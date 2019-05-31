@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": false,
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "declaration": true,
+    "forceConsistentCasingInFileNames": true,
+    "lib": ["es2017", "dom"],
+    "noFallthroughCasesInSwitch": true,
+    "noEmitOnError": true,
+    "noImplicitReturns": true,
+    "pretty": true,
+    "strict": true,
+    "module": "commonjs",
+    "target": "es5",
+    "sourceMap": true,
+    "rootDir": "src",
+    "outDir": "build",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "baseUrl": "."
+  },
+  "include": [
+    "src/*.ts",
+    "src/**/*.ts",
+    "test/*.ts",
+    "test/**/*.ts"
+  ],
+  "typedocOptions": {
+    "mode": "modules",
+    "out": "docs",
+    "theme": "minimal"
+  }
+}

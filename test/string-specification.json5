@@ -1,0 +1,79 @@
+{
+  "concat": [
+    {
+      "context": { "name": "E. Honda", "yearBorn": 1960, "likesNoodles": true },
+      "template": `{{concat "My name is " name " and I was born in " yearBorn ". True or false, I like noodles? " likesNoodles}}`,
+      "expected": "My name is E. Honda and I was born in 1960. True or false, I like noodles? true"
+    },
+  ],
+  "indexOf": [
+    {
+      "template": `{{indexOf "This string contains 3 lower case letter 'I's and no lower case 'X's" "i"}}`,
+      "expected": "2"
+    },
+    {
+      "template": `{{indexOf "This string contains 3 lower case letter 'I's and no lower case 'X's" "x"}}`,
+      "expected": "-1"
+    },
+    {
+      "template": `{{indexOf "This string contains 3 lower case letter 'I's and no lower case 'X's" 3}}`,
+      "expected": "21"
+    },
+  ],
+  "lastIndexOf": [
+    {
+      "template": `{{lastIndexOf "This string contains 3 lower case letter 'I's and no lower case 'X's" "i"}}`,
+      "expected": "17"
+    },
+    {
+      "template": `{{lastIndexOf "This string contains 3 lower case letter 'I's and no lower case 'X's" "x"}}`,
+      "expected": "-1"
+    },
+    {
+      "template": `{{lastIndexOf "This string contains 3 lower case letter 'I's and no lower case 'X's" 3}}`,
+      "expected": "21"
+    },
+  ],
+  "regexMatch": [
+    {
+      "template": `{{{json regexMatch "I am a test" "(am)\sa" "gi")}}}
+      "expected": [ "am a", "am" ],
+      "parseOutput": true
+    }
+  ],
+  "split": [
+    {
+      "template": `{{{json (split "Europe|Asia|North America" "|")}}}`,
+      "expected": [ "Europe", "Asia", "North America" ],
+      "parseOutput": true
+    }
+  ],
+  "substr": [
+    {
+      "template": `{{substr "Hello, my name is E. Honda. How are you?" 18 8}}`,
+      "expected": "E. Honda"
+    },
+    {
+      "template": `{{substr "Hello, my name is E. Honda. How are you?" 18}}`,
+      "expected": "E. Honda. How are you?"
+    },
+    {
+      "template": `{{substr "Hello, my name is E. Honda. How are you?" -12}}`,
+      "expected": "E. Honda. How are you?"
+    },
+    {
+      "template": `{{substr "Hello, my name is E. Honda. How are you?" -22 8}}`,
+      "expected": "E. Honda"
+    },
+  ],
+  "substring": [
+    {
+      "template": `{{substring "Hello, my name is E. Honda. How are you?" 18 26}}`,
+      "expected": "E. Honda"
+    },
+    {
+      "template": `{{substring "Hello, my name is E. Honda. How are you?" 18}}`,
+      "expected": "E. Honda. How are you?"
+    }
+  ]
+}

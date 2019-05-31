@@ -1,0 +1,49 @@
+{
+  "name": "@public/bristles",
+  "engines": {
+    "node": ">=10"
+  },
+  "version": "0.0.1",
+  "description": "Handlebars but with some a lot of useful helpers",
+  "main": "build/index.js",
+  "scripts": {
+    "docs": "rm -rf docs/ && node_modules/.bin/typedoc src",
+    "tsc": "rm -rf build/ && ./node_modules/.bin/tsc",
+    "build": "npm run tsc && npm run docs",
+    "build-playground": "rm -rf public && node_modules/.bin/webpack",
+    "playground": "npm run build-playground && ./node_modules/.bin/webpack-dev-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Matthew Wilkes",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "deep-diff": "^1.0.2",
+    "deepmerge": "^3.2.0",
+    "dot-object": "^1.7.1",
+    "fast-safe-stringify": "^2.0.6",
+    "handlebars": "^4.1.2",
+    "json-6": "^1.0.2",
+    "string": "^3.3.3"
+  },
+  "devDependencies": {
+    "@types/dot-object": "^1.7.0",
+    "@types/handlebars": "^4.1.0",
+    "@types/node": "^12.0.0",
+    "@types/string": "0.0.29",
+    "brace": "^0.11.1",
+    "css-loader": "^2.1.1",
+    "golden-layout": "^1.5.9",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "jquery": "^3.4.1",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "ts-loader": "^6.0.1",
+    "typedoc": "^0.14.2",
+    "typescript": "^3.4.5",
+    "webpack": "^4.32.0",
+    "webpack-cli": "^3.3.2",
+    "webpack-dev-server": "^3.4.1"
+  }
+}
