@@ -913,12 +913,27 @@ img { max-width: 100%; }
 			<a href="_helpers_object_.objecthelpers.html" class="tsd-kind-icon">Object<wbr>Helpers</a>
 			<ul>
 				<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
-					<a href="_helpers_object_.objecthelpers.html#_parsejson" class="tsd-kind-icon">_parse<wbr>Json</a>
+					<a href="_helpers_object_.objecthelpers.html#_entries" class="tsd-kind-icon">_entries</a>
 				</li>
 				<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
-					<a href="_helpers_object_.objecthelpers.html#_set" class="tsd-kind-icon">_set</a>
+					<a href="_helpers_object_.objecthelpers.html#_get" class="tsd-kind-icon">_get</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
+					<a href="_helpers_object_.objecthelpers.html#_keys" class="tsd-kind-icon">_keys</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
+					<a href="_helpers_object_.objecthelpers.html#_merge" class="tsd-kind-icon">_merge</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
+					<a href="_helpers_object_.objecthelpers.html#_parse" class="tsd-kind-icon">_parse</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
+					<a href="_helpers_object_.objecthelpers.html#_values" class="tsd-kind-icon">_values</a>
 				</li>
 			</ul>
+		</li>
+		<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+			<a href="../modules/_helpers_object_.html#json6" class="tsd-kind-icon">JSON6</a>
 		</li>
 	</ul>
 </nav>
@@ -946,8 +961,12 @@ img { max-width: 100%; }
 					<section class="tsd-index-section ">
 						<h3>Methods</h3>
 						<ul class="tsd-index-list">
-							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="_helpers_object_.objecthelpers.html#_parsejson" class="tsd-kind-icon">_parse<wbr>Json</a></li>
-							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="_helpers_object_.objecthelpers.html#_set" class="tsd-kind-icon">_set</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="_helpers_object_.objecthelpers.html#_entries" class="tsd-kind-icon">_entries</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="_helpers_object_.objecthelpers.html#_get" class="tsd-kind-icon">_get</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="_helpers_object_.objecthelpers.html#_keys" class="tsd-kind-icon">_keys</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="_helpers_object_.objecthelpers.html#_merge" class="tsd-kind-icon">_merge</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="_helpers_object_.objecthelpers.html#_parse" class="tsd-kind-icon">_parse</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="_helpers_object_.objecthelpers.html#_values" class="tsd-kind-icon">_values</a></li>
 						</ul>
 					</section>
 				</div>
@@ -956,22 +975,22 @@ img { max-width: 100%; }
 		<section class="tsd-panel-group tsd-member-group ">
 			<h2>Methods</h2>
 			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
-				<a name="_parsejson" class="tsd-anchor"></a>
-				<h3><span class="tsd-flag ts-flagStatic">Static</span> _parse<wbr>Json</h3>
+				<a name="_entries" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagStatic">Static</span> _entries</h3>
 				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
-					<li class="tsd-signature tsd-kind-icon">_parse<wbr>Json<span class="tsd-signature-symbol">(</span>input<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+					<li class="tsd-signature tsd-kind-icon">_entries<span class="tsd-signature-symbol">(</span>input<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in helpers/object.ts:24</li>
+								<li>Defined in <a href="https://github.com/tonicblue/bristles/blob/3a15d28/src/helpers/object.ts#L45">helpers/object.ts:45</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
-								<h5>input: <span class="tsd-signature-type">string</span></h5>
+								<h5>input: <span class="tsd-signature-type">any</span></h5>
 							</li>
 						</ul>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
@@ -979,16 +998,16 @@ img { max-width: 100%; }
 				</ul>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
-				<a name="_set" class="tsd-anchor"></a>
-				<h3><span class="tsd-flag ts-flagStatic">Static</span> _set</h3>
+				<a name="_get" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagStatic">Static</span> _get</h3>
 				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
-					<li class="tsd-signature tsd-kind-icon">_set<span class="tsd-signature-symbol">(</span>context<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, path<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					<li class="tsd-signature tsd-kind-icon">_get<span class="tsd-signature-symbol">(</span>context<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, path<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in helpers/object.ts:42</li>
+								<li>Defined in <a href="https://github.com/tonicblue/bristles/blob/3a15d28/src/helpers/object.ts#L57">helpers/object.ts:57</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -999,11 +1018,94 @@ img { max-width: 100%; }
 							<li>
 								<h5>path: <span class="tsd-signature-type">string</span></h5>
 							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
+				<a name="_keys" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagStatic">Static</span> _keys</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
+					<li class="tsd-signature tsd-kind-icon">_keys<span class="tsd-signature-symbol">(</span>input<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/tonicblue/bristles/blob/3a15d28/src/helpers/object.ts#L33">helpers/object.ts:33</a></li>
+							</ul>
+						</aside>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>input: <span class="tsd-signature-type">any</span></h5>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
+				<a name="_merge" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagStatic">Static</span> _merge</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
+					<li class="tsd-signature tsd-kind-icon">_merge<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/tonicblue/bristles/blob/3a15d28/src/helpers/object.ts#L69">helpers/object.ts:69</a></li>
+							</ul>
+						</aside>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
+				<a name="_parse" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagStatic">Static</span> _parse</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
+					<li class="tsd-signature tsd-kind-icon">_parse<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/tonicblue/bristles/blob/3a15d28/src/helpers/object.ts#L84">helpers/object.ts:84</a></li>
+							</ul>
+						</aside>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
 							<li>
 								<h5>value: <span class="tsd-signature-type">any</span></h5>
 							</li>
 						</ul>
-						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
+				<a name="_values" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagStatic">Static</span> _values</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
+					<li class="tsd-signature tsd-kind-icon">_values<span class="tsd-signature-symbol">(</span>input<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/tonicblue/bristles/blob/3a15d28/src/helpers/object.ts#L21">helpers/object.ts:21</a></li>
+							</ul>
+						</aside>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>input: <span class="tsd-signature-type">any</span></h5>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
 					</li>
 				</ul>
 			</section>
