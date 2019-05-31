@@ -1253,7 +1253,7 @@ JSON6.begin = function( cb, reviver ) {
 							val.string += str;
 							exponent_sign = true;
 						} else {
-							status = false;
+							status = false; 
 							throwError( "fault while parsing number;", cInt );
 							break;
 						}
@@ -1303,7 +1303,7 @@ JSON6.begin = function( cb, reviver ) {
 					}
 				}
 				n = _n;
-
+	                
 				if( (!complete_at_end) && n == buf.length )
 				{
 					gatheringNumber = true;
@@ -2368,7 +2368,7 @@ string.js - Copyright (C) 2012-2014, JP Richardson <jprichardson@gmail.com>
       var s = this.trim().s.replace(/[_\s]+/g, '-').replace(/([A-Z])/g, '-$1').replace(/-+/g, '-').toLowerCase();
       return new this.constructor(s);
     },
-
+    
     equalsIgnoreCase: function(prefix) {
       var s = this.s;
       return s.toLowerCase() == prefix.toLowerCase()
@@ -4096,7 +4096,6 @@ var util_1 = __webpack_require__(/*! util */ "./node_modules/util/util.js");
  *  sort
  *  slice
  *  splice
- *  includes
  *  join
  *  eachJoin
  *  merge
@@ -4163,6 +4162,30 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var ConditionalHelpers = /** @class */ (function () {
     function ConditionalHelpers() {
     }
+    ConditionalHelpers._contains = function (input, test) {
+        try {
+            var helper = arguments[arguments.length - 1];
+            var contains = typeof input === 'string' && typeof test === 'string' && input.indexOf(test) > -1;
+            if (!helper.fn) {
+                return contains;
+            }
+            else {
+                if (contains) {
+                    return helper.fn(helper.data);
+                }
+                else if (helper.inverse) {
+                    return helper.inverse(helper.data);
+                }
+                else {
+                    return '';
+                }
+            }
+        }
+        catch (err) {
+            console.error('Bristles Error -> Helper: contains, Error:', err.message);
+            return false;
+        }
+    };
     return ConditionalHelpers;
 }());
 exports.default = ConditionalHelpers;
@@ -4917,30 +4940,6 @@ var StringHelpers = /** @class */ (function () {
         }
         catch (err) {
             console.error('Bristles Error -> Helper: endsWith, Error:', err.message);
-            return false;
-        }
-    };
-    StringHelpers._contains = function (input, test) {
-        try {
-            var helper = arguments[arguments.length - 1];
-            var contains = typeof input === 'string' && typeof test === 'string' && input.indexOf(test) > -1;
-            if (!helper.fn) {
-                return contains;
-            }
-            else {
-                if (contains) {
-                    return helper.fn(helper.data);
-                }
-                else if (helper.inverse) {
-                    return helper.inverse(helper.data);
-                }
-                else {
-                    return '';
-                }
-            }
-        }
-        catch (err) {
-            console.error('Bristles Error -> Helper: contains, Error:', err.message);
             return false;
         }
     };

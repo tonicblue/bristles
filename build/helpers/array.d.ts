@@ -4,7 +4,6 @@
  *  sort
  *  slice
  *  splice
- *  includes
  *  join
  *  eachJoin
  *  merge

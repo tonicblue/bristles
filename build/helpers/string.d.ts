@@ -127,7 +127,6 @@ export default class StringHelpers {
     static _underscore(input: string): string;
     static _startsWith(input: string, test: string): boolean | string;
     static _endsWith(input: string, test: string): boolean | string;
-    static _contains(input: string, test: string): boolean | string;
     /**
      * Check to see if a string matches a regular expression
      *

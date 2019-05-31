@@ -7,7 +7,6 @@ import { isFunction } from 'util';
  *  sort
  *  slice
  *  splice
- *  includes
  *  join
  *  eachJoin
  *  merge

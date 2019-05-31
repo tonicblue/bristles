@@ -602,27 +602,6 @@ export default class StringHelpers {
     }
   }
 
-  static _contains(input: string, test: string): boolean|string {
-    try {
-      const helper: HelperOptions = arguments[arguments.length - 1];
-      const contains = typeof input === 'string' && typeof test === 'string' && input.indexOf(test) > -1;
-      if (!helper.fn) {
-        return contains;
-      } else {
-        if (contains) {
-          return helper.fn(helper.data);
-        } else if (helper.inverse) {
-          return helper.inverse(helper.data);
-        } else {
-          return '';
-        }
-      }
-    } catch(err) {
-      console.error('Bristles Error -> Helper: contains, Error:', err.message);
-      return false;
-    }
-  }
-
   /**
    * Check to see if a string matches a regular expression
    *
