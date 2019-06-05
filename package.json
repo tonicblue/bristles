@@ -30,6 +30,7 @@
     "string": "^3.3.3"
   },
   "devDependencies": {
+    "@types/deep-diff": "^1.0.0",
     "@types/dot-object": "^1.7.0",
     "@types/handlebars": "^4.1.0",
     "@types/node": "^12.0.0",
