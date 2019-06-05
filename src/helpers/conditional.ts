@@ -190,6 +190,20 @@ export default class ConditionalHelpers {
     }
   }
 
+  static _any(input: any[]): any {
+    try {
+      const helper: HelperOptions = arguments[arguments.length - 1];
+      if (isOps(input) || !Array.isArray(input)) {
+        throw new Error('Invalid arguments');
+      }
+      const length = input.length;
+      return this.conditionalResponse(helper, length > 0, { length });
+    } catch (err) {
+      console.error('Bristles Error -> Helper: any, Error:', err.message);
+      return false;
+    }
+  }
+
   static _contains(input: string, test: string): any {
     try {
       const helper: HelperOptions = arguments[arguments.length - 1];
