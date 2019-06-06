@@ -96,6 +96,82 @@ export default class ConditionalHelpers {
     }
   }
 
+  static _has(target: any, property: string): any {
+    try {
+      if (typeof target !== 'object' || Array.isArray(target) || typeof property !== 'string') {
+        throw new Error('Invalid arguments');
+      }
+      const helper: HelperOptions = arguments[arguments.length - 1];
+      const evaluation = target.hasOwnProperty(property);
+      return this.conditionalResponse(helper, evaluation);
+    } catch (err) {
+      console.error('Bristles Error -> Helper: has, Error:', err.message);
+      return false;
+    }
+  }
+
+  //TODO: Allow an array of properties in arguments and flatten it.
+  //      This would be useful with getKeys comparing object types
+  static _hasAll(): any {
+    try {
+      const args = Array.from(arguments);
+      const helper: HelperOptions = args.pop();
+      const target = args.shift();
+      const missing = args.filter(arg => { return !target.hasOwnProperty(arg); });
+      const evaluation = missing.length === 0;
+      return this.conditionalResponse(helper, evaluation, { missing });
+    } catch (err) {
+      console.error('Bristles Error -> Helper: ifAll, Error:', err.message);
+      return false;
+    }
+  }
+
+  //TODO: Allow an array of properties in arguments and flatten it.
+  //      This would be useful with getKeys comparing object types
+  static _hasAny(): any {
+    try {
+      const args = Array.from(arguments);
+      const helper: HelperOptions = args.pop();
+      const target = args.shift();
+      const has = args.filter(arg => { return target.hasOwnProperty(arg); });
+      const evaluation = has.length > 0;
+      return this.conditionalResponse(helper, evaluation, { has });
+    } catch (err) {
+      console.error('Bristles Error -> Helper: ifAll, Error:', err.message);
+      return false;
+    }
+  }
+
+  static _is(input: any, type: string): any {
+    try {
+      const helper: HelperOptions = arguments[arguments.length - 1];
+      if (typeof type !== 'string') {
+        throw new Error('Invalid arguments');
+      }
+      const evaluation = typeof input === type;
+      return this.conditionalResponse(helper, evaluation);
+    } catch (err) {
+      console.error('Bristles Error -> Helper: gt, Error:', err.message);
+      return false;
+    }
+  }
+
+  static _isLike(input: any, test: any): any {
+    try {
+      const helper: HelperOptions = arguments[arguments.length - 1];
+      if (!test || isOps(test)) {
+        throw new Error('Invalid arguments');
+      }
+      const inputType = typeof input;
+      const testType = typeof test;
+      const evaluation = inputType === testType;
+      return this.conditionalResponse(helper, evaluation, { inputType, testType });
+    } catch (err) {
+      console.error('Bristles Error -> Helper: gt, Error:', err.message);
+      return false;
+    }
+  }
+
   static _gt(inputA: number, inputB: number): any {
     try {
       const helper: HelperOptions = arguments[arguments.length - 1];
