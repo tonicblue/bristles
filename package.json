@@ -3,7 +3,7 @@
   "engines": {
     "node": ">=10"
   },
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Handlebars but with some a lot of useful helpers",
   "main": "build/index.js",
   "repository": {
