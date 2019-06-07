@@ -88,4 +88,29 @@ export default class UtilityHelpers {
       return null;
     }
   }
+
+  /*TODO: This isn't currently returning anything and I need to give this some proper thought
+  *       and security consideration such as checking that the evaluated function does not
+  *       have ANY access to the wider context and I need to work out what to do in case of infinite
+  *       loops. Also, if this is going to be used with `map` I need to work out how to stuff
+  *       other parameters into the evaluated function so it isn't just the current item being
+  *       mapped. May just drop this in its entirety. Though it would be amazing for filtering
+  *       and preparing data
+  */
+  static _eval(code: string): any {
+    try {
+      const args = Array.from(arguments);
+      const helper = args.pop();
+      args.shift();
+
+      const evaluator = function (...args: any[]) {
+        return Function('"use strict";return (' + code + ')')()(...args);
+      }
+
+      const output = evaluator(...args);
+    } catch(err) {
+      console.error('Bristles Error -> Helper: eval, Error:', err.message);
+      return err.message;
+    }
+  }
 }

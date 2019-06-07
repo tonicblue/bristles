@@ -1,11 +1,6 @@
 /**
  * TODO: functions
- *  map
- *  sort
- *  slice
- *  splice
  *  join
- *  eachJoin
  *  merge
  *  delta
  *  same
@@ -22,4 +17,7 @@
 export default class ArrayHelpers {
     static _map(input: any[], func: (...args: any[]) => any): any[];
     static _each(input: any, join: string): string;
+    static _sort(input: any[], direction?: string, path?: string): any[];
+    static _slice(input: any[], begin?: number, end?: number): any[];
+    static _splice(input: any[], start?: number, deleteCount?: number, items?: any[]): any[];
 }

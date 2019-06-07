@@ -1,14 +1,12 @@
 import { HelperOptions } from 'handlebars';
 import { isFunction } from 'util';
 
+import * as dot from 'dot-object';
+
 import { isOps } from '../utilities';
-import { test } from 'shelljs';
 
 /**
  * TODO: functions
- *  sort
- *  slice
- *  splice
  *  join
  *  merge
  *  delta
@@ -107,5 +105,86 @@ export default class ArrayHelpers {
     }
 
     return '';
+  }
+
+  static _sort(input: any[], direction?: string, path?: string): any[] {
+    const helper: HelperOptions = arguments[arguments.length - 1];
+    try {
+      if (!Array.isArray(input)) {
+        throw new Error('Invalid arguments');
+      }
+
+      direction = direction || 'asc';
+      direction = direction === 'desc' ? 'desc' : 'asc';
+      path = typeof path === 'string' ? path : undefined;
+
+      let func = (a: number, b: number) => { return b - a; };
+      if (!path) {
+        if (direction === 'desc') {
+          func = (a: number, b: number) => { return a - b; };
+        }
+      } else {
+        if (direction === 'desc') {
+          func = (a: number, b: number) => {
+            return dot.pick(path || '', a) - dot.pick(path || '', b);
+          };
+        } else {
+          func = (a: number, b: number) => {
+            return dot.pick(path || '', b) - dot.pick(path || '', a);
+          };
+        }
+      }
+
+      if (helper.hash.mutate === true) {
+        return input.sort(func);
+      } else {
+        const clone = JSON.parse(JSON.stringify(input));
+        clone.sort(func);
+        return clone;
+      }
+    } catch(err) {
+      console.error('Bristles Error -> Helper: sort, Error:', err.message);
+      return Array.isArray ? input : [];
+    }
+  }
+
+  static _slice(input: any[], begin?: number, end?: number): any[] {
+    try {
+      if (!Array.isArray(input)) {
+        throw new Error('Invalid arguments');
+      }
+
+      begin = typeof begin === 'number' ? begin : 0;
+      end = typeof end === 'number' ? end : undefined;
+
+      return input.slice(begin, end);
+    } catch(err) {
+      console.error('Bristles Error -> Helper: slice, Error:', err.message);
+      return [];
+    }
+  }
+
+  static _splice(input: any[], start?: number, deleteCount?: number, items?: any[]): any[] {
+    const helper: HelperOptions = arguments[arguments.length - 1];
+    try {
+      if (!Array.isArray(input)) {
+        throw new Error('Invalid arguments');
+      }
+
+      start = typeof start === 'number' ? start : 0;
+      deleteCount = typeof deleteCount === 'number' ? deleteCount : 0;
+      items = Array.isArray(items) ? items : [];
+
+      if (helper.hash.mutate === true) {
+        return input.splice(start, deleteCount, ...items);
+      } else {
+        const clone = JSON.parse(JSON.stringify(input));
+        clone.splice(start, deleteCount, ...items);
+        return clone;
+      }
+    } catch(err) {
+      console.error('Bristles Error -> Helper: splice, Error:', err.message);
+      return [];
+    }
   }
 }

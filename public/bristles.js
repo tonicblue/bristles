@@ -86,6 +86,531 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./node_modules/deep-diff/index.js":
+/*!*****************************************!*\
+  !*** ./node_modules/deep-diff/index.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_RESULT__;;(function(root, factory) { // eslint-disable-line no-extra-semi
+  var deepDiff = factory(root);
+  // eslint-disable-next-line no-undef
+  if (true) {
+      // AMD
+      !(__WEBPACK_AMD_DEFINE_RESULT__ = (function() { // eslint-disable-line no-undef
+          return deepDiff;
+      }).call(exports, __webpack_require__, exports, module),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+  } else { var _deepdiff; }
+}(this, function(root) {
+  var validKinds = ['N', 'E', 'A', 'D'];
+
+  // nodejs compatible on server side and in the browser.
+  function inherits(ctor, superCtor) {
+    ctor.super_ = superCtor;
+    ctor.prototype = Object.create(superCtor.prototype, {
+      constructor: {
+        value: ctor,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+  }
+
+  function Diff(kind, path) {
+    Object.defineProperty(this, 'kind', {
+      value: kind,
+      enumerable: true
+    });
+    if (path && path.length) {
+      Object.defineProperty(this, 'path', {
+        value: path,
+        enumerable: true
+      });
+    }
+  }
+
+  function DiffEdit(path, origin, value) {
+    DiffEdit.super_.call(this, 'E', path);
+    Object.defineProperty(this, 'lhs', {
+      value: origin,
+      enumerable: true
+    });
+    Object.defineProperty(this, 'rhs', {
+      value: value,
+      enumerable: true
+    });
+  }
+  inherits(DiffEdit, Diff);
+
+  function DiffNew(path, value) {
+    DiffNew.super_.call(this, 'N', path);
+    Object.defineProperty(this, 'rhs', {
+      value: value,
+      enumerable: true
+    });
+  }
+  inherits(DiffNew, Diff);
+
+  function DiffDeleted(path, value) {
+    DiffDeleted.super_.call(this, 'D', path);
+    Object.defineProperty(this, 'lhs', {
+      value: value,
+      enumerable: true
+    });
+  }
+  inherits(DiffDeleted, Diff);
+
+  function DiffArray(path, index, item) {
+    DiffArray.super_.call(this, 'A', path);
+    Object.defineProperty(this, 'index', {
+      value: index,
+      enumerable: true
+    });
+    Object.defineProperty(this, 'item', {
+      value: item,
+      enumerable: true
+    });
+  }
+  inherits(DiffArray, Diff);
+
+  function arrayRemove(arr, from, to) {
+    var rest = arr.slice((to || from) + 1 || arr.length);
+    arr.length = from < 0 ? arr.length + from : from;
+    arr.push.apply(arr, rest);
+    return arr;
+  }
+
+  function realTypeOf(subject) {
+    var type = typeof subject;
+    if (type !== 'object') {
+      return type;
+    }
+
+    if (subject === Math) {
+      return 'math';
+    } else if (subject === null) {
+      return 'null';
+    } else if (Array.isArray(subject)) {
+      return 'array';
+    } else if (Object.prototype.toString.call(subject) === '[object Date]') {
+      return 'date';
+    } else if (typeof subject.toString === 'function' && /^\/.*\//.test(subject.toString())) {
+      return 'regexp';
+    }
+    return 'object';
+  }
+
+  // http://werxltd.com/wp/2010/05/13/javascript-implementation-of-javas-string-hashcode-method/
+  function hashThisString(string) {
+    var hash = 0;
+    if (string.length === 0) { return hash; }
+    for (var i = 0; i < string.length; i++) {
+      var char = string.charCodeAt(i);
+      hash = ((hash << 5) - hash) + char;
+      hash = hash & hash; // Convert to 32bit integer
+    }
+    return hash;
+  }
+
+  // Gets a hash of the given object in an array order-independent fashion
+  // also object key order independent (easier since they can be alphabetized)
+  function getOrderIndependentHash(object) {
+    var accum = 0;
+    var type = realTypeOf(object);
+
+    if (type === 'array') {
+      object.forEach(function (item) {
+        // Addition is commutative so this is order indep
+        accum += getOrderIndependentHash(item);
+      });
+
+      var arrayString = '[type: array, hash: ' + accum + ']';
+      return accum + hashThisString(arrayString);
+    }
+
+    if (type === 'object') {
+      for (var key in object) {
+        if (object.hasOwnProperty(key)) {
+          var keyValueString = '[ type: object, key: ' + key + ', value hash: ' + getOrderIndependentHash(object[key]) + ']';
+          accum += hashThisString(keyValueString);
+        }
+      }
+
+      return accum;
+    }
+
+    // Non object, non array...should be good?
+    var stringToHash = '[ type: ' + type + ' ; value: ' + object + ']';
+    return accum + hashThisString(stringToHash);
+  }
+
+  function deepDiff(lhs, rhs, changes, prefilter, path, key, stack, orderIndependent) {
+    changes = changes || [];
+    path = path || [];
+    stack = stack || [];
+    var currentPath = path.slice(0);
+    if (typeof key !== 'undefined' && key !== null) {
+      if (prefilter) {
+        if (typeof (prefilter) === 'function' && prefilter(currentPath, key)) {
+          return;
+        } else if (typeof (prefilter) === 'object') {
+          if (prefilter.prefilter && prefilter.prefilter(currentPath, key)) {
+            return;
+          }
+          if (prefilter.normalize) {
+            var alt = prefilter.normalize(currentPath, key, lhs, rhs);
+            if (alt) {
+              lhs = alt[0];
+              rhs = alt[1];
+            }
+          }
+        }
+      }
+      currentPath.push(key);
+    }
+
+    // Use string comparison for regexes
+    if (realTypeOf(lhs) === 'regexp' && realTypeOf(rhs) === 'regexp') {
+      lhs = lhs.toString();
+      rhs = rhs.toString();
+    }
+
+    var ltype = typeof lhs;
+    var rtype = typeof rhs;
+    var i, j, k, other;
+
+    var ldefined = ltype !== 'undefined' ||
+      (stack && (stack.length > 0) && stack[stack.length - 1].lhs &&
+        Object.getOwnPropertyDescriptor(stack[stack.length - 1].lhs, key));
+    var rdefined = rtype !== 'undefined' ||
+      (stack && (stack.length > 0) && stack[stack.length - 1].rhs &&
+        Object.getOwnPropertyDescriptor(stack[stack.length - 1].rhs, key));
+
+    if (!ldefined && rdefined) {
+      changes.push(new DiffNew(currentPath, rhs));
+    } else if (!rdefined && ldefined) {
+      changes.push(new DiffDeleted(currentPath, lhs));
+    } else if (realTypeOf(lhs) !== realTypeOf(rhs)) {
+      changes.push(new DiffEdit(currentPath, lhs, rhs));
+    } else if (realTypeOf(lhs) === 'date' && (lhs - rhs) !== 0) {
+      changes.push(new DiffEdit(currentPath, lhs, rhs));
+    } else if (ltype === 'object' && lhs !== null && rhs !== null) {
+      for (i = stack.length - 1; i > -1; --i) {
+        if (stack[i].lhs === lhs) {
+          other = true;
+          break;
+        }
+      }
+      if (!other) {
+        stack.push({ lhs: lhs, rhs: rhs });
+        if (Array.isArray(lhs)) {
+          // If order doesn't matter, we need to sort our arrays
+          if (orderIndependent) {
+            lhs.sort(function (a, b) {
+              return getOrderIndependentHash(a) - getOrderIndependentHash(b);
+            });
+
+            rhs.sort(function (a, b) {
+              return getOrderIndependentHash(a) - getOrderIndependentHash(b);
+            });
+          }
+          i = rhs.length - 1;
+          j = lhs.length - 1;
+          while (i > j) {
+            changes.push(new DiffArray(currentPath, i, new DiffNew(undefined, rhs[i--])));
+          }
+          while (j > i) {
+            changes.push(new DiffArray(currentPath, j, new DiffDeleted(undefined, lhs[j--])));
+          }
+          for (; i >= 0; --i) {
+            deepDiff(lhs[i], rhs[i], changes, prefilter, currentPath, i, stack, orderIndependent);
+          }
+        } else {
+          var akeys = Object.keys(lhs);
+          var pkeys = Object.keys(rhs);
+          for (i = 0; i < akeys.length; ++i) {
+            k = akeys[i];
+            other = pkeys.indexOf(k);
+            if (other >= 0) {
+              deepDiff(lhs[k], rhs[k], changes, prefilter, currentPath, k, stack, orderIndependent);
+              pkeys[other] = null;
+            } else {
+              deepDiff(lhs[k], undefined, changes, prefilter, currentPath, k, stack, orderIndependent);
+            }
+          }
+          for (i = 0; i < pkeys.length; ++i) {
+            k = pkeys[i];
+            if (k) {
+              deepDiff(undefined, rhs[k], changes, prefilter, currentPath, k, stack, orderIndependent);
+            }
+          }
+        }
+        stack.length = stack.length - 1;
+      } else if (lhs !== rhs) {
+        // lhs is contains a cycle at this element and it differs from rhs
+        changes.push(new DiffEdit(currentPath, lhs, rhs));
+      }
+    } else if (lhs !== rhs) {
+      if (!(ltype === 'number' && isNaN(lhs) && isNaN(rhs))) {
+        changes.push(new DiffEdit(currentPath, lhs, rhs));
+      }
+    }
+  }
+
+  function observableDiff(lhs, rhs, observer, prefilter, orderIndependent) {
+    var changes = [];
+    deepDiff(lhs, rhs, changes, prefilter, null, null, null, orderIndependent);
+    if (observer) {
+      for (var i = 0; i < changes.length; ++i) {
+        observer(changes[i]);
+      }
+    }
+    return changes;
+  }
+
+  function orderIndependentDeepDiff(lhs, rhs, changes, prefilter, path, key, stack) {
+    return deepDiff(lhs, rhs, changes, prefilter, path, key, stack, true);
+  }
+
+  function accumulateDiff(lhs, rhs, prefilter, accum) {
+    var observer = (accum) ?
+      function (difference) {
+        if (difference) {
+          accum.push(difference);
+        }
+      } : undefined;
+    var changes = observableDiff(lhs, rhs, observer, prefilter);
+    return (accum) ? accum : (changes.length) ? changes : undefined;
+  }
+
+  function accumulateOrderIndependentDiff(lhs, rhs, prefilter, accum) {
+    var observer = (accum) ?
+      function (difference) {
+        if (difference) {
+          accum.push(difference);
+        }
+      } : undefined;
+    var changes = observableDiff(lhs, rhs, observer, prefilter, true);
+    return (accum) ? accum : (changes.length) ? changes : undefined;
+  }
+
+  function applyArrayChange(arr, index, change) {
+    if (change.path && change.path.length) {
+      var it = arr[index],
+        i, u = change.path.length - 1;
+      for (i = 0; i < u; i++) {
+        it = it[change.path[i]];
+      }
+      switch (change.kind) {
+        case 'A':
+          applyArrayChange(it[change.path[i]], change.index, change.item);
+          break;
+        case 'D':
+          delete it[change.path[i]];
+          break;
+        case 'E':
+        case 'N':
+          it[change.path[i]] = change.rhs;
+          break;
+      }
+    } else {
+      switch (change.kind) {
+        case 'A':
+          applyArrayChange(arr[index], change.index, change.item);
+          break;
+        case 'D':
+          arr = arrayRemove(arr, index);
+          break;
+        case 'E':
+        case 'N':
+          arr[index] = change.rhs;
+          break;
+      }
+    }
+    return arr;
+  }
+
+  function applyChange(target, source, change) {
+    if (typeof change === 'undefined' && source && ~validKinds.indexOf(source.kind)) {
+      change = source;
+    }
+    if (target && change && change.kind) {
+      var it = target,
+        i = -1,
+        last = change.path ? change.path.length - 1 : 0;
+      while (++i < last) {
+        if (typeof it[change.path[i]] === 'undefined') {
+          it[change.path[i]] = (typeof change.path[i + 1] !== 'undefined' && typeof change.path[i + 1] === 'number') ? [] : {};
+        }
+        it = it[change.path[i]];
+      }
+      switch (change.kind) {
+        case 'A':
+          if (change.path && typeof it[change.path[i]] === 'undefined') {
+            it[change.path[i]] = [];
+          }
+          applyArrayChange(change.path ? it[change.path[i]] : it, change.index, change.item);
+          break;
+        case 'D':
+          delete it[change.path[i]];
+          break;
+        case 'E':
+        case 'N':
+          it[change.path[i]] = change.rhs;
+          break;
+      }
+    }
+  }
+
+  function revertArrayChange(arr, index, change) {
+    if (change.path && change.path.length) {
+      // the structure of the object at the index has changed...
+      var it = arr[index],
+        i, u = change.path.length - 1;
+      for (i = 0; i < u; i++) {
+        it = it[change.path[i]];
+      }
+      switch (change.kind) {
+        case 'A':
+          revertArrayChange(it[change.path[i]], change.index, change.item);
+          break;
+        case 'D':
+          it[change.path[i]] = change.lhs;
+          break;
+        case 'E':
+          it[change.path[i]] = change.lhs;
+          break;
+        case 'N':
+          delete it[change.path[i]];
+          break;
+      }
+    } else {
+      // the array item is different...
+      switch (change.kind) {
+        case 'A':
+          revertArrayChange(arr[index], change.index, change.item);
+          break;
+        case 'D':
+          arr[index] = change.lhs;
+          break;
+        case 'E':
+          arr[index] = change.lhs;
+          break;
+        case 'N':
+          arr = arrayRemove(arr, index);
+          break;
+      }
+    }
+    return arr;
+  }
+
+  function revertChange(target, source, change) {
+    if (target && source && change && change.kind) {
+      var it = target,
+        i, u;
+      u = change.path.length - 1;
+      for (i = 0; i < u; i++) {
+        if (typeof it[change.path[i]] === 'undefined') {
+          it[change.path[i]] = {};
+        }
+        it = it[change.path[i]];
+      }
+      switch (change.kind) {
+        case 'A':
+          // Array was modified...
+          // it will be an array...
+          revertArrayChange(it[change.path[i]], change.index, change.item);
+          break;
+        case 'D':
+          // Item was deleted...
+          it[change.path[i]] = change.lhs;
+          break;
+        case 'E':
+          // Item was edited...
+          it[change.path[i]] = change.lhs;
+          break;
+        case 'N':
+          // Item is new...
+          delete it[change.path[i]];
+          break;
+      }
+    }
+  }
+
+  function applyDiff(target, source, filter) {
+    if (target && source) {
+      var onChange = function (change) {
+        if (!filter || filter(target, source, change)) {
+          applyChange(target, source, change);
+        }
+      };
+      observableDiff(target, source, onChange);
+    }
+  }
+
+  Object.defineProperties(accumulateDiff, {
+
+    diff: {
+      value: accumulateDiff,
+      enumerable: true
+    },
+    orderIndependentDiff: {
+      value: accumulateOrderIndependentDiff,
+      enumerable: true
+    },
+    observableDiff: {
+      value: observableDiff,
+      enumerable: true
+    },
+    orderIndependentObservableDiff: {
+      value: orderIndependentDeepDiff,
+      enumerable: true
+    },
+    orderIndepHash: {
+      value: getOrderIndependentHash,
+      enumerable: true
+    },
+    applyDiff: {
+      value: applyDiff,
+      enumerable: true
+    },
+    applyChange: {
+      value: applyChange,
+      enumerable: true
+    },
+    revertChange: {
+      value: revertChange,
+      enumerable: true
+    },
+    isConflict: {
+      value: function () {
+        return typeof $conflict !== 'undefined';
+      },
+      enumerable: true
+    }
+  });
+
+  // hackish...
+  accumulateDiff.DeepDiff = accumulateDiff;
+  // ...but works with:
+  // import DeepDiff from 'deep-diff'
+  // import { DeepDiff } from 'deep-diff'
+  // const DeepDiff = require('deep-diff');
+  // const { DeepDiff } = require('deep-diff');
+
+  if (root) {
+    root.DeepDiff = accumulateDiff;
+  }
+
+  return accumulateDiff;
+}));
+
+
+/***/ }),
+
 /***/ "./node_modules/dot-object/index.js":
 /*!******************************************!*\
   !*** ./node_modules/dot-object/index.js ***!
@@ -4090,14 +4615,11 @@ exports.callbackify = callbackify;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var util_1 = __webpack_require__(/*! util */ "./node_modules/util/util.js");
+var dot = __webpack_require__(/*! dot-object */ "./node_modules/dot-object/index.js");
+var utilities_1 = __webpack_require__(/*! ../utilities */ "./src/utilities.ts");
 /**
  * TODO: functions
- *  map
- *  sort
- *  slice
- *  splice
  *  join
- *  eachJoin
  *  merge
  *  delta
  *  same
@@ -4126,6 +4648,148 @@ var ArrayHelpers = /** @class */ (function () {
             return [];
         }
     };
+    ArrayHelpers._each = function (input, join) {
+        var helper = arguments[arguments.length - 1];
+        try {
+            if (utilities_1.isOps(input)) {
+                throw new Error('Invalid arguments');
+            }
+            if (!helper.fn) {
+                throw new Error('The each helper can only be used as a block helper');
+            }
+            var outputs = [];
+            input = typeof input !== 'object' ? [input] : input;
+            if (Array.isArray(input)) {
+                var total = '' + input.length;
+                for (var index in input) {
+                    if (index === '0') {
+                        helper.data['@first'] = true;
+                    }
+                    if (index === total) {
+                        helper.data['@last'] = true;
+                    }
+                    helper.data['@index'] = index;
+                    var output = helper.fn(input[index]).trim();
+                    outputs.push(output);
+                    delete helper.data['@first'];
+                    delete helper.data['@last'];
+                    delete helper.data['@index'];
+                }
+            }
+            else {
+                var keys = Object.keys(input);
+                var total = '' + keys.length;
+                for (var index in keys) {
+                    if (index === '0') {
+                        helper.data['@first'] = true;
+                    }
+                    if (index === total) {
+                        helper.data['@last'] = true;
+                    }
+                    helper.data['@key'] = keys[index];
+                    var output = helper.fn(input[keys[index]]).trim();
+                    outputs.push(output);
+                    delete helper.data['@first'];
+                    delete helper.data['@last'];
+                    delete helper.data['@key'];
+                }
+            }
+            outputs = outputs.filter(function (item) { return !!item; });
+            if (outputs.length > 0) {
+                return outputs.join(typeof join === 'string' ? join : '\n');
+            }
+        }
+        catch (err) {
+            console.error('Bristles Error -> Helper: each, Error:', err.message);
+        }
+        try {
+            if (helper.inverse) {
+                return helper.inverse(helper.data);
+            }
+        }
+        catch (err) {
+            console.error('Bristles Error -> Helper: each, Inverse Error:', err);
+        }
+        return '';
+    };
+    ArrayHelpers._sort = function (input, direction, path) {
+        var helper = arguments[arguments.length - 1];
+        try {
+            if (!Array.isArray(input)) {
+                throw new Error('Invalid arguments');
+            }
+            direction = direction || 'asc';
+            direction = direction === 'desc' ? 'desc' : 'asc';
+            path = typeof path === 'string' ? path : undefined;
+            var func = function (a, b) { return b - a; };
+            if (!path) {
+                if (direction === 'desc') {
+                    func = function (a, b) { return a - b; };
+                }
+            }
+            else {
+                if (direction === 'desc') {
+                    func = function (a, b) {
+                        return dot.pick(path || '', a) - dot.pick(path || '', b);
+                    };
+                }
+                else {
+                    func = function (a, b) {
+                        return dot.pick(path || '', b) - dot.pick(path || '', a);
+                    };
+                }
+            }
+            if (helper.hash.mutate === true) {
+                return input.sort(func);
+            }
+            else {
+                var clone = JSON.parse(JSON.stringify(input));
+                clone.sort(func);
+                return clone;
+            }
+        }
+        catch (err) {
+            console.error('Bristles Error -> Helper: sort, Error:', err.message);
+            return Array.isArray ? input : [];
+        }
+    };
+    ArrayHelpers._slice = function (input, begin, end) {
+        try {
+            if (!Array.isArray(input)) {
+                throw new Error('Invalid arguments');
+            }
+            begin = typeof begin === 'number' ? begin : 0;
+            end = typeof end === 'number' ? end : undefined;
+            return input.slice(begin, end);
+        }
+        catch (err) {
+            console.error('Bristles Error -> Helper: slice, Error:', err.message);
+            return [];
+        }
+    };
+    ArrayHelpers._splice = function (input, start, deleteCount, items) {
+        var helper = arguments[arguments.length - 1];
+        try {
+            if (!Array.isArray(input)) {
+                throw new Error('Invalid arguments');
+            }
+            start = typeof start === 'number' ? start : 0;
+            deleteCount = typeof deleteCount === 'number' ? deleteCount : 0;
+            items = Array.isArray(items) ? items : [];
+            if (helper.hash.mutate === true) {
+                return input.splice.apply(input, [start, deleteCount].concat(items));
+            }
+            else {
+                var clone = JSON.parse(JSON.stringify(input));
+                clone.splice.apply(clone, [start, deleteCount].concat(items));
+                return clone;
+            }
+        }
+        catch (err) {
+            console.error('Bristles Error -> Helper: splice, Error:', err.message);
+            return [];
+        }
+    };
     return ArrayHelpers;
 }());
 exports.default = ArrayHelpers;
@@ -4143,18 +4807,12 @@ exports.default = ArrayHelpers;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
+var DeepDiff = __webpack_require__(/*! deep-diff */ "./node_modules/deep-diff/index.js");
+var utilities_1 = __webpack_require__(/*! ../utilities */ "./src/utilities.ts");
 /**
- * TODO: functions
- *  if
- *  unless
- *  ifAll
- *  ifAny
- *  ifNone
- *  unlessAll
- *  unlessAny
- *  compare
- *  switch/case/default
- *  elseIfBlock/elseIf
+ * TODO:
+ *  document
+ *  test
  */
 /**
  * A bunch of helpers for working with conditionals
@@ -4162,27 +4820,698 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var ConditionalHelpers = /** @class */ (function () {
     function ConditionalHelpers() {
     }
-    ConditionalHelpers._contains = function (input, test) {
+    ConditionalHelpers._if = function (input) {
+        var helper = arguments[arguments.length - 1];
         try {
-            var helper = arguments[arguments.length - 1];
-            var contains = typeof input === 'string' && typeof test === 'string' && input.indexOf(test) > -1;
-            if (!helper.fn) {
-                return contains;
-            }
-            else {
-                if (contains) {
-                    return helper.fn(helper.data);
+            var evaluation = utilities_1.isOps(input) ? false : !!input;
+            return this.conditionalResponse(helper, evaluation);
+        }
+        catch (err) {
+            console.error('Bristles Error -> Helper: if, Error:', err.message);
+            return this.conditionalResponse(helper, false);
+        }
+    };
+    ConditionalHelpers._unless = function (input) {
+        var helper = arguments[arguments.length - 1];
+        try {
+            var evaluation = utilities_1.isOps(input) ? false : !!input;
+            return this.conditionalResponse(helper, !evaluation);
+        }
+        catch (err) {
+            console.error('Bristles Error -> Helper: unless, Error:', err.message);
+            return this.conditionalResponse(helper, false);
+        }
+    };
+    ConditionalHelpers._ifAny = function () {
+        var helper = arguments[arguments.length - 1];
+        try {
+            var args = Array.from(arguments);
+            args.pop();
+            var evaluation = false;
+            for (var _i = 0, args_1 = args; _i < args_1.length; _i++) {
+                var arg = args_1[_i];
+                if (!!arg) {
+                    evaluation = true;
+                    break;
                 }
-                else if (helper.inverse) {
-                    return helper.inverse(helper.data);
+            }
+            return this.conditionalResponse(helper, evaluation);
+        }
+        catch (err) {
+            console.error('Bristles Error -> Helper: ifAny, Error:', err.message);
+            return this.conditionalResponse(helper, false);
+        }
+    };
+    ConditionalHelpers._unlessAll = function () {
+        var helper = arguments[arguments.length - 1];
+        try {
+            var args = Array.from(arguments);
+            args.pop();
+            var evaluation = false;
+            for (var _i = 0, args_2 = args; _i < args_2.length; _i++) {
+                var arg = args_2[_i];
+                if (!arg) {
+                    evaluation = true;
+                    break;
+                }
+            }
+            return this.conditionalResponse(helper, evaluation);
+        }
+        catch (err) {
+            console.error('Bristles Error -> Helper: unlessAll, Error:', err.message);
+            return this.conditionalResponse(helper, false);
+        }
+    };
+    ConditionalHelpers._ifAll = function () {
+        var helper = arguments[arguments.length - 1];
+        try {
+            var args = Array.from(arguments);
+            args.pop();
+            var trueArgs = args.filter(function (arg) { return !!arg; });
+            var evaluation = trueArgs.length === args.length;
+            return this.conditionalResponse(helper, evaluation);
+        }
+        catch (err) {
+            console.error('Bristles Error -> Helper: ifAll, Error:', err.message);
+            return this.conditionalResponse(helper, false);
+        }
+    };
+    ConditionalHelpers._ifNone = function () {
+        var helper = arguments[arguments.length - 1];
+        try {
+            var args = Array.from(arguments);
+            args.pop();
+            var falseArgs = args.filter(function (arg) { return !arg; });
+            var evaluation = falseArgs.length === args.length;
+            return this.conditionalResponse(helper, evaluation);
+        }
+        catch (err) {
+            console.error('Bristles Error -> Helper: ifNone, Error:', err.message);
+            return this.conditionalResponse(helper, false);
+        }
+    };
+    ConditionalHelpers._has = function (target, property) {
+        var helper = arguments[arguments.length - 1];
+        try {
+            if (typeof target !== 'object' || Array.isArray(target) || typeof property !== 'string') {
+                throw new Error('Invalid arguments');
+            }
+            var evaluation = target.hasOwnProperty(property);
+            return this.conditionalResponse(helper, evaluation);
+        }
+        catch (err) {
+            console.error('Bristles Error -> Helper: has, Error:', err.message);
+            return this.conditionalResponse(helper, false);
+        }
+    };
+    ConditionalHelpers._hasAll = function () {
+        var helper = arguments[arguments.length - 1];
+        try {
+            var args = Array.from(arguments);
+            args.pop();
+            var target_1 = args.shift();
+            args = Array.isArray(args[0]) ? args[0] : args;
+            var missing = args.filter(function (arg) { return !target_1.hasOwnProperty(arg); });
+            var evaluation = missing.length === 0;
+            return this.conditionalResponse(helper, evaluation, { missing: missing });
+        }
+        catch (err) {
+            console.error('Bristles Error -> Helper: ifAll, Error:', err.message);
+            return this.conditionalResponse(helper, false);
+        }
+    };
+    ConditionalHelpers._hasAny = function () {
+        var helper = arguments[arguments.length - 1];
+        try {
+            var args = Array.from(arguments);
+            args.pop();
+            var target = args.shift();
+            var has = [];
+            var missing = [];
+            for (var _i = 0, args_3 = args; _i < args_3.length; _i++) {
+                var arg = args_3[_i];
+                if (target.hasOwnProperty(arg)) {
+                    has.push(arg);
                 }
                 else {
-                    return '';
+                    missing.push(arg);
                 }
+            }
+            var evaluation = has.length > 0;
+            return this.conditionalResponse(helper, evaluation, { has: has, missing: missing });
+        }
+        catch (err) {
+            console.error('Bristles Error -> Helper: ifAll, Error:', err.message);
+            return this.conditionalResponse(helper, false);
+        }
+    };
+    ConditionalHelpers._isString = function (input) {
+        var helper = arguments[arguments.length - 1];
+        try {
+            if (utilities_1.isOps(input)) {
+                throw new Error('Invalid arguments');
+            }
+            var evaluation = typeof input === 'string';
+            return this.conditionalResponse(helper, evaluation);
+        }
+        catch (err) {
+            console.error('Bristles Error -> Helper: isString, Error:', err.message);
+            return this.conditionalResponse(helper, false);
+        }
+    };
+    ConditionalHelpers._isNumber = function (input) {
+        var helper = arguments[arguments.length - 1];
+        try {
+            if (utilities_1.isOps(input)) {
+                throw new Error('Invalid arguments');
+            }
+            var evaluation = typeof input === 'number';
+            return this.conditionalResponse(helper, evaluation);
+        }
+        catch (err) {
+            console.error('Bristles Error -> Helper: isNumber, Error:', err.message);
+            return this.conditionalResponse(helper, false);
+        }
+    };
+    ConditionalHelpers._isNaN = function (input) {
+        var helper = arguments[arguments.length - 1];
+        try {
+            if (utilities_1.isOps(input)) {
+                throw new Error('Invalid arguments');
+            }
+            var evaluation = Number.isNaN(input);
+            return this.conditionalResponse(helper, evaluation);
+        }
+        catch (err) {
+            console.error('Bristles Error -> Helper: isNumber, Error:', err.message);
+            return this.conditionalResponse(helper, false);
+        }
+    };
+    ConditionalHelpers._isFinite = function (input) {
+        var helper = arguments[arguments.length - 1];
+        try {
+            if (utilities_1.isOps(input)) {
+                throw new Error('Invalid arguments');
+            }
+            var evaluation = Number.isFinite(input);
+            return this.conditionalResponse(helper, evaluation);
+        }
+        catch (err) {
+            console.error('Bristles Error -> Helper: isNumber, Error:', err.message);
+            return this.conditionalResponse(helper, false);
+        }
+    };
+    ConditionalHelpers._isBoolean = function (input) {
+        var helper = arguments[arguments.length - 1];
+        try {
+            if (utilities_1.isOps(input)) {
+                throw new Error('Invalid arguments');
+            }
+            var evaluation = typeof input === 'boolean';
+            return this.conditionalResponse(helper, evaluation);
+        }
+        catch (err) {
+            console.error('Bristles Error -> Helper: isBoolean, Error:', err.message);
+            return this.conditionalResponse(helper, false);
+        }
+    };
+    ConditionalHelpers._isObject = function (input) {
+        var helper = arguments[arguments.length - 1];
+        try {
+            if (utilities_1.isOps(input)) {
+                throw new Error('Invalid arguments');
+            }
+            var evaluation = typeof input === 'object' && !Array.isArray(input);
+            return this.conditionalResponse(helper, evaluation);
+        }
+        catch (err) {
+            console.error('Bristles Error -> Helper: isObject, Error:', err.message);
+            return this.conditionalResponse(helper, false);
+        }
+    };
+    ConditionalHelpers._isArray = function (input) {
+        var helper = arguments[arguments.length - 1];
+        try {
+            if (utilities_1.isOps(input)) {
+                throw new Error('Invalid arguments');
+            }
+            var evaluation = Array.isArray(input);
+            return this.conditionalResponse(helper, evaluation);
+        }
+        catch (err) {
+            console.error('Bristles Error -> Helper: isObject, Error:', err.message);
+            return this.conditionalResponse(helper, false);
+        }
+    };
+    ConditionalHelpers._isFunction = function (input) {
+        var helper = arguments[arguments.length - 1];
+        try {
+            if (utilities_1.isOps(input)) {
+                throw new Error('Invalid arguments');
+            }
+            var evaluation = typeof input === 'function';
+            return this.conditionalResponse(helper, evaluation);
+        }
+        catch (err) {
+            console.error('Bristles Error -> Helper: isFunction, Error:', err.message);
+            return this.conditionalResponse(helper, false);
+        }
+    };
+    ConditionalHelpers._isNull = function (input) {
+        var helper = arguments[arguments.length - 1];
+        try {
+            if (utilities_1.isOps(input)) {
+                throw new Error('Invalid arguments');
+            }
+            var evaluation = input === null;
+            return this.conditionalResponse(helper, evaluation);
+        }
+        catch (err) {
+            console.error('Bristles Error -> Helper: isNull, Error:', err.message);
+            return this.conditionalResponse(helper, false);
+        }
+    };
+    ConditionalHelpers._isUndefined = function (input) {
+        var helper = arguments[arguments.length - 1];
+        try {
+            if (utilities_1.isOps(input)) {
+                throw new Error('Invalid arguments');
+            }
+            var evaluation = typeof input === 'undefined';
+            return this.conditionalResponse(helper, evaluation);
+        }
+        catch (err) {
+            console.error('Bristles Error -> Helper: isUndefined, Error:', err.message);
+            return this.conditionalResponse(helper, false);
+        }
+    };
+    ConditionalHelpers._isLike = function (input, test) {
+        var helper = arguments[arguments.length - 1];
+        try {
+            if (!test || utilities_1.isOps(test)) {
+                throw new Error('Invalid arguments');
+            }
+            var inputType = typeof input;
+            var testType = typeof test;
+            var evaluation = inputType === testType;
+            if (!evaluation || inputType !== 'object' || Array.isArray(input)) {
+                return this.conditionalResponse(helper, evaluation, { inputType: inputType, testType: testType });
+            }
+            var inputProps = Object.getOwnPropertyNames(input);
+            var similarities = [];
+            var differences = [];
+            for (var _i = 0, inputProps_1 = inputProps; _i < inputProps_1.length; _i++) {
+                var prop = inputProps_1[_i];
+                var comparison = {
+                    property: prop,
+                    inputType: typeof input[prop],
+                    testType: typeof test[prop]
+                };
+                if (comparison.inputType === comparison.testType) {
+                    similarities.push(comparison);
+                }
+                else {
+                    differences.push(comparison);
+                }
+            }
+            return this.conditionalResponse(helper, differences.length === 0, { similarities: similarities, differences: differences });
+        }
+        catch (err) {
+            console.error('Bristles Error -> Helper: gt, Error:', err.message);
+            return this.conditionalResponse(helper, false);
+        }
+    };
+    ConditionalHelpers._gt = function (inputA, inputB) {
+        var helper = arguments[arguments.length - 1];
+        try {
+            if (typeof inputA !== 'number' || typeof inputB !== 'number') {
+                throw new Error('Invalid arguments');
+            }
+            var evaluation = inputA > inputB;
+            return this.conditionalResponse(helper, evaluation);
+        }
+        catch (err) {
+            console.error('Bristles Error -> Helper: gt, Error:', err.message);
+            return this.conditionalResponse(helper, false);
+        }
+    };
+    ConditionalHelpers._gte = function (inputA, inputB) {
+        var helper = arguments[arguments.length - 1];
+        try {
+            if (typeof inputA !== 'number' || typeof inputB !== 'number') {
+                throw new Error('Invalid arguments');
+            }
+            var evaluation = inputA >= inputB;
+            return this.conditionalResponse(helper, evaluation);
+        }
+        catch (err) {
+            console.error('Bristles Error -> Helper: gt, Error:', err.message);
+            return this.conditionalResponse(helper, false);
+        }
+    };
+    ConditionalHelpers._lt = function (inputA, inputB) {
+        var helper = arguments[arguments.length - 1];
+        try {
+            if (typeof inputA !== 'number' || typeof inputB !== 'number') {
+                throw new Error('Invalid arguments');
+            }
+            var evaluation = inputA < inputB;
+            return this.conditionalResponse(helper, evaluation);
+        }
+        catch (err) {
+            console.error('Bristles Error -> Helper: lt, Error:', err.message);
+            return this.conditionalResponse(helper, false);
+        }
+    };
+    ConditionalHelpers._lte = function (inputA, inputB) {
+        var helper = arguments[arguments.length - 1];
+        try {
+            if (typeof inputA !== 'number' || typeof inputB !== 'number') {
+                throw new Error('Invalid arguments');
+            }
+            var evaluation = inputA <= inputB;
+            return this.conditionalResponse(helper, evaluation);
+        }
+        catch (err) {
+            console.error('Bristles Error -> Helper: lte, Error:', err.message);
+            return this.conditionalResponse(helper, false);
+        }
+    };
+    ConditionalHelpers._eq = function (inputA, inputB) {
+        var helper = arguments[arguments.length - 1];
+        try {
+            if (utilities_1.isOps(inputA) || !inputB || utilities_1.isOps(inputB)) {
+                throw new Error('Invalid arguments');
+            }
+            if (typeof inputA === 'object' && typeof inputB === 'object') {
+                var changes = DeepDiff.diff(inputA, inputB);
+                return this.conditionalResponse(helper, !changes, { changes: changes });
+            }
+            else {
+                var evaluation = inputA == inputB;
+                return this.conditionalResponse(helper, evaluation);
             }
         }
         catch (err) {
+            console.error('Bristles Error -> Helper: eq, Error:', err.message);
+            return this.conditionalResponse(helper, false);
+        }
+    };
+    ConditionalHelpers._teq = function (inputA, inputB) {
+        var helper = arguments[arguments.length - 1];
+        try {
+            if (utilities_1.isOps(inputA) || !inputB || utilities_1.isOps(inputB)) {
+                throw new Error('Invalid arguments');
+            }
+            if (typeof inputA === 'object' && typeof inputB === 'object') {
+                var changes = DeepDiff.diff(inputA, inputB);
+                return this.conditionalResponse(helper, !changes, { changes: changes });
+            }
+            else {
+                var evaluation = inputA === inputB;
+                return this.conditionalResponse(helper, evaluation);
+            }
+        }
+        catch (err) {
+            console.error('Bristles Error -> Helper: teq, Error:', err.message);
+            return this.conditionalResponse(helper, false);
+        }
+    };
+    ConditionalHelpers._any = function (input) {
+        var helper = arguments[arguments.length - 1];
+        try {
+            if (utilities_1.isOps(input) || !Array.isArray(input)) {
+                throw new Error('Invalid arguments');
+            }
+            var length_1 = input.length;
+            return this.conditionalResponse(helper, length_1 > 0, { length: length_1 });
+        }
+        catch (err) {
+            console.error('Bristles Error -> Helper: any, Error:', err.message);
+            return this.conditionalResponse(helper, false);
+        }
+    };
+    ConditionalHelpers._contains = function (input, test) {
+        var helper = arguments[arguments.length - 1];
+        try {
+            if (utilities_1.isOps(input) || !test || utilities_1.isOps(test)) {
+                throw new Error('Invalid arguments');
+            }
+            var index = input.toString().indexOf(test.toString());
+            return this.conditionalResponse(helper, index > -1, { index: index });
+        }
+        catch (err) {
             console.error('Bristles Error -> Helper: contains, Error:', err.message);
+            return this.conditionalResponse(helper, false);
+        }
+    };
+    ConditionalHelpers._startsWith = function (input, test) {
+        var helper = arguments[arguments.length - 1];
+        try {
+            if (utilities_1.isOps(input) || !test || utilities_1.isOps(test)) {
+                throw new Error('Invalid arguments');
+            }
+            var evaluation = input.toString().startsWith(test.toString());
+            return this.conditionalResponse(helper, evaluation);
+        }
+        catch (err) {
+            console.error('Bristles Error -> Helper: startsWith, Error:', err.message);
+            return this.conditionalResponse(helper, false);
+        }
+    };
+    ConditionalHelpers._endsWith = function (input, test) {
+        var helper = arguments[arguments.length - 1];
+        try {
+            if (utilities_1.isOps(input) || !test || utilities_1.isOps(test)) {
+                throw new Error('Invalid arguments');
+            }
+            var evaluation = input.toString().endsWith(test.toString());
+            return this.conditionalResponse(helper, evaluation);
+        }
+        catch (err) {
+            console.error('Bristles Error -> Helper: endsWith, Error:', err.message);
+            return this.conditionalResponse(helper, false);
+        }
+    };
+    ConditionalHelpers._includes = function (input, test) {
+        var helper = arguments[arguments.length - 1];
+        try {
+            if (!Array.isArray(input) || utilities_1.isOps(test)) {
+                throw new Error('Invalid arguments');
+            }
+            if (typeof test === 'object') {
+                for (var _i = 0, _a = Object.entries(input); _i < _a.length; _i++) {
+                    var _b = _a[_i], index = _b[0], item = _b[1];
+                    if (!DeepDiff.diff(item, test)) {
+                        return this.conditionalResponse(helper, true, { index: index });
+                    }
+                }
+                return this.conditionalResponse(helper, false, { index: -1 });
+            }
+            else {
+                var index = input.indexOf(test);
+                return this.conditionalResponse(helper, index > -1, { index: index });
+            }
+        }
+        catch (err) {
+            console.error('Bristles Error -> Helper: includes, Error:', err.message);
+            return this.conditionalResponse(helper, false);
+        }
+    };
+    /**
+     * Check to see if a string matches a regular expression
+     *
+     * @param input       The string to test
+     * @param expression  The regular expression to test the input string with
+     * @param options     Any regular expression options to use (defaults to 'gi')
+     * @returns           A `false` if there is no match or regular expression match array where the first
+     *                    item is the complete match and each subsequent iteam are the captured groups.
+     *                    On failure returns `false`
+     *
+     * @type              Block/Inline
+     */
+    ConditionalHelpers._regexMatch = function (input, expression, options) {
+        var helper = arguments[arguments.length - 1];
+        try {
+            if (typeof input !== 'string' || typeof expression !== 'string') {
+                throw new Error('Invalid arguments');
+            }
+            if (typeof options !== 'string') {
+                options = 'gi';
+            }
+            var regex = new RegExp(expression, options);
+            var matches = regex.exec(input) || false;
+            var output = matches;
+            return this.conditionalResponse(helper, !!output, { output: output });
+        }
+        catch (err) {
+            console.error('Bristles Error -> Helper: regexMatch, Error:', err.message);
+            return this.conditionalResponse(helper, false);
+        }
+    };
+    ConditionalHelpers._elseIfWrapper = function () {
+        try {
+            var helper = arguments[arguments.length - 1];
+            if (!helper.fn) {
+                throw new Error('The elseIfWrapper helper can only be used as a block helper');
+            }
+            helper.data['@elseIf'] = helper.data['@elseIf'] || [];
+            helper.data['@elseIf'].push(false);
+            var output = helper.fn(helper.data);
+            var level = helper.data['@elseIf'].length - 1;
+            if (helper.data['@elseIf'][level] === false) {
+                if (helper.inverse) {
+                    output = helper.inverse(helper.data);
+                }
+                else {
+                    output = '';
+                }
+            }
+            helper.data['@elseIf'].pop();
+            if (helper.data['@elseIf'].length === 0) {
+                delete helper.data['@elseIf'];
+            }
+            return output;
+        }
+        catch (err) {
+            console.error('Bristles Error -> Helper: elseIfWrapper, Error:', err.message);
+            return '';
+        }
+    };
+    ConditionalHelpers._elseIf = function (input) {
+        try {
+            var helper = arguments[arguments.length - 1];
+            var level = helper.data['@elseIf'].length - 1;
+            if (helper.data['@elseIf'][level] === true) {
+                return '';
+            }
+            if (!helper.fn) {
+                throw new Error('The elseIf helper can only be used as a block helper');
+            }
+            if (helper.inverse) {
+                throw new Error('The elseIf helper should not contain an inverse/else block');
+            }
+            if (utilities_1.isOps(input)) {
+                throw new Error('Invalid arguments');
+            }
+            var evaluation = !!input;
+            if (evaluation) {
+                helper.data['@elseIf'][level] = true;
+                return helper.fn(helper.data);
+            }
+            else {
+                return '';
+            }
+        }
+        catch (err) {
+            console.error('Bristles Error -> Helper: elseIf, Error:', err.message);
+            return '';
+        }
+    };
+    ConditionalHelpers._switch = function (input) {
+        try {
+            var helper = arguments[arguments.length - 1];
+            if (!helper.fn) {
+                throw new Error('The switch helper can only be used as a block helper');
+            }
+            if (utilities_1.isOps(input)) {
+                throw new Error('Invalid arguments');
+            }
+            helper.data['@switch'] = helper.data['@switch'] || [];
+            helper.data['@switch'].push({
+                value: input,
+                resolved: false
+            });
+            var output = helper.fn(helper.data);
+            var level = helper.data['@switch'].length - 1;
+            if (helper.data['@switch'][level].resolved === false) {
+                if (helper.inverse) {
+                    output = helper.inverse(helper.data);
+                }
+                else {
+                    output = '';
+                }
+            }
+            helper.data['@switch'].pop();
+            if (helper.data['@switch'].length === 0) {
+                delete helper.data['@switch'];
+            }
+            return output;
+        }
+        catch (err) {
+            console.error('Bristles Error -> Helper: switch, Error:', err.message);
+            return '';
+        }
+    };
+    ConditionalHelpers._case = function (input) {
+        try {
+            var helper = arguments[arguments.length - 1];
+            var level = helper.data['@switch'].length - 1;
+            if (helper.data['@switch'][level].resolved === true) {
+                return '';
+            }
+            if (!helper.fn) {
+                throw new Error('The elseIf helper can only be used as a block helper');
+            }
+            if (helper.inverse) {
+                throw new Error('The elseIf helper should not contain an inverse/else block');
+            }
+            if (utilities_1.isOps(input)) {
+                throw new Error('Invalid arguments');
+            }
+            var value = helper.data['@switch'][level].value;
+            var evaluation = input == value;
+            if (evaluation) {
+                helper.data['@switch'][level].resolved = true;
+                return helper.fn(helper.data);
+            }
+            else {
+                return '';
+            }
+        }
+        catch (err) {
+            console.error('Bristles Error -> Helper: case, Error:', err.message);
+            return '';
+        }
+    };
+    ConditionalHelpers.conditionalResponse = function (helper, evaluation, metadata) {
+        if (metadata === void 0) { metadata = {}; }
+        try {
+            if (!utilities_1.isOps(helper)) {
+                throw new Error('The passed in helper is not a valid HelperOptions object');
+            }
+            if (!helper.fn) {
+                if (evaluation && helper.hash.hasOwnProperty('ifTrue')) {
+                    return helper.hash.ifTrue;
+                }
+                else if (!evaluation && helper.hash.hasOwnProperty('ifFalse')) {
+                    return helper.hash.ifFalse;
+                }
+                else {
+                    return evaluation;
+                }
+            }
+            else {
+                var output = '';
+                for (var _i = 0, _a = Object.entries(metadata); _i < _a.length; _i++) {
+                    var _b = _a[_i], key = _b[0], value = _b[1];
+                    helper.data['@' + key] = value;
+                }
+                if (evaluation) {
+                    output = helper.fn(helper.data);
+                }
+                else if (helper.inverse) {
+                    output = helper.inverse(helper.data);
+                }
+                for (var _c = 0, _d = Object.keys(metadata); _c < _d.length; _c++) {
+                    var key = _d[_c];
+                    delete helper.data['@' + key];
+                }
+                return output;
+            }
+        }
+        catch (err) {
+            console.error('Bristles Error -> Helper: [some conditional | conditionalResponse error], Error:', err);
             return false;
         }
     };
@@ -4893,109 +6222,6 @@ var StringHelpers = /** @class */ (function () {
         catch (err) {
             console.error('Bristles Error -> Helper: underscore, Error:', err.message);
             return typeof input === 'string' ? input : '';
-        }
-    };
-    StringHelpers._startsWith = function (input, test) {
-        try {
-            var helper = arguments[arguments.length - 1];
-            var startsWith = typeof input === 'string' && typeof test === 'string' && input.startsWith(test);
-            if (!helper.fn) {
-                return startsWith;
-            }
-            else {
-                if (startsWith) {
-                    return helper.fn(helper.data);
-                }
-                else if (helper.inverse) {
-                    return helper.inverse(helper.data);
-                }
-                else {
-                    return '';
-                }
-            }
-        }
-        catch (err) {
-            console.error('Bristles Error -> Helper: startsWith, Error:', err.message);
-            return false;
-        }
-    };
-    StringHelpers._endsWith = function (input, test) {
-        try {
-            var helper = arguments[arguments.length - 1];
-            var startsWith = typeof input === 'string' && typeof test === 'string' && input.endsWith(test);
-            if (!helper.fn) {
-                return startsWith;
-            }
-            else {
-                if (startsWith) {
-                    return helper.fn(helper.data);
-                }
-                else if (helper.inverse) {
-                    return helper.inverse(helper.data);
-                }
-                else {
-                    return '';
-                }
-            }
-        }
-        catch (err) {
-            console.error('Bristles Error -> Helper: endsWith, Error:', err.message);
-            return false;
-        }
-    };
-    /**
-     * Check to see if a string matches a regular expression
-     *
-     * @param input       The string to test
-     * @param expression  The regular expression to test the input string with
-     * @param options     Any regular expression options to use (defaults to 'gi')
-     * @returns           A `false` if there is no match or regular expression match array where the first
-     *                    item is the complete match and each subsequent iteam are the captured groups.
-     *                    On failure returns `false`
-     *
-     * @type              Block/Inline
-     * @example ```
-     * {{regexMatch "I am a test" "(am)\sa" "gi"}}
-     * output => [ "am a", "am" ]
-     * ```
-     */
-    StringHelpers._regexMatch = function (input, expression, options) {
-        try {
-            var helper = arguments[arguments.length - 1];
-            if (typeof input !== 'string' || typeof expression !== 'string') {
-                if (helper.inverse) {
-                    return helper.inverse(this);
-                }
-                else {
-                    return false;
-                }
-            }
-            if (typeof options !== 'string') {
-                options = 'gi';
-            }
-            var regex = new RegExp(expression, options);
-            var matches = regex.exec(input) || false;
-            var output = matches;
-            if (helper.fn) {
-                if (matches) {
-                    helper.data['@matches'] = matches;
-                    output = helper.fn(helper.data);
-                    delete helper.data['@matches'];
-                }
-                else {
-                    if (helper.inverse) {
-                        output = helper.inverse(helper.data);
-                    }
-                    else {
-                        output = '';
-                    }
-                }
-            }
-            return output;
-        }
-        catch (err) {
-            console.error('Bristles Error -> Helper: regexMatch, Error:', err.message);
-            return false;
         }
     };
     return StringHelpers;
