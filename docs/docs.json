@@ -1,11 +1,11 @@
 {
 	"id": 0,
-	"name": "@public/bristles",
+	"name": "bristles",
 	"kind": 0,
 	"flags": {},
 	"children": [
 		{
-			"id": 1,
+			"id": 9,
 			"name": "\"helpers/array\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -15,7 +15,7 @@
 			"originalName": "/home/tonicblue/code/scvo/bristles/src/helpers/array.ts",
 			"children": [
 				{
-					"id": 2,
+					"id": 10,
 					"name": "ArrayHelpers",
 					"kind": 128,
 					"kindString": "Class",
@@ -27,7 +27,61 @@
 					},
 					"children": [
 						{
-							"id": 3,
+							"id": 18,
+							"name": "_each",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isStatic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 19,
+									"name": "_each",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 20,
+											"name": "input",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										},
+										{
+											"id": 21,
+											"name": "join",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "helpers/array.ts",
+									"line": 42,
+									"character": 14
+								}
+							]
+						},
+						{
+							"id": 11,
 							"name": "_map",
 							"kind": 2048,
 							"kindString": "Method",
@@ -37,14 +91,14 @@
 							},
 							"signatures": [
 								{
-									"id": 4,
+									"id": 12,
 									"name": "_map",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 5,
+											"id": 13,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -58,7 +112,7 @@
 											}
 										},
 										{
-											"id": 6,
+											"id": 14,
 											"name": "func",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -66,21 +120,21 @@
 											"type": {
 												"type": "reflection",
 												"declaration": {
-													"id": 7,
+													"id": 15,
 													"name": "__type",
 													"kind": 65536,
 													"kindString": "Type literal",
 													"flags": {},
 													"signatures": [
 														{
-															"id": 8,
+															"id": 16,
 															"name": "__call",
 															"kind": 4096,
 															"kindString": "Call signature",
 															"flags": {},
 															"parameters": [
 																{
-																	"id": 9,
+																	"id": 17,
 																	"name": "args",
 																	"kind": 32768,
 																	"kindString": "Parameter",
@@ -105,7 +159,7 @@
 													"sources": [
 														{
 															"fileName": "helpers/array.ts",
-															"line": 28,
+															"line": 30,
 															"character": 33
 														}
 													]
@@ -125,7 +179,7 @@
 							"sources": [
 								{
 									"fileName": "helpers/array.ts",
-									"line": 28,
+									"line": 30,
 									"character": 13
 								}
 							]
@@ -136,14 +190,15 @@
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								3
+								18,
+								11
 							]
 						}
 					],
 					"sources": [
 						{
 							"fileName": "helpers/array.ts",
-							"line": 27,
+							"line": 29,
 							"character": 33
 						}
 					]
@@ -154,7 +209,7 @@
 					"title": "Classes",
 					"kind": 128,
 					"children": [
-						2
+						10
 					]
 				}
 			],
@@ -167,7 +222,7 @@
 			]
 		},
 		{
-			"id": 10,
+			"id": 22,
 			"name": "\"helpers/conditional\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -177,7 +232,7 @@
 			"originalName": "/home/tonicblue/code/scvo/bristles/src/helpers/conditional.ts",
 			"children": [
 				{
-					"id": 11,
+					"id": 23,
 					"name": "ConditionalHelpers",
 					"kind": 128,
 					"kindString": "Class",
@@ -187,74 +242,10 @@
 					"comment": {
 						"shortText": "A bunch of helpers for working with conditionals"
 					},
-					"sources": [
-						{
-							"fileName": "helpers/conditional.ts",
-							"line": 20,
-							"character": 39
-						}
-					]
-				}
-			],
-			"groups": [
-				{
-					"title": "Classes",
-					"kind": 128,
-					"children": [
-						11
-					]
-				}
-			],
-			"sources": [
-				{
-					"fileName": "helpers/conditional.ts",
-					"line": 1,
-					"character": 0
-				}
-			]
-		},
-		{
-			"id": 12,
-			"name": "\"helpers/number\"",
-			"kind": 1,
-			"kindString": "External module",
-			"flags": {
-				"isExported": true
-			},
-			"originalName": "/home/tonicblue/code/scvo/bristles/src/helpers/number.ts",
-			"sources": [
-				{
-					"fileName": "helpers/number.ts",
-					"line": 1,
-					"character": 0
-				}
-			]
-		},
-		{
-			"id": 17,
-			"name": "\"helpers/object\"",
-			"kind": 1,
-			"kindString": "External module",
-			"flags": {
-				"isExported": true
-			},
-			"originalName": "/home/tonicblue/code/scvo/bristles/src/helpers/object.ts",
-			"children": [
-				{
-					"id": 18,
-					"name": "ObjectHelpers",
-					"kind": 128,
-					"kindString": "Class",
-					"flags": {
-						"isExported": true
-					},
-					"comment": {
-						"shortText": "A bunch of helpers for working with objects"
-					},
 					"children": [
 						{
-							"id": 25,
-							"name": "_entries",
+							"id": 104,
+							"name": "_any",
 							"kind": 2048,
 							"kindString": "Method",
 							"flags": {
@@ -263,618 +254,18 @@
 							},
 							"signatures": [
 								{
-									"id": 26,
-									"name": "_entries",
+									"id": 105,
+									"name": "_any",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 27,
+											"id": 106,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
 											"flags": {},
-											"type": {
-												"type": "intrinsic",
-												"name": "any"
-											}
-										}
-									],
-									"type": {
-										"type": "intrinsic",
-										"name": "any"
-									}
-								}
-							],
-							"sources": [
-								{
-									"fileName": "helpers/object.ts",
-									"line": 45,
-									"character": 17
-								}
-							]
-						},
-						{
-							"id": 28,
-							"name": "_get",
-							"kind": 2048,
-							"kindString": "Method",
-							"flags": {
-								"isStatic": true,
-								"isExported": true
-							},
-							"signatures": [
-								{
-									"id": 29,
-									"name": "_get",
-									"kind": 4096,
-									"kindString": "Call signature",
-									"flags": {},
-									"parameters": [
-										{
-											"id": 30,
-											"name": "context",
-											"kind": 32768,
-											"kindString": "Parameter",
-											"flags": {},
-											"type": {
-												"type": "intrinsic",
-												"name": "any"
-											}
-										},
-										{
-											"id": 31,
-											"name": "path",
-											"kind": 32768,
-											"kindString": "Parameter",
-											"flags": {},
-											"type": {
-												"type": "intrinsic",
-												"name": "string"
-											}
-										}
-									],
-									"type": {
-										"type": "intrinsic",
-										"name": "any"
-									}
-								}
-							],
-							"sources": [
-								{
-									"fileName": "helpers/object.ts",
-									"line": 57,
-									"character": 13
-								}
-							]
-						},
-						{
-							"id": 22,
-							"name": "_keys",
-							"kind": 2048,
-							"kindString": "Method",
-							"flags": {
-								"isStatic": true,
-								"isExported": true
-							},
-							"signatures": [
-								{
-									"id": 23,
-									"name": "_keys",
-									"kind": 4096,
-									"kindString": "Call signature",
-									"flags": {},
-									"parameters": [
-										{
-											"id": 24,
-											"name": "input",
-											"kind": 32768,
-											"kindString": "Parameter",
-											"flags": {},
-											"type": {
-												"type": "intrinsic",
-												"name": "any"
-											}
-										}
-									],
-									"type": {
-										"type": "intrinsic",
-										"name": "any"
-									}
-								}
-							],
-							"sources": [
-								{
-									"fileName": "helpers/object.ts",
-									"line": 33,
-									"character": 14
-								}
-							]
-						},
-						{
-							"id": 32,
-							"name": "_merge",
-							"kind": 2048,
-							"kindString": "Method",
-							"flags": {
-								"isStatic": true,
-								"isExported": true
-							},
-							"signatures": [
-								{
-									"id": 33,
-									"name": "_merge",
-									"kind": 4096,
-									"kindString": "Call signature",
-									"flags": {},
-									"type": {
-										"type": "intrinsic",
-										"name": "any"
-									}
-								}
-							],
-							"sources": [
-								{
-									"fileName": "helpers/object.ts",
-									"line": 69,
-									"character": 15
-								}
-							]
-						},
-						{
-							"id": 34,
-							"name": "_parse",
-							"kind": 2048,
-							"kindString": "Method",
-							"flags": {
-								"isStatic": true,
-								"isExported": true
-							},
-							"signatures": [
-								{
-									"id": 35,
-									"name": "_parse",
-									"kind": 4096,
-									"kindString": "Call signature",
-									"flags": {},
-									"parameters": [
-										{
-											"id": 36,
-											"name": "value",
-											"kind": 32768,
-											"kindString": "Parameter",
-											"flags": {},
-											"type": {
-												"type": "intrinsic",
-												"name": "any"
-											}
-										}
-									],
-									"type": {
-										"type": "intrinsic",
-										"name": "any"
-									}
-								}
-							],
-							"sources": [
-								{
-									"fileName": "helpers/object.ts",
-									"line": 84,
-									"character": 15
-								}
-							]
-						},
-						{
-							"id": 19,
-							"name": "_values",
-							"kind": 2048,
-							"kindString": "Method",
-							"flags": {
-								"isStatic": true,
-								"isExported": true
-							},
-							"signatures": [
-								{
-									"id": 20,
-									"name": "_values",
-									"kind": 4096,
-									"kindString": "Call signature",
-									"flags": {},
-									"parameters": [
-										{
-											"id": 21,
-											"name": "input",
-											"kind": 32768,
-											"kindString": "Parameter",
-											"flags": {},
-											"type": {
-												"type": "intrinsic",
-												"name": "any"
-											}
-										}
-									],
-									"type": {
-										"type": "intrinsic",
-										"name": "any"
-									}
-								}
-							],
-							"sources": [
-								{
-									"fileName": "helpers/object.ts",
-									"line": 21,
-									"character": 16
-								}
-							]
-						}
-					],
-					"groups": [
-						{
-							"title": "Methods",
-							"kind": 2048,
-							"children": [
-								25,
-								28,
-								22,
-								32,
-								34,
-								19
-							]
-						}
-					],
-					"sources": [
-						{
-							"fileName": "helpers/object.ts",
-							"line": 20,
-							"character": 34
-						}
-					]
-				},
-				{
-					"id": 37,
-					"name": "JSON6",
-					"kind": 32,
-					"kindString": "Variable",
-					"flags": {
-						"isConst": true
-					},
-					"sources": [
-						{
-							"fileName": "helpers/object.ts",
-							"line": 6,
-							"character": 11
-						}
-					],
-					"type": {
-						"type": "intrinsic",
-						"name": "any"
-					},
-					"defaultValue": " require('json-6')"
-				}
-			],
-			"groups": [
-				{
-					"title": "Classes",
-					"kind": 128,
-					"children": [
-						18
-					]
-				},
-				{
-					"title": "Variables",
-					"kind": 32,
-					"children": [
-						37
-					]
-				}
-			],
-			"sources": [
-				{
-					"fileName": "helpers/object.ts",
-					"line": 1,
-					"character": 0
-				}
-			]
-		},
-		{
-			"id": 38,
-			"name": "\"helpers/string\"",
-			"kind": 1,
-			"kindString": "External module",
-			"flags": {
-				"isExported": true
-			},
-			"originalName": "/home/tonicblue/code/scvo/bristles/src/helpers/string.ts",
-			"children": [
-				{
-					"id": 39,
-					"name": "StringHelpers",
-					"kind": 128,
-					"kindString": "Class",
-					"flags": {
-						"isExported": true
-					},
-					"comment": {
-						"shortText": "A bunch of helpers for working with strings"
-					},
-					"children": [
-						{
-							"id": 85,
-							"name": "_camelize",
-							"kind": 2048,
-							"kindString": "Method",
-							"flags": {
-								"isStatic": true,
-								"isExported": true
-							},
-							"signatures": [
-								{
-									"id": 86,
-									"name": "_camelize",
-									"kind": 4096,
-									"kindString": "Call signature",
-									"flags": {},
-									"parameters": [
-										{
-											"id": 87,
-											"name": "input",
-											"kind": 32768,
-											"kindString": "Parameter",
-											"flags": {},
-											"type": {
-												"type": "intrinsic",
-												"name": "string"
-											}
-										}
-									],
-									"type": {
-										"type": "intrinsic",
-										"name": "string"
-									}
-								}
-							],
-							"sources": [
-								{
-									"fileName": "helpers/string.ts",
-									"line": 273,
-									"character": 18
-								}
-							]
-						},
-						{
-							"id": 88,
-							"name": "_capitalize",
-							"kind": 2048,
-							"kindString": "Method",
-							"flags": {
-								"isStatic": true,
-								"isExported": true
-							},
-							"signatures": [
-								{
-									"id": 89,
-									"name": "_capitalize",
-									"kind": 4096,
-									"kindString": "Call signature",
-									"flags": {},
-									"parameters": [
-										{
-											"id": 90,
-											"name": "input",
-											"kind": 32768,
-											"kindString": "Parameter",
-											"flags": {},
-											"type": {
-												"type": "intrinsic",
-												"name": "string"
-											}
-										}
-									],
-									"type": {
-										"type": "intrinsic",
-										"name": "string"
-									}
-								}
-							],
-							"sources": [
-								{
-									"fileName": "helpers/string.ts",
-									"line": 286,
-									"character": 20
-								}
-							]
-						},
-						{
-							"id": 91,
-							"name": "_chompLeft",
-							"kind": 2048,
-							"kindString": "Method",
-							"flags": {
-								"isStatic": true,
-								"isExported": true
-							},
-							"signatures": [
-								{
-									"id": 92,
-									"name": "_chompLeft",
-									"kind": 4096,
-									"kindString": "Call signature",
-									"flags": {},
-									"parameters": [
-										{
-											"id": 93,
-											"name": "input",
-											"kind": 32768,
-											"kindString": "Parameter",
-											"flags": {},
-											"type": {
-												"type": "intrinsic",
-												"name": "string"
-											}
-										},
-										{
-											"id": 94,
-											"name": "prefix",
-											"kind": 32768,
-											"kindString": "Parameter",
-											"flags": {},
-											"type": {
-												"type": "intrinsic",
-												"name": "string"
-											}
-										}
-									],
-									"type": {
-										"type": "intrinsic",
-										"name": "string"
-									}
-								}
-							],
-							"sources": [
-								{
-									"fileName": "helpers/string.ts",
-									"line": 299,
-									"character": 19
-								}
-							]
-						},
-						{
-							"id": 95,
-							"name": "_chompRight",
-							"kind": 2048,
-							"kindString": "Method",
-							"flags": {
-								"isStatic": true,
-								"isExported": true
-							},
-							"signatures": [
-								{
-									"id": 96,
-									"name": "_chompRight",
-									"kind": 4096,
-									"kindString": "Call signature",
-									"flags": {},
-									"parameters": [
-										{
-											"id": 97,
-											"name": "input",
-											"kind": 32768,
-											"kindString": "Parameter",
-											"flags": {},
-											"type": {
-												"type": "intrinsic",
-												"name": "string"
-											}
-										},
-										{
-											"id": 98,
-											"name": "suffix",
-											"kind": 32768,
-											"kindString": "Parameter",
-											"flags": {},
-											"type": {
-												"type": "intrinsic",
-												"name": "string"
-											}
-										}
-									],
-									"type": {
-										"type": "intrinsic",
-										"name": "string"
-									}
-								}
-							],
-							"sources": [
-								{
-									"fileName": "helpers/string.ts",
-									"line": 313,
-									"character": 20
-								}
-							]
-						},
-						{
-							"id": 99,
-							"name": "_collapseWhitespace",
-							"kind": 2048,
-							"kindString": "Method",
-							"flags": {
-								"isStatic": true,
-								"isExported": true
-							},
-							"signatures": [
-								{
-									"id": 100,
-									"name": "_collapseWhitespace",
-									"kind": 4096,
-									"kindString": "Call signature",
-									"flags": {},
-									"parameters": [
-										{
-											"id": 101,
-											"name": "input",
-											"kind": 32768,
-											"kindString": "Parameter",
-											"flags": {},
-											"type": {
-												"type": "intrinsic",
-												"name": "string"
-											}
-										}
-									],
-									"type": {
-										"type": "intrinsic",
-										"name": "string"
-									}
-								}
-							],
-							"sources": [
-								{
-									"fileName": "helpers/string.ts",
-									"line": 327,
-									"character": 28
-								}
-							]
-						},
-						{
-							"id": 54,
-							"name": "_concat",
-							"kind": 2048,
-							"kindString": "Method",
-							"flags": {
-								"isStatic": true,
-								"isExported": true
-							},
-							"signatures": [
-								{
-									"id": 55,
-									"name": "_concat",
-									"kind": 4096,
-									"kindString": "Call signature",
-									"flags": {},
-									"comment": {
-										"shortText": "Joins any number of strings or stringable objects together into one long string",
-										"returns": "One big string. On failure returns an empty string.\n",
-										"tags": [
-											{
-												"tag": "type",
-												"text": "Inline"
-											},
-											{
-												"tag": "example",
-												"text": "```\ncontext => { \"name\": \"E. Honda\", \"yearBorn\": 1960, \"likesNoodles\": true }\n{{concat \"My name is \" name \" and I was born in \" yearBorn \". True or false, I like noodles? \" likesNoodles}}\noutput => \"My name is E. Honda and I was born in 1960. True or false, I like noodles? true\"\n```\n"
-											}
-										]
-									},
-									"parameters": [
-										{
-											"id": 56,
-											"name": "args",
-											"kind": 32768,
-											"kindString": "Parameter",
-											"flags": {
-												"isRest": true
-											},
 											"type": {
 												"type": "array",
 												"elementType": {
@@ -886,20 +277,63 @@
 									],
 									"type": {
 										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "helpers/conditional.ts",
+									"line": 428,
+									"character": 13
+								}
+							]
+						},
+						{
+							"id": 136,
+							"name": "_case",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isStatic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 137,
+									"name": "_case",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 138,
+											"name": "input",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
 										"name": "string"
 									}
 								}
 							],
 							"sources": [
 								{
-									"fileName": "helpers/string.ts",
-									"line": 128,
-									"character": 16
+									"fileName": "helpers/conditional.ts",
+									"line": 648,
+									"character": 14
 								}
 							]
 						},
 						{
-							"id": 167,
+							"id": 107,
 							"name": "_contains",
 							"kind": 2048,
 							"kindString": "Method",
@@ -909,14 +343,14 @@
 							},
 							"signatures": [
 								{
-									"id": 168,
+									"id": 108,
 									"name": "_contains",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 169,
+											"id": 109,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -927,7 +361,7 @@
 											}
 										},
 										{
-											"id": 170,
+											"id": 110,
 											"name": "test",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -939,31 +373,22 @@
 										}
 									],
 									"type": {
-										"type": "union",
-										"types": [
-											{
-												"type": "intrinsic",
-												"name": "boolean"
-											},
-											{
-												"type": "intrinsic",
-												"name": "string"
-											}
-										]
+										"type": "intrinsic",
+										"name": "any"
 									}
 								}
 							],
 							"sources": [
 								{
-									"fileName": "helpers/string.ts",
-									"line": 605,
+									"fileName": "helpers/conditional.ts",
+									"line": 442,
 									"character": 18
 								}
 							]
 						},
 						{
-							"id": 102,
-							"name": "_count",
+							"id": 130,
+							"name": "_elseIf",
 							"kind": 2048,
 							"kindString": "Method",
 							"flags": {
@@ -972,75 +397,21 @@
 							},
 							"signatures": [
 								{
-									"id": 103,
-									"name": "_count",
+									"id": 131,
+									"name": "_elseIf",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 104,
+											"id": 132,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
 											"flags": {},
 											"type": {
 												"type": "intrinsic",
-												"name": "string"
-											}
-										},
-										{
-											"id": 105,
-											"name": "substring",
-											"kind": 32768,
-											"kindString": "Parameter",
-											"flags": {},
-											"type": {
-												"type": "intrinsic",
-												"name": "string"
-											}
-										}
-									],
-									"type": {
-										"type": "intrinsic",
-										"name": "number"
-									}
-								}
-							],
-							"sources": [
-								{
-									"fileName": "helpers/string.ts",
-									"line": 340,
-									"character": 15
-								}
-							]
-						},
-						{
-							"id": 106,
-							"name": "_dasherize",
-							"kind": 2048,
-							"kindString": "Method",
-							"flags": {
-								"isStatic": true,
-								"isExported": true
-							},
-							"signatures": [
-								{
-									"id": 107,
-									"name": "_dasherize",
-									"kind": 4096,
-									"kindString": "Call signature",
-									"flags": {},
-									"parameters": [
-										{
-											"id": 108,
-											"name": "input",
-											"kind": 32768,
-											"kindString": "Parameter",
-											"flags": {},
-											"type": {
-												"type": "intrinsic",
-												"name": "string"
+												"name": "any"
 											}
 										}
 									],
@@ -1052,15 +423,15 @@
 							],
 							"sources": [
 								{
-									"fileName": "helpers/string.ts",
-									"line": 353,
-									"character": 19
+									"fileName": "helpers/conditional.ts",
+									"line": 574,
+									"character": 16
 								}
 							]
 						},
 						{
-							"id": 109,
-							"name": "_decodeHTMLEntities",
+							"id": 128,
+							"name": "_elseIfWrapper",
 							"kind": 2048,
 							"kindString": "Method",
 							"flags": {
@@ -1069,24 +440,11 @@
 							},
 							"signatures": [
 								{
-									"id": 110,
-									"name": "_decodeHTMLEntities",
+									"id": 129,
+									"name": "_elseIfWrapper",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
-									"parameters": [
-										{
-											"id": 111,
-											"name": "input",
-											"kind": 32768,
-											"kindString": "Parameter",
-											"flags": {},
-											"type": {
-												"type": "intrinsic",
-												"name": "string"
-											}
-										}
-									],
 									"type": {
 										"type": "intrinsic",
 										"name": "string"
@@ -1095,14 +453,14 @@
 							],
 							"sources": [
 								{
-									"fileName": "helpers/string.ts",
-									"line": 366,
-									"character": 28
+									"fileName": "helpers/conditional.ts",
+									"line": 541,
+									"character": 23
 								}
 							]
 						},
 						{
-							"id": 163,
+							"id": 115,
 							"name": "_endsWith",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1112,14 +470,14 @@
 							},
 							"signatures": [
 								{
-									"id": 164,
+									"id": 116,
 									"name": "_endsWith",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 165,
+											"id": 117,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1130,7 +488,7 @@
 											}
 										},
 										{
-											"id": 166,
+											"id": 118,
 											"name": "test",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1142,31 +500,22 @@
 										}
 									],
 									"type": {
-										"type": "union",
-										"types": [
-											{
-												"type": "intrinsic",
-												"name": "boolean"
-											},
-											{
-												"type": "intrinsic",
-												"name": "string"
-											}
-										]
+										"type": "intrinsic",
+										"name": "any"
 									}
 								}
 							],
 							"sources": [
 								{
-									"fileName": "helpers/string.ts",
-									"line": 584,
+									"fileName": "helpers/conditional.ts",
+									"line": 470,
 									"character": 18
 								}
 							]
 						},
 						{
-							"id": 112,
-							"name": "_ensureLeft",
+							"id": 96,
+							"name": "_eq",
 							"kind": 2048,
 							"kindString": "Method",
 							"flags": {
@@ -1175,52 +524,52 @@
 							},
 							"signatures": [
 								{
-									"id": 113,
-									"name": "_ensureLeft",
+									"id": 97,
+									"name": "_eq",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 114,
-											"name": "input",
+											"id": 98,
+											"name": "inputA",
 											"kind": 32768,
 											"kindString": "Parameter",
 											"flags": {},
 											"type": {
 												"type": "intrinsic",
-												"name": "string"
+												"name": "any"
 											}
 										},
 										{
-											"id": 115,
-											"name": "prefix",
+											"id": 99,
+											"name": "inputB",
 											"kind": 32768,
 											"kindString": "Parameter",
 											"flags": {},
 											"type": {
 												"type": "intrinsic",
-												"name": "string"
+												"name": "any"
 											}
 										}
 									],
 									"type": {
 										"type": "intrinsic",
-										"name": "string"
+										"name": "any"
 									}
 								}
 							],
 							"sources": [
 								{
-									"fileName": "helpers/string.ts",
-									"line": 379,
-									"character": 20
+									"fileName": "helpers/conditional.ts",
+									"line": 390,
+									"character": 12
 								}
 							]
 						},
 						{
-							"id": 116,
-							"name": "_ensureRight",
+							"id": 80,
+							"name": "_gt",
 							"kind": 2048,
 							"kindString": "Method",
 							"flags": {
@@ -1229,52 +578,52 @@
 							},
 							"signatures": [
 								{
-									"id": 117,
-									"name": "_ensureRight",
+									"id": 81,
+									"name": "_gt",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 118,
-											"name": "input",
+											"id": 82,
+											"name": "inputA",
 											"kind": 32768,
 											"kindString": "Parameter",
 											"flags": {},
 											"type": {
 												"type": "intrinsic",
-												"name": "string"
+												"name": "number"
 											}
 										},
 										{
-											"id": 119,
-											"name": "suffix",
+											"id": 83,
+											"name": "inputB",
 											"kind": 32768,
 											"kindString": "Parameter",
 											"flags": {},
 											"type": {
 												"type": "intrinsic",
-												"name": "string"
+												"name": "number"
 											}
 										}
 									],
 									"type": {
 										"type": "intrinsic",
-										"name": "string"
+										"name": "any"
 									}
 								}
 							],
 							"sources": [
 								{
-									"fileName": "helpers/string.ts",
-									"line": 395,
-									"character": 21
+									"fileName": "helpers/conditional.ts",
+									"line": 334,
+									"character": 12
 								}
 							]
 						},
 						{
-							"id": 120,
-							"name": "_humanize",
+							"id": 84,
+							"name": "_gte",
 							"kind": 2048,
 							"kindString": "Method",
 							"flags": {
@@ -1283,115 +632,52 @@
 							},
 							"signatures": [
 								{
-									"id": 121,
-									"name": "_humanize",
+									"id": 85,
+									"name": "_gte",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 122,
-											"name": "input",
+											"id": 86,
+											"name": "inputA",
 											"kind": 32768,
 											"kindString": "Parameter",
 											"flags": {},
 											"type": {
 												"type": "intrinsic",
-												"name": "string"
-											}
-										}
-									],
-									"type": {
-										"type": "intrinsic",
-										"name": "string"
-									}
-								}
-							],
-							"sources": [
-								{
-									"fileName": "helpers/string.ts",
-									"line": 411,
-									"character": 18
-								}
-							]
-						},
-						{
-							"id": 57,
-							"name": "_indexOf",
-							"kind": 2048,
-							"kindString": "Method",
-							"flags": {
-								"isStatic": true,
-								"isExported": true
-							},
-							"signatures": [
-								{
-									"id": 58,
-									"name": "_indexOf",
-									"kind": 4096,
-									"kindString": "Call signature",
-									"flags": {},
-									"comment": {
-										"shortText": "Find the position of the first instance of one string in another.",
-										"returns": "The position of the first occurance of the match string as a number, or `-1` if it is not found. On failure returns `-1`.\n",
-										"tags": [
-											{
-												"tag": "type",
-												"text": "Inline"
-											},
-											{
-												"tag": "example",
-												"text": "```\n{{indexOf \"This string contains multiple letter 'i's\" \"i\"}}\noutput => 2\n```\n"
-											}
-										]
-									},
-									"parameters": [
-										{
-											"id": 59,
-											"name": "input",
-											"kind": 32768,
-											"kindString": "Parameter",
-											"flags": {},
-											"comment": {
-												"text": "The string to search"
-											},
-											"type": {
-												"type": "intrinsic",
-												"name": "string"
+												"name": "number"
 											}
 										},
 										{
-											"id": 60,
-											"name": "match",
+											"id": 87,
+											"name": "inputB",
 											"kind": 32768,
 											"kindString": "Parameter",
 											"flags": {},
-											"comment": {
-												"text": "The string you are searching for"
-											},
 											"type": {
 												"type": "intrinsic",
-												"name": "string"
+												"name": "number"
 											}
 										}
 									],
 									"type": {
 										"type": "intrinsic",
-										"name": "number"
+										"name": "any"
 									}
 								}
 							],
 							"sources": [
 								{
-									"fileName": "helpers/string.ts",
-									"line": 157,
-									"character": 17
+									"fileName": "helpers/conditional.ts",
+									"line": 348,
+									"character": 13
 								}
 							]
 						},
 						{
-							"id": 61,
-							"name": "_lastIndexOf",
+							"id": 38,
+							"name": "_has",
 							"kind": 2048,
 							"kindString": "Method",
 							"flags": {
@@ -1400,49 +686,29 @@
 							},
 							"signatures": [
 								{
-									"id": 62,
-									"name": "_lastIndexOf",
+									"id": 39,
+									"name": "_has",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
-									"comment": {
-										"shortText": "Find the position of the last instance of one string in another.",
-										"returns": "The position of the last occurance of the match string as a number, or `-1` if it is not found. On failure returns `-1`.\n",
-										"tags": [
-											{
-												"tag": "type",
-												"text": "Inline"
-											},
-											{
-												"tag": "example",
-												"text": "```\n{{indexOf \"This string contains multiple letter 'i's\" \"i\"}}\noutput => 38\n```\n"
-											}
-										]
-									},
 									"parameters": [
 										{
-											"id": 63,
-											"name": "input",
+											"id": 40,
+											"name": "target",
 											"kind": 32768,
 											"kindString": "Parameter",
 											"flags": {},
-											"comment": {
-												"text": "The string to search"
-											},
 											"type": {
 												"type": "intrinsic",
-												"name": "string"
+												"name": "any"
 											}
 										},
 										{
-											"id": 64,
-											"name": "match",
+											"id": 41,
+											"name": "property",
 											"kind": 32768,
 											"kindString": "Parameter",
 											"flags": {},
-											"comment": {
-												"text": "The string you are searching for"
-											},
 											"type": {
 												"type": "intrinsic",
 												"name": "string"
@@ -1451,21 +717,21 @@
 									],
 									"type": {
 										"type": "intrinsic",
-										"name": "number"
+										"name": "any"
 									}
 								}
 							],
 							"sources": [
 								{
-									"fileName": "helpers/string.ts",
-									"line": 183,
-									"character": 21
+									"fileName": "helpers/conditional.ts",
+									"line": 104,
+									"character": 13
 								}
 							]
 						},
 						{
-							"id": 123,
-							"name": "_lines",
+							"id": 42,
+							"name": "_hasAll",
 							"kind": 2048,
 							"kindString": "Method",
 							"flags": {
@@ -1474,44 +740,420 @@
 							},
 							"signatures": [
 								{
-									"id": 124,
-									"name": "_lines",
+									"id": 43,
+									"name": "_hasAll",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "helpers/conditional.ts",
+									"line": 118,
+									"character": 16
+								}
+							]
+						},
+						{
+							"id": 44,
+							"name": "_hasAny",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isStatic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 45,
+									"name": "_hasAny",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "helpers/conditional.ts",
+									"line": 134,
+									"character": 16
+								}
+							]
+						},
+						{
+							"id": 24,
+							"name": "_if",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isStatic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 25,
+									"name": "_if",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 125,
+											"id": 26,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
 											"flags": {},
 											"type": {
 												"type": "intrinsic",
-												"name": "string"
+												"name": "any"
 											}
 										}
 									],
 									"type": {
-										"type": "array",
-										"elementType": {
-											"type": "intrinsic",
-											"name": "string"
-										}
+										"type": "intrinsic",
+										"name": "any"
 									}
 								}
 							],
 							"sources": [
 								{
-									"fileName": "helpers/string.ts",
-									"line": 424,
+									"fileName": "helpers/conditional.ts",
+									"line": 16,
+									"character": 12
+								}
+							]
+						},
+						{
+							"id": 34,
+							"name": "_ifAll",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isStatic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 35,
+									"name": "_ifAll",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "helpers/conditional.ts",
+									"line": 76,
 									"character": 15
 								}
 							]
 						},
 						{
+							"id": 30,
+							"name": "_ifAny",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isStatic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 31,
+									"name": "_ifAny",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "helpers/conditional.ts",
+									"line": 38,
+									"character": 15
+								}
+							]
+						},
+						{
+							"id": 36,
+							"name": "_ifNone",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isStatic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 37,
+									"name": "_ifNone",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "helpers/conditional.ts",
+									"line": 90,
+									"character": 16
+								}
+							]
+						},
+						{
+							"id": 119,
+							"name": "_includes",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isStatic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 120,
+									"name": "_includes",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 121,
+											"name": "input",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "array",
+												"elementType": {
+													"type": "intrinsic",
+													"name": "any"
+												}
+											}
+										},
+										{
+											"id": 122,
+											"name": "test",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "helpers/conditional.ts",
+									"line": 484,
+									"character": 18
+								}
+							]
+						},
+						{
+							"id": 64,
+							"name": "_isArray",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isStatic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 65,
+									"name": "_isArray",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 66,
+											"name": "input",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "helpers/conditional.ts",
+									"line": 241,
+									"character": 17
+								}
+							]
+						},
+						{
+							"id": 58,
+							"name": "_isBoolean",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isStatic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 59,
+									"name": "_isBoolean",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 60,
+											"name": "input",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "helpers/conditional.ts",
+									"line": 213,
+									"character": 19
+								}
+							]
+						},
+						{
+							"id": 55,
+							"name": "_isFinite",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isStatic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 56,
+									"name": "_isFinite",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 57,
+											"name": "input",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "helpers/conditional.ts",
+									"line": 199,
+									"character": 18
+								}
+							]
+						},
+						{
+							"id": 67,
+							"name": "_isFunction",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isStatic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 68,
+									"name": "_isFunction",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 69,
+											"name": "input",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "helpers/conditional.ts",
+									"line": 255,
+									"character": 20
+								}
+							]
+						},
+						{
 							"id": 76,
-							"name": "_padEnd",
+							"name": "_isLike",
 							"kind": 2048,
 							"kindString": "Method",
 							"flags": {
@@ -1521,7 +1163,7 @@
 							"signatures": [
 								{
 									"id": 77,
-									"name": "_padEnd",
+									"name": "_isLike",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
@@ -1534,49 +1176,38 @@
 											"flags": {},
 											"type": {
 												"type": "intrinsic",
-												"name": "string"
+												"name": "any"
 											}
 										},
 										{
 											"id": 79,
-											"name": "maxLength",
+											"name": "test",
 											"kind": 32768,
 											"kindString": "Parameter",
 											"flags": {},
 											"type": {
 												"type": "intrinsic",
-												"name": "number"
-											}
-										},
-										{
-											"id": 80,
-											"name": "fillString",
-											"kind": 32768,
-											"kindString": "Parameter",
-											"flags": {},
-											"type": {
-												"type": "intrinsic",
-												"name": "string"
+												"name": "any"
 											}
 										}
 									],
 									"type": {
 										"type": "intrinsic",
-										"name": "string"
+										"name": "any"
 									}
 								}
 							],
 							"sources": [
 								{
-									"fileName": "helpers/string.ts",
-									"line": 241,
+									"fileName": "helpers/conditional.ts",
+									"line": 297,
 									"character": 16
 								}
 							]
 						},
 						{
-							"id": 71,
-							"name": "_padStart",
+							"id": 52,
+							"name": "_isNaN",
 							"kind": 2048,
 							"kindString": "Method",
 							"flags": {
@@ -1585,26 +1216,273 @@
 							},
 							"signatures": [
 								{
-									"id": 72,
-									"name": "_padStart",
+									"id": 53,
+									"name": "_isNaN",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 73,
+											"id": 54,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
 											"flags": {},
 											"type": {
 												"type": "intrinsic",
-												"name": "string"
+												"name": "any"
 											}
-										},
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "helpers/conditional.ts",
+									"line": 185,
+									"character": 15
+								}
+							]
+						},
+						{
+							"id": 70,
+							"name": "_isNull",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isStatic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 71,
+									"name": "_isNull",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
 										{
-											"id": 74,
-											"name": "maxLength",
+											"id": 72,
+											"name": "input",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "helpers/conditional.ts",
+									"line": 269,
+									"character": 16
+								}
+							]
+						},
+						{
+							"id": 49,
+							"name": "_isNumber",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isStatic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 50,
+									"name": "_isNumber",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 51,
+											"name": "input",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "helpers/conditional.ts",
+									"line": 171,
+									"character": 18
+								}
+							]
+						},
+						{
+							"id": 61,
+							"name": "_isObject",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isStatic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 62,
+									"name": "_isObject",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 63,
+											"name": "input",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "helpers/conditional.ts",
+									"line": 227,
+									"character": 18
+								}
+							]
+						},
+						{
+							"id": 46,
+							"name": "_isString",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isStatic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 47,
+									"name": "_isString",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 48,
+											"name": "input",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "helpers/conditional.ts",
+									"line": 157,
+									"character": 18
+								}
+							]
+						},
+						{
+							"id": 73,
+							"name": "_isUndefined",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isStatic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 74,
+									"name": "_isUndefined",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 75,
+											"name": "input",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "helpers/conditional.ts",
+									"line": 283,
+									"character": 21
+								}
+							]
+						},
+						{
+							"id": 88,
+							"name": "_lt",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isStatic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 89,
+									"name": "_lt",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 90,
+											"name": "inputA",
 											"kind": 32768,
 											"kindString": "Parameter",
 											"flags": {},
@@ -1614,33 +1492,87 @@
 											}
 										},
 										{
-											"id": 75,
-											"name": "fillString",
+											"id": 91,
+											"name": "inputB",
 											"kind": 32768,
 											"kindString": "Parameter",
 											"flags": {},
 											"type": {
 												"type": "intrinsic",
-												"name": "string"
+												"name": "number"
 											}
 										}
 									],
 									"type": {
 										"type": "intrinsic",
-										"name": "string"
+										"name": "any"
 									}
 								}
 							],
 							"sources": [
 								{
-									"fileName": "helpers/string.ts",
-									"line": 222,
-									"character": 18
+									"fileName": "helpers/conditional.ts",
+									"line": 362,
+									"character": 12
 								}
 							]
 						},
 						{
-							"id": 171,
+							"id": 92,
+							"name": "_lte",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isStatic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 93,
+									"name": "_lte",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 94,
+											"name": "inputA",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "number"
+											}
+										},
+										{
+											"id": 95,
+											"name": "inputB",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "number"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "helpers/conditional.ts",
+									"line": 376,
+									"character": 13
+								}
+							]
+						},
+						{
+							"id": 123,
 							"name": "_regexMatch",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1650,7 +1582,7 @@
 							},
 							"signatures": [
 								{
-									"id": 172,
+									"id": 124,
 									"name": "_regexMatch",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1661,17 +1593,13 @@
 										"tags": [
 											{
 												"tag": "type",
-												"text": "Block/Inline"
-											},
-											{
-												"tag": "example",
-												"text": "```\n{{regexMatch \"I am a test\" \"(am)\\sa\" \"gi\"}}\noutput => [ \"am a\", \"am\" ]\n```\n"
+												"text": "Block/Inline\n"
 											}
 										]
 									},
 									"parameters": [
 										{
-											"id": 173,
+											"id": 125,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1685,7 +1613,7 @@
 											}
 										},
 										{
-											"id": 174,
+											"id": 126,
 											"name": "expression",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1699,7 +1627,7 @@
 											}
 										},
 										{
-											"id": 175,
+											"id": 127,
 											"name": "options",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1748,15 +1676,15 @@
 							],
 							"sources": [
 								{
-									"fileName": "helpers/string.ts",
-									"line": 642,
+									"fileName": "helpers/conditional.ts",
+									"line": 519,
 									"character": 20
 								}
 							]
 						},
 						{
-							"id": 81,
-							"name": "_repeat",
+							"id": 111,
+							"name": "_startsWith",
 							"kind": 2048,
 							"kindString": "Method",
 							"flags": {
@@ -1765,14 +1693,14 @@
 							},
 							"signatures": [
 								{
-									"id": 82,
-									"name": "_repeat",
+									"id": 112,
+									"name": "_startsWith",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 83,
+											"id": 113,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1783,7 +1711,1676 @@
 											}
 										},
 										{
-											"id": 84,
+											"id": 114,
+											"name": "test",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "helpers/conditional.ts",
+									"line": 456,
+									"character": 20
+								}
+							]
+						},
+						{
+							"id": 133,
+							"name": "_switch",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isStatic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 134,
+									"name": "_switch",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 135,
+											"name": "input",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "helpers/conditional.ts",
+									"line": 608,
+									"character": 16
+								}
+							]
+						},
+						{
+							"id": 100,
+							"name": "_teq",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isStatic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 101,
+									"name": "_teq",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 102,
+											"name": "inputA",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										},
+										{
+											"id": 103,
+											"name": "inputB",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "helpers/conditional.ts",
+									"line": 409,
+									"character": 13
+								}
+							]
+						},
+						{
+							"id": 27,
+							"name": "_unless",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isStatic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 28,
+									"name": "_unless",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 29,
+											"name": "input",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "helpers/conditional.ts",
+									"line": 27,
+									"character": 16
+								}
+							]
+						},
+						{
+							"id": 32,
+							"name": "_unlessAll",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isStatic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 33,
+									"name": "_unlessAll",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "helpers/conditional.ts",
+									"line": 57,
+									"character": 19
+								}
+							]
+						},
+						{
+							"id": 139,
+							"name": "conditionalResponse",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isStatic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 140,
+									"name": "conditionalResponse",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 141,
+											"name": "helper",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "HelperOptions"
+											}
+										},
+										{
+											"id": 142,
+											"name": "evaluation",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "boolean"
+											}
+										},
+										{
+											"id": 143,
+											"name": "metadata",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Map",
+												"id": 2,
+												"typeArguments": [
+													{
+														"type": "intrinsic",
+														"name": "any"
+													}
+												]
+											},
+											"defaultValue": " {}"
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "helpers/conditional.ts",
+									"line": 684,
+									"character": 28
+								}
+							]
+						}
+					],
+					"groups": [
+						{
+							"title": "Methods",
+							"kind": 2048,
+							"children": [
+								104,
+								136,
+								107,
+								130,
+								128,
+								115,
+								96,
+								80,
+								84,
+								38,
+								42,
+								44,
+								24,
+								34,
+								30,
+								36,
+								119,
+								64,
+								58,
+								55,
+								67,
+								76,
+								52,
+								70,
+								49,
+								61,
+								46,
+								73,
+								88,
+								92,
+								123,
+								111,
+								133,
+								100,
+								27,
+								32,
+								139
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "helpers/conditional.ts",
+							"line": 15,
+							"character": 39
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Classes",
+					"kind": 128,
+					"children": [
+						23
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "helpers/conditional.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 144,
+			"name": "\"helpers/number\"",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "/home/tonicblue/code/scvo/bristles/src/helpers/number.ts",
+			"sources": [
+				{
+					"fileName": "helpers/number.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 145,
+			"name": "\"helpers/object\"",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "/home/tonicblue/code/scvo/bristles/src/helpers/object.ts",
+			"children": [
+				{
+					"id": 146,
+					"name": "ObjectHelpers",
+					"kind": 128,
+					"kindString": "Class",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "A bunch of helpers for working with objects"
+					},
+					"children": [
+						{
+							"id": 153,
+							"name": "_entries",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isStatic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 154,
+									"name": "_entries",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 155,
+											"name": "input",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "helpers/object.ts",
+									"line": 45,
+									"character": 17
+								}
+							]
+						},
+						{
+							"id": 156,
+							"name": "_get",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isStatic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 157,
+									"name": "_get",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 158,
+											"name": "context",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										},
+										{
+											"id": 159,
+											"name": "path",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "helpers/object.ts",
+									"line": 57,
+									"character": 13
+								}
+							]
+						},
+						{
+							"id": 150,
+							"name": "_keys",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isStatic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 151,
+									"name": "_keys",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 152,
+											"name": "input",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "helpers/object.ts",
+									"line": 33,
+									"character": 14
+								}
+							]
+						},
+						{
+							"id": 160,
+							"name": "_merge",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isStatic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 161,
+									"name": "_merge",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "helpers/object.ts",
+									"line": 69,
+									"character": 15
+								}
+							]
+						},
+						{
+							"id": 162,
+							"name": "_parse",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isStatic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 163,
+									"name": "_parse",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 164,
+											"name": "value",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "helpers/object.ts",
+									"line": 84,
+									"character": 15
+								}
+							]
+						},
+						{
+							"id": 147,
+							"name": "_values",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isStatic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 148,
+									"name": "_values",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 149,
+											"name": "input",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "helpers/object.ts",
+									"line": 21,
+									"character": 16
+								}
+							]
+						}
+					],
+					"groups": [
+						{
+							"title": "Methods",
+							"kind": 2048,
+							"children": [
+								153,
+								156,
+								150,
+								160,
+								162,
+								147
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "helpers/object.ts",
+							"line": 20,
+							"character": 34
+						}
+					]
+				},
+				{
+					"id": 165,
+					"name": "JSON6",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "helpers/object.ts",
+							"line": 6,
+							"character": 11
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "any"
+					},
+					"defaultValue": " require('json-6')"
+				}
+			],
+			"groups": [
+				{
+					"title": "Classes",
+					"kind": 128,
+					"children": [
+						146
+					]
+				},
+				{
+					"title": "Variables",
+					"kind": 32,
+					"children": [
+						165
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "helpers/object.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 166,
+			"name": "\"helpers/string\"",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "/home/tonicblue/code/scvo/bristles/src/helpers/string.ts",
+			"children": [
+				{
+					"id": 167,
+					"name": "StringHelpers",
+					"kind": 128,
+					"kindString": "Class",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "A bunch of helpers for working with strings"
+					},
+					"children": [
+						{
+							"id": 213,
+							"name": "_camelize",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isStatic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 214,
+									"name": "_camelize",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 215,
+											"name": "input",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "helpers/string.ts",
+									"line": 273,
+									"character": 18
+								}
+							]
+						},
+						{
+							"id": 216,
+							"name": "_capitalize",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isStatic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 217,
+									"name": "_capitalize",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 218,
+											"name": "input",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "helpers/string.ts",
+									"line": 286,
+									"character": 20
+								}
+							]
+						},
+						{
+							"id": 219,
+							"name": "_chompLeft",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isStatic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 220,
+									"name": "_chompLeft",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 221,
+											"name": "input",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										},
+										{
+											"id": 222,
+											"name": "prefix",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "helpers/string.ts",
+									"line": 299,
+									"character": 19
+								}
+							]
+						},
+						{
+							"id": 223,
+							"name": "_chompRight",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isStatic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 224,
+									"name": "_chompRight",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 225,
+											"name": "input",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										},
+										{
+											"id": 226,
+											"name": "suffix",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "helpers/string.ts",
+									"line": 313,
+									"character": 20
+								}
+							]
+						},
+						{
+							"id": 227,
+							"name": "_collapseWhitespace",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isStatic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 228,
+									"name": "_collapseWhitespace",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 229,
+											"name": "input",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "helpers/string.ts",
+									"line": 327,
+									"character": 28
+								}
+							]
+						},
+						{
+							"id": 182,
+							"name": "_concat",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isStatic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 183,
+									"name": "_concat",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Joins any number of strings or stringable objects together into one long string",
+										"returns": "One big string. On failure returns an empty string.\n",
+										"tags": [
+											{
+												"tag": "type",
+												"text": "Inline"
+											},
+											{
+												"tag": "example",
+												"text": "```\ncontext => { \"name\": \"E. Honda\", \"yearBorn\": 1960, \"likesNoodles\": true }\n{{concat \"My name is \" name \" and I was born in \" yearBorn \". True or false, I like noodles? \" likesNoodles}}\noutput => \"My name is E. Honda and I was born in 1960. True or false, I like noodles? true\"\n```\n"
+											}
+										]
+									},
+									"parameters": [
+										{
+											"id": 184,
+											"name": "args",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isRest": true
+											},
+											"type": {
+												"type": "array",
+												"elementType": {
+													"type": "intrinsic",
+													"name": "any"
+												}
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "helpers/string.ts",
+									"line": 128,
+									"character": 16
+								}
+							]
+						},
+						{
+							"id": 230,
+							"name": "_count",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isStatic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 231,
+									"name": "_count",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 232,
+											"name": "input",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										},
+										{
+											"id": 233,
+											"name": "substring",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "helpers/string.ts",
+									"line": 340,
+									"character": 15
+								}
+							]
+						},
+						{
+							"id": 234,
+							"name": "_dasherize",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isStatic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 235,
+									"name": "_dasherize",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 236,
+											"name": "input",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "helpers/string.ts",
+									"line": 353,
+									"character": 19
+								}
+							]
+						},
+						{
+							"id": 237,
+							"name": "_decodeHTMLEntities",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isStatic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 238,
+									"name": "_decodeHTMLEntities",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 239,
+											"name": "input",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "helpers/string.ts",
+									"line": 366,
+									"character": 28
+								}
+							]
+						},
+						{
+							"id": 240,
+							"name": "_ensureLeft",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isStatic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 241,
+									"name": "_ensureLeft",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 242,
+											"name": "input",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										},
+										{
+											"id": 243,
+											"name": "prefix",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "helpers/string.ts",
+									"line": 379,
+									"character": 20
+								}
+							]
+						},
+						{
+							"id": 244,
+							"name": "_ensureRight",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isStatic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 245,
+									"name": "_ensureRight",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 246,
+											"name": "input",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										},
+										{
+											"id": 247,
+											"name": "suffix",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "helpers/string.ts",
+									"line": 395,
+									"character": 21
+								}
+							]
+						},
+						{
+							"id": 248,
+							"name": "_humanize",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isStatic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 249,
+									"name": "_humanize",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 250,
+											"name": "input",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "helpers/string.ts",
+									"line": 411,
+									"character": 18
+								}
+							]
+						},
+						{
+							"id": 185,
+							"name": "_indexOf",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isStatic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 186,
+									"name": "_indexOf",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Find the position of the first instance of one string in another.",
+										"returns": "The position of the first occurance of the match string as a number, or `-1` if it is not found. On failure returns `-1`.\n",
+										"tags": [
+											{
+												"tag": "type",
+												"text": "Inline"
+											},
+											{
+												"tag": "example",
+												"text": "```\n{{indexOf \"This string contains multiple letter 'i's\" \"i\"}}\noutput => 2\n```\n"
+											}
+										]
+									},
+									"parameters": [
+										{
+											"id": 187,
+											"name": "input",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"comment": {
+												"text": "The string to search"
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										},
+										{
+											"id": 188,
+											"name": "match",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"comment": {
+												"text": "The string you are searching for"
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "helpers/string.ts",
+									"line": 157,
+									"character": 17
+								}
+							]
+						},
+						{
+							"id": 189,
+							"name": "_lastIndexOf",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isStatic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 190,
+									"name": "_lastIndexOf",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Find the position of the last instance of one string in another.",
+										"returns": "The position of the last occurance of the match string as a number, or `-1` if it is not found. On failure returns `-1`.\n",
+										"tags": [
+											{
+												"tag": "type",
+												"text": "Inline"
+											},
+											{
+												"tag": "example",
+												"text": "```\n{{indexOf \"This string contains multiple letter 'i's\" \"i\"}}\noutput => 38\n```\n"
+											}
+										]
+									},
+									"parameters": [
+										{
+											"id": 191,
+											"name": "input",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"comment": {
+												"text": "The string to search"
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										},
+										{
+											"id": 192,
+											"name": "match",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"comment": {
+												"text": "The string you are searching for"
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "helpers/string.ts",
+									"line": 183,
+									"character": 21
+								}
+							]
+						},
+						{
+							"id": 251,
+							"name": "_lines",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isStatic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 252,
+									"name": "_lines",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 253,
+											"name": "input",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "array",
+										"elementType": {
+											"type": "intrinsic",
+											"name": "string"
+										}
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "helpers/string.ts",
+									"line": 424,
+									"character": 15
+								}
+							]
+						},
+						{
+							"id": 204,
+							"name": "_padEnd",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isStatic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 205,
+									"name": "_padEnd",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 206,
+											"name": "input",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										},
+										{
+											"id": 207,
+											"name": "maxLength",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "number"
+											}
+										},
+										{
+											"id": 208,
+											"name": "fillString",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "helpers/string.ts",
+									"line": 241,
+									"character": 16
+								}
+							]
+						},
+						{
+							"id": 199,
+							"name": "_padStart",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isStatic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 200,
+									"name": "_padStart",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 201,
+											"name": "input",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										},
+										{
+											"id": 202,
+											"name": "maxLength",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "number"
+											}
+										},
+										{
+											"id": 203,
+											"name": "fillString",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "helpers/string.ts",
+									"line": 222,
+									"character": 18
+								}
+							]
+						},
+						{
+							"id": 209,
+							"name": "_repeat",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isStatic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 210,
+									"name": "_repeat",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 211,
+											"name": "input",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										},
+										{
+											"id": 212,
 											"name": "times",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1809,7 +3406,7 @@
 							]
 						},
 						{
-							"id": 126,
+							"id": 254,
 							"name": "_replace",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1819,14 +3416,14 @@
 							},
 							"signatures": [
 								{
-									"id": 127,
+									"id": 255,
 									"name": "_replace",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 128,
+											"id": 256,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1837,7 +3434,7 @@
 											}
 										},
 										{
-											"id": 129,
+											"id": 257,
 											"name": "match",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1848,7 +3445,7 @@
 											}
 										},
 										{
-											"id": 130,
+											"id": 258,
 											"name": "replacement",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1874,7 +3471,7 @@
 							]
 						},
 						{
-							"id": 131,
+							"id": 259,
 							"name": "_slugify",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1884,14 +3481,14 @@
 							},
 							"signatures": [
 								{
-									"id": 132,
+									"id": 260,
 									"name": "_slugify",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 133,
+											"id": 261,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1917,7 +3514,7 @@
 							]
 						},
 						{
-							"id": 40,
+							"id": 168,
 							"name": "_split",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1927,7 +3524,7 @@
 							},
 							"signatures": [
 								{
-									"id": 41,
+									"id": 169,
 									"name": "_split",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1948,7 +3545,7 @@
 									},
 									"parameters": [
 										{
-											"id": 42,
+											"id": 170,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1962,7 +3559,7 @@
 											}
 										},
 										{
-											"id": 43,
+											"id": 171,
 											"name": "delimeter",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2002,70 +3599,7 @@
 							]
 						},
 						{
-							"id": 159,
-							"name": "_startsWith",
-							"kind": 2048,
-							"kindString": "Method",
-							"flags": {
-								"isStatic": true,
-								"isExported": true
-							},
-							"signatures": [
-								{
-									"id": 160,
-									"name": "_startsWith",
-									"kind": 4096,
-									"kindString": "Call signature",
-									"flags": {},
-									"parameters": [
-										{
-											"id": 161,
-											"name": "input",
-											"kind": 32768,
-											"kindString": "Parameter",
-											"flags": {},
-											"type": {
-												"type": "intrinsic",
-												"name": "string"
-											}
-										},
-										{
-											"id": 162,
-											"name": "test",
-											"kind": 32768,
-											"kindString": "Parameter",
-											"flags": {},
-											"type": {
-												"type": "intrinsic",
-												"name": "string"
-											}
-										}
-									],
-									"type": {
-										"type": "union",
-										"types": [
-											{
-												"type": "intrinsic",
-												"name": "boolean"
-											},
-											{
-												"type": "intrinsic",
-												"name": "string"
-											}
-										]
-									}
-								}
-							],
-							"sources": [
-								{
-									"fileName": "helpers/string.ts",
-									"line": 563,
-									"character": 20
-								}
-							]
-						},
-						{
-							"id": 134,
+							"id": 262,
 							"name": "_stripLeft",
 							"kind": 2048,
 							"kindString": "Method",
@@ -2075,14 +3609,14 @@
 							},
 							"signatures": [
 								{
-									"id": 135,
+									"id": 263,
 									"name": "_stripLeft",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 136,
+											"id": 264,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2093,7 +3627,7 @@
 											}
 										},
 										{
-											"id": 137,
+											"id": 265,
 											"name": "chars",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2119,7 +3653,7 @@
 							]
 						},
 						{
-							"id": 138,
+							"id": 266,
 							"name": "_stripRight",
 							"kind": 2048,
 							"kindString": "Method",
@@ -2129,14 +3663,14 @@
 							},
 							"signatures": [
 								{
-									"id": 139,
+									"id": 267,
 									"name": "_stripRight",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 140,
+											"id": 268,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2147,7 +3681,7 @@
 											}
 										},
 										{
-											"id": 141,
+											"id": 269,
 											"name": "chars",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2173,7 +3707,7 @@
 							]
 						},
 						{
-							"id": 142,
+							"id": 270,
 							"name": "_stripTags",
 							"kind": 2048,
 							"kindString": "Method",
@@ -2183,14 +3717,14 @@
 							},
 							"signatures": [
 								{
-									"id": 143,
+									"id": 271,
 									"name": "_stripTags",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 144,
+											"id": 272,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2216,7 +3750,7 @@
 							]
 						},
 						{
-							"id": 44,
+							"id": 172,
 							"name": "_substr",
 							"kind": 2048,
 							"kindString": "Method",
@@ -2226,7 +3760,7 @@
 							},
 							"signatures": [
 								{
-									"id": 45,
+									"id": 173,
 									"name": "_substr",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -2247,7 +3781,7 @@
 									},
 									"parameters": [
 										{
-											"id": 46,
+											"id": 174,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2261,7 +3795,7 @@
 											}
 										},
 										{
-											"id": 47,
+											"id": 175,
 											"name": "from",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2275,7 +3809,7 @@
 											}
 										},
 										{
-											"id": 48,
+											"id": 176,
 											"name": "length",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2312,7 +3846,7 @@
 							]
 						},
 						{
-							"id": 49,
+							"id": 177,
 							"name": "_substring",
 							"kind": 2048,
 							"kindString": "Method",
@@ -2322,7 +3856,7 @@
 							},
 							"signatures": [
 								{
-									"id": 50,
+									"id": 178,
 									"name": "_substring",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -2343,7 +3877,7 @@
 									},
 									"parameters": [
 										{
-											"id": 51,
+											"id": 179,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2357,7 +3891,7 @@
 											}
 										},
 										{
-											"id": 52,
+											"id": 180,
 											"name": "start",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2371,7 +3905,7 @@
 											}
 										},
 										{
-											"id": 53,
+											"id": 181,
 											"name": "end",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2408,7 +3942,7 @@
 							]
 						},
 						{
-							"id": 145,
+							"id": 273,
 							"name": "_titleCase",
 							"kind": 2048,
 							"kindString": "Method",
@@ -2418,14 +3952,14 @@
 							},
 							"signatures": [
 								{
-									"id": 146,
+									"id": 274,
 									"name": "_titleCase",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 147,
+											"id": 275,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2451,7 +3985,7 @@
 							]
 						},
 						{
-							"id": 148,
+							"id": 276,
 							"name": "_toBoolean",
 							"kind": 2048,
 							"kindString": "Method",
@@ -2461,14 +3995,14 @@
 							},
 							"signatures": [
 								{
-									"id": 149,
+									"id": 277,
 									"name": "_toBoolean",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 150,
+											"id": 278,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2494,7 +4028,7 @@
 							]
 						},
 						{
-							"id": 68,
+							"id": 196,
 							"name": "_toLowerCase",
 							"kind": 2048,
 							"kindString": "Method",
@@ -2504,14 +4038,14 @@
 							},
 							"signatures": [
 								{
-									"id": 69,
+									"id": 197,
 									"name": "_toLowerCase",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 70,
+											"id": 198,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2537,7 +4071,7 @@
 							]
 						},
 						{
-							"id": 65,
+							"id": 193,
 							"name": "_toUpperCase",
 							"kind": 2048,
 							"kindString": "Method",
@@ -2547,14 +4081,14 @@
 							},
 							"signatures": [
 								{
-									"id": 66,
+									"id": 194,
 									"name": "_toUpperCase",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 67,
+											"id": 195,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2580,7 +4114,7 @@
 							]
 						},
 						{
-							"id": 151,
+							"id": 279,
 							"name": "_truncate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -2590,14 +4124,14 @@
 							},
 							"signatures": [
 								{
-									"id": 152,
+									"id": 280,
 									"name": "_truncate",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 153,
+											"id": 281,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2608,7 +4142,7 @@
 											}
 										},
 										{
-											"id": 154,
+											"id": 282,
 											"name": "length",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2619,7 +4153,7 @@
 											}
 										},
 										{
-											"id": 155,
+											"id": 283,
 											"name": "chars",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2645,7 +4179,7 @@
 							]
 						},
 						{
-							"id": 156,
+							"id": 284,
 							"name": "_underscore",
 							"kind": 2048,
 							"kindString": "Method",
@@ -2655,14 +4189,14 @@
 							},
 							"signatures": [
 								{
-									"id": 157,
+									"id": 285,
 									"name": "_underscore",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 158,
+											"id": 286,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2693,42 +4227,38 @@
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								85,
-								88,
-								91,
-								95,
-								99,
-								54,
-								167,
-								102,
-								106,
-								109,
-								163,
-								112,
-								116,
-								120,
-								57,
-								61,
-								123,
-								76,
-								71,
-								171,
-								81,
-								126,
-								131,
-								40,
-								159,
-								134,
-								138,
-								142,
-								44,
-								49,
-								145,
-								148,
-								68,
-								65,
-								151,
-								156
+								213,
+								216,
+								219,
+								223,
+								227,
+								182,
+								230,
+								234,
+								237,
+								240,
+								244,
+								248,
+								185,
+								189,
+								251,
+								204,
+								199,
+								209,
+								254,
+								259,
+								168,
+								262,
+								266,
+								270,
+								172,
+								177,
+								273,
+								276,
+								196,
+								193,
+								279,
+								284
 							]
 						}
 					],
@@ -2746,7 +4276,7 @@
 					"title": "Classes",
 					"kind": 128,
 					"children": [
-						39
+						167
 					]
 				}
 			],
@@ -2759,7 +4289,7 @@
 			]
 		},
 		{
-			"id": 176,
+			"id": 287,
 			"name": "\"helpers/utility\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -2769,7 +4299,7 @@
 			"originalName": "/home/tonicblue/code/scvo/bristles/src/helpers/utility.ts",
 			"children": [
 				{
-					"id": 177,
+					"id": 288,
 					"name": "UtilityHelpers",
 					"kind": 128,
 					"kindString": "Class",
@@ -2781,7 +4311,7 @@
 					},
 					"children": [
 						{
-							"id": 182,
+							"id": 293,
 							"name": "_coalesce",
 							"kind": 2048,
 							"kindString": "Method",
@@ -2791,7 +4321,7 @@
 							},
 							"signatures": [
 								{
-									"id": 183,
+									"id": 294,
 									"name": "_coalesce",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -2811,7 +4341,7 @@
 							]
 						},
 						{
-							"id": 178,
+							"id": 289,
 							"name": "_json",
 							"kind": 2048,
 							"kindString": "Method",
@@ -2821,7 +4351,7 @@
 							},
 							"signatures": [
 								{
-									"id": 179,
+									"id": 290,
 									"name": "_json",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -2841,7 +4371,7 @@
 							]
 						},
 						{
-							"id": 180,
+							"id": 291,
 							"name": "_typeof",
 							"kind": 2048,
 							"kindString": "Method",
@@ -2851,7 +4381,7 @@
 							},
 							"signatures": [
 								{
-									"id": 181,
+									"id": 292,
 									"name": "_typeof",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -2917,9 +4447,9 @@
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								182,
-								178,
-								180
+								293,
+								289,
+								291
 							]
 						}
 					],
@@ -2932,7 +4462,7 @@
 					]
 				},
 				{
-					"id": 184,
+					"id": 295,
 					"name": "JSON6",
 					"kind": 32,
 					"kindString": "Variable",
@@ -2958,14 +4488,14 @@
 					"title": "Classes",
 					"kind": 128,
 					"children": [
-						177
+						288
 					]
 				},
 				{
 					"title": "Variables",
 					"kind": 32,
 					"children": [
-						184
+						295
 					]
 				}
 			],
@@ -2978,7 +4508,7 @@
 			]
 		},
 		{
-			"id": 185,
+			"id": 296,
 			"name": "\"index\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -2988,7 +4518,7 @@
 			"originalName": "/home/tonicblue/code/scvo/bristles/src/index.ts",
 			"children": [
 				{
-					"id": 186,
+					"id": 297,
 					"name": "Bristles",
 					"kind": 64,
 					"kindString": "Function",
@@ -2997,14 +4527,14 @@
 					},
 					"signatures": [
 						{
-							"id": 187,
+							"id": 298,
 							"name": "Bristles",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 188,
+									"id": 299,
 									"name": "hbs",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -3032,21 +4562,21 @@
 					]
 				},
 				{
-					"id": 189,
+					"id": 300,
 					"name": "registerHelpers",
 					"kind": 64,
 					"kindString": "Function",
 					"flags": {},
 					"signatures": [
 						{
-							"id": 190,
+							"id": 301,
 							"name": "registerHelpers",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 191,
+									"id": 302,
 									"name": "hbs",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -3057,7 +4587,7 @@
 									}
 								},
 								{
-									"id": 192,
+									"id": 303,
 									"name": "mod",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -3088,8 +4618,8 @@
 					"title": "Functions",
 					"kind": 64,
 					"children": [
-						186,
-						189
+						297,
+						300
 					]
 				}
 			],
@@ -3102,7 +4632,7 @@
 			]
 		},
 		{
-			"id": 13,
+			"id": 1,
 			"name": "\"utilities\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -3112,7 +4642,58 @@
 			"originalName": "/home/tonicblue/code/scvo/bristles/src/utilities.ts",
 			"children": [
 				{
-					"id": 14,
+					"id": 2,
+					"name": "Map",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true
+					},
+					"typeParameter": [
+						{
+							"id": 3,
+							"name": "T",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {}
+						}
+					],
+					"indexSignature": [
+						{
+							"id": 4,
+							"name": "__index",
+							"kind": 8192,
+							"kindString": "Index signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 5,
+									"name": "key",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "typeParameter",
+								"name": "T"
+							}
+						}
+					],
+					"sources": [
+						{
+							"fileName": "utilities.ts",
+							"line": 12,
+							"character": 20
+						}
+					]
+				},
+				{
+					"id": 6,
 					"name": "isOps",
 					"kind": 64,
 					"kindString": "Function",
@@ -3121,7 +4702,7 @@
 					},
 					"signatures": [
 						{
-							"id": 15,
+							"id": 7,
 							"name": "isOps",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -3131,7 +4712,7 @@
 							},
 							"parameters": [
 								{
-									"id": 16,
+									"id": 8,
 									"name": "obj",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -3159,10 +4740,17 @@
 			],
 			"groups": [
 				{
+					"title": "Interfaces",
+					"kind": 256,
+					"children": [
+						2
+					]
+				},
+				{
 					"title": "Functions",
 					"kind": 64,
 					"children": [
-						14
+						6
 					]
 				}
 			],
@@ -3180,14 +4768,14 @@
 			"title": "External modules",
 			"kind": 1,
 			"children": [
-				1,
-				10,
-				12,
-				17,
-				38,
-				176,
-				185,
-				13
+				9,
+				22,
+				144,
+				145,
+				166,
+				287,
+				296,
+				1
 			]
 		}
 	]

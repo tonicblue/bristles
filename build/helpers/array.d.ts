@@ -21,4 +21,5 @@
  */
 export default class ArrayHelpers {
     static _map(input: any[], func: (...args: any[]) => any): any[];
+    static _each(input: any, join: string): string;
 }

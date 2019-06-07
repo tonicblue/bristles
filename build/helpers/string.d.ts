@@ -125,23 +125,4 @@ export default class StringHelpers {
     static _toBoolean(input: string): boolean;
     static _truncate(input: string, length: number, chars: string): string;
     static _underscore(input: string): string;
-    static _startsWith(input: string, test: string): boolean | string;
-    static _endsWith(input: string, test: string): boolean | string;
-    /**
-     * Check to see if a string matches a regular expression
-     *
-     * @param input       The string to test
-     * @param expression  The regular expression to test the input string with
-     * @param options     Any regular expression options to use (defaults to 'gi')
-     * @returns           A `false` if there is no match or regular expression match array where the first
-     *                    item is the complete match and each subsequent iteam are the captured groups.
-     *                    On failure returns `false`
-     *
-     * @type              Block/Inline
-     * @example ```
-     * {{regexMatch "I am a test" "(am)\sa" "gi"}}
-     * output => [ "am a", "am" ]
-     * ```
-     */
-    static _regexMatch(input: string, expression: string, options?: string): false | string[] | string;
 }
