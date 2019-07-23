@@ -3,16 +3,18 @@
   "engines": {
     "node": ">=10"
   },
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Handlebars but with some a lot of useful helpers",
   "main": "build/index.js",
+  "types": "build/index.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/tonicblue/bristles.git"
   },
   "scripts": {
+    "prepublish": "tsc",
     "docs": "rm -rf docs/ && node_modules/.bin/typedoc src",
-    "tsc": "rm -rf build/ && ./node_modules/.bin/tsc",
+    "tsc": "rm -rf build/ && node_modules/.bin/tsc",
     "build": "npm run tsc && npm run docs",
     "build-playground": "rm -rf public && node_modules/.bin/webpack",
     "playground": "npm run build-playground && ./node_modules/.bin/webpack-dev-server",

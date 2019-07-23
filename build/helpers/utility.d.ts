@@ -12,4 +12,5 @@ export default class UtilityHelpers {
     static _json(): string;
     static _typeof(): "string" | "number" | "bigint" | "boolean" | "symbol" | "undefined" | "object" | "function" | "array" | null;
     static _coalesce(): any;
+    static _eval(code: string): any;
 }

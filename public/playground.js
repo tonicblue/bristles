@@ -49028,6 +49028,33 @@ var UtilityHelpers = /** @class */ (function () {
             return null;
         }
     };
+    /*TODO: This isn't currently returning anything and I need to give this some proper thought
+    *       and security consideration such as checking that the evaluated function does not
+    *       have ANY access to the wider context and I need to work out what to do in case of infinite
+    *       loops. Also, if this is going to be used with `map` I need to work out how to stuff
+    *       other parameters into the evaluated function so it isn't just the current item being
+    *       mapped. May just drop this in its entirety. Though it would be amazing for filtering
+    *       and preparing data
+    */
+    UtilityHelpers._eval = function (code) {
+        try {
+            var args = Array.from(arguments);
+            var helper = args.pop();
+            args.shift();
+            var evaluator = function () {
+                var args = [];
+                for (var _i = 0; _i < arguments.length; _i++) {
+                    args[_i] = arguments[_i];
+                }
+                return Function('"use strict";return (' + code + ')')().apply(void 0, args);
+            };
+            var output = evaluator.apply(void 0, args);
+        }
+        catch (err) {
+            console.error('Bristles Error -> Helper: eval, Error:', err.message);
+            return err.message;
+        }
+    };
     return UtilityHelpers;
 }());
 exports.default = UtilityHelpers;
