@@ -1,2 +1,1 @@
-declare function Bristles(hbs?: any): any;
-export default Bristles;
+export declare function Bristles(hbs?: any): any;

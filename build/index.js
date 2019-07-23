@@ -15,6 +15,7 @@ function Bristles(hbs) {
     registerHelpers(hbs, utility_1.default);
     return hbs;
 }
+exports.Bristles = Bristles;
 /*
 IDEA:
 Give each helper a prefix for different added functions.
@@ -35,5 +36,4 @@ function registerHelpers(hbs, mod) {
         _loop_1(prop);
     }
 }
-exports.default = Bristles;
 //# sourceMappingURL=index.js.map

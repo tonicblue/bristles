@@ -5,7 +5,7 @@ import ArrayHelpers from './helpers/array';
 import ObjectHelpers from './helpers/object';
 import UtilityHelpers from './helpers/utility';
 
-export function Bristles(hbs?: any) {
+export function BristlesFactory(hbs?: any) {
   hbs = hbs || Handlebars;
   registerHelpers(hbs, StringHelpers);
   registerHelpers(hbs, ConditionalHelpers);
@@ -14,6 +14,8 @@ export function Bristles(hbs?: any) {
   registerHelpers(hbs, UtilityHelpers);
   return hbs;
 }
+
+export const Bristles = BristlesFactory();
 
 /*
 IDEA:
