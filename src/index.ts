@@ -5,7 +5,7 @@ import ArrayHelpers from './helpers/array';
 import ObjectHelpers from './helpers/object';
 import UtilityHelpers from './helpers/utility';
 
-function Bristles(hbs?: any) {
+export function Bristles(hbs?: any) {
   hbs = hbs || Handlebars;
   registerHelpers(hbs, StringHelpers);
   registerHelpers(hbs, ConditionalHelpers);
@@ -32,5 +32,3 @@ function registerHelpers(hbs: any, mod: any) {
     }
   }
 }
-
-export default Bristles;

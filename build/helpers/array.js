@@ -1,15 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var util_1 = require("util");
+var dot = require("dot-object");
 var utilities_1 = require("../utilities");
 /**
  * TODO: functions
- *  map
- *  sort
- *  slice
- *  splice
  *  join
- *  eachJoin
  *  merge
  *  delta
  *  same
@@ -101,6 +97,84 @@ var ArrayHelpers = /** @class */ (function () {
             console.error('Bristles Error -> Helper: each, Inverse Error:', err);
         }
         return '';
+    };
+    ArrayHelpers._sort = function (input, direction, path) {
+        var helper = arguments[arguments.length - 1];
+        try {
+            if (!Array.isArray(input)) {
+                throw new Error('Invalid arguments');
+            }
+            direction = direction || 'asc';
+            direction = direction === 'desc' ? 'desc' : 'asc';
+            path = typeof path === 'string' ? path : undefined;
+            var func = function (a, b) { return b - a; };
+            if (!path) {
+                if (direction === 'desc') {
+                    func = function (a, b) { return a - b; };
+                }
+            }
+            else {
+                if (direction === 'desc') {
+                    func = function (a, b) {
+                        return dot.pick(path || '', a) - dot.pick(path || '', b);
+                    };
+                }
+                else {
+                    func = function (a, b) {
+                        return dot.pick(path || '', b) - dot.pick(path || '', a);
+                    };
+                }
+            }
+            if (helper.hash.mutate === true) {
+                return input.sort(func);
+            }
+            else {
+                var clone = JSON.parse(JSON.stringify(input));
+                clone.sort(func);
+                return clone;
+            }
+        }
+        catch (err) {
+            console.error('Bristles Error -> Helper: sort, Error:', err.message);
+            return Array.isArray ? input : [];
+        }
+    };
+    ArrayHelpers._slice = function (input, begin, end) {
+        try {
+            if (!Array.isArray(input)) {
+                throw new Error('Invalid arguments');
+            }
+            begin = typeof begin === 'number' ? begin : 0;
+            end = typeof end === 'number' ? end : undefined;
+            return input.slice(begin, end);
+        }
+        catch (err) {
+            console.error('Bristles Error -> Helper: slice, Error:', err.message);
+            return [];
+        }
+    };
+    ArrayHelpers._splice = function (input, start, deleteCount, items) {
+        var helper = arguments[arguments.length - 1];
+        try {
+            if (!Array.isArray(input)) {
+                throw new Error('Invalid arguments');
+            }
+            start = typeof start === 'number' ? start : 0;
+            deleteCount = typeof deleteCount === 'number' ? deleteCount : 0;
+            items = Array.isArray(items) ? items : [];
+            if (helper.hash.mutate === true) {
+                return input.splice.apply(input, [start, deleteCount].concat(items));
+            }
+            else {
+                var clone = JSON.parse(JSON.stringify(input));
+                clone.splice.apply(clone, [start, deleteCount].concat(items));
+                return clone;
+            }
+        }
+        catch (err) {
+            console.error('Bristles Error -> Helper: splice, Error:', err.message);
+            return [];
+        }
     };
     return ArrayHelpers;
 }());
