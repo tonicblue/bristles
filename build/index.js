@@ -6,7 +6,7 @@ var conditional_1 = require("./helpers/conditional");
 var array_1 = require("./helpers/array");
 var object_1 = require("./helpers/object");
 var utility_1 = require("./helpers/utility");
-function Bristles(hbs) {
+function BristlesFactory(hbs) {
     hbs = hbs || Handlebars;
     registerHelpers(hbs, string_1.default);
     registerHelpers(hbs, conditional_1.default);
@@ -15,7 +15,8 @@ function Bristles(hbs) {
     registerHelpers(hbs, utility_1.default);
     return hbs;
 }
-exports.Bristles = Bristles;
+exports.BristlesFactory = BristlesFactory;
+exports.Bristles = BristlesFactory();
 /*
 IDEA:
 Give each helper a prefix for different added functions.

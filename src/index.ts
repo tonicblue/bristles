@@ -5,18 +5,17 @@ import ArrayHelpers from './helpers/array';
 import ObjectHelpers from './helpers/object';
 import UtilityHelpers from './helpers/utility';
 
-export function BristlesFactory(hbs?: any) {
+export function BristlesFactory(hbs?: typeof Handlebars): typeof Handlebars{
   hbs = hbs || Handlebars;
   registerHelpers(hbs, StringHelpers);
   registerHelpers(hbs, ConditionalHelpers);
   registerHelpers(hbs, ArrayHelpers);
   registerHelpers(hbs, ObjectHelpers);
   registerHelpers(hbs, UtilityHelpers);
-  return hbs;
+  return hbs as typeof Handlebars;
 }
 
 export const Bristles = BristlesFactory();
-
 /*
 IDEA:
 Give each helper a prefix for different added functions.
