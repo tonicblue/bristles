@@ -20,4 +20,6 @@ export default class ArrayHelpers {
     static _sort(input: any[], direction?: string, path?: string): any[];
     static _slice(input: any[], begin?: number, end?: number): any[];
     static _splice(input: any[], start?: number, deleteCount?: number, items?: any[]): any[];
+    static _count(input: any): number;
+    static _itemAt(input: any[], index: number): any;
 }

@@ -109,7 +109,7 @@ export default class StringHelpers {
     static _chompLeft(input: string, prefix: string): string;
     static _chompRight(input: string, suffix: string): string;
     static _collapseWhitespace(input: string): string;
-    static _count(input: string, substring: string): number;
+    static _countOccurances(input: string, substring: string): number;
     static _dasherize(input: string): string;
     static _decodeHTMLEntities(input: string): string;
     static _ensureLeft(input: string, prefix: string): string;
@@ -117,7 +117,11 @@ export default class StringHelpers {
     static _humanize(input: string): string;
     static _lines(input: string): string[];
     static _replace(input: string, match: string, replacement: string): string;
+    static _regexReplace(input: string, match: string, options: string, replacement: string): string;
     static _slugify(input: string): string;
+    static _trim(input: string): string;
+    static _trimLeft(input: string): string;
+    static _trimRight(input: string): string;
     static _stripLeft(input: string, chars: string): string;
     static _stripRight(input: string, chars: string): string;
     static _stripTags(input: string): string;
@@ -125,4 +129,5 @@ export default class StringHelpers {
     static _toBoolean(input: string): boolean;
     static _truncate(input: string, length: number, chars: string): string;
     static _underscore(input: string): string;
+    static _match(input: string, pattern: string, options: string): string | RegExpExecArray[];
 }

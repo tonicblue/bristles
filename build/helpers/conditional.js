@@ -17,22 +17,22 @@ var ConditionalHelpers = /** @class */ (function () {
         var helper = arguments[arguments.length - 1];
         try {
             var evaluation = utilities_1.isOps(input) ? false : !!input;
-            return ConditionalHelpers.conditionalResponse(helper, evaluation);
+            return ConditionalHelpers.conditionalResponse(helper, this, evaluation, { input: input });
         }
         catch (err) {
             console.error('Bristles Error -> Helper: if, Error:', err.message);
-            return ConditionalHelpers.conditionalResponse(helper, false);
+            return ConditionalHelpers.conditionalResponse(helper, this, false);
         }
     };
     ConditionalHelpers._unless = function (input) {
         var helper = arguments[arguments.length - 1];
         try {
             var evaluation = utilities_1.isOps(input) ? false : !!input;
-            return ConditionalHelpers.conditionalResponse(helper, !evaluation);
+            return ConditionalHelpers.conditionalResponse(helper, this, !evaluation);
         }
         catch (err) {
             console.error('Bristles Error -> Helper: unless, Error:', err.message);
-            return ConditionalHelpers.conditionalResponse(helper, false);
+            return ConditionalHelpers.conditionalResponse(helper, this, false);
         }
     };
     ConditionalHelpers._ifAny = function () {
@@ -48,11 +48,11 @@ var ConditionalHelpers = /** @class */ (function () {
                     break;
                 }
             }
-            return ConditionalHelpers.conditionalResponse(helper, evaluation);
+            return ConditionalHelpers.conditionalResponse(helper, this, evaluation);
         }
         catch (err) {
             console.error('Bristles Error -> Helper: ifAny, Error:', err.message);
-            return ConditionalHelpers.conditionalResponse(helper, false);
+            return ConditionalHelpers.conditionalResponse(helper, this, false);
         }
     };
     ConditionalHelpers._unlessAll = function () {
@@ -68,11 +68,11 @@ var ConditionalHelpers = /** @class */ (function () {
                     break;
                 }
             }
-            return ConditionalHelpers.conditionalResponse(helper, evaluation);
+            return ConditionalHelpers.conditionalResponse(helper, this, evaluation);
         }
         catch (err) {
             console.error('Bristles Error -> Helper: unlessAll, Error:', err.message);
-            return ConditionalHelpers.conditionalResponse(helper, false);
+            return ConditionalHelpers.conditionalResponse(helper, this, false);
         }
     };
     ConditionalHelpers._ifAll = function () {
@@ -82,11 +82,11 @@ var ConditionalHelpers = /** @class */ (function () {
             args.pop();
             var trueArgs = args.filter(function (arg) { return !!arg; });
             var evaluation = trueArgs.length === args.length;
-            return ConditionalHelpers.conditionalResponse(helper, evaluation);
+            return ConditionalHelpers.conditionalResponse(helper, this, evaluation);
         }
         catch (err) {
             console.error('Bristles Error -> Helper: ifAll, Error:', err.message);
-            return ConditionalHelpers.conditionalResponse(helper, false);
+            return ConditionalHelpers.conditionalResponse(helper, this, false);
         }
     };
     ConditionalHelpers._ifNone = function () {
@@ -96,11 +96,11 @@ var ConditionalHelpers = /** @class */ (function () {
             args.pop();
             var falseArgs = args.filter(function (arg) { return !arg; });
             var evaluation = falseArgs.length === args.length;
-            return ConditionalHelpers.conditionalResponse(helper, evaluation);
+            return ConditionalHelpers.conditionalResponse(helper, this, evaluation);
         }
         catch (err) {
             console.error('Bristles Error -> Helper: ifNone, Error:', err.message);
-            return ConditionalHelpers.conditionalResponse(helper, false);
+            return ConditionalHelpers.conditionalResponse(helper, this, false);
         }
     };
     ConditionalHelpers._has = function (target, property) {
@@ -110,11 +110,11 @@ var ConditionalHelpers = /** @class */ (function () {
                 throw new Error('Invalid arguments');
             }
             var evaluation = target.hasOwnProperty(property);
-            return ConditionalHelpers.conditionalResponse(helper, evaluation);
+            return ConditionalHelpers.conditionalResponse(helper, this, evaluation);
         }
         catch (err) {
             console.error('Bristles Error -> Helper: has, Error:', err.message);
-            return ConditionalHelpers.conditionalResponse(helper, false);
+            return ConditionalHelpers.conditionalResponse(helper, this, false);
         }
     };
     ConditionalHelpers._hasAll = function () {
@@ -126,11 +126,11 @@ var ConditionalHelpers = /** @class */ (function () {
             args = Array.isArray(args[0]) ? args[0] : args;
             var missing = args.filter(function (arg) { return !target_1.hasOwnProperty(arg); });
             var evaluation = missing.length === 0;
-            return ConditionalHelpers.conditionalResponse(helper, evaluation, { missing: missing });
+            return ConditionalHelpers.conditionalResponse(helper, this, evaluation, { missing: missing });
         }
         catch (err) {
             console.error('Bristles Error -> Helper: ifAll, Error:', err.message);
-            return ConditionalHelpers.conditionalResponse(helper, false);
+            return ConditionalHelpers.conditionalResponse(helper, this, false);
         }
     };
     ConditionalHelpers._hasAny = function () {
@@ -151,11 +151,11 @@ var ConditionalHelpers = /** @class */ (function () {
                 }
             }
             var evaluation = has.length > 0;
-            return ConditionalHelpers.conditionalResponse(helper, evaluation, { has: has, missing: missing });
+            return ConditionalHelpers.conditionalResponse(helper, this, evaluation, { has: has, missing: missing });
         }
         catch (err) {
             console.error('Bristles Error -> Helper: ifAll, Error:', err.message);
-            return ConditionalHelpers.conditionalResponse(helper, false);
+            return ConditionalHelpers.conditionalResponse(helper, this, false);
         }
     };
     ConditionalHelpers._isString = function (input) {
@@ -165,11 +165,11 @@ var ConditionalHelpers = /** @class */ (function () {
                 throw new Error('Invalid arguments');
             }
             var evaluation = typeof input === 'string';
-            return ConditionalHelpers.conditionalResponse(helper, evaluation);
+            return ConditionalHelpers.conditionalResponse(helper, this, evaluation);
         }
         catch (err) {
             console.error('Bristles Error -> Helper: isString, Error:', err.message);
-            return ConditionalHelpers.conditionalResponse(helper, false);
+            return ConditionalHelpers.conditionalResponse(helper, this, false);
         }
     };
     ConditionalHelpers._isNumber = function (input) {
@@ -179,11 +179,11 @@ var ConditionalHelpers = /** @class */ (function () {
                 throw new Error('Invalid arguments');
             }
             var evaluation = typeof input === 'number';
-            return ConditionalHelpers.conditionalResponse(helper, evaluation);
+            return ConditionalHelpers.conditionalResponse(helper, this, evaluation);
         }
         catch (err) {
             console.error('Bristles Error -> Helper: isNumber, Error:', err.message);
-            return ConditionalHelpers.conditionalResponse(helper, false);
+            return ConditionalHelpers.conditionalResponse(helper, this, false);
         }
     };
     ConditionalHelpers._isNaN = function (input) {
@@ -193,11 +193,11 @@ var ConditionalHelpers = /** @class */ (function () {
                 throw new Error('Invalid arguments');
             }
             var evaluation = Number.isNaN(input);
-            return ConditionalHelpers.conditionalResponse(helper, evaluation);
+            return ConditionalHelpers.conditionalResponse(helper, this, evaluation);
         }
         catch (err) {
             console.error('Bristles Error -> Helper: isNumber, Error:', err.message);
-            return ConditionalHelpers.conditionalResponse(helper, false);
+            return ConditionalHelpers.conditionalResponse(helper, this, false);
         }
     };
     ConditionalHelpers._isFinite = function (input) {
@@ -207,11 +207,11 @@ var ConditionalHelpers = /** @class */ (function () {
                 throw new Error('Invalid arguments');
             }
             var evaluation = Number.isFinite(input);
-            return ConditionalHelpers.conditionalResponse(helper, evaluation);
+            return ConditionalHelpers.conditionalResponse(helper, this, evaluation);
         }
         catch (err) {
             console.error('Bristles Error -> Helper: isNumber, Error:', err.message);
-            return ConditionalHelpers.conditionalResponse(helper, false);
+            return ConditionalHelpers.conditionalResponse(helper, this, false);
         }
     };
     ConditionalHelpers._isBoolean = function (input) {
@@ -221,11 +221,11 @@ var ConditionalHelpers = /** @class */ (function () {
                 throw new Error('Invalid arguments');
             }
             var evaluation = typeof input === 'boolean';
-            return ConditionalHelpers.conditionalResponse(helper, evaluation);
+            return ConditionalHelpers.conditionalResponse(helper, this, evaluation);
         }
         catch (err) {
             console.error('Bristles Error -> Helper: isBoolean, Error:', err.message);
-            return ConditionalHelpers.conditionalResponse(helper, false);
+            return ConditionalHelpers.conditionalResponse(helper, this, false);
         }
     };
     ConditionalHelpers._isObject = function (input) {
@@ -235,11 +235,11 @@ var ConditionalHelpers = /** @class */ (function () {
                 throw new Error('Invalid arguments');
             }
             var evaluation = typeof input === 'object' && !Array.isArray(input);
-            return ConditionalHelpers.conditionalResponse(helper, evaluation);
+            return ConditionalHelpers.conditionalResponse(helper, this, evaluation);
         }
         catch (err) {
             console.error('Bristles Error -> Helper: isObject, Error:', err.message);
-            return ConditionalHelpers.conditionalResponse(helper, false);
+            return ConditionalHelpers.conditionalResponse(helper, this, false);
         }
     };
     ConditionalHelpers._isArray = function (input) {
@@ -249,11 +249,11 @@ var ConditionalHelpers = /** @class */ (function () {
                 throw new Error('Invalid arguments');
             }
             var evaluation = Array.isArray(input);
-            return ConditionalHelpers.conditionalResponse(helper, evaluation);
+            return ConditionalHelpers.conditionalResponse(helper, this, evaluation);
         }
         catch (err) {
             console.error('Bristles Error -> Helper: isObject, Error:', err.message);
-            return ConditionalHelpers.conditionalResponse(helper, false);
+            return ConditionalHelpers.conditionalResponse(helper, this, false);
         }
     };
     ConditionalHelpers._isFunction = function (input) {
@@ -263,11 +263,11 @@ var ConditionalHelpers = /** @class */ (function () {
                 throw new Error('Invalid arguments');
             }
             var evaluation = typeof input === 'function';
-            return ConditionalHelpers.conditionalResponse(helper, evaluation);
+            return ConditionalHelpers.conditionalResponse(helper, this, evaluation);
         }
         catch (err) {
             console.error('Bristles Error -> Helper: isFunction, Error:', err.message);
-            return ConditionalHelpers.conditionalResponse(helper, false);
+            return ConditionalHelpers.conditionalResponse(helper, this, false);
         }
     };
     ConditionalHelpers._isNull = function (input) {
@@ -277,11 +277,11 @@ var ConditionalHelpers = /** @class */ (function () {
                 throw new Error('Invalid arguments');
             }
             var evaluation = input === null;
-            return ConditionalHelpers.conditionalResponse(helper, evaluation);
+            return ConditionalHelpers.conditionalResponse(helper, this, evaluation);
         }
         catch (err) {
             console.error('Bristles Error -> Helper: isNull, Error:', err.message);
-            return ConditionalHelpers.conditionalResponse(helper, false);
+            return ConditionalHelpers.conditionalResponse(helper, this, false);
         }
     };
     ConditionalHelpers._isUndefined = function (input) {
@@ -291,11 +291,11 @@ var ConditionalHelpers = /** @class */ (function () {
                 throw new Error('Invalid arguments');
             }
             var evaluation = typeof input === 'undefined';
-            return ConditionalHelpers.conditionalResponse(helper, evaluation);
+            return ConditionalHelpers.conditionalResponse(helper, this, evaluation);
         }
         catch (err) {
             console.error('Bristles Error -> Helper: isUndefined, Error:', err.message);
-            return ConditionalHelpers.conditionalResponse(helper, false);
+            return ConditionalHelpers.conditionalResponse(helper, this, false);
         }
     };
     ConditionalHelpers._isLike = function (input, test) {
@@ -308,7 +308,7 @@ var ConditionalHelpers = /** @class */ (function () {
             var testType = typeof test;
             var evaluation = inputType === testType;
             if (!evaluation || inputType !== 'object' || Array.isArray(input)) {
-                return ConditionalHelpers.conditionalResponse(helper, evaluation, { inputType: inputType, testType: testType });
+                return ConditionalHelpers.conditionalResponse(helper, this, evaluation, { inputType: inputType, testType: testType });
             }
             var inputProps = Object.getOwnPropertyNames(input);
             var similarities = [];
@@ -327,11 +327,11 @@ var ConditionalHelpers = /** @class */ (function () {
                     differences.push(comparison);
                 }
             }
-            return ConditionalHelpers.conditionalResponse(helper, differences.length === 0, { similarities: similarities, differences: differences });
+            return ConditionalHelpers.conditionalResponse(helper, this, differences.length === 0, { similarities: similarities, differences: differences });
         }
         catch (err) {
             console.error('Bristles Error -> Helper: gt, Error:', err.message);
-            return ConditionalHelpers.conditionalResponse(helper, false);
+            return ConditionalHelpers.conditionalResponse(helper, this, false);
         }
     };
     ConditionalHelpers._gt = function (inputA, inputB) {
@@ -341,11 +341,11 @@ var ConditionalHelpers = /** @class */ (function () {
                 throw new Error('Invalid arguments');
             }
             var evaluation = inputA > inputB;
-            return ConditionalHelpers.conditionalResponse(helper, evaluation);
+            return ConditionalHelpers.conditionalResponse(helper, this, evaluation);
         }
         catch (err) {
             console.error('Bristles Error -> Helper: gt, Error:', err.message);
-            return ConditionalHelpers.conditionalResponse(helper, false);
+            return ConditionalHelpers.conditionalResponse(helper, this, false);
         }
     };
     ConditionalHelpers._gte = function (inputA, inputB) {
@@ -355,11 +355,11 @@ var ConditionalHelpers = /** @class */ (function () {
                 throw new Error('Invalid arguments');
             }
             var evaluation = inputA >= inputB;
-            return ConditionalHelpers.conditionalResponse(helper, evaluation);
+            return ConditionalHelpers.conditionalResponse(helper, this, evaluation);
         }
         catch (err) {
             console.error('Bristles Error -> Helper: gt, Error:', err.message);
-            return ConditionalHelpers.conditionalResponse(helper, false);
+            return ConditionalHelpers.conditionalResponse(helper, this, false);
         }
     };
     ConditionalHelpers._lt = function (inputA, inputB) {
@@ -369,11 +369,11 @@ var ConditionalHelpers = /** @class */ (function () {
                 throw new Error('Invalid arguments');
             }
             var evaluation = inputA < inputB;
-            return ConditionalHelpers.conditionalResponse(helper, evaluation);
+            return ConditionalHelpers.conditionalResponse(helper, this, evaluation);
         }
         catch (err) {
             console.error('Bristles Error -> Helper: lt, Error:', err.message);
-            return ConditionalHelpers.conditionalResponse(helper, false);
+            return ConditionalHelpers.conditionalResponse(helper, this, false);
         }
     };
     ConditionalHelpers._lte = function (inputA, inputB) {
@@ -383,11 +383,11 @@ var ConditionalHelpers = /** @class */ (function () {
                 throw new Error('Invalid arguments');
             }
             var evaluation = inputA <= inputB;
-            return ConditionalHelpers.conditionalResponse(helper, evaluation);
+            return ConditionalHelpers.conditionalResponse(helper, this, evaluation);
         }
         catch (err) {
             console.error('Bristles Error -> Helper: lte, Error:', err.message);
-            return ConditionalHelpers.conditionalResponse(helper, false);
+            return ConditionalHelpers.conditionalResponse(helper, this, false);
         }
     };
     ConditionalHelpers._eq = function (inputA, inputB) {
@@ -398,16 +398,16 @@ var ConditionalHelpers = /** @class */ (function () {
             }
             if (typeof inputA === 'object' && typeof inputB === 'object') {
                 var changes = DeepDiff.diff(inputA, inputB);
-                return ConditionalHelpers.conditionalResponse(helper, !changes, { changes: changes });
+                return ConditionalHelpers.conditionalResponse(helper, this, !changes, { changes: changes });
             }
             else {
                 var evaluation = inputA == inputB;
-                return ConditionalHelpers.conditionalResponse(helper, evaluation);
+                return ConditionalHelpers.conditionalResponse(helper, this, evaluation);
             }
         }
         catch (err) {
             console.error('Bristles Error -> Helper: eq, Error:', err.message);
-            return ConditionalHelpers.conditionalResponse(helper, false);
+            return ConditionalHelpers.conditionalResponse(helper, this, false);
         }
     };
     ConditionalHelpers._teq = function (inputA, inputB) {
@@ -418,30 +418,36 @@ var ConditionalHelpers = /** @class */ (function () {
             }
             if (typeof inputA === 'object' && typeof inputB === 'object') {
                 var changes = DeepDiff.diff(inputA, inputB);
-                return ConditionalHelpers.conditionalResponse(helper, !changes, { changes: changes });
+                return ConditionalHelpers.conditionalResponse(helper, this, !changes, { changes: changes });
             }
             else {
                 var evaluation = inputA === inputB;
-                return ConditionalHelpers.conditionalResponse(helper, evaluation);
+                return ConditionalHelpers.conditionalResponse(helper, this, evaluation);
             }
         }
         catch (err) {
             console.error('Bristles Error -> Helper: teq, Error:', err.message);
-            return ConditionalHelpers.conditionalResponse(helper, false);
+            return ConditionalHelpers.conditionalResponse(helper, this, false);
         }
     };
     ConditionalHelpers._any = function (input) {
         var helper = arguments[arguments.length - 1];
         try {
-            if (utilities_1.isOps(input) || !Array.isArray(input)) {
+            if (utilities_1.isOps(input) || typeof input !== 'object') {
                 throw new Error('Invalid arguments');
             }
-            var length_1 = input.length;
-            return ConditionalHelpers.conditionalResponse(helper, length_1 > 0, { length: length_1 });
+            var length_1 = 0;
+            if (Array.isArray(input)) {
+                length_1 = input.length;
+            }
+            else {
+                length_1 = Object.keys(input).length;
+            }
+            return ConditionalHelpers.conditionalResponse(helper, this, length_1 > 0, { length: length_1 });
         }
         catch (err) {
             console.error('Bristles Error -> Helper: any, Error:', err.message);
-            return ConditionalHelpers.conditionalResponse(helper, false);
+            return ConditionalHelpers.conditionalResponse(helper, this, false);
         }
     };
     ConditionalHelpers._contains = function (input, test) {
@@ -451,11 +457,11 @@ var ConditionalHelpers = /** @class */ (function () {
                 throw new Error('Invalid arguments');
             }
             var index = input.toString().indexOf(test.toString());
-            return ConditionalHelpers.conditionalResponse(helper, index > -1, { index: index });
+            return ConditionalHelpers.conditionalResponse(helper, this, index > -1, { index: index });
         }
         catch (err) {
             console.error('Bristles Error -> Helper: contains, Error:', err.message);
-            return ConditionalHelpers.conditionalResponse(helper, false);
+            return ConditionalHelpers.conditionalResponse(helper, this, false);
         }
     };
     ConditionalHelpers._startsWith = function (input, test) {
@@ -465,11 +471,11 @@ var ConditionalHelpers = /** @class */ (function () {
                 throw new Error('Invalid arguments');
             }
             var evaluation = input.toString().startsWith(test.toString());
-            return ConditionalHelpers.conditionalResponse(helper, evaluation);
+            return ConditionalHelpers.conditionalResponse(helper, this, evaluation);
         }
         catch (err) {
             console.error('Bristles Error -> Helper: startsWith, Error:', err.message);
-            return ConditionalHelpers.conditionalResponse(helper, false);
+            return ConditionalHelpers.conditionalResponse(helper, this, false);
         }
     };
     ConditionalHelpers._endsWith = function (input, test) {
@@ -479,11 +485,11 @@ var ConditionalHelpers = /** @class */ (function () {
                 throw new Error('Invalid arguments');
             }
             var evaluation = input.toString().endsWith(test.toString());
-            return ConditionalHelpers.conditionalResponse(helper, evaluation);
+            return ConditionalHelpers.conditionalResponse(helper, this, evaluation);
         }
         catch (err) {
             console.error('Bristles Error -> Helper: endsWith, Error:', err.message);
-            return ConditionalHelpers.conditionalResponse(helper, false);
+            return ConditionalHelpers.conditionalResponse(helper, this, false);
         }
     };
     ConditionalHelpers._includes = function (input, test) {
@@ -496,19 +502,19 @@ var ConditionalHelpers = /** @class */ (function () {
                 for (var _i = 0, _a = Object.entries(input); _i < _a.length; _i++) {
                     var _b = _a[_i], index = _b[0], item = _b[1];
                     if (!DeepDiff.diff(item, test)) {
-                        return ConditionalHelpers.conditionalResponse(helper, true, { index: index });
+                        return ConditionalHelpers.conditionalResponse(helper, this, true, { index: index });
                     }
                 }
-                return ConditionalHelpers.conditionalResponse(helper, false, { index: -1 });
+                return ConditionalHelpers.conditionalResponse(helper, this, false, { index: -1 });
             }
             else {
                 var index = input.indexOf(test);
-                return ConditionalHelpers.conditionalResponse(helper, index > -1, { index: index });
+                return ConditionalHelpers.conditionalResponse(helper, this, index > -1, { index: index });
             }
         }
         catch (err) {
             console.error('Bristles Error -> Helper: includes, Error:', err.message);
-            return ConditionalHelpers.conditionalResponse(helper, false);
+            return ConditionalHelpers.conditionalResponse(helper, this, false);
         }
     };
     /**
@@ -535,11 +541,11 @@ var ConditionalHelpers = /** @class */ (function () {
             var regex = new RegExp(expression, options);
             var matches = regex.exec(input) || false;
             var output = matches;
-            return ConditionalHelpers.conditionalResponse(helper, !!output, { output: output });
+            return ConditionalHelpers.conditionalResponse(helper, this, !!output, { output: output });
         }
         catch (err) {
             console.error('Bristles Error -> Helper: regexMatch, Error:', err.message);
-            return ConditionalHelpers.conditionalResponse(helper, false);
+            return ConditionalHelpers.conditionalResponse(helper, this, false);
         }
     };
     ConditionalHelpers._elseIfWrapper = function () {
@@ -550,11 +556,11 @@ var ConditionalHelpers = /** @class */ (function () {
             }
             helper.data['@elseIf'] = helper.data['@elseIf'] || [];
             helper.data['@elseIf'].push(false);
-            var output = helper.fn(helper.data);
+            var output = helper.fn(this);
             var level = helper.data['@elseIf'].length - 1;
             if (helper.data['@elseIf'][level] === false) {
                 if (helper.inverse) {
-                    output = helper.inverse(helper.data);
+                    output = helper.inverse(this);
                 }
                 else {
                     output = '';
@@ -581,7 +587,7 @@ var ConditionalHelpers = /** @class */ (function () {
             if (!helper.fn) {
                 throw new Error('The elseIf helper can only be used as a block helper');
             }
-            if (helper.inverse) {
+            if (helper.inverse.name !== 'noop') {
                 throw new Error('The elseIf helper should not contain an inverse/else block');
             }
             if (utilities_1.isOps(input)) {
@@ -590,7 +596,7 @@ var ConditionalHelpers = /** @class */ (function () {
             var evaluation = !!input;
             if (evaluation) {
                 helper.data['@elseIf'][level] = true;
-                return helper.fn(helper.data);
+                return helper.fn(this);
             }
             else {
                 return '';
@@ -667,17 +673,17 @@ var ConditionalHelpers = /** @class */ (function () {
             return '';
         }
     };
-    ConditionalHelpers.conditionalResponse = function (helper, evaluation, metadata) {
+    ConditionalHelpers.conditionalResponse = function (helper, context, evaluation, metadata) {
         if (metadata === void 0) { metadata = {}; }
         try {
             if (!utilities_1.isOps(helper)) {
                 throw new Error('The passed in helper is not a valid HelperOptions object');
             }
             if (!helper.fn) {
-                if (evaluation && helper.hash.hasOwnProperty('ifTrue')) {
+                if (evaluation && helper.hash && helper.hash.hasOwnProperty('ifTrue')) {
                     return helper.hash.ifTrue;
                 }
-                else if (!evaluation && helper.hash.hasOwnProperty('ifFalse')) {
+                else if (!evaluation && helper.hash && helper.hash.hasOwnProperty('ifFalse')) {
                     return helper.hash.ifFalse;
                 }
                 else {
@@ -688,17 +694,17 @@ var ConditionalHelpers = /** @class */ (function () {
                 var output = '';
                 for (var _i = 0, _a = Object.entries(metadata); _i < _a.length; _i++) {
                     var _b = _a[_i], key = _b[0], value = _b[1];
-                    helper.data['@' + key] = value;
+                    context['@' + key] = value;
                 }
                 if (evaluation) {
-                    output = helper.fn(helper.data);
+                    output = helper.fn(context);
                 }
                 else if (helper.inverse) {
-                    output = helper.inverse(helper.data);
+                    output = helper.inverse(context);
                 }
                 for (var _c = 0, _d = Object.keys(metadata); _c < _d.length; _c++) {
                     var key = _d[_c];
-                    delete helper.data['@' + key];
+                    delete context['@' + key];
                 }
                 return output;
             }

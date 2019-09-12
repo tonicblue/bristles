@@ -1,11 +1,4 @@
 "use strict";
-var __spreadArrays = (this && this.__spreadArrays) || function () {
-    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
-    for (var r = Array(s), k = 0, i = 0; i < il; i++)
-        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
-            r[k] = a[j];
-    return r;
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 var util_1 = require("util");
 var dot = require("dot-object");
@@ -41,6 +34,7 @@ var ArrayHelpers = /** @class */ (function () {
             return [];
         }
     };
+    //TODO: Context doesn't appear to be going through
     ArrayHelpers._each = function (input, join) {
         var helper = arguments[arguments.length - 1];
         try {
@@ -170,17 +164,60 @@ var ArrayHelpers = /** @class */ (function () {
             deleteCount = typeof deleteCount === 'number' ? deleteCount : 0;
             items = Array.isArray(items) ? items : [];
             if (helper.hash.mutate === true) {
-                return input.splice.apply(input, __spreadArrays([start, deleteCount], items));
+                return input.splice.apply(input, [start, deleteCount].concat(items));
             }
             else {
                 var clone = JSON.parse(JSON.stringify(input));
-                clone.splice.apply(clone, __spreadArrays([start, deleteCount], items));
+                clone.splice.apply(clone, [start, deleteCount].concat(items));
                 return clone;
             }
         }
         catch (err) {
             console.error('Bristles Error -> Helper: splice, Error:', err.message);
             return [];
+        }
+    };
+    ArrayHelpers._count = function (input) {
+        try {
+            var helper = arguments[arguments.length - 1];
+            if (utilities_1.isOps(input) || typeof input !== 'object') {
+                return 0;
+            }
+            if (Array.isArray(input)) {
+                return input.length;
+            }
+            else {
+                return Object.keys(input).length;
+            }
+        }
+        catch (err) {
+            console.error('Bristles Error -> Helper: count, Error:', err.message);
+            return 0;
+        }
+    };
+    ArrayHelpers._itemAt = function (input, index) {
+        try {
+            var helper = arguments[arguments.length - 1];
+            if (!Array.isArray(input) || typeof index !== 'number') {
+                throw new Error('Invalid arguments');
+            }
+            if (index < 0) {
+                var position = input.length + index;
+                if (position < 0) {
+                    throw new Error("Position " + position + " is out of bounds. Input has " + input.length + " items");
+                }
+                return input[position];
+            }
+            else {
+                if (index >= input.length) {
+                    throw new Error("Position " + index + " is out of bounds. Input has " + input.length + " items");
+                }
+                return input[index];
+            }
+        }
+        catch (err) {
+            console.error('Bristles Error -> Helper: itemAt, Error:', err.message);
+            return null;
         }
     };
     return ArrayHelpers;

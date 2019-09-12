@@ -17,10 +17,10 @@ export default class ConditionalHelpers {
     const helper: HelperOptions = arguments[arguments.length - 1];
     try {
       const evaluation = isOps(input) ? false : !!input;
-      return ConditionalHelpers.conditionalResponse(helper, evaluation);
+      return ConditionalHelpers.conditionalResponse(helper, this, evaluation, { input });
     } catch (err) {
       console.error('Bristles Error -> Helper: if, Error:', err.message);
-      return ConditionalHelpers.conditionalResponse(helper, false);
+      return ConditionalHelpers.conditionalResponse(helper, this, false);
     }
   }
 
@@ -28,10 +28,10 @@ export default class ConditionalHelpers {
     const helper: HelperOptions = arguments[arguments.length - 1];
     try {
       const evaluation = isOps(input) ? false : !!input;
-      return ConditionalHelpers.conditionalResponse(helper, !evaluation);
+      return ConditionalHelpers.conditionalResponse(helper, this, !evaluation);
     } catch (err) {
       console.error('Bristles Error -> Helper: unless, Error:', err.message);
-      return ConditionalHelpers.conditionalResponse(helper, false);
+      return ConditionalHelpers.conditionalResponse(helper, this, false);
     }
   }
 
@@ -47,10 +47,10 @@ export default class ConditionalHelpers {
           break;
         }
       }
-      return ConditionalHelpers.conditionalResponse(helper, evaluation);
+      return ConditionalHelpers.conditionalResponse(helper, this, evaluation);
     } catch (err) {
       console.error('Bristles Error -> Helper: ifAny, Error:', err.message);
-      return ConditionalHelpers.conditionalResponse(helper, false);
+      return ConditionalHelpers.conditionalResponse(helper, this, false);
     }
   }
 
@@ -66,10 +66,10 @@ export default class ConditionalHelpers {
           break;
         }
       }
-      return ConditionalHelpers.conditionalResponse(helper, evaluation);
+      return ConditionalHelpers.conditionalResponse(helper, this, evaluation);
     } catch (err) {
       console.error('Bristles Error -> Helper: unlessAll, Error:', err.message);
-      return ConditionalHelpers.conditionalResponse(helper, false);
+      return ConditionalHelpers.conditionalResponse(helper, this, false);
     }
   }
 
@@ -80,10 +80,10 @@ export default class ConditionalHelpers {
       args.pop();
       const trueArgs = args.filter(arg => { return !!arg; });
       const evaluation = trueArgs.length === args.length;
-      return ConditionalHelpers.conditionalResponse(helper, evaluation);
+      return ConditionalHelpers.conditionalResponse(helper, this, evaluation);
     } catch (err) {
       console.error('Bristles Error -> Helper: ifAll, Error:', err.message);
-      return ConditionalHelpers.conditionalResponse(helper, false);
+      return ConditionalHelpers.conditionalResponse(helper, this, false);
     }
   }
 
@@ -94,10 +94,10 @@ export default class ConditionalHelpers {
       args.pop();
       const falseArgs = args.filter(arg => { return !arg; });
       const evaluation = falseArgs.length === args.length;
-      return ConditionalHelpers.conditionalResponse(helper, evaluation);
+      return ConditionalHelpers.conditionalResponse(helper, this, evaluation);
     } catch (err) {
       console.error('Bristles Error -> Helper: ifNone, Error:', err.message);
-      return ConditionalHelpers.conditionalResponse(helper, false);
+      return ConditionalHelpers.conditionalResponse(helper, this, false);
     }
   }
 
@@ -108,10 +108,10 @@ export default class ConditionalHelpers {
         throw new Error('Invalid arguments');
       }
       const evaluation = target.hasOwnProperty(property);
-      return ConditionalHelpers.conditionalResponse(helper, evaluation);
+      return ConditionalHelpers.conditionalResponse(helper, this, evaluation);
     } catch (err) {
       console.error('Bristles Error -> Helper: has, Error:', err.message);
-      return ConditionalHelpers.conditionalResponse(helper, false);
+      return ConditionalHelpers.conditionalResponse(helper, this, false);
     }
   }
 
@@ -124,10 +124,10 @@ export default class ConditionalHelpers {
       args = Array.isArray(args[0]) ? args[0] : args;
       const missing = args.filter(arg => { return !target.hasOwnProperty(arg); });
       const evaluation = missing.length === 0;
-      return ConditionalHelpers.conditionalResponse(helper, evaluation, { missing });
+      return ConditionalHelpers.conditionalResponse(helper, this, evaluation, { missing });
     } catch (err) {
       console.error('Bristles Error -> Helper: ifAll, Error:', err.message);
-      return ConditionalHelpers.conditionalResponse(helper, false);
+      return ConditionalHelpers.conditionalResponse(helper, this, false);
     }
   }
 
@@ -147,10 +147,10 @@ export default class ConditionalHelpers {
         }
       }
       const evaluation = has.length > 0;
-      return ConditionalHelpers.conditionalResponse(helper, evaluation, { has, missing });
+      return ConditionalHelpers.conditionalResponse(helper, this, evaluation, { has, missing });
     } catch (err) {
       console.error('Bristles Error -> Helper: ifAll, Error:', err.message);
-      return ConditionalHelpers.conditionalResponse(helper, false);
+      return ConditionalHelpers.conditionalResponse(helper, this, false);
     }
   }
 
@@ -161,10 +161,10 @@ export default class ConditionalHelpers {
         throw new Error('Invalid arguments');
       }
       const evaluation = typeof input === 'string';
-      return ConditionalHelpers.conditionalResponse(helper, evaluation);
+      return ConditionalHelpers.conditionalResponse(helper, this, evaluation);
     } catch (err) {
       console.error('Bristles Error -> Helper: isString, Error:', err.message);
-      return ConditionalHelpers.conditionalResponse(helper, false);
+      return ConditionalHelpers.conditionalResponse(helper, this, false);
     }
   }
 
@@ -175,10 +175,10 @@ export default class ConditionalHelpers {
         throw new Error('Invalid arguments');
       }
       const evaluation = typeof input === 'number';
-      return ConditionalHelpers.conditionalResponse(helper, evaluation);
+      return ConditionalHelpers.conditionalResponse(helper, this, evaluation);
     } catch (err) {
       console.error('Bristles Error -> Helper: isNumber, Error:', err.message);
-      return ConditionalHelpers.conditionalResponse(helper, false);
+      return ConditionalHelpers.conditionalResponse(helper, this, false);
     }
   }
 
@@ -189,10 +189,10 @@ export default class ConditionalHelpers {
         throw new Error('Invalid arguments');
       }
       const evaluation = Number.isNaN(input);
-      return ConditionalHelpers.conditionalResponse(helper, evaluation);
+      return ConditionalHelpers.conditionalResponse(helper, this, evaluation);
     } catch (err) {
       console.error('Bristles Error -> Helper: isNumber, Error:', err.message);
-      return ConditionalHelpers.conditionalResponse(helper, false);
+      return ConditionalHelpers.conditionalResponse(helper, this, false);
     }
   }
 
@@ -203,10 +203,10 @@ export default class ConditionalHelpers {
         throw new Error('Invalid arguments');
       }
       const evaluation = Number.isFinite(input);
-      return ConditionalHelpers.conditionalResponse(helper, evaluation);
+      return ConditionalHelpers.conditionalResponse(helper, this, evaluation);
     } catch (err) {
       console.error('Bristles Error -> Helper: isNumber, Error:', err.message);
-      return ConditionalHelpers.conditionalResponse(helper, false);
+      return ConditionalHelpers.conditionalResponse(helper, this, false);
     }
   }
 
@@ -217,10 +217,10 @@ export default class ConditionalHelpers {
         throw new Error('Invalid arguments');
       }
       const evaluation = typeof input === 'boolean';
-      return ConditionalHelpers.conditionalResponse(helper, evaluation);
+      return ConditionalHelpers.conditionalResponse(helper, this, evaluation);
     } catch (err) {
       console.error('Bristles Error -> Helper: isBoolean, Error:', err.message);
-      return ConditionalHelpers.conditionalResponse(helper, false);
+      return ConditionalHelpers.conditionalResponse(helper, this, false);
     }
   }
 
@@ -231,10 +231,10 @@ export default class ConditionalHelpers {
         throw new Error('Invalid arguments');
       }
       const evaluation = typeof input === 'object' && !Array.isArray(input);
-      return ConditionalHelpers.conditionalResponse(helper, evaluation);
+      return ConditionalHelpers.conditionalResponse(helper, this, evaluation);
     } catch (err) {
       console.error('Bristles Error -> Helper: isObject, Error:', err.message);
-      return ConditionalHelpers.conditionalResponse(helper, false);
+      return ConditionalHelpers.conditionalResponse(helper, this, false);
     }
   }
 
@@ -245,10 +245,10 @@ export default class ConditionalHelpers {
         throw new Error('Invalid arguments');
       }
       const evaluation = Array.isArray(input);
-      return ConditionalHelpers.conditionalResponse(helper, evaluation);
+      return ConditionalHelpers.conditionalResponse(helper, this, evaluation);
     } catch (err) {
       console.error('Bristles Error -> Helper: isObject, Error:', err.message);
-      return ConditionalHelpers.conditionalResponse(helper, false);
+      return ConditionalHelpers.conditionalResponse(helper, this, false);
     }
   }
 
@@ -259,10 +259,10 @@ export default class ConditionalHelpers {
         throw new Error('Invalid arguments');
       }
       const evaluation = typeof input === 'function';
-      return ConditionalHelpers.conditionalResponse(helper, evaluation);
+      return ConditionalHelpers.conditionalResponse(helper, this, evaluation);
     } catch (err) {
       console.error('Bristles Error -> Helper: isFunction, Error:', err.message);
-      return ConditionalHelpers.conditionalResponse(helper, false);
+      return ConditionalHelpers.conditionalResponse(helper, this, false);
     }
   }
 
@@ -273,10 +273,10 @@ export default class ConditionalHelpers {
         throw new Error('Invalid arguments');
       }
       const evaluation = input === null;
-      return ConditionalHelpers.conditionalResponse(helper, evaluation);
+      return ConditionalHelpers.conditionalResponse(helper, this, evaluation);
     } catch (err) {
       console.error('Bristles Error -> Helper: isNull, Error:', err.message);
-      return ConditionalHelpers.conditionalResponse(helper, false);
+      return ConditionalHelpers.conditionalResponse(helper, this, false);
     }
   }
 
@@ -287,10 +287,10 @@ export default class ConditionalHelpers {
         throw new Error('Invalid arguments');
       }
       const evaluation = typeof input === 'undefined';
-      return ConditionalHelpers.conditionalResponse(helper, evaluation);
+      return ConditionalHelpers.conditionalResponse(helper, this, evaluation);
     } catch (err) {
       console.error('Bristles Error -> Helper: isUndefined, Error:', err.message);
-      return ConditionalHelpers.conditionalResponse(helper, false);
+      return ConditionalHelpers.conditionalResponse(helper, this, false);
     }
   }
 
@@ -304,7 +304,7 @@ export default class ConditionalHelpers {
       const testType = typeof test;
       const evaluation = inputType === testType;
       if (!evaluation || inputType !== 'object' || Array.isArray(input)) {
-        return ConditionalHelpers.conditionalResponse(helper, evaluation, { inputType, testType });
+        return ConditionalHelpers.conditionalResponse(helper, this, evaluation, { inputType, testType });
       }
 
       const inputProps = Object.getOwnPropertyNames(input);
@@ -324,10 +324,10 @@ export default class ConditionalHelpers {
         }
       }
 
-      return ConditionalHelpers.conditionalResponse(helper, differences.length === 0, { similarities, differences });
+      return ConditionalHelpers.conditionalResponse(helper, this, differences.length === 0, { similarities, differences });
     } catch (err) {
       console.error('Bristles Error -> Helper: gt, Error:', err.message);
-      return ConditionalHelpers.conditionalResponse(helper, false);
+      return ConditionalHelpers.conditionalResponse(helper, this, false);
     }
   }
 
@@ -338,10 +338,10 @@ export default class ConditionalHelpers {
         throw new Error('Invalid arguments');
       }
       const evaluation = inputA > inputB;
-      return ConditionalHelpers.conditionalResponse(helper, evaluation);
+      return ConditionalHelpers.conditionalResponse(helper, this, evaluation);
     } catch (err) {
       console.error('Bristles Error -> Helper: gt, Error:', err.message);
-      return ConditionalHelpers.conditionalResponse(helper, false);
+      return ConditionalHelpers.conditionalResponse(helper, this, false);
     }
   }
 
@@ -352,10 +352,10 @@ export default class ConditionalHelpers {
         throw new Error('Invalid arguments');
       }
       const evaluation = inputA >= inputB;
-      return ConditionalHelpers.conditionalResponse(helper, evaluation);
+      return ConditionalHelpers.conditionalResponse(helper, this, evaluation);
     } catch (err) {
       console.error('Bristles Error -> Helper: gt, Error:', err.message);
-      return ConditionalHelpers.conditionalResponse(helper, false);
+      return ConditionalHelpers.conditionalResponse(helper, this, false);
     }
   }
 
@@ -366,10 +366,10 @@ export default class ConditionalHelpers {
         throw new Error('Invalid arguments');
       }
       const evaluation = inputA < inputB;
-      return ConditionalHelpers.conditionalResponse(helper, evaluation);
+      return ConditionalHelpers.conditionalResponse(helper, this, evaluation);
     } catch (err) {
       console.error('Bristles Error -> Helper: lt, Error:', err.message);
-      return ConditionalHelpers.conditionalResponse(helper, false);
+      return ConditionalHelpers.conditionalResponse(helper, this, false);
     }
   }
 
@@ -380,10 +380,10 @@ export default class ConditionalHelpers {
         throw new Error('Invalid arguments');
       }
       const evaluation = inputA <= inputB;
-      return ConditionalHelpers.conditionalResponse(helper, evaluation);
+      return ConditionalHelpers.conditionalResponse(helper, this, evaluation);
     } catch (err) {
       console.error('Bristles Error -> Helper: lte, Error:', err.message);
-      return ConditionalHelpers.conditionalResponse(helper, false);
+      return ConditionalHelpers.conditionalResponse(helper, this, false);
     }
   }
 
@@ -395,14 +395,14 @@ export default class ConditionalHelpers {
       }
       if (typeof inputA === 'object' && typeof inputB === 'object') {
         const changes = DeepDiff.diff(inputA, inputB);
-        return ConditionalHelpers.conditionalResponse(helper, !changes, { changes });
+        return ConditionalHelpers.conditionalResponse(helper, this, !changes, { changes });
       } else {
         const evaluation = inputA == inputB;
-        return ConditionalHelpers.conditionalResponse(helper, evaluation);
+        return ConditionalHelpers.conditionalResponse(helper, this, evaluation);
       }
     } catch (err) {
       console.error('Bristles Error -> Helper: eq, Error:', err.message);
-      return ConditionalHelpers.conditionalResponse(helper, false);
+      return ConditionalHelpers.conditionalResponse(helper, this, false);
     }
   }
 
@@ -414,28 +414,33 @@ export default class ConditionalHelpers {
       }
       if (typeof inputA === 'object' && typeof inputB === 'object') {
         const changes = DeepDiff.diff(inputA, inputB);
-        return ConditionalHelpers.conditionalResponse(helper, !changes, { changes });
+        return ConditionalHelpers.conditionalResponse(helper, this, !changes, { changes });
       } else {
         const evaluation = inputA === inputB;
-        return ConditionalHelpers.conditionalResponse(helper, evaluation);
+        return ConditionalHelpers.conditionalResponse(helper, this, evaluation);
       }
     } catch (err) {
       console.error('Bristles Error -> Helper: teq, Error:', err.message);
-      return ConditionalHelpers.conditionalResponse(helper, false);
+      return ConditionalHelpers.conditionalResponse(helper, this, false);
     }
   }
 
   static _any(input: any[]): any {
     const helper: HelperOptions = arguments[arguments.length - 1];
     try {
-      if (isOps(input) || !Array.isArray(input)) {
+      if (isOps(input) || typeof input !== 'object') {
         throw new Error('Invalid arguments');
       }
-      const length = input.length;
-      return ConditionalHelpers.conditionalResponse(helper, length > 0, { length });
+      let length = 0;
+      if (Array.isArray(input)) {
+        length = input.length;
+      } else {
+        length = Object.keys(input).length;
+      }
+      return ConditionalHelpers.conditionalResponse(helper, this, length > 0, { length });
     } catch (err) {
       console.error('Bristles Error -> Helper: any, Error:', err.message);
-      return ConditionalHelpers.conditionalResponse(helper, false);
+      return ConditionalHelpers.conditionalResponse(helper, this, false);
     }
   }
 
@@ -446,10 +451,10 @@ export default class ConditionalHelpers {
         throw new Error('Invalid arguments');
       }
       const index = input.toString().indexOf(test.toString());
-      return ConditionalHelpers.conditionalResponse(helper, index > -1, { index });
+      return ConditionalHelpers.conditionalResponse(helper, this, index > -1, { index });
     } catch (err) {
       console.error('Bristles Error -> Helper: contains, Error:', err.message);
-      return ConditionalHelpers.conditionalResponse(helper, false);
+      return ConditionalHelpers.conditionalResponse(helper, this, false);
     }
   }
 
@@ -460,10 +465,10 @@ export default class ConditionalHelpers {
         throw new Error('Invalid arguments');
       }
       const evaluation = input.toString().startsWith(test.toString());
-      return ConditionalHelpers.conditionalResponse(helper, evaluation);
+      return ConditionalHelpers.conditionalResponse(helper, this, evaluation);
     } catch (err) {
       console.error('Bristles Error -> Helper: startsWith, Error:', err.message);
-      return ConditionalHelpers.conditionalResponse(helper, false);
+      return ConditionalHelpers.conditionalResponse(helper, this, false);
     }
   }
 
@@ -474,10 +479,10 @@ export default class ConditionalHelpers {
         throw new Error('Invalid arguments');
       }
       const evaluation = input.toString().endsWith(test.toString());
-      return ConditionalHelpers.conditionalResponse(helper, evaluation);
+      return ConditionalHelpers.conditionalResponse(helper, this, evaluation);
     } catch (err) {
       console.error('Bristles Error -> Helper: endsWith, Error:', err.message);
-      return ConditionalHelpers.conditionalResponse(helper, false);
+      return ConditionalHelpers.conditionalResponse(helper, this, false);
     }
   }
 
@@ -490,17 +495,17 @@ export default class ConditionalHelpers {
       if (typeof test === 'object') {
         for (const [index, item] of Object.entries(input)) {
           if (!DeepDiff.diff(item, test)) {
-            return ConditionalHelpers.conditionalResponse(helper, true, { index });
+            return ConditionalHelpers.conditionalResponse(helper, this, true, { index });
           }
         }
-        return ConditionalHelpers.conditionalResponse(helper, false, { index: -1 });
+        return ConditionalHelpers.conditionalResponse(helper, this, false, { index: -1 });
       } else {
         const index = input.indexOf(test);
-        return ConditionalHelpers.conditionalResponse(helper, index > -1, { index });
+        return ConditionalHelpers.conditionalResponse(helper, this, index > -1, { index });
       }
     } catch (err) {
       console.error('Bristles Error -> Helper: includes, Error:', err.message);
-      return ConditionalHelpers.conditionalResponse(helper, false);
+      return ConditionalHelpers.conditionalResponse(helper, this, false);
     }
   }
 
@@ -531,10 +536,10 @@ export default class ConditionalHelpers {
       const matches = regex.exec(input) || false;
       const output: false | string[] | string = matches;
 
-      return ConditionalHelpers.conditionalResponse(helper, !!output, { output });
+      return ConditionalHelpers.conditionalResponse(helper, this, !!output, { output });
     } catch (err) {
       console.error('Bristles Error -> Helper: regexMatch, Error:', err.message);
-      return ConditionalHelpers.conditionalResponse(helper, false);
+      return ConditionalHelpers.conditionalResponse(helper, this, false);
     }
   }
 
@@ -549,12 +554,12 @@ export default class ConditionalHelpers {
       helper.data['@elseIf'] = helper.data['@elseIf'] || [];
       helper.data['@elseIf'].push(false);
 
-      let output = helper.fn(helper.data);
+      let output = helper.fn(this);
       const level = helper.data['@elseIf'].length - 1;
 
       if (helper.data['@elseIf'][level] === false) {
         if (helper.inverse) {
-          output = helper.inverse(helper.data);
+          output = helper.inverse(this);
         } else {
           output = '';
         }
@@ -584,7 +589,7 @@ export default class ConditionalHelpers {
         throw new Error('The elseIf helper can only be used as a block helper');
       }
 
-      if (helper.inverse) {
+      if (helper.inverse.name !== 'noop') {
         throw new Error('The elseIf helper should not contain an inverse/else block')
       }
 
@@ -595,7 +600,7 @@ export default class ConditionalHelpers {
       const evaluation = !!input;
       if (evaluation) {
         helper.data['@elseIf'][level] = true;
-        return helper.fn(helper.data);
+        return helper.fn(this);
       } else {
         return '';
       }
@@ -681,16 +686,16 @@ export default class ConditionalHelpers {
     }
   }
 
-  static conditionalResponse(helper: HelperOptions, evaluation: boolean, metadata: Map<any> = {}): any {
+  static conditionalResponse(helper: HelperOptions, context: any, evaluation: boolean, metadata: Map<any> = {}): any {
     try {
       if (!isOps(helper)) {
         throw new Error('The passed in helper is not a valid HelperOptions object');
       }
 
       if (!helper.fn) {
-        if (evaluation && helper.hash.hasOwnProperty('ifTrue')) {
+        if (evaluation && helper.hash && helper.hash.hasOwnProperty('ifTrue')) {
           return helper.hash.ifTrue;
-        } else if (!evaluation && helper.hash.hasOwnProperty('ifFalse')) {
+        } else if (!evaluation && helper.hash && helper.hash.hasOwnProperty('ifFalse')) {
           return helper.hash.ifFalse;
         } else {
           return evaluation;
@@ -699,17 +704,17 @@ export default class ConditionalHelpers {
         let output = '';
 
         for (const [key, value] of Object.entries(metadata)) {
-          helper.data['@' + key] = value;
+          context['@' + key] = value;
         }
 
         if (evaluation) {
-          output = helper.fn(helper.data);
+          output = helper.fn(context);
         } else if (helper.inverse) {
-          output = helper.inverse(helper.data);
+          output = helper.inverse(context);
         }
 
         for (const key of Object.keys(metadata)) {
-          delete helper.data['@' + key];
+          delete context['@' + key];
         }
 
         return output;

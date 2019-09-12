@@ -342,7 +342,7 @@ var StringHelpers = /** @class */ (function () {
             return typeof input === 'string' ? input : '';
         }
     };
-    StringHelpers._count = function (input, substring) {
+    StringHelpers._countOccurances = function (input, substring) {
         try {
             var helper = arguments[arguments.length - 1];
             if (typeof input !== 'string' || typeof substring !== 'string') {
@@ -351,7 +351,7 @@ var StringHelpers = /** @class */ (function () {
             return S(input).count(substring);
         }
         catch (err) {
-            console.error('Bristles Error -> Helper: count, Error:', err.message);
+            console.error('Bristles Error -> Helper: countOccurances, Error:', err.message);
             return 0;
         }
     };
@@ -455,16 +455,72 @@ var StringHelpers = /** @class */ (function () {
             return typeof input === 'string' ? input : '';
         }
     };
+    StringHelpers._regexReplace = function (input, match, options, replacement) {
+        try {
+            var helper = arguments[arguments.length - 1];
+            if (typeof input !== 'string') {
+                return '';
+            }
+            if (typeof match !== 'string' || typeof options !== 'string' || typeof replacement !== 'string') {
+                return input;
+            }
+            var regex = new RegExp(match, options);
+            return input.replace(regex, replacement);
+        }
+        catch (err) {
+            console.error('Bristles Error -> Helper: replace, Error:', err.message);
+            return typeof input === 'string' ? input : '';
+        }
+    };
     StringHelpers._slugify = function (input) {
         try {
             var helper = arguments[arguments.length - 1];
             if (typeof input !== 'string') {
                 return '';
             }
-            return S(input).slugify().s;
+            return S(input.replace(/\//g, '-')).slugify().s;
         }
         catch (err) {
             console.error('Bristles Error -> Helper: slugify, Error:', err.message);
+            return typeof input === 'string' ? input : '';
+        }
+    };
+    StringHelpers._trim = function (input) {
+        try {
+            var helper = arguments[arguments.length - 1];
+            if (typeof input !== 'string') {
+                return '';
+            }
+            return S(input).trim().s;
+        }
+        catch (err) {
+            console.error('Bristles Error -> Helper: trim, Error:', err.message);
+            return typeof input === 'string' ? input : '';
+        }
+    };
+    StringHelpers._trimLeft = function (input) {
+        try {
+            var helper = arguments[arguments.length - 1];
+            if (typeof input !== 'string') {
+                return '';
+            }
+            return S(input).trimLeft().s;
+        }
+        catch (err) {
+            console.error('Bristles Error -> Helper: trimLeft, Error:', err.message);
+            return typeof input === 'string' ? input : '';
+        }
+    };
+    StringHelpers._trimRight = function (input) {
+        try {
+            var helper = arguments[arguments.length - 1];
+            if (typeof input !== 'string') {
+                return '';
+            }
+            return S(input).trimRight().s;
+        }
+        catch (err) {
+            console.error('Bristles Error -> Helper: trimRight, Error:', err.message);
             return typeof input === 'string' ? input : '';
         }
     };
@@ -499,7 +555,9 @@ var StringHelpers = /** @class */ (function () {
     StringHelpers._stripTags = function (input) {
         var _a;
         try {
-            var tags = Array.from(arguments).pop().shift();
+            var tags = Array.from(arguments);
+            tags.pop();
+            tags.shift();
             if (typeof input !== 'string') {
                 return '';
             }
@@ -563,6 +621,44 @@ var StringHelpers = /** @class */ (function () {
         }
         catch (err) {
             console.error('Bristles Error -> Helper: underscore, Error:', err.message);
+            return typeof input === 'string' ? input : '';
+        }
+    };
+    StringHelpers._match = function (input, pattern, options) {
+        try {
+            var helper = arguments[arguments.length - 1];
+            if (typeof input !== 'string' || typeof pattern !== 'string') {
+                return '';
+            }
+            options = typeof options === 'string' ? options : 'gi';
+            var regex = new RegExp(pattern, options);
+            var matches = [];
+            var match = null;
+            while ((match = regex.exec(input)) !== null) {
+                matches.push(match);
+            }
+            if (helper.fn) {
+                if (matches.length === 0 && helper.inverse) {
+                    return helper.inverse(this);
+                }
+                else if (matches.length > 0) {
+                    var output = [];
+                    for (var index = 0; index < matches.length; index++) {
+                        var context = {
+                            match: matches[index],
+                            first: index === 0,
+                            last: index === matches.length - 1,
+                            index: index
+                        };
+                        output.push(helper.fn(context));
+                    }
+                    return output.join('');
+                }
+            }
+            return matches;
+        }
+        catch (err) {
+            console.error('Bristles Error -> Helper: match, Error:', err.message);
             return typeof input === 'string' ? input : '';
         }
     };

@@ -35,6 +35,7 @@ export default class ArrayHelpers {
     }
   }
 
+  //TODO: Context doesn't appear to be going through
   static _each(input: any, join: string): string {
     const helper: HelperOptions = arguments[arguments.length - 1];
     try {
@@ -185,6 +186,48 @@ export default class ArrayHelpers {
     } catch(err) {
       console.error('Bristles Error -> Helper: splice, Error:', err.message);
       return [];
+    }
+  }
+
+  static _count(input: any): number {
+    try {
+      const helper: HelperOptions = arguments[arguments.length - 1];
+      if (isOps(input) || typeof input !== 'object') {
+        return 0;
+      }
+      if (Array.isArray(input)) {
+        return input.length;
+      } else {
+        return Object.keys(input).length;
+      }
+    } catch(err) {
+      console.error('Bristles Error -> Helper: count, Error:', err.message);
+      return 0;
+    }
+  }
+
+  static _itemAt(input: any[], index: number): any {
+    try {
+      const helper: HelperOptions = arguments[arguments.length - 1];
+      if (!Array.isArray(input) || typeof index !== 'number') {
+        throw new Error('Invalid arguments');
+      }
+
+      if (index < 0) {
+        const position = input.length + index;
+        if (position < 0) {
+          throw new Error(`Position ${position} is out of bounds. Input has ${input.length} items`);
+        }
+        return input[position];
+      } else {
+        if (index >= input.length) {
+          throw new Error(`Position ${index} is out of bounds. Input has ${input.length} items`);
+        }
+        return input[index];
+      }
+    } catch(err) {
+      console.error('Bristles Error -> Helper: itemAt, Error:', err.message);
+      return null;
     }
   }
 }

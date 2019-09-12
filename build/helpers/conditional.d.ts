@@ -57,5 +57,5 @@ export default class ConditionalHelpers {
     static _elseIf(input: any): string;
     static _switch(input: any): string;
     static _case(input: any): string;
-    static conditionalResponse(helper: HelperOptions, evaluation: boolean, metadata?: Map<any>): any;
+    static conditionalResponse(helper: HelperOptions, context: any, evaluation: boolean, metadata?: Map<any>): any;
 }

@@ -1,6 +1,7 @@
 import { HelperOptions, TemplateDelegate } from 'handlebars';
 
 const JSON6: any = require('json-6');
+const SafeStringify = require('fast-safe-stringify');
 
 /**
  * TODO:
@@ -47,9 +48,9 @@ export default class UtilityHelpers {
         }
       }
       if (helper.hash.key) {
-        return JSON.stringify(helper.hash.key) + ': ' + JSON.stringify(value, null, 4);
+        return SafeStringify(helper.hash.key) + ': ' + SafeStringify(value, null, 4);
       } else {
-        return JSON.stringify(value, null, 4);
+        return SafeStringify(value, null, 4);
       }
     } catch(err) {
       console.error('Bristles Error -> Helper: json, Error:', err.message);

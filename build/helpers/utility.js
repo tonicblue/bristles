@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var JSON6 = require('json-6');
+var SafeStringify = require('fast-safe-stringify');
 /**
  * TODO:
  * CSV parse and unparse functions
@@ -49,10 +50,10 @@ var UtilityHelpers = /** @class */ (function () {
                 }
             }
             if (helper.hash.key) {
-                return JSON.stringify(helper.hash.key) + ': ' + JSON.stringify(value, null, 4);
+                return SafeStringify(helper.hash.key) + ': ' + SafeStringify(value, null, 4);
             }
             else {
-                return JSON.stringify(value, null, 4);
+                return SafeStringify(value, null, 4);
             }
         }
         catch (err) {
