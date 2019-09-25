@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+var Querystring = require("querystring");
 var dot = require("dot-object");
 var utilities_1 = require("../utilities");
 var JSON6 = require('json-6');
@@ -95,6 +96,9 @@ var ObjectHelpers = /** @class */ (function () {
                     break;
                 case ('boolean'):
                     value = Boolean(value);
+                    break;
+                case ('querystring'):
+                    value = Querystring.parse(value);
                     break;
             }
             if (helper.hash.context) {

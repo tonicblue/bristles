@@ -1,3 +1,4 @@
+import * as Querystring from 'querystring';
 import { HelperOptions, TemplateDelegate } from 'handlebars';
 import * as dot from 'dot-object';
 import { isOps } from '../utilities';
@@ -98,6 +99,9 @@ export default class ObjectHelpers {
           break;
         case ('boolean'):
           value = Boolean(value);
+          break;
+        case ('querystring'):
+          value = Querystring.parse(value);
           break;
       }
 
