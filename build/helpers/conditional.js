@@ -650,10 +650,10 @@ var ConditionalHelpers = /** @class */ (function () {
                 return '';
             }
             if (!helper.fn) {
-                throw new Error('The elseIf helper can only be used as a block helper');
+                throw new Error('The case helper can only be used as a block helper');
             }
-            if (helper.inverse) {
-                throw new Error('The elseIf helper should not contain an inverse/else block');
+            if (helper.inverse.name !== 'noop') {
+                throw new Error('The case helper should not contain an inverse/else block');
             }
             if (utilities_1.isOps(input)) {
                 throw new Error('Invalid arguments');
