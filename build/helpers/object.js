@@ -59,7 +59,7 @@ var ObjectHelpers = /** @class */ (function () {
             if (typeof path !== 'string') {
                 throw new Error('Invalid arguments');
             }
-            return dot.pick(path, context) || null;
+            return dot.pick(path, context);
         }
         catch (err) {
             console.error('Bristles Error -> Helper: get, Error:', err.message);
