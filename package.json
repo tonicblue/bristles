@@ -3,7 +3,7 @@
   "engines": {
     "node": ">=10"
   },
-  "version": "0.0.15",
+  "version": "0.0.16",
   "description": "Handlebars but with some a lot of useful helpers",
   "main": "build/index.js",
   "types": "build/index.d.ts",
@@ -27,7 +27,7 @@
     "deepmerge": "^3.3.0",
     "dot-object": "^1.8.1",
     "fast-safe-stringify": "^2.0.6",
-    "handlebars": "^4.1.2",
+    "handlebars": "4.1.2",
     "json-6": "^1.0.2",
     "string": "^3.3.3"
   },
