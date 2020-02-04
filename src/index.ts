@@ -4,6 +4,7 @@ import ConditionalHelpers from './helpers/conditional';
 import ArrayHelpers from './helpers/array';
 import ObjectHelpers from './helpers/object';
 import UtilityHelpers from './helpers/utility';
+import NumberHelpers from './helpers/number';
 
 export function BristlesFactory(hbs?: typeof Handlebars): typeof Handlebars{
   hbs = hbs || Handlebars;
@@ -12,6 +13,7 @@ export function BristlesFactory(hbs?: typeof Handlebars): typeof Handlebars{
   registerHelpers(hbs, ArrayHelpers);
   registerHelpers(hbs, ObjectHelpers);
   registerHelpers(hbs, UtilityHelpers);
+  registerHelpers(hbs, NumberHelpers);
   return hbs as typeof Handlebars;
 }
 
