@@ -16,7 +16,7 @@ var NumberHelpers = /** @class */ (function () {
             return args.reduce(function (a, b) { return a + b; });
         }
         catch (err) {
-            console.error('Bristles Error -> Helper: count, Error:', err.message);
+            console.error('Bristles Error -> Helper: sum, Error:', err.message);
             return 0;
         }
     };

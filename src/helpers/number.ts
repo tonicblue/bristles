@@ -10,7 +10,7 @@ export default class NumberHelpers {
       const helper: HelperOptions = arguments[arguments.length - 1];
       return args.reduce(function(a, b){ return a + b; });
     } catch (err) {
-      console.error('Bristles Error -> Helper: count, Error:', err.message);
+      console.error('Bristles Error -> Helper: sum, Error:', err.message);
       return 0;
     }
   }
