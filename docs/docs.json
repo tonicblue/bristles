@@ -12,7 +12,7 @@
 			"flags": {
 				"isExported": true
 			},
-			"originalName": "/home/tonicblue/code/scvo/bristles/src/helpers/array.ts",
+			"originalName": "/home/alex/WebstormProjects/scvo/bristles/src/helpers/array.ts",
 			"children": [
 				{
 					"id": 10,
@@ -629,7 +629,7 @@
 			"flags": {
 				"isExported": true
 			},
-			"originalName": "/home/tonicblue/code/scvo/bristles/src/helpers/conditional.ts",
+			"originalName": "/home/alex/WebstormProjects/scvo/bristles/src/helpers/conditional.ts",
 			"children": [
 				{
 					"id": 46,
@@ -2470,7 +2470,7 @@
 			"flags": {
 				"isExported": true
 			},
-			"originalName": "/home/tonicblue/code/scvo/bristles/src/helpers/number.ts",
+			"originalName": "/home/alex/WebstormProjects/scvo/bristles/src/helpers/number.ts",
 			"children": [
 				{
 					"id": 169,
@@ -2576,7 +2576,7 @@
 			"flags": {
 				"isExported": true
 			},
-			"originalName": "/home/tonicblue/code/scvo/bristles/src/helpers/object.ts",
+			"originalName": "/home/alex/WebstormProjects/scvo/bristles/src/helpers/object.ts",
 			"children": [
 				{
 					"id": 174,
@@ -2923,7 +2923,7 @@
 			"flags": {
 				"isExported": true
 			},
-			"originalName": "/home/tonicblue/code/scvo/bristles/src/helpers/string.ts",
+			"originalName": "/home/alex/WebstormProjects/scvo/bristles/src/helpers/string.ts",
 			"children": [
 				{
 					"id": 195,
@@ -5083,7 +5083,7 @@
 			"flags": {
 				"isExported": true
 			},
-			"originalName": "/home/tonicblue/code/scvo/bristles/src/helpers/utility.ts",
+			"originalName": "/home/alex/WebstormProjects/scvo/bristles/src/helpers/utility.ts",
 			"children": [
 				{
 					"id": 336,
@@ -5368,7 +5368,7 @@
 			"flags": {
 				"isExported": true
 			},
-			"originalName": "/home/tonicblue/code/scvo/bristles/src/index.ts",
+			"originalName": "/home/alex/WebstormProjects/scvo/bristles/src/index.ts",
 			"children": [
 				{
 					"id": 352,
@@ -5530,7 +5530,7 @@
 			"flags": {
 				"isExported": true
 			},
-			"originalName": "/home/tonicblue/code/scvo/bristles/src/utilities.ts",
+			"originalName": "/home/alex/WebstormProjects/scvo/bristles/src/utilities.ts",
 			"children": [
 				{
 					"id": 2,

@@ -13,6 +13,7 @@ var NumberHelpers = /** @class */ (function () {
         }
         try {
             var helper = arguments[arguments.length - 1];
+            args.pop();
             return args.reduce(function (a, b) { return a + b; });
         }
         catch (err) {
