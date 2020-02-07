@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 var S = require("string");
 /**
  * TODO: Functions
@@ -664,5 +664,5 @@ var StringHelpers = /** @class */ (function () {
     };
     return StringHelpers;
 }());
-exports["default"] = StringHelpers;
+exports.default = StringHelpers;
 //# sourceMappingURL=string.js.map

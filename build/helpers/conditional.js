@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 var DeepDiff = require("deep-diff");
 var utilities_1 = require("../utilities");
 /**
@@ -716,5 +716,5 @@ var ConditionalHelpers = /** @class */ (function () {
     };
     return ConditionalHelpers;
 }());
-exports["default"] = ConditionalHelpers;
+exports.default = ConditionalHelpers;
 //# sourceMappingURL=conditional.js.map

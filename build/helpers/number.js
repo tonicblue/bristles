@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * A bunch of helpers for working with numbers
  */
@@ -22,5 +22,5 @@ var NumberHelpers = /** @class */ (function () {
     };
     return NumberHelpers;
 }());
-exports["default"] = NumberHelpers;
+exports.default = NumberHelpers;
 //# sourceMappingURL=number.js.map
