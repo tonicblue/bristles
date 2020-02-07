@@ -1,5 +1,5 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+exports.__esModule = true;
 var JSON6 = require('json-6');
 var SafeStringify = require('fast-safe-stringify');
 /**
@@ -123,5 +123,5 @@ var UtilityHelpers = /** @class */ (function () {
     };
     return UtilityHelpers;
 }());
-exports.default = UtilityHelpers;
+exports["default"] = UtilityHelpers;
 //# sourceMappingURL=utility.js.map

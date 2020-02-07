@@ -1,5 +1,5 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+exports.__esModule = true;
 var Handlebars = require("handlebars");
 var string_1 = require("./helpers/string");
 var conditional_1 = require("./helpers/conditional");
@@ -9,12 +9,12 @@ var utility_1 = require("./helpers/utility");
 var number_1 = require("./helpers/number");
 function BristlesFactory(hbs) {
     hbs = hbs || Handlebars;
-    registerHelpers(hbs, string_1.default);
-    registerHelpers(hbs, conditional_1.default);
-    registerHelpers(hbs, array_1.default);
-    registerHelpers(hbs, object_1.default);
-    registerHelpers(hbs, utility_1.default);
-    registerHelpers(hbs, number_1.default);
+    registerHelpers(hbs, string_1["default"]);
+    registerHelpers(hbs, conditional_1["default"]);
+    registerHelpers(hbs, array_1["default"]);
+    registerHelpers(hbs, object_1["default"]);
+    registerHelpers(hbs, utility_1["default"]);
+    registerHelpers(hbs, number_1["default"]);
     return hbs;
 }
 exports.BristlesFactory = BristlesFactory;

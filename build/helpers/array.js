@@ -1,5 +1,5 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+exports.__esModule = true;
 var util_1 = require("util");
 var dot = require("dot-object");
 var utilities_1 = require("../utilities");
@@ -222,5 +222,5 @@ var ArrayHelpers = /** @class */ (function () {
     };
     return ArrayHelpers;
 }());
-exports.default = ArrayHelpers;
+exports["default"] = ArrayHelpers;
 //# sourceMappingURL=array.js.map
