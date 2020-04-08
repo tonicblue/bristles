@@ -628,12 +628,12 @@ export default class ConditionalHelpers {
         resolved: false
       });
 
-      let output = helper.fn(helper.data);
+      let output = helper.fn(this);
       const level = helper.data['@switch'].length - 1;
 
       if (helper.data['@switch'][level].resolved === false) {
         if (helper.inverse) {
-          output = helper.inverse(helper.data);
+          output = helper.inverse(this);
         } else {
           output = '';
         }
@@ -676,7 +676,7 @@ export default class ConditionalHelpers {
 
       if (evaluation) {
         helper.data['@switch'][level].resolved = true;
-        return helper.fn(helper.data);
+        return helper.fn(this);
       } else {
         return '';
       }
