@@ -1,5 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+var utilities_1 = require("../utilities");
+var html_attributes_map_1 = require("./html-attributes-map");
 var JSON6 = require('json-6');
 var SafeStringify = require('fast-safe-stringify');
 /**
@@ -93,6 +95,96 @@ var UtilityHelpers = /** @class */ (function () {
             console.error('Bristles Error -> Helper: coalesce, Error:', err.message);
             return null;
         }
+    };
+    UtilityHelpers._raw = function (options) {
+        return options.fn(this);
+    };
+    UtilityHelpers._lookupMap = function () {
+        try {
+            var args = Array.from(arguments);
+            var options = args.pop();
+            var map = {};
+            for (var _i = 0, _a = Object.entries(options.hash); _i < _a.length; _i++) {
+                var _b = _a[_i], key = _b[0], value = _b[1];
+                var values = Array.isArray(value) ? value : [value];
+                for (var _c = 0, values_1 = values; _c < values_1.length; _c++) {
+                    var item = values_1[_c];
+                    map[item] = key;
+                }
+            }
+            if (args.length > 0) {
+                var input = args[0];
+                if (map.hasOwnProperty(input)) {
+                    return map[input];
+                }
+                else if (args.length > 1) {
+                    return args[1];
+                }
+                else {
+                    return null;
+                }
+            }
+            else {
+                return map;
+            }
+        }
+        catch (err) {
+            console.error('Bristles Error -> Helper: lookup, Error:', err.message);
+            return null;
+        }
+    };
+    UtilityHelpers._toHtmlAttributes = function (input) {
+        var attributes = [];
+        try {
+            if (typeof input === 'string') {
+                return input;
+            }
+            if (utilities_1.isOps(input)) {
+                throw new Error('No input provided');
+            }
+            if (typeof input !== 'object' || Array.isArray(input)) {
+                throw new Error('Invalid input type. Inputs must be an object or a string (for pass-through)');
+            }
+            var options = Array.from(arguments).pop();
+            var ignore = options.hash.ignore || [];
+            var tagName = options.hash.tagName || false;
+            var booleanAttributes = [
+                'async', 'autofocus', 'autoplay', 'checked', 'contenteditable', 'controls', 'default',
+                'defer', 'disabled', 'formNoValidate', 'frameborder', 'hidden', 'ismap', 'itemscope',
+                'loop', 'multiple', 'muted', 'nomodule', 'novalidate', 'open', 'readonly', 'required',
+                'reversed', 'scoped', 'selected', 'typemustmatch'
+            ];
+            for (var _i = 0, _a = Object.entries(input); _i < _a.length; _i++) {
+                var _b = _a[_i], key = _b[0], value = _b[1];
+                if (tagName && !key.startsWith('data-')) {
+                    var attribute = html_attributes_map_1.HTML_ATTRIBUTES_MAP[key] || [];
+                    if (attribute !== true && attribute.includes(tagName)) {
+                        continue;
+                    }
+                }
+                if (ignore.includes(key)) {
+                    continue;
+                }
+                if (booleanAttributes.includes(key)) {
+                    if (!!value) {
+                        attributes.push(key);
+                    }
+                }
+                else if (typeof value === 'object') {
+                    var stringified = JSON.stringify(value);
+                    var escaped = stringified.replace(/'/g, '&apos;');
+                    attributes.push(key + "='" + escaped + "'");
+                }
+                else {
+                    var escaped = ('' + value).replace(/"/g, '&quot;');
+                    attributes.push(key + "=\"" + escaped + "\"");
+                }
+            }
+        }
+        catch (err) {
+            console.error('Bristles Error -> Helper: toHtmlAttributes, Error:', err.message);
+        }
+        return attributes.join(' ');
     };
     /*TODO: This isn't currently returning anything and I need to give this some proper thought
     *       and security consideration such as checking that the evaluated function does not

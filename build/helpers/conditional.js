@@ -621,11 +621,11 @@ var ConditionalHelpers = /** @class */ (function () {
                 value: input,
                 resolved: false
             });
-            var output = helper.fn(helper.data);
+            var output = helper.fn(this);
             var level = helper.data['@switch'].length - 1;
             if (helper.data['@switch'][level].resolved === false) {
                 if (helper.inverse) {
-                    output = helper.inverse(helper.data);
+                    output = helper.inverse(this);
                 }
                 else {
                     output = '';
@@ -662,7 +662,7 @@ var ConditionalHelpers = /** @class */ (function () {
             var evaluation = input == value;
             if (evaluation) {
                 helper.data['@switch'][level].resolved = true;
-                return helper.fn(helper.data);
+                return helper.fn(this);
             }
             else {
                 return '';

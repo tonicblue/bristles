@@ -35,7 +35,6 @@ export default class ArrayHelpers {
     }
   }
 
-  //TODO: Context doesn't appear to be going through
   static _each(input: any, join: string): string {
     const helper: HelperOptions = arguments[arguments.length - 1];
     try {
@@ -48,44 +47,34 @@ export default class ArrayHelpers {
       }
 
       let outputs: string[] = [];
-      input = typeof input !== 'object' ? [input] : input;
+      input = typeof input === 'undefined' ? [] : typeof input !== 'object' ? [input] : input;
 
       if (Array.isArray(input)) {
         const total = '' + input.length;
         for (const index in input) {
-          if (index === '0') {
-            helper.data['@first'] = true;
-          }
-          if (index === total) {
-            helper.data['@last'] = true;
-          }
+          const data = {
+            '__first': index === '0',
+            '__last': index === total,
+            '__index': index
+          };
+          const item = Object.assign(input[index], data);
 
-          helper.data['@index'] = index;
-          const output = helper.fn(input[index]).trim();
+          const output = helper.fn(item).trim();
           outputs.push(output);
-
-          delete helper.data['@first'];
-          delete helper.data['@last'];
-          delete helper.data['@index'];
         }
       } else {
         const keys = Object.keys(input);
         const total = '' + keys.length;
         for (const index in keys) {
-          if (index === '0') {
-            helper.data['@first'] = true;
-          }
-          if (index === total) {
-            helper.data['@last'] = true;
-          }
+          const data = {
+            '__first': index === '0',
+            '__last': index === total,
+            '__key': keys[index]
+          };
+          const item = Object.assign(input[keys[index]], data);
 
-          helper.data['@key'] = keys[index];
-          const output = helper.fn(input[keys[index]]).trim();
+          const output = helper.fn(item).trim();
           outputs.push(output);
-
-          delete helper.data['@first'];
-          delete helper.data['@last'];
-          delete helper.data['@key'];
         }
       }
 
@@ -228,6 +217,39 @@ export default class ArrayHelpers {
     } catch(err) {
       console.error('Bristles Error -> Helper: itemAt, Error:', err.message);
       return null;
+    }
+  }
+
+  static _array(): any[] {
+    try {
+      const args = Array.from(arguments);
+      return args.slice(0, args.length - 1);
+    } catch(err) {
+      console.error('Bristles Error -> Helper: array, Error:', err.message);
+      return [];
+    }
+  }
+
+  static _join(input: any[], separator: string): string {
+    try {
+      if (!Array.isArray(input)) {
+        throw new Error('First argument must be an array');
+      }
+
+      separator = typeof separator === 'string' ? separator : ',';
+      const options: HelperOptions = Array.from(arguments).pop();
+
+      if (input.length === 0 && options.hash.wrapEmpty !== true) {
+        return '';
+      }
+
+      const joined = input.join(separator);
+      const left = options.hash.left || '';
+      const right = options.hash.right || '';
+      return `${left}${joined}${right}`;
+    } catch(err) {
+      console.error('Bristles Error -> Helper: join, Error:', err.message);
+      return '';
     }
   }
 }

@@ -22,4 +22,6 @@ export default class ArrayHelpers {
     static _splice(input: any[], start?: number, deleteCount?: number, items?: any[]): any[];
     static _count(input: any): number;
     static _itemAt(input: any[], index: number): any;
+    static _array(): any[];
+    static _join(input: any[], separator: string): string;
 }

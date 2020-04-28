@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+npm run build
+cd /home/tonicblue/code/platform/packages/server
+npm i --save /home/tonicblue/code/scvo/bristles
+cd /home/tonicblue/code/scvo/bristles

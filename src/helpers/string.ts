@@ -131,7 +131,7 @@ export default class StringHelpers {
       let output = '';
       for (let i = 0; i < arguments.length; i++) {
         if (typeof arguments[i] !== 'object') {
-          output += arguments[i].toString();
+          output += (arguments[i] || '').toString();
         }
       }
       return output;
@@ -615,6 +615,30 @@ export default class StringHelpers {
     } catch(err) {
       console.error('Bristles Error -> Helper: underscore, Error:', err.message);
       return typeof input === 'string' ? input : '';
+    }
+  }
+
+  static _unindent(): string {
+    try {
+      const args = Array.from(arguments);
+      const helper = args.pop();
+
+      const input = (args[0] || helper.fn(this)) as string;
+      const lines = S(input).lines();
+      let indentSize = 0;
+
+      for (const line of lines) {
+        indentSize = line.search(/\S|$/);
+        if (indentSize > 0) break;
+      }
+
+      const unpadRegex = new RegExp(`^\\s{0,${indentSize}}`, 'gm');
+      const output = input.replace(unpadRegex, '');
+
+      return output;
+    } catch(err) {
+      console.error('Bristles Error -> Helper: unindent, Error:', err.message);
+      return typeof arguments[0] === 'string' ? arguments[0] : '';
     }
   }
 

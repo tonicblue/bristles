@@ -136,7 +136,7 @@ var StringHelpers = /** @class */ (function () {
             var output = '';
             for (var i = 0; i < arguments.length; i++) {
                 if (typeof arguments[i] !== 'object') {
-                    output += arguments[i].toString();
+                    output += (arguments[i] || '').toString();
                 }
             }
             return output;
@@ -622,6 +622,28 @@ var StringHelpers = /** @class */ (function () {
         catch (err) {
             console.error('Bristles Error -> Helper: underscore, Error:', err.message);
             return typeof input === 'string' ? input : '';
+        }
+    };
+    StringHelpers._unindent = function () {
+        try {
+            var args = Array.from(arguments);
+            var helper = args.pop();
+            var input = (args[0] || helper.fn(this));
+            var lines = S(input).lines();
+            var indentSize = 0;
+            for (var _i = 0, lines_1 = lines; _i < lines_1.length; _i++) {
+                var line = lines_1[_i];
+                indentSize = line.search(/\S|$/);
+                if (indentSize > 0)
+                    break;
+            }
+            var unpadRegex = new RegExp("^\\s{0," + indentSize + "}", 'gm');
+            var output = input.replace(unpadRegex, '');
+            return output;
+        }
+        catch (err) {
+            console.error('Bristles Error -> Helper: unindent, Error:', err.message);
+            return typeof arguments[0] === 'string' ? arguments[0] : '';
         }
     };
     StringHelpers._match = function (input, pattern, options) {

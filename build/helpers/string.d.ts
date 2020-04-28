@@ -129,5 +129,6 @@ export default class StringHelpers {
     static _toBoolean(input: string): boolean;
     static _truncate(input: string, length: number, chars: string): string;
     static _underscore(input: string): string;
+    static _unindent(): string;
     static _match(input: string, pattern: string, options: string): string | RegExpExecArray[];
 }

@@ -27,6 +27,39 @@
 					},
 					"children": [
 						{
+							"id": 45,
+							"name": "_array",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isStatic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 46,
+									"name": "_array",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "array",
+										"elementType": {
+											"type": "intrinsic",
+											"name": "any"
+										}
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "helpers/array.ts",
+									"line": 223,
+									"character": 15
+								}
+							]
+						},
+						{
 							"id": 38,
 							"name": "_count",
 							"kind": 2048,
@@ -64,7 +97,7 @@
 							"sources": [
 								{
 									"fileName": "helpers/array.ts",
-									"line": 192,
+									"line": 181,
 									"character": 15
 								}
 							]
@@ -118,7 +151,7 @@
 							"sources": [
 								{
 									"fileName": "helpers/array.ts",
-									"line": 39,
+									"line": 38,
 									"character": 14
 								}
 							]
@@ -175,8 +208,65 @@
 							"sources": [
 								{
 									"fileName": "helpers/array.ts",
-									"line": 209,
+									"line": 198,
 									"character": 16
+								}
+							]
+						},
+						{
+							"id": 47,
+							"name": "_join",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isStatic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 48,
+									"name": "_join",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 49,
+											"name": "input",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "array",
+												"elementType": {
+													"type": "intrinsic",
+													"name": "any"
+												}
+											}
+										},
+										{
+											"id": 50,
+											"name": "separator",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "helpers/array.ts",
+									"line": 233,
+									"character": 14
 								}
 							]
 						},
@@ -372,7 +462,7 @@
 							"sources": [
 								{
 									"fileName": "helpers/array.ts",
-									"line": 152,
+									"line": 141,
 									"character": 15
 								}
 							]
@@ -465,7 +555,7 @@
 							"sources": [
 								{
 									"fileName": "helpers/array.ts",
-									"line": 111,
+									"line": 100,
 									"character": 14
 								}
 							]
@@ -574,7 +664,7 @@
 							"sources": [
 								{
 									"fileName": "helpers/array.ts",
-									"line": 168,
+									"line": 157,
 									"character": 16
 								}
 							]
@@ -585,9 +675,11 @@
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
+								45,
 								38,
 								18,
 								41,
+								47,
 								11,
 								27,
 								22,
@@ -622,7 +714,7 @@
 			]
 		},
 		{
-			"id": 45,
+			"id": 51,
 			"name": "\"helpers/conditional\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -632,7 +724,7 @@
 			"originalName": "/home/tonicblue/code/scvo/bristles/src/helpers/conditional.ts",
 			"children": [
 				{
-					"id": 46,
+					"id": 52,
 					"name": "ConditionalHelpers",
 					"kind": 128,
 					"kindString": "Class",
@@ -644,7 +736,7 @@
 					},
 					"children": [
 						{
-							"id": 127,
+							"id": 133,
 							"name": "_any",
 							"kind": 2048,
 							"kindString": "Method",
@@ -654,14 +746,14 @@
 							},
 							"signatures": [
 								{
-									"id": 128,
+									"id": 134,
 									"name": "_any",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 129,
+											"id": 135,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -690,7 +782,7 @@
 							]
 						},
 						{
-							"id": 159,
+							"id": 165,
 							"name": "_case",
 							"kind": 2048,
 							"kindString": "Method",
@@ -700,14 +792,14 @@
 							},
 							"signatures": [
 								{
-									"id": 160,
+									"id": 166,
 									"name": "_case",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 161,
+											"id": 167,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -733,7 +825,7 @@
 							]
 						},
 						{
-							"id": 130,
+							"id": 136,
 							"name": "_contains",
 							"kind": 2048,
 							"kindString": "Method",
@@ -743,14 +835,14 @@
 							},
 							"signatures": [
 								{
-									"id": 131,
+									"id": 137,
 									"name": "_contains",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 132,
+											"id": 138,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -761,7 +853,7 @@
 											}
 										},
 										{
-											"id": 133,
+											"id": 139,
 											"name": "test",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -787,7 +879,7 @@
 							]
 						},
 						{
-							"id": 153,
+							"id": 159,
 							"name": "_elseIf",
 							"kind": 2048,
 							"kindString": "Method",
@@ -797,14 +889,14 @@
 							},
 							"signatures": [
 								{
-									"id": 154,
+									"id": 160,
 									"name": "_elseIf",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 155,
+											"id": 161,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -830,7 +922,7 @@
 							]
 						},
 						{
-							"id": 151,
+							"id": 157,
 							"name": "_elseIfWrapper",
 							"kind": 2048,
 							"kindString": "Method",
@@ -840,7 +932,7 @@
 							},
 							"signatures": [
 								{
-									"id": 152,
+									"id": 158,
 									"name": "_elseIfWrapper",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -860,7 +952,7 @@
 							]
 						},
 						{
-							"id": 138,
+							"id": 144,
 							"name": "_endsWith",
 							"kind": 2048,
 							"kindString": "Method",
@@ -870,14 +962,14 @@
 							},
 							"signatures": [
 								{
-									"id": 139,
+									"id": 145,
 									"name": "_endsWith",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 140,
+											"id": 146,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -888,7 +980,7 @@
 											}
 										},
 										{
-											"id": 141,
+											"id": 147,
 											"name": "test",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -914,7 +1006,7 @@
 							]
 						},
 						{
-							"id": 119,
+							"id": 125,
 							"name": "_eq",
 							"kind": 2048,
 							"kindString": "Method",
@@ -924,14 +1016,14 @@
 							},
 							"signatures": [
 								{
-									"id": 120,
+									"id": 126,
 									"name": "_eq",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 121,
+											"id": 127,
 											"name": "inputA",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -942,7 +1034,7 @@
 											}
 										},
 										{
-											"id": 122,
+											"id": 128,
 											"name": "inputB",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -968,7 +1060,7 @@
 							]
 						},
 						{
-							"id": 103,
+							"id": 109,
 							"name": "_gt",
 							"kind": 2048,
 							"kindString": "Method",
@@ -978,14 +1070,14 @@
 							},
 							"signatures": [
 								{
-									"id": 104,
+									"id": 110,
 									"name": "_gt",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 105,
+											"id": 111,
 											"name": "inputA",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -996,7 +1088,7 @@
 											}
 										},
 										{
-											"id": 106,
+											"id": 112,
 											"name": "inputB",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1022,7 +1114,7 @@
 							]
 						},
 						{
-							"id": 107,
+							"id": 113,
 							"name": "_gte",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1032,14 +1124,14 @@
 							},
 							"signatures": [
 								{
-									"id": 108,
+									"id": 114,
 									"name": "_gte",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 109,
+											"id": 115,
 											"name": "inputA",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1050,7 +1142,7 @@
 											}
 										},
 										{
-											"id": 110,
+											"id": 116,
 											"name": "inputB",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1076,7 +1168,7 @@
 							]
 						},
 						{
-							"id": 61,
+							"id": 67,
 							"name": "_has",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1086,14 +1178,14 @@
 							},
 							"signatures": [
 								{
-									"id": 62,
+									"id": 68,
 									"name": "_has",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 63,
+											"id": 69,
 											"name": "target",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1104,7 +1196,7 @@
 											}
 										},
 										{
-											"id": 64,
+											"id": 70,
 											"name": "property",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1130,7 +1222,7 @@
 							]
 						},
 						{
-							"id": 65,
+							"id": 71,
 							"name": "_hasAll",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1140,7 +1232,7 @@
 							},
 							"signatures": [
 								{
-									"id": 66,
+									"id": 72,
 									"name": "_hasAll",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1160,7 +1252,7 @@
 							]
 						},
 						{
-							"id": 67,
+							"id": 73,
 							"name": "_hasAny",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1170,7 +1262,7 @@
 							},
 							"signatures": [
 								{
-									"id": 68,
+									"id": 74,
 									"name": "_hasAny",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1190,7 +1282,7 @@
 							]
 						},
 						{
-							"id": 47,
+							"id": 53,
 							"name": "_if",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1200,14 +1292,14 @@
 							},
 							"signatures": [
 								{
-									"id": 48,
+									"id": 54,
 									"name": "_if",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 49,
+											"id": 55,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1233,7 +1325,7 @@
 							]
 						},
 						{
-							"id": 57,
+							"id": 63,
 							"name": "_ifAll",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1243,7 +1335,7 @@
 							},
 							"signatures": [
 								{
-									"id": 58,
+									"id": 64,
 									"name": "_ifAll",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1263,7 +1355,7 @@
 							]
 						},
 						{
-							"id": 53,
+							"id": 59,
 							"name": "_ifAny",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1273,7 +1365,7 @@
 							},
 							"signatures": [
 								{
-									"id": 54,
+									"id": 60,
 									"name": "_ifAny",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1293,7 +1385,7 @@
 							]
 						},
 						{
-							"id": 59,
+							"id": 65,
 							"name": "_ifNone",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1303,7 +1395,7 @@
 							},
 							"signatures": [
 								{
-									"id": 60,
+									"id": 66,
 									"name": "_ifNone",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1323,7 +1415,7 @@
 							]
 						},
 						{
-							"id": 142,
+							"id": 148,
 							"name": "_includes",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1333,14 +1425,14 @@
 							},
 							"signatures": [
 								{
-									"id": 143,
+									"id": 149,
 									"name": "_includes",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 144,
+											"id": 150,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1354,7 +1446,7 @@
 											}
 										},
 										{
-											"id": 145,
+											"id": 151,
 											"name": "test",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1380,7 +1472,7 @@
 							]
 						},
 						{
-							"id": 87,
+							"id": 93,
 							"name": "_isArray",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1390,277 +1482,8 @@
 							},
 							"signatures": [
 								{
-									"id": 88,
-									"name": "_isArray",
-									"kind": 4096,
-									"kindString": "Call signature",
-									"flags": {},
-									"parameters": [
-										{
-											"id": 89,
-											"name": "input",
-											"kind": 32768,
-											"kindString": "Parameter",
-											"flags": {},
-											"type": {
-												"type": "intrinsic",
-												"name": "any"
-											}
-										}
-									],
-									"type": {
-										"type": "intrinsic",
-										"name": "any"
-									}
-								}
-							],
-							"sources": [
-								{
-									"fileName": "helpers/conditional.ts",
-									"line": 241,
-									"character": 17
-								}
-							]
-						},
-						{
-							"id": 81,
-							"name": "_isBoolean",
-							"kind": 2048,
-							"kindString": "Method",
-							"flags": {
-								"isStatic": true,
-								"isExported": true
-							},
-							"signatures": [
-								{
-									"id": 82,
-									"name": "_isBoolean",
-									"kind": 4096,
-									"kindString": "Call signature",
-									"flags": {},
-									"parameters": [
-										{
-											"id": 83,
-											"name": "input",
-											"kind": 32768,
-											"kindString": "Parameter",
-											"flags": {},
-											"type": {
-												"type": "intrinsic",
-												"name": "any"
-											}
-										}
-									],
-									"type": {
-										"type": "intrinsic",
-										"name": "any"
-									}
-								}
-							],
-							"sources": [
-								{
-									"fileName": "helpers/conditional.ts",
-									"line": 213,
-									"character": 19
-								}
-							]
-						},
-						{
-							"id": 78,
-							"name": "_isFinite",
-							"kind": 2048,
-							"kindString": "Method",
-							"flags": {
-								"isStatic": true,
-								"isExported": true
-							},
-							"signatures": [
-								{
-									"id": 79,
-									"name": "_isFinite",
-									"kind": 4096,
-									"kindString": "Call signature",
-									"flags": {},
-									"parameters": [
-										{
-											"id": 80,
-											"name": "input",
-											"kind": 32768,
-											"kindString": "Parameter",
-											"flags": {},
-											"type": {
-												"type": "intrinsic",
-												"name": "any"
-											}
-										}
-									],
-									"type": {
-										"type": "intrinsic",
-										"name": "any"
-									}
-								}
-							],
-							"sources": [
-								{
-									"fileName": "helpers/conditional.ts",
-									"line": 199,
-									"character": 18
-								}
-							]
-						},
-						{
-							"id": 90,
-							"name": "_isFunction",
-							"kind": 2048,
-							"kindString": "Method",
-							"flags": {
-								"isStatic": true,
-								"isExported": true
-							},
-							"signatures": [
-								{
-									"id": 91,
-									"name": "_isFunction",
-									"kind": 4096,
-									"kindString": "Call signature",
-									"flags": {},
-									"parameters": [
-										{
-											"id": 92,
-											"name": "input",
-											"kind": 32768,
-											"kindString": "Parameter",
-											"flags": {},
-											"type": {
-												"type": "intrinsic",
-												"name": "any"
-											}
-										}
-									],
-									"type": {
-										"type": "intrinsic",
-										"name": "any"
-									}
-								}
-							],
-							"sources": [
-								{
-									"fileName": "helpers/conditional.ts",
-									"line": 255,
-									"character": 20
-								}
-							]
-						},
-						{
-							"id": 99,
-							"name": "_isLike",
-							"kind": 2048,
-							"kindString": "Method",
-							"flags": {
-								"isStatic": true,
-								"isExported": true
-							},
-							"signatures": [
-								{
-									"id": 100,
-									"name": "_isLike",
-									"kind": 4096,
-									"kindString": "Call signature",
-									"flags": {},
-									"parameters": [
-										{
-											"id": 101,
-											"name": "input",
-											"kind": 32768,
-											"kindString": "Parameter",
-											"flags": {},
-											"type": {
-												"type": "intrinsic",
-												"name": "any"
-											}
-										},
-										{
-											"id": 102,
-											"name": "test",
-											"kind": 32768,
-											"kindString": "Parameter",
-											"flags": {},
-											"type": {
-												"type": "intrinsic",
-												"name": "any"
-											}
-										}
-									],
-									"type": {
-										"type": "intrinsic",
-										"name": "any"
-									}
-								}
-							],
-							"sources": [
-								{
-									"fileName": "helpers/conditional.ts",
-									"line": 297,
-									"character": 16
-								}
-							]
-						},
-						{
-							"id": 75,
-							"name": "_isNaN",
-							"kind": 2048,
-							"kindString": "Method",
-							"flags": {
-								"isStatic": true,
-								"isExported": true
-							},
-							"signatures": [
-								{
-									"id": 76,
-									"name": "_isNaN",
-									"kind": 4096,
-									"kindString": "Call signature",
-									"flags": {},
-									"parameters": [
-										{
-											"id": 77,
-											"name": "input",
-											"kind": 32768,
-											"kindString": "Parameter",
-											"flags": {},
-											"type": {
-												"type": "intrinsic",
-												"name": "any"
-											}
-										}
-									],
-									"type": {
-										"type": "intrinsic",
-										"name": "any"
-									}
-								}
-							],
-							"sources": [
-								{
-									"fileName": "helpers/conditional.ts",
-									"line": 185,
-									"character": 15
-								}
-							]
-						},
-						{
-							"id": 93,
-							"name": "_isNull",
-							"kind": 2048,
-							"kindString": "Method",
-							"flags": {
-								"isStatic": true,
-								"isExported": true
-							},
-							"signatures": [
-								{
 									"id": 94,
-									"name": "_isNull",
+									"name": "_isArray",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
@@ -1686,14 +1509,14 @@
 							"sources": [
 								{
 									"fileName": "helpers/conditional.ts",
-									"line": 269,
-									"character": 16
+									"line": 241,
+									"character": 17
 								}
 							]
 						},
 						{
-							"id": 72,
-							"name": "_isNumber",
+							"id": 87,
+							"name": "_isBoolean",
 							"kind": 2048,
 							"kindString": "Method",
 							"flags": {
@@ -1702,14 +1525,14 @@
 							},
 							"signatures": [
 								{
-									"id": 73,
-									"name": "_isNumber",
+									"id": 88,
+									"name": "_isBoolean",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 74,
+											"id": 89,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1729,14 +1552,14 @@
 							"sources": [
 								{
 									"fileName": "helpers/conditional.ts",
-									"line": 171,
-									"character": 18
+									"line": 213,
+									"character": 19
 								}
 							]
 						},
 						{
 							"id": 84,
-							"name": "_isObject",
+							"name": "_isFinite",
 							"kind": 2048,
 							"kindString": "Method",
 							"flags": {
@@ -1746,7 +1569,7 @@
 							"signatures": [
 								{
 									"id": 85,
-									"name": "_isObject",
+									"name": "_isFinite",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
@@ -1772,57 +1595,14 @@
 							"sources": [
 								{
 									"fileName": "helpers/conditional.ts",
-									"line": 227,
-									"character": 18
-								}
-							]
-						},
-						{
-							"id": 69,
-							"name": "_isString",
-							"kind": 2048,
-							"kindString": "Method",
-							"flags": {
-								"isStatic": true,
-								"isExported": true
-							},
-							"signatures": [
-								{
-									"id": 70,
-									"name": "_isString",
-									"kind": 4096,
-									"kindString": "Call signature",
-									"flags": {},
-									"parameters": [
-										{
-											"id": 71,
-											"name": "input",
-											"kind": 32768,
-											"kindString": "Parameter",
-											"flags": {},
-											"type": {
-												"type": "intrinsic",
-												"name": "any"
-											}
-										}
-									],
-									"type": {
-										"type": "intrinsic",
-										"name": "any"
-									}
-								}
-							],
-							"sources": [
-								{
-									"fileName": "helpers/conditional.ts",
-									"line": 157,
+									"line": 199,
 									"character": 18
 								}
 							]
 						},
 						{
 							"id": 96,
-							"name": "_isUndefined",
+							"name": "_isFunction",
 							"kind": 2048,
 							"kindString": "Method",
 							"flags": {
@@ -1832,7 +1612,7 @@
 							"signatures": [
 								{
 									"id": 97,
-									"name": "_isUndefined",
+									"name": "_isFunction",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
@@ -1858,13 +1638,325 @@
 							"sources": [
 								{
 									"fileName": "helpers/conditional.ts",
+									"line": 255,
+									"character": 20
+								}
+							]
+						},
+						{
+							"id": 105,
+							"name": "_isLike",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isStatic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 106,
+									"name": "_isLike",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 107,
+											"name": "input",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										},
+										{
+											"id": 108,
+											"name": "test",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "helpers/conditional.ts",
+									"line": 297,
+									"character": 16
+								}
+							]
+						},
+						{
+							"id": 81,
+							"name": "_isNaN",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isStatic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 82,
+									"name": "_isNaN",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 83,
+											"name": "input",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "helpers/conditional.ts",
+									"line": 185,
+									"character": 15
+								}
+							]
+						},
+						{
+							"id": 99,
+							"name": "_isNull",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isStatic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 100,
+									"name": "_isNull",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 101,
+											"name": "input",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "helpers/conditional.ts",
+									"line": 269,
+									"character": 16
+								}
+							]
+						},
+						{
+							"id": 78,
+							"name": "_isNumber",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isStatic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 79,
+									"name": "_isNumber",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 80,
+											"name": "input",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "helpers/conditional.ts",
+									"line": 171,
+									"character": 18
+								}
+							]
+						},
+						{
+							"id": 90,
+							"name": "_isObject",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isStatic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 91,
+									"name": "_isObject",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 92,
+											"name": "input",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "helpers/conditional.ts",
+									"line": 227,
+									"character": 18
+								}
+							]
+						},
+						{
+							"id": 75,
+							"name": "_isString",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isStatic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 76,
+									"name": "_isString",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 77,
+											"name": "input",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "helpers/conditional.ts",
+									"line": 157,
+									"character": 18
+								}
+							]
+						},
+						{
+							"id": 102,
+							"name": "_isUndefined",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isStatic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 103,
+									"name": "_isUndefined",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 104,
+											"name": "input",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "helpers/conditional.ts",
 									"line": 283,
 									"character": 21
 								}
 							]
 						},
 						{
-							"id": 111,
+							"id": 117,
 							"name": "_lt",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1874,14 +1966,14 @@
 							},
 							"signatures": [
 								{
-									"id": 112,
+									"id": 118,
 									"name": "_lt",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 113,
+											"id": 119,
 											"name": "inputA",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1892,7 +1984,7 @@
 											}
 										},
 										{
-											"id": 114,
+											"id": 120,
 											"name": "inputB",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1918,7 +2010,7 @@
 							]
 						},
 						{
-							"id": 115,
+							"id": 121,
 							"name": "_lte",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1928,14 +2020,14 @@
 							},
 							"signatures": [
 								{
-									"id": 116,
+									"id": 122,
 									"name": "_lte",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 117,
+											"id": 123,
 											"name": "inputA",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1946,7 +2038,7 @@
 											}
 										},
 										{
-											"id": 118,
+											"id": 124,
 											"name": "inputB",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1972,7 +2064,7 @@
 							]
 						},
 						{
-							"id": 146,
+							"id": 152,
 							"name": "_regexMatch",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1982,7 +2074,7 @@
 							},
 							"signatures": [
 								{
-									"id": 147,
+									"id": 153,
 									"name": "_regexMatch",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1999,7 +2091,7 @@
 									},
 									"parameters": [
 										{
-											"id": 148,
+											"id": 154,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2013,7 +2105,7 @@
 											}
 										},
 										{
-											"id": 149,
+											"id": 155,
 											"name": "expression",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2027,7 +2119,7 @@
 											}
 										},
 										{
-											"id": 150,
+											"id": 156,
 											"name": "options",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2083,7 +2175,7 @@
 							]
 						},
 						{
-							"id": 134,
+							"id": 140,
 							"name": "_startsWith",
 							"kind": 2048,
 							"kindString": "Method",
@@ -2093,14 +2185,14 @@
 							},
 							"signatures": [
 								{
-									"id": 135,
+									"id": 141,
 									"name": "_startsWith",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 136,
+											"id": 142,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2111,7 +2203,7 @@
 											}
 										},
 										{
-											"id": 137,
+											"id": 143,
 											"name": "test",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2137,7 +2229,7 @@
 							]
 						},
 						{
-							"id": 156,
+							"id": 162,
 							"name": "_switch",
 							"kind": 2048,
 							"kindString": "Method",
@@ -2147,14 +2239,14 @@
 							},
 							"signatures": [
 								{
-									"id": 157,
+									"id": 163,
 									"name": "_switch",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 158,
+											"id": 164,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2180,7 +2272,7 @@
 							]
 						},
 						{
-							"id": 123,
+							"id": 129,
 							"name": "_teq",
 							"kind": 2048,
 							"kindString": "Method",
@@ -2190,14 +2282,14 @@
 							},
 							"signatures": [
 								{
-									"id": 124,
+									"id": 130,
 									"name": "_teq",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 125,
+											"id": 131,
 											"name": "inputA",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2208,7 +2300,7 @@
 											}
 										},
 										{
-											"id": 126,
+											"id": 132,
 											"name": "inputB",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2234,7 +2326,7 @@
 							]
 						},
 						{
-							"id": 50,
+							"id": 56,
 							"name": "_unless",
 							"kind": 2048,
 							"kindString": "Method",
@@ -2244,14 +2336,14 @@
 							},
 							"signatures": [
 								{
-									"id": 51,
+									"id": 57,
 									"name": "_unless",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 52,
+											"id": 58,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2277,7 +2369,7 @@
 							]
 						},
 						{
-							"id": 55,
+							"id": 61,
 							"name": "_unlessAll",
 							"kind": 2048,
 							"kindString": "Method",
@@ -2287,7 +2379,7 @@
 							},
 							"signatures": [
 								{
-									"id": 56,
+									"id": 62,
 									"name": "_unlessAll",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -2307,7 +2399,7 @@
 							]
 						},
 						{
-							"id": 162,
+							"id": 168,
 							"name": "conditionalResponse",
 							"kind": 2048,
 							"kindString": "Method",
@@ -2317,14 +2409,14 @@
 							},
 							"signatures": [
 								{
-									"id": 163,
+									"id": 169,
 									"name": "conditionalResponse",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 164,
+											"id": 170,
 											"name": "helper",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2335,7 +2427,7 @@
 											}
 										},
 										{
-											"id": 165,
+											"id": 171,
 											"name": "context",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2346,7 +2438,7 @@
 											}
 										},
 										{
-											"id": 166,
+											"id": 172,
 											"name": "evaluation",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2357,7 +2449,7 @@
 											}
 										},
 										{
-											"id": 167,
+											"id": 173,
 											"name": "metadata",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2396,43 +2488,43 @@
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								127,
+								133,
+								165,
+								136,
 								159,
-								130,
-								153,
-								151,
-								138,
-								119,
-								103,
-								107,
-								61,
-								65,
+								157,
+								144,
+								125,
+								109,
+								113,
 								67,
-								47,
-								57,
+								71,
+								73,
 								53,
+								63,
 								59,
-								142,
+								65,
+								148,
+								93,
 								87,
+								84,
+								96,
+								105,
 								81,
+								99,
 								78,
 								90,
-								99,
 								75,
-								93,
-								72,
-								84,
-								69,
-								96,
-								111,
-								115,
-								146,
-								134,
-								156,
-								123,
-								50,
-								55,
-								162
+								102,
+								117,
+								121,
+								152,
+								140,
+								162,
+								129,
+								56,
+								61,
+								168
 							]
 						}
 					],
@@ -2450,7 +2542,7 @@
 					"title": "Classes",
 					"kind": 128,
 					"children": [
-						46
+						52
 					]
 				}
 			],
@@ -2463,7 +2555,5021 @@
 			]
 		},
 		{
-			"id": 168,
+			"id": 174,
+			"name": "\"helpers/html-attributes-map\"",
+			"kind": 1,
+			"kindString": "External module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "/home/tonicblue/code/scvo/bristles/src/helpers/html-attributes-map.ts",
+			"children": [
+				{
+					"id": 175,
+					"name": "HTML_ATTRIBUTES_MAP",
+					"kind": 2097152,
+					"kindString": "Object literal",
+					"flags": {
+						"isExported": true,
+						"isConst": true
+					},
+					"children": [
+						{
+							"id": 176,
+							"name": "accept",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 2,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"input\"\n  ]"
+						},
+						{
+							"id": 177,
+							"name": "accept-charset",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 5,
+									"character": 18
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"form\"\n  ]"
+						},
+						{
+							"id": 178,
+							"name": "accesskey",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 8,
+									"character": 13
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 179,
+							"name": "action",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 9,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"form\"\n  ]"
+						},
+						{
+							"id": 180,
+							"name": "alt",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 12,
+									"character": 7
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"area\",\n    \"img\",\n    \"input\"\n  ]"
+						},
+						{
+							"id": 181,
+							"name": "aria-activedescendant",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 17,
+									"character": 25
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 182,
+							"name": "aria-atomic",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 18,
+									"character": 15
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 183,
+							"name": "aria-autocomplete",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 19,
+									"character": 21
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 184,
+							"name": "aria-busy",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 20,
+									"character": 13
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 185,
+							"name": "aria-checked",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 21,
+									"character": 16
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 186,
+							"name": "aria-colcount",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 22,
+									"character": 17
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 187,
+							"name": "aria-colindex",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 23,
+									"character": 17
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 188,
+							"name": "aria-colspan",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 24,
+									"character": 16
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 189,
+							"name": "aria-controls",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 25,
+									"character": 17
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 190,
+							"name": "aria-current",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 26,
+									"character": 16
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 191,
+							"name": "aria-describedby",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 27,
+									"character": 20
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 192,
+							"name": "aria-details",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 28,
+									"character": 16
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 193,
+							"name": "aria-disabled",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 29,
+									"character": 17
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 194,
+							"name": "aria-dragged",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 30,
+									"character": 16
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 195,
+							"name": "aria-dropeffect",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 31,
+									"character": 19
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 196,
+							"name": "aria-errormessage",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 32,
+									"character": 21
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 197,
+							"name": "aria-expanded",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 33,
+									"character": 17
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 198,
+							"name": "aria-flowto",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 34,
+									"character": 15
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 199,
+							"name": "aria-haspopup",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 35,
+									"character": 17
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 200,
+							"name": "aria-hidden",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 36,
+									"character": 15
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 201,
+							"name": "aria-invalid",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 37,
+									"character": 16
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 202,
+							"name": "aria-label",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 38,
+									"character": 14
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 203,
+							"name": "aria-labelledby",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 39,
+									"character": 19
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 204,
+							"name": "aria-level",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 40,
+									"character": 14
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 205,
+							"name": "aria-live",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 41,
+									"character": 13
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 206,
+							"name": "aria-modal",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 42,
+									"character": 14
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 207,
+							"name": "aria-multiline",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 43,
+									"character": 18
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 208,
+							"name": "aria-multiselectable",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 44,
+									"character": 24
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 209,
+							"name": "aria-orientation",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 45,
+									"character": 20
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 210,
+							"name": "aria-owns",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 46,
+									"character": 13
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 211,
+							"name": "aria-placeholder",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 47,
+									"character": 20
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 212,
+							"name": "aria-posinset",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 48,
+									"character": 17
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 213,
+							"name": "aria-pressed",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 49,
+									"character": 16
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 214,
+							"name": "aria-readonly",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 50,
+									"character": 17
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 215,
+							"name": "aria-relevant",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 51,
+									"character": 17
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 216,
+							"name": "aria-required",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 52,
+									"character": 17
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 217,
+							"name": "aria-rowcount",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 53,
+									"character": 17
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 218,
+							"name": "aria-rowindex",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 54,
+									"character": 17
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 219,
+							"name": "aria-rowspan",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 55,
+									"character": 16
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 220,
+							"name": "aria-selected",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 56,
+									"character": 17
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 221,
+							"name": "aria-setsize",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 57,
+									"character": 16
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 222,
+							"name": "aria-sort",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 58,
+									"character": 13
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 223,
+							"name": "aria-valuemax",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 59,
+									"character": 17
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 224,
+							"name": "aria-valuemin",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 60,
+									"character": 17
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 225,
+							"name": "aria-valuenow",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 61,
+									"character": 17
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 226,
+							"name": "aria-valuetext",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 62,
+									"character": 18
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 227,
+							"name": "async",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 63,
+									"character": 9
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"script\"\n  ]"
+						},
+						{
+							"id": 228,
+							"name": "autocomplete",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 66,
+									"character": 16
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"form\",\n    \"input\"\n  ]"
+						},
+						{
+							"id": 229,
+							"name": "autofocus",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 70,
+									"character": 13
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"button\",\n    \"input\",\n    \"select\",\n    \"textarea\"\n  ]"
+						},
+						{
+							"id": 230,
+							"name": "autoplay",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 76,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"audio\",\n    \"video\"\n  ]"
+						},
+						{
+							"id": 231,
+							"name": "charset",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 80,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"meta\",\n    \"script\"\n  ]"
+						},
+						{
+							"id": 232,
+							"name": "checked",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 84,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"input\"\n  ]"
+						},
+						{
+							"id": 233,
+							"name": "cite",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 87,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"blockquote\",\n    \"del\",\n    \"ins\",\n    \"q\"\n  ]"
+						},
+						{
+							"id": 234,
+							"name": "class",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 93,
+									"character": 9
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 235,
+							"name": "cols",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 94,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"textarea\"\n  ]"
+						},
+						{
+							"id": 236,
+							"name": "colspan",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 97,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"td\",\n    \"th\"\n  ]"
+						},
+						{
+							"id": 237,
+							"name": "content",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 101,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"meta\"\n  ]"
+						},
+						{
+							"id": 238,
+							"name": "contenteditable",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 104,
+									"character": 19
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 239,
+							"name": "controls",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 105,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"audio\",\n    \"video\"\n  ]"
+						},
+						{
+							"id": 240,
+							"name": "coords",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 109,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"area\"\n  ]"
+						},
+						{
+							"id": 241,
+							"name": "data",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 112,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"object\"\n  ]"
+						},
+						{
+							"id": 242,
+							"name": "datetime",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 115,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"del\",\n    \"ins\",\n    \"time\"\n  ]"
+						},
+						{
+							"id": 243,
+							"name": "default",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 120,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"track\"\n  ]"
+						},
+						{
+							"id": 244,
+							"name": "defer",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 123,
+									"character": 9
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"script\"\n  ]"
+						},
+						{
+							"id": 245,
+							"name": "dir",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 126,
+									"character": 7
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 246,
+							"name": "dirname",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 127,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"input\",\n    \"textarea\"\n  ]"
+						},
+						{
+							"id": 247,
+							"name": "disabled",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 131,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"button\",\n    \"fieldset\",\n    \"input\",\n    \"optgroup\",\n    \"option\",\n    \"select\",\n    \"textarea\"\n  ]"
+						},
+						{
+							"id": 248,
+							"name": "download",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 140,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"a\",\n    \"area\"\n  ]"
+						},
+						{
+							"id": 249,
+							"name": "draggable",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 144,
+									"character": 13
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 250,
+							"name": "dropzone",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 145,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 251,
+							"name": "enctype",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 146,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"form\"\n  ]"
+						},
+						{
+							"id": 252,
+							"name": "for",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 149,
+									"character": 7
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"label\",\n    \"output\"\n  ]"
+						},
+						{
+							"id": 253,
+							"name": "form",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 153,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"button\",\n    \"fieldset\",\n    \"input\",\n    \"label\",\n    \"meter\",\n    \"object\",\n    \"output\",\n    \"select\",\n    \"textarea\"\n  ]"
+						},
+						{
+							"id": 254,
+							"name": "formaction",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 164,
+									"character": 14
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"button\",\n    \"input\"\n  ]"
+						},
+						{
+							"id": 255,
+							"name": "headers",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 168,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"td\",\n    \"th\"\n  ]"
+						},
+						{
+							"id": 256,
+							"name": "height",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 172,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"canvas\",\n    \"embed\",\n    \"iframe\",\n    \"img\",\n    \"input\",\n    \"object\",\n    \"video\"\n  ]"
+						},
+						{
+							"id": 257,
+							"name": "hidden",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 181,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 258,
+							"name": "high",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 182,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"meter\"\n  ]"
+						},
+						{
+							"id": 259,
+							"name": "href",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 185,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"a\",\n    \"area\",\n    \"base\",\n    \"link\"\n  ]"
+						},
+						{
+							"id": 260,
+							"name": "hreflang",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 191,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"a\",\n    \"area\",\n    \"link\"\n  ]"
+						},
+						{
+							"id": 261,
+							"name": "http-equiv",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 196,
+									"character": 14
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"meta\"\n  ]"
+						},
+						{
+							"id": 262,
+							"name": "id",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 199,
+									"character": 6
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 263,
+							"name": "ismap",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 200,
+									"character": 9
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"img\"\n  ]"
+						},
+						{
+							"id": 264,
+							"name": "kind",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 203,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"track\"\n  ]"
+						},
+						{
+							"id": 265,
+							"name": "label",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 206,
+									"character": 9
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"track\",\n    \"option\",\n    \"optgroup\"\n  ]"
+						},
+						{
+							"id": 266,
+							"name": "lang",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 211,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 267,
+							"name": "list",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 212,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"input\"\n  ]"
+						},
+						{
+							"id": 268,
+							"name": "loop",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 215,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"audio\",\n    \"video\"\n  ]"
+						},
+						{
+							"id": 269,
+							"name": "low",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 219,
+									"character": 7
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"meter\"\n  ]"
+						},
+						{
+							"id": 270,
+							"name": "max",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 222,
+									"character": 7
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"input\",\n    \"meter\",\n    \"progress\"\n  ]"
+						},
+						{
+							"id": 271,
+							"name": "maxlength",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 227,
+									"character": 13
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"input\",\n    \"textarea\"\n  ]"
+						},
+						{
+							"id": 272,
+							"name": "media",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 231,
+									"character": 9
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"a\",\n    \"area\",\n    \"link\",\n    \"source\",\n    \"style\"\n  ]"
+						},
+						{
+							"id": 273,
+							"name": "method",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 238,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"form\"\n  ]"
+						},
+						{
+							"id": 274,
+							"name": "min",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 241,
+									"character": 7
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"input\",\n    \"meter\"\n  ]"
+						},
+						{
+							"id": 275,
+							"name": "multiple",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 245,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"input\",\n    \"select\"\n  ]"
+						},
+						{
+							"id": 276,
+							"name": "muted",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 249,
+									"character": 9
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"video\",\n    \"audio\"\n  ]"
+						},
+						{
+							"id": 277,
+							"name": "name",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 253,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"button\",\n    \"fieldset\",\n    \"form\",\n    \"iframe\",\n    \"input\",\n    \"map\",\n    \"meta\",\n    \"object\",\n    \"output\",\n    \"param\",\n    \"select\",\n    \"textarea\"\n  ]"
+						},
+						{
+							"id": 278,
+							"name": "novalidate",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 267,
+									"character": 14
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"form\"\n  ]"
+						},
+						{
+							"id": 279,
+							"name": "onabort",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 270,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"audio\",\n    \"embed\",\n    \"img\",\n    \"object\",\n    \"video\"\n  ]"
+						},
+						{
+							"id": 280,
+							"name": "onafterprint",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 277,
+									"character": 16
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"body\"\n  ]"
+						},
+						{
+							"id": 281,
+							"name": "onbeforeprint",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 280,
+									"character": 17
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"body\"\n  ]"
+						},
+						{
+							"id": 282,
+							"name": "onbeforeunload",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 283,
+									"character": 18
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"body\"\n  ]"
+						},
+						{
+							"id": 283,
+							"name": "onblur",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 286,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 284,
+							"name": "oncanplay",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 287,
+									"character": 13
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"audio\",\n    \"embed\",\n    \"object\",\n    \"video\"\n  ]"
+						},
+						{
+							"id": 285,
+							"name": "oncanplaythrough",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 293,
+									"character": 20
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"audio\",\n    \"video\"\n  ]"
+						},
+						{
+							"id": 286,
+							"name": "onchange",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 297,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 287,
+							"name": "onclick",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 298,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 288,
+							"name": "oncontextmenu",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 299,
+									"character": 17
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 289,
+							"name": "oncopy",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 300,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 290,
+							"name": "oncuechange",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 301,
+									"character": 15
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"track\"\n  ]"
+						},
+						{
+							"id": 291,
+							"name": "oncut",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 304,
+									"character": 9
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 292,
+							"name": "ondblclick",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 305,
+									"character": 14
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 293,
+							"name": "ondrag",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 306,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 294,
+							"name": "ondragend",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 307,
+									"character": 13
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 295,
+							"name": "ondragenter",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 308,
+									"character": 15
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 296,
+							"name": "ondragleave",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 309,
+									"character": 15
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 297,
+							"name": "ondragover",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 310,
+									"character": 14
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 298,
+							"name": "ondragstart",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 311,
+									"character": 15
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 299,
+							"name": "ondrop",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 312,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 300,
+							"name": "ondurationchange",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 313,
+									"character": 20
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"audio\",\n    \"video\"\n  ]"
+						},
+						{
+							"id": 301,
+							"name": "onemptied",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 317,
+									"character": 13
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"audio\",\n    \"video\"\n  ]"
+						},
+						{
+							"id": 302,
+							"name": "onended",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 321,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"audio\",\n    \"video\"\n  ]"
+						},
+						{
+							"id": 303,
+							"name": "onerror",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 325,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"audio\",\n    \"body\",\n    \"embed\",\n    \"img\",\n    \"object\",\n    \"script\",\n    \"style\",\n    \"video\"\n  ]"
+						},
+						{
+							"id": 304,
+							"name": "onfocus",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 335,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 305,
+							"name": "onhashchange",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 336,
+									"character": 16
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"body\"\n  ]"
+						},
+						{
+							"id": 306,
+							"name": "oninput",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 339,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 307,
+							"name": "oninvalid",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 340,
+									"character": 13
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 308,
+							"name": "onkeydown",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 341,
+									"character": 13
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 309,
+							"name": "onkeypress",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 342,
+									"character": 14
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 310,
+							"name": "onkeyup",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 343,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 311,
+							"name": "onload",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 344,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"body\",\n    \"iframe\",\n    \"img\",\n    \"input\",\n    \"link\",\n    \"script\",\n    \"style\"\n  ]"
+						},
+						{
+							"id": 312,
+							"name": "onloadeddata",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 353,
+									"character": 16
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"audio\",\n    \"video\"\n  ]"
+						},
+						{
+							"id": 313,
+							"name": "onloadedmetadata",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 357,
+									"character": 20
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"audio\",\n    \"video\"\n  ]"
+						},
+						{
+							"id": 314,
+							"name": "onloadstart",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 361,
+									"character": 15
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"audio\",\n    \"video\"\n  ]"
+						},
+						{
+							"id": 315,
+							"name": "onmousedown",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 365,
+									"character": 15
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 316,
+							"name": "onmousemove",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 366,
+									"character": 15
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 317,
+							"name": "onmouseout",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 367,
+									"character": 14
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 318,
+							"name": "onmouseover",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 368,
+									"character": 15
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 319,
+							"name": "onmouseup",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 369,
+									"character": 13
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 320,
+							"name": "onmousewheel",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 370,
+									"character": 16
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 321,
+							"name": "onoffline",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 371,
+									"character": 13
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"body\"\n  ]"
+						},
+						{
+							"id": 322,
+							"name": "ononline",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 374,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"body\"\n  ]"
+						},
+						{
+							"id": 323,
+							"name": "onpagehide",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 377,
+									"character": 14
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"body\"\n  ]"
+						},
+						{
+							"id": 324,
+							"name": "onpageshow",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 380,
+									"character": 14
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"body\"\n  ]"
+						},
+						{
+							"id": 325,
+							"name": "onpaste",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 383,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 326,
+							"name": "onpause",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 384,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"audio\",\n    \"video\"\n  ]"
+						},
+						{
+							"id": 327,
+							"name": "onplay",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 388,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"audio\",\n    \"video\"\n  ]"
+						},
+						{
+							"id": 328,
+							"name": "onplaying",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 392,
+									"character": 13
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"audio\",\n    \"video\"\n  ]"
+						},
+						{
+							"id": 329,
+							"name": "onpopstate",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 396,
+									"character": 14
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"body\"\n  ]"
+						},
+						{
+							"id": 330,
+							"name": "onprogress",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 399,
+									"character": 14
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"audio\",\n    \"video\"\n  ]"
+						},
+						{
+							"id": 331,
+							"name": "onratechange",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 403,
+									"character": 16
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"audio\",\n    \"video\"\n  ]"
+						},
+						{
+							"id": 332,
+							"name": "onreset",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 407,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"form\"\n  ]"
+						},
+						{
+							"id": 333,
+							"name": "onresize",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 410,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"body\"\n  ]"
+						},
+						{
+							"id": 334,
+							"name": "onscroll",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 413,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 335,
+							"name": "onsearch",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 414,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"input\"\n  ]"
+						},
+						{
+							"id": 336,
+							"name": "onseeked",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 417,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"audio\",\n    \"video\"\n  ]"
+						},
+						{
+							"id": 337,
+							"name": "onseeking",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 421,
+									"character": 13
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"audio\",\n    \"video\"\n  ]"
+						},
+						{
+							"id": 338,
+							"name": "onselect",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 425,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 339,
+							"name": "onstalled",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 426,
+									"character": 13
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"audio\",\n    \"video\"\n  ]"
+						},
+						{
+							"id": 340,
+							"name": "onstorage",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 430,
+									"character": 13
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"body\"\n  ]"
+						},
+						{
+							"id": 341,
+							"name": "onsubmit",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 433,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"form\"\n  ]"
+						},
+						{
+							"id": 342,
+							"name": "onsuspend",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 436,
+									"character": 13
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"audio\",\n    \"video\"\n  ]"
+						},
+						{
+							"id": 343,
+							"name": "ontimeupdate",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 440,
+									"character": 16
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"audio\",\n    \"video\"\n  ]"
+						},
+						{
+							"id": 344,
+							"name": "ontoggle",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 444,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"details\"\n  ]"
+						},
+						{
+							"id": 345,
+							"name": "onunload",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 447,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"body\"\n  ]"
+						},
+						{
+							"id": 346,
+							"name": "onvolumechange",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 450,
+									"character": 18
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"audio\",\n    \"video\"\n  ]"
+						},
+						{
+							"id": 347,
+							"name": "onwaiting",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 454,
+									"character": 13
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"audio\",\n    \"video\"\n  ]"
+						},
+						{
+							"id": 348,
+							"name": "onwheel",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 458,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 349,
+							"name": "open",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 459,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"details\"\n  ]"
+						},
+						{
+							"id": 350,
+							"name": "optimum",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 462,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"meter\"\n  ]"
+						},
+						{
+							"id": 351,
+							"name": "pattern",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 465,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"input\"\n  ]"
+						},
+						{
+							"id": 352,
+							"name": "placeholder",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 468,
+									"character": 15
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"input\",\n    \"textarea\"\n  ]"
+						},
+						{
+							"id": 353,
+							"name": "poster",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 472,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"video\"\n  ]"
+						},
+						{
+							"id": 354,
+							"name": "preload",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 475,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"audio\",\n    \"video\"\n  ]"
+						},
+						{
+							"id": 355,
+							"name": "readonly",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 479,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"input\",\n    \"textarea\"\n  ]"
+						},
+						{
+							"id": 356,
+							"name": "rel",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 483,
+									"character": 7
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"a\",\n    \"area\",\n    \"link\"\n  ]"
+						},
+						{
+							"id": 357,
+							"name": "required",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 488,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"input\",\n    \"select\",\n    \"textarea\"\n  ]"
+						},
+						{
+							"id": 358,
+							"name": "reversed",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 493,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"ol\"\n  ]"
+						},
+						{
+							"id": 359,
+							"name": "rows",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 496,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"textarea\"\n  ]"
+						},
+						{
+							"id": 360,
+							"name": "rowspan",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 499,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"td\",\n    \"th\"\n  ]"
+						},
+						{
+							"id": 361,
+							"name": "sandbox",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 503,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"iframe\"\n  ]"
+						},
+						{
+							"id": 362,
+							"name": "scope",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 506,
+									"character": 9
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"th\"\n  ]"
+						},
+						{
+							"id": 363,
+							"name": "selected",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 509,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"option\"\n  ]"
+						},
+						{
+							"id": 364,
+							"name": "shape",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 512,
+									"character": 9
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"area\"\n  ]"
+						},
+						{
+							"id": 365,
+							"name": "size",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 515,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"input\",\n    \"select\"\n  ]"
+						},
+						{
+							"id": 366,
+							"name": "sizes",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 519,
+									"character": 9
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"img\",\n    \"link\",\n    \"source\"\n  ]"
+						},
+						{
+							"id": 367,
+							"name": "span",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 524,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"col\",\n    \"colgroup\"\n  ]"
+						},
+						{
+							"id": 368,
+							"name": "spellcheck",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 528,
+									"character": 14
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 369,
+							"name": "src",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 529,
+									"character": 7
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"audio\",\n    \"embed\",\n    \"iframe\",\n    \"img\",\n    \"input\",\n    \"script\",\n    \"source\",\n    \"track\",\n    \"video\"\n  ]"
+						},
+						{
+							"id": 370,
+							"name": "srcdoc",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 540,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"iframe\"\n  ]"
+						},
+						{
+							"id": 371,
+							"name": "srclang",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 543,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"track\"\n  ]"
+						},
+						{
+							"id": 372,
+							"name": "srcset",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 546,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"img\",\n    \"source\"\n  ]"
+						},
+						{
+							"id": 373,
+							"name": "start",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 550,
+									"character": 9
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"ol\"\n  ]"
+						},
+						{
+							"id": 374,
+							"name": "step",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 553,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"input\"\n  ]"
+						},
+						{
+							"id": 375,
+							"name": "style",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 556,
+									"character": 9
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 376,
+							"name": "tabindex",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 557,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 377,
+							"name": "target",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 558,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"a\",\n    \"area\",\n    \"base\",\n    \"form\"\n  ]"
+						},
+						{
+							"id": 378,
+							"name": "title",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 564,
+									"character": 9
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 379,
+							"name": "translate",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 565,
+									"character": 13
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "true"
+							},
+							"defaultValue": "true"
+						},
+						{
+							"id": 380,
+							"name": "type",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 566,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"a\",\n    \"button\",\n    \"embed\",\n    \"input\",\n    \"link\",\n    \"menu\",\n    \"object\",\n    \"script\",\n    \"source\",\n    \"style\"\n  ]"
+						},
+						{
+							"id": 381,
+							"name": "usemap",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 578,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"img\",\n    \"object\"\n  ]"
+						},
+						{
+							"id": 382,
+							"name": "value",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 582,
+									"character": 9
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"button\",\n    \"input\",\n    \"li\",\n    \"option\",\n    \"meter\",\n    \"progress\",\n    \"param\"\n  ]"
+						},
+						{
+							"id": 383,
+							"name": "width",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 591,
+									"character": 9
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"canvas\",\n    \"embed\",\n    \"iframe\",\n    \"img\",\n    \"input\",\n    \"object\",\n    \"video\"\n  ]"
+						},
+						{
+							"id": 384,
+							"name": "wrap",
+							"kind": 32,
+							"kindString": "Variable",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "helpers/html-attributes-map.ts",
+									"line": 600,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"defaultValue": " [\n    \"textarea\"\n  ]"
+						}
+					],
+					"groups": [
+						{
+							"title": "Variables",
+							"kind": 32,
+							"children": [
+								176,
+								177,
+								178,
+								179,
+								180,
+								181,
+								182,
+								183,
+								184,
+								185,
+								186,
+								187,
+								188,
+								189,
+								190,
+								191,
+								192,
+								193,
+								194,
+								195,
+								196,
+								197,
+								198,
+								199,
+								200,
+								201,
+								202,
+								203,
+								204,
+								205,
+								206,
+								207,
+								208,
+								209,
+								210,
+								211,
+								212,
+								213,
+								214,
+								215,
+								216,
+								217,
+								218,
+								219,
+								220,
+								221,
+								222,
+								223,
+								224,
+								225,
+								226,
+								227,
+								228,
+								229,
+								230,
+								231,
+								232,
+								233,
+								234,
+								235,
+								236,
+								237,
+								238,
+								239,
+								240,
+								241,
+								242,
+								243,
+								244,
+								245,
+								246,
+								247,
+								248,
+								249,
+								250,
+								251,
+								252,
+								253,
+								254,
+								255,
+								256,
+								257,
+								258,
+								259,
+								260,
+								261,
+								262,
+								263,
+								264,
+								265,
+								266,
+								267,
+								268,
+								269,
+								270,
+								271,
+								272,
+								273,
+								274,
+								275,
+								276,
+								277,
+								278,
+								279,
+								280,
+								281,
+								282,
+								283,
+								284,
+								285,
+								286,
+								287,
+								288,
+								289,
+								290,
+								291,
+								292,
+								293,
+								294,
+								295,
+								296,
+								297,
+								298,
+								299,
+								300,
+								301,
+								302,
+								303,
+								304,
+								305,
+								306,
+								307,
+								308,
+								309,
+								310,
+								311,
+								312,
+								313,
+								314,
+								315,
+								316,
+								317,
+								318,
+								319,
+								320,
+								321,
+								322,
+								323,
+								324,
+								325,
+								326,
+								327,
+								328,
+								329,
+								330,
+								331,
+								332,
+								333,
+								334,
+								335,
+								336,
+								337,
+								338,
+								339,
+								340,
+								341,
+								342,
+								343,
+								344,
+								345,
+								346,
+								347,
+								348,
+								349,
+								350,
+								351,
+								352,
+								353,
+								354,
+								355,
+								356,
+								357,
+								358,
+								359,
+								360,
+								361,
+								362,
+								363,
+								364,
+								365,
+								366,
+								367,
+								368,
+								369,
+								370,
+								371,
+								372,
+								373,
+								374,
+								375,
+								376,
+								377,
+								378,
+								379,
+								380,
+								381,
+								382,
+								383,
+								384
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "helpers/html-attributes-map.ts",
+							"line": 1,
+							"character": 32
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "object"
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Object literals",
+					"kind": 2097152,
+					"children": [
+						175
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "helpers/html-attributes-map.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 385,
 			"name": "\"helpers/number\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -2473,7 +7579,7 @@
 			"originalName": "/home/tonicblue/code/scvo/bristles/src/helpers/number.ts",
 			"children": [
 				{
-					"id": 169,
+					"id": 386,
 					"name": "NumberHelpers",
 					"kind": 128,
 					"kindString": "Class",
@@ -2485,7 +7591,7 @@
 					},
 					"children": [
 						{
-							"id": 170,
+							"id": 387,
 							"name": "_sum",
 							"kind": 2048,
 							"kindString": "Method",
@@ -2495,14 +7601,14 @@
 							},
 							"signatures": [
 								{
-									"id": 171,
+									"id": 388,
 									"name": "_sum",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 172,
+											"id": 389,
 											"name": "args",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2538,7 +7644,7 @@
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								170
+								387
 							]
 						}
 					],
@@ -2556,7 +7662,7 @@
 					"title": "Classes",
 					"kind": 128,
 					"children": [
-						169
+						386
 					]
 				}
 			],
@@ -2569,7 +7675,7 @@
 			]
 		},
 		{
-			"id": 173,
+			"id": 390,
 			"name": "\"helpers/object\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -2579,7 +7685,7 @@
 			"originalName": "/home/tonicblue/code/scvo/bristles/src/helpers/object.ts",
 			"children": [
 				{
-					"id": 174,
+					"id": 391,
 					"name": "ObjectHelpers",
 					"kind": 128,
 					"kindString": "Class",
@@ -2591,7 +7697,7 @@
 					},
 					"children": [
 						{
-							"id": 181,
+							"id": 398,
 							"name": "_entries",
 							"kind": 2048,
 							"kindString": "Method",
@@ -2601,14 +7707,14 @@
 							},
 							"signatures": [
 								{
-									"id": 182,
+									"id": 399,
 									"name": "_entries",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 183,
+											"id": 400,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2634,7 +7740,37 @@
 							]
 						},
 						{
-							"id": 184,
+							"id": 410,
+							"name": "_extend",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isStatic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 411,
+									"name": "_extend",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "helpers/object.ts",
+									"line": 125,
+									"character": 16
+								}
+							]
+						},
+						{
+							"id": 401,
 							"name": "_get",
 							"kind": 2048,
 							"kindString": "Method",
@@ -2644,14 +7780,14 @@
 							},
 							"signatures": [
 								{
-									"id": 185,
+									"id": 402,
 									"name": "_get",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 186,
+											"id": 403,
 											"name": "context",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2662,7 +7798,7 @@
 											}
 										},
 										{
-											"id": 187,
+											"id": 404,
 											"name": "path",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2688,7 +7824,7 @@
 							]
 						},
 						{
-							"id": 178,
+							"id": 395,
 							"name": "_keys",
 							"kind": 2048,
 							"kindString": "Method",
@@ -2698,14 +7834,14 @@
 							},
 							"signatures": [
 								{
-									"id": 179,
+									"id": 396,
 									"name": "_keys",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 180,
+											"id": 397,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2731,7 +7867,7 @@
 							]
 						},
 						{
-							"id": 188,
+							"id": 405,
 							"name": "_merge",
 							"kind": 2048,
 							"kindString": "Method",
@@ -2741,7 +7877,7 @@
 							},
 							"signatures": [
 								{
-									"id": 189,
+									"id": 406,
 									"name": "_merge",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -2761,7 +7897,7 @@
 							]
 						},
 						{
-							"id": 190,
+							"id": 407,
 							"name": "_parse",
 							"kind": 2048,
 							"kindString": "Method",
@@ -2771,14 +7907,14 @@
 							},
 							"signatures": [
 								{
-									"id": 191,
+									"id": 408,
 									"name": "_parse",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 192,
+											"id": 409,
 											"name": "value",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2804,7 +7940,7 @@
 							]
 						},
 						{
-							"id": 175,
+							"id": 392,
 							"name": "_values",
 							"kind": 2048,
 							"kindString": "Method",
@@ -2814,14 +7950,14 @@
 							},
 							"signatures": [
 								{
-									"id": 176,
+									"id": 393,
 									"name": "_values",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 177,
+											"id": 394,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2852,12 +7988,13 @@
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								181,
-								184,
-								178,
-								188,
-								190,
-								175
+								398,
+								410,
+								401,
+								395,
+								405,
+								407,
+								392
 							]
 						}
 					],
@@ -2870,7 +8007,7 @@
 					]
 				},
 				{
-					"id": 193,
+					"id": 412,
 					"name": "JSON6",
 					"kind": 32,
 					"kindString": "Variable",
@@ -2896,14 +8033,14 @@
 					"title": "Classes",
 					"kind": 128,
 					"children": [
-						174
+						391
 					]
 				},
 				{
 					"title": "Variables",
 					"kind": 32,
 					"children": [
-						193
+						412
 					]
 				}
 			],
@@ -2916,7 +8053,7 @@
 			]
 		},
 		{
-			"id": 194,
+			"id": 413,
 			"name": "\"helpers/string\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -2926,7 +8063,7 @@
 			"originalName": "/home/tonicblue/code/scvo/bristles/src/helpers/string.ts",
 			"children": [
 				{
-					"id": 195,
+					"id": 414,
 					"name": "StringHelpers",
 					"kind": 128,
 					"kindString": "Class",
@@ -2938,7 +8075,7 @@
 					},
 					"children": [
 						{
-							"id": 241,
+							"id": 460,
 							"name": "_camelize",
 							"kind": 2048,
 							"kindString": "Method",
@@ -2948,14 +8085,14 @@
 							},
 							"signatures": [
 								{
-									"id": 242,
+									"id": 461,
 									"name": "_camelize",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 243,
+											"id": 462,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2981,7 +8118,7 @@
 							]
 						},
 						{
-							"id": 244,
+							"id": 463,
 							"name": "_capitalize",
 							"kind": 2048,
 							"kindString": "Method",
@@ -2991,14 +8128,14 @@
 							},
 							"signatures": [
 								{
-									"id": 245,
+									"id": 464,
 									"name": "_capitalize",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 246,
+											"id": 465,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3024,7 +8161,7 @@
 							]
 						},
 						{
-							"id": 247,
+							"id": 466,
 							"name": "_chompLeft",
 							"kind": 2048,
 							"kindString": "Method",
@@ -3034,14 +8171,14 @@
 							},
 							"signatures": [
 								{
-									"id": 248,
+									"id": 467,
 									"name": "_chompLeft",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 249,
+											"id": 468,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3052,7 +8189,7 @@
 											}
 										},
 										{
-											"id": 250,
+											"id": 469,
 											"name": "prefix",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3078,7 +8215,7 @@
 							]
 						},
 						{
-							"id": 251,
+							"id": 470,
 							"name": "_chompRight",
 							"kind": 2048,
 							"kindString": "Method",
@@ -3088,14 +8225,14 @@
 							},
 							"signatures": [
 								{
-									"id": 252,
+									"id": 471,
 									"name": "_chompRight",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 253,
+											"id": 472,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3106,7 +8243,7 @@
 											}
 										},
 										{
-											"id": 254,
+											"id": 473,
 											"name": "suffix",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3132,7 +8269,7 @@
 							]
 						},
 						{
-							"id": 255,
+							"id": 474,
 							"name": "_collapseWhitespace",
 							"kind": 2048,
 							"kindString": "Method",
@@ -3142,14 +8279,14 @@
 							},
 							"signatures": [
 								{
-									"id": 256,
+									"id": 475,
 									"name": "_collapseWhitespace",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 257,
+											"id": 476,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3175,7 +8312,7 @@
 							]
 						},
 						{
-							"id": 210,
+							"id": 429,
 							"name": "_concat",
 							"kind": 2048,
 							"kindString": "Method",
@@ -3185,7 +8322,7 @@
 							},
 							"signatures": [
 								{
-									"id": 211,
+									"id": 430,
 									"name": "_concat",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -3206,7 +8343,7 @@
 									},
 									"parameters": [
 										{
-											"id": 212,
+											"id": 431,
 											"name": "args",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3237,7 +8374,7 @@
 							]
 						},
 						{
-							"id": 258,
+							"id": 477,
 							"name": "_countOccurances",
 							"kind": 2048,
 							"kindString": "Method",
@@ -3247,14 +8384,14 @@
 							},
 							"signatures": [
 								{
-									"id": 259,
+									"id": 478,
 									"name": "_countOccurances",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 260,
+											"id": 479,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3265,7 +8402,7 @@
 											}
 										},
 										{
-											"id": 261,
+											"id": 480,
 											"name": "substring",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3291,7 +8428,7 @@
 							]
 						},
 						{
-							"id": 262,
+							"id": 481,
 							"name": "_dasherize",
 							"kind": 2048,
 							"kindString": "Method",
@@ -3301,14 +8438,14 @@
 							},
 							"signatures": [
 								{
-									"id": 263,
+									"id": 482,
 									"name": "_dasherize",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 264,
+											"id": 483,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3334,7 +8471,7 @@
 							]
 						},
 						{
-							"id": 265,
+							"id": 484,
 							"name": "_decodeHTMLEntities",
 							"kind": 2048,
 							"kindString": "Method",
@@ -3344,14 +8481,14 @@
 							},
 							"signatures": [
 								{
-									"id": 266,
+									"id": 485,
 									"name": "_decodeHTMLEntities",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 267,
+											"id": 486,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3377,7 +8514,7 @@
 							]
 						},
 						{
-							"id": 268,
+							"id": 487,
 							"name": "_ensureLeft",
 							"kind": 2048,
 							"kindString": "Method",
@@ -3387,14 +8524,14 @@
 							},
 							"signatures": [
 								{
-									"id": 269,
+									"id": 488,
 									"name": "_ensureLeft",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 270,
+											"id": 489,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3405,7 +8542,7 @@
 											}
 										},
 										{
-											"id": 271,
+											"id": 490,
 											"name": "prefix",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3431,7 +8568,7 @@
 							]
 						},
 						{
-							"id": 272,
+							"id": 491,
 							"name": "_ensureRight",
 							"kind": 2048,
 							"kindString": "Method",
@@ -3441,14 +8578,14 @@
 							},
 							"signatures": [
 								{
-									"id": 273,
+									"id": 492,
 									"name": "_ensureRight",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 274,
+											"id": 493,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3459,7 +8596,7 @@
 											}
 										},
 										{
-											"id": 275,
+											"id": 494,
 											"name": "suffix",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3485,7 +8622,7 @@
 							]
 						},
 						{
-							"id": 276,
+							"id": 495,
 							"name": "_humanize",
 							"kind": 2048,
 							"kindString": "Method",
@@ -3495,14 +8632,14 @@
 							},
 							"signatures": [
 								{
-									"id": 277,
+									"id": 496,
 									"name": "_humanize",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 278,
+											"id": 497,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3528,7 +8665,7 @@
 							]
 						},
 						{
-							"id": 213,
+							"id": 432,
 							"name": "_indexOf",
 							"kind": 2048,
 							"kindString": "Method",
@@ -3538,7 +8675,7 @@
 							},
 							"signatures": [
 								{
-									"id": 214,
+									"id": 433,
 									"name": "_indexOf",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -3559,7 +8696,7 @@
 									},
 									"parameters": [
 										{
-											"id": 215,
+											"id": 434,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3573,7 +8710,7 @@
 											}
 										},
 										{
-											"id": 216,
+											"id": 435,
 											"name": "match",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3602,7 +8739,7 @@
 							]
 						},
 						{
-							"id": 217,
+							"id": 436,
 							"name": "_lastIndexOf",
 							"kind": 2048,
 							"kindString": "Method",
@@ -3612,7 +8749,7 @@
 							},
 							"signatures": [
 								{
-									"id": 218,
+									"id": 437,
 									"name": "_lastIndexOf",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -3633,7 +8770,7 @@
 									},
 									"parameters": [
 										{
-											"id": 219,
+											"id": 438,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3647,7 +8784,7 @@
 											}
 										},
 										{
-											"id": 220,
+											"id": 439,
 											"name": "match",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3676,7 +8813,7 @@
 							]
 						},
 						{
-							"id": 279,
+							"id": 498,
 							"name": "_lines",
 							"kind": 2048,
 							"kindString": "Method",
@@ -3686,14 +8823,14 @@
 							},
 							"signatures": [
 								{
-									"id": 280,
+									"id": 499,
 									"name": "_lines",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 281,
+											"id": 500,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3722,7 +8859,7 @@
 							]
 						},
 						{
-							"id": 330,
+							"id": 551,
 							"name": "_match",
 							"kind": 2048,
 							"kindString": "Method",
@@ -3732,14 +8869,14 @@
 							},
 							"signatures": [
 								{
-									"id": 331,
+									"id": 552,
 									"name": "_match",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 332,
+											"id": 553,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3750,7 +8887,7 @@
 											}
 										},
 										{
-											"id": 333,
+											"id": 554,
 											"name": "pattern",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3761,7 +8898,7 @@
 											}
 										},
 										{
-											"id": 334,
+											"id": 555,
 											"name": "options",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3793,13 +8930,13 @@
 							"sources": [
 								{
 									"fileName": "helpers/string.ts",
-									"line": 621,
+									"line": 645,
 									"character": 15
 								}
 							]
 						},
 						{
-							"id": 232,
+							"id": 451,
 							"name": "_padEnd",
 							"kind": 2048,
 							"kindString": "Method",
@@ -3809,14 +8946,14 @@
 							},
 							"signatures": [
 								{
-									"id": 233,
+									"id": 452,
 									"name": "_padEnd",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 234,
+											"id": 453,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3827,7 +8964,7 @@
 											}
 										},
 										{
-											"id": 235,
+											"id": 454,
 											"name": "maxLength",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3838,7 +8975,7 @@
 											}
 										},
 										{
-											"id": 236,
+											"id": 455,
 											"name": "fillString",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3864,7 +9001,7 @@
 							]
 						},
 						{
-							"id": 227,
+							"id": 446,
 							"name": "_padStart",
 							"kind": 2048,
 							"kindString": "Method",
@@ -3874,14 +9011,14 @@
 							},
 							"signatures": [
 								{
-									"id": 228,
+									"id": 447,
 									"name": "_padStart",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 229,
+											"id": 448,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3892,7 +9029,7 @@
 											}
 										},
 										{
-											"id": 230,
+											"id": 449,
 											"name": "maxLength",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3903,7 +9040,7 @@
 											}
 										},
 										{
-											"id": 231,
+											"id": 450,
 											"name": "fillString",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3929,7 +9066,7 @@
 							]
 						},
 						{
-							"id": 287,
+							"id": 506,
 							"name": "_regexReplace",
 							"kind": 2048,
 							"kindString": "Method",
@@ -3939,14 +9076,14 @@
 							},
 							"signatures": [
 								{
-									"id": 288,
+									"id": 507,
 									"name": "_regexReplace",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 289,
+											"id": 508,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3957,7 +9094,7 @@
 											}
 										},
 										{
-											"id": 290,
+											"id": 509,
 											"name": "match",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3968,7 +9105,7 @@
 											}
 										},
 										{
-											"id": 291,
+											"id": 510,
 											"name": "options",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3979,7 +9116,7 @@
 											}
 										},
 										{
-											"id": 292,
+											"id": 511,
 											"name": "replacement",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -4005,7 +9142,7 @@
 							]
 						},
 						{
-							"id": 237,
+							"id": 456,
 							"name": "_repeat",
 							"kind": 2048,
 							"kindString": "Method",
@@ -4015,14 +9152,14 @@
 							},
 							"signatures": [
 								{
-									"id": 238,
+									"id": 457,
 									"name": "_repeat",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 239,
+											"id": 458,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -4033,7 +9170,7 @@
 											}
 										},
 										{
-											"id": 240,
+											"id": 459,
 											"name": "times",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -4059,7 +9196,7 @@
 							]
 						},
 						{
-							"id": 282,
+							"id": 501,
 							"name": "_replace",
 							"kind": 2048,
 							"kindString": "Method",
@@ -4069,14 +9206,14 @@
 							},
 							"signatures": [
 								{
-									"id": 283,
+									"id": 502,
 									"name": "_replace",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 284,
+											"id": 503,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -4087,7 +9224,7 @@
 											}
 										},
 										{
-											"id": 285,
+											"id": 504,
 											"name": "match",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -4098,7 +9235,7 @@
 											}
 										},
 										{
-											"id": 286,
+											"id": 505,
 											"name": "replacement",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -4124,7 +9261,7 @@
 							]
 						},
 						{
-							"id": 293,
+							"id": 512,
 							"name": "_slugify",
 							"kind": 2048,
 							"kindString": "Method",
@@ -4134,14 +9271,14 @@
 							},
 							"signatures": [
 								{
-									"id": 294,
+									"id": 513,
 									"name": "_slugify",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 295,
+											"id": 514,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -4167,7 +9304,7 @@
 							]
 						},
 						{
-							"id": 196,
+							"id": 415,
 							"name": "_split",
 							"kind": 2048,
 							"kindString": "Method",
@@ -4177,7 +9314,7 @@
 							},
 							"signatures": [
 								{
-									"id": 197,
+									"id": 416,
 									"name": "_split",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -4198,7 +9335,7 @@
 									},
 									"parameters": [
 										{
-											"id": 198,
+											"id": 417,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -4212,7 +9349,7 @@
 											}
 										},
 										{
-											"id": 199,
+											"id": 418,
 											"name": "delimeter",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -4252,7 +9389,7 @@
 							]
 						},
 						{
-							"id": 305,
+							"id": 524,
 							"name": "_stripLeft",
 							"kind": 2048,
 							"kindString": "Method",
@@ -4262,14 +9399,14 @@
 							},
 							"signatures": [
 								{
-									"id": 306,
+									"id": 525,
 									"name": "_stripLeft",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 307,
+											"id": 526,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -4280,7 +9417,7 @@
 											}
 										},
 										{
-											"id": 308,
+											"id": 527,
 											"name": "chars",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -4306,7 +9443,7 @@
 							]
 						},
 						{
-							"id": 309,
+							"id": 528,
 							"name": "_stripRight",
 							"kind": 2048,
 							"kindString": "Method",
@@ -4316,14 +9453,14 @@
 							},
 							"signatures": [
 								{
-									"id": 310,
+									"id": 529,
 									"name": "_stripRight",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 311,
+											"id": 530,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -4334,7 +9471,7 @@
 											}
 										},
 										{
-											"id": 312,
+											"id": 531,
 											"name": "chars",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -4360,7 +9497,7 @@
 							]
 						},
 						{
-							"id": 313,
+							"id": 532,
 							"name": "_stripTags",
 							"kind": 2048,
 							"kindString": "Method",
@@ -4370,14 +9507,14 @@
 							},
 							"signatures": [
 								{
-									"id": 314,
+									"id": 533,
 									"name": "_stripTags",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 315,
+											"id": 534,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -4403,7 +9540,7 @@
 							]
 						},
 						{
-							"id": 200,
+							"id": 419,
 							"name": "_substr",
 							"kind": 2048,
 							"kindString": "Method",
@@ -4413,7 +9550,7 @@
 							},
 							"signatures": [
 								{
-									"id": 201,
+									"id": 420,
 									"name": "_substr",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -4434,7 +9571,7 @@
 									},
 									"parameters": [
 										{
-											"id": 202,
+											"id": 421,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -4448,7 +9585,7 @@
 											}
 										},
 										{
-											"id": 203,
+											"id": 422,
 											"name": "from",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -4462,7 +9599,7 @@
 											}
 										},
 										{
-											"id": 204,
+											"id": 423,
 											"name": "length",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -4499,7 +9636,7 @@
 							]
 						},
 						{
-							"id": 205,
+							"id": 424,
 							"name": "_substring",
 							"kind": 2048,
 							"kindString": "Method",
@@ -4509,7 +9646,7 @@
 							},
 							"signatures": [
 								{
-									"id": 206,
+									"id": 425,
 									"name": "_substring",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -4530,7 +9667,7 @@
 									},
 									"parameters": [
 										{
-											"id": 207,
+											"id": 426,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -4544,7 +9681,7 @@
 											}
 										},
 										{
-											"id": 208,
+											"id": 427,
 											"name": "start",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -4558,7 +9695,7 @@
 											}
 										},
 										{
-											"id": 209,
+											"id": 428,
 											"name": "end",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -4595,7 +9732,7 @@
 							]
 						},
 						{
-							"id": 316,
+							"id": 535,
 							"name": "_titleCase",
 							"kind": 2048,
 							"kindString": "Method",
@@ -4605,14 +9742,14 @@
 							},
 							"signatures": [
 								{
-									"id": 317,
+									"id": 536,
 									"name": "_titleCase",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 318,
+											"id": 537,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -4638,7 +9775,7 @@
 							]
 						},
 						{
-							"id": 319,
+							"id": 538,
 							"name": "_toBoolean",
 							"kind": 2048,
 							"kindString": "Method",
@@ -4648,14 +9785,14 @@
 							},
 							"signatures": [
 								{
-									"id": 320,
+									"id": 539,
 									"name": "_toBoolean",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 321,
+											"id": 540,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -4681,7 +9818,7 @@
 							]
 						},
 						{
-							"id": 224,
+							"id": 443,
 							"name": "_toLowerCase",
 							"kind": 2048,
 							"kindString": "Method",
@@ -4691,14 +9828,14 @@
 							},
 							"signatures": [
 								{
-									"id": 225,
+									"id": 444,
 									"name": "_toLowerCase",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 226,
+											"id": 445,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -4724,7 +9861,7 @@
 							]
 						},
 						{
-							"id": 221,
+							"id": 440,
 							"name": "_toUpperCase",
 							"kind": 2048,
 							"kindString": "Method",
@@ -4734,14 +9871,14 @@
 							},
 							"signatures": [
 								{
-									"id": 222,
+									"id": 441,
 									"name": "_toUpperCase",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 223,
+											"id": 442,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -4767,7 +9904,7 @@
 							]
 						},
 						{
-							"id": 296,
+							"id": 515,
 							"name": "_trim",
 							"kind": 2048,
 							"kindString": "Method",
@@ -4777,14 +9914,14 @@
 							},
 							"signatures": [
 								{
-									"id": 297,
+									"id": 516,
 									"name": "_trim",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 298,
+											"id": 517,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -4810,7 +9947,7 @@
 							]
 						},
 						{
-							"id": 299,
+							"id": 518,
 							"name": "_trimLeft",
 							"kind": 2048,
 							"kindString": "Method",
@@ -4820,14 +9957,14 @@
 							},
 							"signatures": [
 								{
-									"id": 300,
+									"id": 519,
 									"name": "_trimLeft",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 301,
+											"id": 520,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -4853,7 +9990,7 @@
 							]
 						},
 						{
-							"id": 302,
+							"id": 521,
 							"name": "_trimRight",
 							"kind": 2048,
 							"kindString": "Method",
@@ -4863,14 +10000,14 @@
 							},
 							"signatures": [
 								{
-									"id": 303,
+									"id": 522,
 									"name": "_trimRight",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 304,
+											"id": 523,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -4896,7 +10033,7 @@
 							]
 						},
 						{
-							"id": 322,
+							"id": 541,
 							"name": "_truncate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -4906,14 +10043,14 @@
 							},
 							"signatures": [
 								{
-									"id": 323,
+									"id": 542,
 									"name": "_truncate",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 324,
+											"id": 543,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -4924,7 +10061,7 @@
 											}
 										},
 										{
-											"id": 325,
+											"id": 544,
 											"name": "length",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -4935,7 +10072,7 @@
 											}
 										},
 										{
-											"id": 326,
+											"id": 545,
 											"name": "chars",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -4961,7 +10098,7 @@
 							]
 						},
 						{
-							"id": 327,
+							"id": 546,
 							"name": "_underscore",
 							"kind": 2048,
 							"kindString": "Method",
@@ -4971,14 +10108,14 @@
 							},
 							"signatures": [
 								{
-									"id": 328,
+									"id": 547,
 									"name": "_underscore",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 329,
+											"id": 548,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -5002,6 +10139,36 @@
 									"character": 20
 								}
 							]
+						},
+						{
+							"id": 549,
+							"name": "_unindent",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isStatic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 550,
+									"name": "_unindent",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "helpers/string.ts",
+									"line": 621,
+									"character": 18
+								}
+							]
 						}
 					],
 					"groups": [
@@ -5009,43 +10176,44 @@
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								241,
-								244,
-								247,
-								251,
-								255,
-								210,
-								258,
-								262,
-								265,
-								268,
-								272,
-								276,
-								213,
-								217,
-								279,
-								330,
-								232,
-								227,
-								287,
-								237,
-								282,
-								293,
-								196,
-								305,
-								309,
-								313,
-								200,
-								205,
-								316,
-								319,
-								224,
-								221,
-								296,
-								299,
-								302,
-								322,
-								327
+								460,
+								463,
+								466,
+								470,
+								474,
+								429,
+								477,
+								481,
+								484,
+								487,
+								491,
+								495,
+								432,
+								436,
+								498,
+								551,
+								451,
+								446,
+								506,
+								456,
+								501,
+								512,
+								415,
+								524,
+								528,
+								532,
+								419,
+								424,
+								535,
+								538,
+								443,
+								440,
+								515,
+								518,
+								521,
+								541,
+								546,
+								549
 							]
 						}
 					],
@@ -5063,7 +10231,7 @@
 					"title": "Classes",
 					"kind": 128,
 					"children": [
-						195
+						414
 					]
 				}
 			],
@@ -5076,7 +10244,7 @@
 			]
 		},
 		{
-			"id": 335,
+			"id": 556,
 			"name": "\"helpers/utility\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -5086,7 +10254,7 @@
 			"originalName": "/home/tonicblue/code/scvo/bristles/src/helpers/utility.ts",
 			"children": [
 				{
-					"id": 336,
+					"id": 557,
 					"name": "UtilityHelpers",
 					"kind": 128,
 					"kindString": "Class",
@@ -5098,7 +10266,7 @@
 					},
 					"children": [
 						{
-							"id": 341,
+							"id": 562,
 							"name": "_coalesce",
 							"kind": 2048,
 							"kindString": "Method",
@@ -5108,7 +10276,7 @@
 							},
 							"signatures": [
 								{
-									"id": 342,
+									"id": 563,
 									"name": "_coalesce",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -5122,13 +10290,13 @@
 							"sources": [
 								{
 									"fileName": "helpers/utility.ts",
-									"line": 77,
+									"line": 80,
 									"character": 18
 								}
 							]
 						},
 						{
-							"id": 343,
+							"id": 572,
 							"name": "_eval",
 							"kind": 2048,
 							"kindString": "Method",
@@ -5138,14 +10306,14 @@
 							},
 							"signatures": [
 								{
-									"id": 344,
+									"id": 573,
 									"name": "_eval",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 345,
+											"id": 574,
 											"name": "code",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -5165,13 +10333,13 @@
 							"sources": [
 								{
 									"fileName": "helpers/utility.ts",
-									"line": 101,
+									"line": 197,
 									"character": 14
 								}
 							]
 						},
 						{
-							"id": 337,
+							"id": 558,
 							"name": "_json",
 							"kind": 2048,
 							"kindString": "Method",
@@ -5181,7 +10349,7 @@
 							},
 							"signatures": [
 								{
-									"id": 338,
+									"id": 559,
 									"name": "_json",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -5195,13 +10363,129 @@
 							"sources": [
 								{
 									"fileName": "helpers/utility.ts",
-									"line": 18,
+									"line": 21,
 									"character": 14
 								}
 							]
 						},
 						{
-							"id": 339,
+							"id": 567,
+							"name": "_lookupMap",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isStatic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 568,
+									"name": "_lookupMap",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "helpers/utility.ts",
+									"line": 100,
+									"character": 19
+								}
+							]
+						},
+						{
+							"id": 564,
+							"name": "_raw",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isStatic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 565,
+									"name": "_raw",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 566,
+											"name": "options",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "HelperOptions"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "helpers/utility.ts",
+									"line": 96,
+									"character": 13
+								}
+							]
+						},
+						{
+							"id": 569,
+							"name": "_toHtmlAttributes",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isStatic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 570,
+									"name": "_toHtmlAttributes",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 571,
+											"name": "input",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "helpers/utility.ts",
+									"line": 132,
+									"character": 26
+								}
+							]
+						},
+						{
+							"id": 560,
 							"name": "_typeof",
 							"kind": 2048,
 							"kindString": "Method",
@@ -5211,7 +10495,7 @@
 							},
 							"signatures": [
 								{
-									"id": 340,
+									"id": 561,
 									"name": "_typeof",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -5266,7 +10550,7 @@
 							"sources": [
 								{
 									"fileName": "helpers/utility.ts",
-									"line": 63,
+									"line": 66,
 									"character": 16
 								}
 							]
@@ -5277,23 +10561,26 @@
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								341,
-								343,
-								337,
-								339
+								562,
+								572,
+								558,
+								567,
+								564,
+								569,
+								560
 							]
 						}
 					],
 					"sources": [
 						{
 							"fileName": "helpers/utility.ts",
-							"line": 17,
+							"line": 20,
 							"character": 35
 						}
 					]
 				},
 				{
-					"id": 346,
+					"id": 575,
 					"name": "JSON6",
 					"kind": 32,
 					"kindString": "Variable",
@@ -5303,7 +10590,7 @@
 					"sources": [
 						{
 							"fileName": "helpers/utility.ts",
-							"line": 3,
+							"line": 6,
 							"character": 11
 						}
 					],
@@ -5314,7 +10601,7 @@
 					"defaultValue": " require('json-6')"
 				},
 				{
-					"id": 347,
+					"id": 576,
 					"name": "SafeStringify",
 					"kind": 32,
 					"kindString": "Variable",
@@ -5324,7 +10611,7 @@
 					"sources": [
 						{
 							"fileName": "helpers/utility.ts",
-							"line": 4,
+							"line": 7,
 							"character": 19
 						}
 					],
@@ -5340,15 +10627,15 @@
 					"title": "Classes",
 					"kind": 128,
 					"children": [
-						336
+						557
 					]
 				},
 				{
 					"title": "Variables",
 					"kind": 32,
 					"children": [
-						346,
-						347
+						575,
+						576
 					]
 				}
 			],
@@ -5361,7 +10648,7 @@
 			]
 		},
 		{
-			"id": 348,
+			"id": 577,
 			"name": "\"index\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -5371,7 +10658,7 @@
 			"originalName": "/home/tonicblue/code/scvo/bristles/src/index.ts",
 			"children": [
 				{
-					"id": 352,
+					"id": 581,
 					"name": "Bristles",
 					"kind": 32,
 					"kindString": "Variable",
@@ -5393,7 +10680,7 @@
 					"defaultValue": " BristlesFactory()"
 				},
 				{
-					"id": 349,
+					"id": 578,
 					"name": "BristlesFactory",
 					"kind": 64,
 					"kindString": "Function",
@@ -5402,14 +10689,14 @@
 					},
 					"signatures": [
 						{
-							"id": 350,
+							"id": 579,
 							"name": "BristlesFactory",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 351,
+									"id": 580,
 									"name": "hbs",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -5446,21 +10733,21 @@
 					]
 				},
 				{
-					"id": 353,
+					"id": 582,
 					"name": "registerHelpers",
 					"kind": 64,
 					"kindString": "Function",
 					"flags": {},
 					"signatures": [
 						{
-							"id": 354,
+							"id": 583,
 							"name": "registerHelpers",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 355,
+									"id": 584,
 									"name": "hbs",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -5471,7 +10758,7 @@
 									}
 								},
 								{
-									"id": 356,
+									"id": 585,
 									"name": "mod",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -5502,15 +10789,15 @@
 					"title": "Variables",
 					"kind": 32,
 					"children": [
-						352
+						581
 					]
 				},
 				{
 					"title": "Functions",
 					"kind": 64,
 					"children": [
-						349,
-						353
+						578,
+						582
 					]
 				}
 			],
@@ -5660,12 +10947,13 @@
 			"kind": 1,
 			"children": [
 				9,
-				45,
-				168,
-				173,
-				194,
-				335,
-				348,
+				51,
+				174,
+				385,
+				390,
+				413,
+				556,
+				577,
 				1
 			]
 		}

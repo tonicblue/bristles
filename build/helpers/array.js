@@ -34,7 +34,6 @@ var ArrayHelpers = /** @class */ (function () {
             return [];
         }
     };
-    //TODO: Context doesn't appear to be going through
     ArrayHelpers._each = function (input, join) {
         var helper = arguments[arguments.length - 1];
         try {
@@ -45,40 +44,32 @@ var ArrayHelpers = /** @class */ (function () {
                 throw new Error('The each helper can only be used as a block helper');
             }
             var outputs = [];
-            input = typeof input !== 'object' ? [input] : input;
+            input = typeof input === 'undefined' ? [] : typeof input !== 'object' ? [input] : input;
             if (Array.isArray(input)) {
                 var total = '' + input.length;
                 for (var index in input) {
-                    if (index === '0') {
-                        helper.data['@first'] = true;
-                    }
-                    if (index === total) {
-                        helper.data['@last'] = true;
-                    }
-                    helper.data['@index'] = index;
-                    var output = helper.fn(input[index]).trim();
+                    var data = {
+                        '__first': index === '0',
+                        '__last': index === total,
+                        '__index': index
+                    };
+                    var item = Object.assign(input[index], data);
+                    var output = helper.fn(item).trim();
                     outputs.push(output);
-                    delete helper.data['@first'];
-                    delete helper.data['@last'];
-                    delete helper.data['@index'];
                 }
             }
             else {
                 var keys = Object.keys(input);
                 var total = '' + keys.length;
                 for (var index in keys) {
-                    if (index === '0') {
-                        helper.data['@first'] = true;
-                    }
-                    if (index === total) {
-                        helper.data['@last'] = true;
-                    }
-                    helper.data['@key'] = keys[index];
-                    var output = helper.fn(input[keys[index]]).trim();
+                    var data = {
+                        '__first': index === '0',
+                        '__last': index === total,
+                        '__key': keys[index]
+                    };
+                    var item = Object.assign(input[keys[index]], data);
+                    var output = helper.fn(item).trim();
                     outputs.push(output);
-                    delete helper.data['@first'];
-                    delete helper.data['@last'];
-                    delete helper.data['@key'];
                 }
             }
             outputs = outputs.filter(function (item) { return !!item; });
@@ -218,6 +209,36 @@ var ArrayHelpers = /** @class */ (function () {
         catch (err) {
             console.error('Bristles Error -> Helper: itemAt, Error:', err.message);
             return null;
+        }
+    };
+    ArrayHelpers._array = function () {
+        try {
+            var args = Array.from(arguments);
+            return args.slice(0, args.length - 1);
+        }
+        catch (err) {
+            console.error('Bristles Error -> Helper: array, Error:', err.message);
+            return [];
+        }
+    };
+    ArrayHelpers._join = function (input, separator) {
+        try {
+            if (!Array.isArray(input)) {
+                throw new Error('First argument must be an array');
+            }
+            separator = typeof separator === 'string' ? separator : ',';
+            var options = Array.from(arguments).pop();
+            if (input.length === 0 && options.hash.wrapEmpty !== true) {
+                return '';
+            }
+            var joined = input.join(separator);
+            var left = options.hash.left || '';
+            var right = options.hash.right || '';
+            return "" + left + joined + right;
+        }
+        catch (err) {
+            console.error('Bristles Error -> Helper: join, Error:', err.message);
+            return '';
         }
     };
     return ArrayHelpers;

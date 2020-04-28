@@ -1,4 +1,7 @@
 import { HelperOptions, TemplateDelegate } from 'handlebars';
+import { isOps } from '../utilities';
+
+import { HTML_ATTRIBUTES_MAP } from './html-attributes-map';
 
 const JSON6: any = require('json-6');
 const SafeStringify = require('fast-safe-stringify');
@@ -88,6 +91,99 @@ export default class UtilityHelpers {
       console.error('Bristles Error -> Helper: coalesce, Error:', err.message);
       return null;
     }
+  }
+
+  static _raw(options: HelperOptions) {
+    return options.fn(this);
+  }
+
+  static _lookupMap() {
+    try {
+      const args = Array.from(arguments);
+      const options: HelperOptions = args.pop();
+
+      const map: any = {};
+
+      for (const [key, value] of Object.entries(options.hash)) {
+        const values = Array.isArray(value) ? value : [value];
+        for (const item of values) {
+          map[item] = key;
+        }
+      }
+
+      if (args.length > 0) {
+        const input = args[0];
+        if (map.hasOwnProperty(input)) {
+          return map[input];
+        } else if (args.length > 1) {
+          return args[1];
+        } else {
+          return null;
+        }
+      } else {
+        return map;
+      }
+    } catch(err) {
+      console.error('Bristles Error -> Helper: lookup, Error:', err.message);
+      return null;
+    }
+  }
+
+  static _toHtmlAttributes(input: any): string {
+    const attributes: string[] = [];
+    try {
+      if (typeof input === 'string') {
+        return input;
+      }
+
+      if (isOps(input)) {
+        throw new Error('No input provided')
+      }
+
+      if (typeof input !== 'object' || Array.isArray(input)) {
+        throw new Error('Invalid input type. Inputs must be an object or a string (for pass-through)')
+      }
+
+      const options: HelperOptions = Array.from(arguments).pop();
+      const ignore: string[] = options.hash.ignore || [];
+      const tagName = options.hash.tagName || false;
+
+      const booleanAttributes = [
+        'async', 'autofocus', 'autoplay', 'checked', 'contenteditable', 'controls', 'default',
+        'defer', 'disabled', 'formNoValidate', 'frameborder', 'hidden', 'ismap', 'itemscope',
+        'loop', 'multiple', 'muted', 'nomodule', 'novalidate', 'open', 'readonly', 'required',
+        'reversed', 'scoped', 'selected', 'typemustmatch'
+      ];
+
+      for (const [key, value] of Object.entries(input)) {
+        if (tagName && !key.startsWith('data-')) {
+          const attribute = HTML_ATTRIBUTES_MAP[key] || [];
+          if (attribute !== true && attribute.includes(tagName)) {
+            continue;
+          }
+        }
+
+        if (ignore.includes(key)) {
+          continue;
+        }
+
+        if (booleanAttributes.includes(key)) {
+          if (!!value) {
+            attributes.push(key);
+          }
+        } else if (typeof value === 'object') {
+          const stringified = JSON.stringify(value);
+          const escaped = stringified.replace(/'/g, '&apos;');
+          attributes.push(`${key}='${escaped}'`);
+        } else {
+          const escaped = ('' + value).replace(/"/g, '&quot;');
+          attributes.push(`${key}="${escaped}"`);
+        }
+      }
+    } catch(err) {
+      console.error('Bristles Error -> Helper: toHtmlAttributes, Error:', err.message);
+    }
+    return attributes.join(' ');
   }
 
   /*TODO: This isn't currently returning anything and I need to give this some proper thought
