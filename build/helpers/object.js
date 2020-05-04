@@ -129,7 +129,8 @@ var ObjectHelpers = /** @class */ (function () {
             if (Object.keys(helper.hash).length > 0) {
                 args.push(helper.hash);
             }
-            var output = Object.assign.apply(Object, [{}].concat(args));
+            var objArgs = args.filter(function (item) { return typeof item === 'object' && !Array.isArray(item); });
+            var output = Object.assign.apply(Object, [{}].concat(objArgs));
             if (!helper.fn) {
                 return output;
             }

@@ -127,13 +127,10 @@ export default class StringHelpers {
    */
   static _concat(...args: any[]): string {
     try {
-      const helper: HelperOptions = arguments[arguments.length - 1];
-      let output = '';
-      for (let i = 0; i < arguments.length; i++) {
-        if (typeof arguments[i] !== 'object') {
-          output += (arguments[i] || '').toString();
-        }
-      }
+      const helper: HelperOptions = args.pop();
+      const unstringableTypes = ['function', 'undefined', 'object'];
+      const stringableArgs = args.filter(arg => !unstringableTypes.includes(typeof arg))
+      const output = stringableArgs.join(helper.hash.separator || '');
       return output;
     } catch(err) {
       console.error('Bristles Error -> Helper: concat, Error:', err.message);

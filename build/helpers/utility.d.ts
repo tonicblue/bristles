@@ -11,10 +11,11 @@ import { HelperOptions } from 'handlebars';
  */
 export default class UtilityHelpers {
     static _json(): any;
-    static _typeof(): "string" | "number" | "bigint" | "boolean" | "symbol" | "undefined" | "object" | "function" | "array" | null;
+    static _typeof(): "string" | "number" | "bigint" | "boolean" | "symbol" | "undefined" | "object" | "function" | "array" | undefined;
     static _coalesce(): any;
     static _raw(options: HelperOptions): string;
     static _lookupMap(): any;
+    static _partial(partial: (context: any) => string): string;
     static _toHtmlAttributes(input: any): string;
     static _eval(code: string): any;
 }

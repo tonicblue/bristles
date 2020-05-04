@@ -115,12 +115,10 @@ export default class ConditionalHelpers {
     }
   }
 
-  static _hasAll(): any {
+  static _hasAll(target: any, ...args: any[]): any {
     const helper: HelperOptions = arguments[arguments.length - 1];
     try {
-      let args = Array.from(arguments);
-      args.pop();
-      const target = args.shift();
+      const helper = args.pop();
       args = Array.isArray(args[0]) ? args[0] : args;
       const missing = args.filter(arg => { return !target.hasOwnProperty(arg); });
       const evaluation = missing.length === 0;
@@ -131,12 +129,10 @@ export default class ConditionalHelpers {
     }
   }
 
-  static _hasAny(): any {
+  static _hasAny(target: any, ...args: any[]): any {
     const helper: HelperOptions = arguments[arguments.length - 1];
     try {
-      const args = Array.from(arguments);
-      args.pop();
-      const target = args.shift();
+      const helper = args.pop();
       const has = [];
       const missing = [];
       for (const arg of args) {
@@ -390,10 +386,16 @@ export default class ConditionalHelpers {
   static _eq(inputA: any, inputB: any): any {
     const helper: HelperOptions = arguments[arguments.length - 1];
     try {
-      if (isOps(inputA) || !inputB || isOps(inputB)) {
+      if (isOps(inputA) || isOps(inputB)) {
         throw new Error('Invalid arguments');
       }
-      if (typeof inputA === 'object' && typeof inputB === 'object') {
+
+      const inputAType = typeof inputA;
+      const inputBType = typeof inputB;
+
+      if (inputAType === 'undefined' && inputBType === 'undefined') {
+        return ConditionalHelpers.conditionalResponse(helper, this, true);
+      } else if (inputAType === 'object' && typeof inputBType === 'object') {
         const changes = DeepDiff.diff(inputA, inputB);
         return ConditionalHelpers.conditionalResponse(helper, this, !changes, { changes });
       } else {
@@ -703,8 +705,10 @@ export default class ConditionalHelpers {
       } else {
         let output = '';
 
-        for (const [key, value] of Object.entries(metadata)) {
-          context['@' + key] = value;
+        if (!Object.isFrozen(context)) {
+          for (const [key, value] of Object.entries(metadata)) {
+            context['__' + key] = value;
+          }
         }
 
         if (evaluation) {
@@ -713,8 +717,10 @@ export default class ConditionalHelpers {
           output = helper.inverse(context);
         }
 
-        for (const key of Object.keys(metadata)) {
-          delete context['@' + key];
+        if (!Object.isFrozen(context)) {
+          for (const key of Object.keys(metadata)) {
+            delete context['__' + key];
+          }
         }
 
         return output;

@@ -73,23 +73,25 @@ export default class UtilityHelpers {
       return typeof args[0];
     } catch(err) {
       console.error('Bristles Error -> Helper: getType, Error:', err.message);
-      return null;
+      return;
     }
   }
 
   static _coalesce() {
     try {
       const args = Array.from(arguments);
-      args.pop();
+      const helper: HelperOptions = args.pop();
       for (const arg of args) {
-        if (arg) {
+        if (typeof arg !== 'undefined' && arg !== null && arg !== '') {
           return arg;
         }
       }
-      return null;
+      if (helper.hash.empty) {
+        return helper.hash.empty;
+      }
+      return '';
     } catch(err) {
       console.error('Bristles Error -> Helper: coalesce, Error:', err.message);
-      return null;
     }
   }
 
@@ -129,6 +131,25 @@ export default class UtilityHelpers {
     }
   }
 
+  static _partial(partial: (context: any) => string): string {
+    try {
+      if (typeof partial !== 'function') {
+        throw new Error('Invalid argument. Was expecting partial function');
+      }
+
+      const args = Array.from(arguments);
+      const options: HelperOptions = args.pop();
+      const context = args[1] || this;
+      const data = Object.assign(context, options.data, options.hash);
+      const output = partial(data);
+
+      return output;
+    } catch(err) {
+      console.error('Bristles Error -> Helper: partial, Error:', err.message);
+      return typeof partial === 'string' ? partial : '';
+    }
+  }
+
   static _toHtmlAttributes(input: any): string {
     const attributes: string[] = [];
     try {
@@ -155,10 +176,12 @@ export default class UtilityHelpers {
         'reversed', 'scoped', 'selected', 'typemustmatch'
       ];
 
+      const stringableTypes = ['number', 'boolean', 'string'];
+
       for (const [key, value] of Object.entries(input)) {
         if (tagName && !key.startsWith('data-')) {
           const attribute = HTML_ATTRIBUTES_MAP[key] || [];
-          if (attribute !== true && attribute.includes(tagName)) {
+          if (attribute !== true && !attribute.includes(tagName)) {
             continue;
           }
         }
@@ -167,17 +190,21 @@ export default class UtilityHelpers {
           continue;
         }
 
+        const valueType = typeof value;
+
         if (booleanAttributes.includes(key)) {
           if (!!value) {
             attributes.push(key);
           }
-        } else if (typeof value === 'object') {
+        } else if (valueType === 'object') {
           const stringified = JSON.stringify(value);
           const escaped = stringified.replace(/'/g, '&apos;');
           attributes.push(`${key}='${escaped}'`);
-        } else {
+        } else if (stringableTypes.includes(valueType)) {
           const escaped = ('' + value).replace(/"/g, '&quot;');
-          attributes.push(`${key}="${escaped}"`);
+          if (escaped !== '') {
+            attributes.push(`${key}="${escaped}"`);
+          }
         }
       }
     } catch(err) {

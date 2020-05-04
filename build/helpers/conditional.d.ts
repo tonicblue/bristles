@@ -16,8 +16,8 @@ export default class ConditionalHelpers {
     static _ifAll(): any;
     static _ifNone(): any;
     static _has(target: any, property: string): any;
-    static _hasAll(): any;
-    static _hasAny(): any;
+    static _hasAll(target: any, ...args: any[]): any;
+    static _hasAny(target: any, ...args: any[]): any;
     static _isString(input: any): any;
     static _isNumber(input: any): any;
     static _isNaN(input: any): any;

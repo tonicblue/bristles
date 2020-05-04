@@ -76,24 +76,26 @@ var UtilityHelpers = /** @class */ (function () {
         }
         catch (err) {
             console.error('Bristles Error -> Helper: getType, Error:', err.message);
-            return null;
+            return;
         }
     };
     UtilityHelpers._coalesce = function () {
         try {
             var args = Array.from(arguments);
-            args.pop();
+            var helper = args.pop();
             for (var _i = 0, args_1 = args; _i < args_1.length; _i++) {
                 var arg = args_1[_i];
-                if (arg) {
+                if (typeof arg !== 'undefined' && arg !== null && arg !== '') {
                     return arg;
                 }
             }
-            return null;
+            if (helper.hash.empty) {
+                return helper.hash.empty;
+            }
+            return '';
         }
         catch (err) {
             console.error('Bristles Error -> Helper: coalesce, Error:', err.message);
-            return null;
         }
     };
     UtilityHelpers._raw = function (options) {
@@ -133,6 +135,23 @@ var UtilityHelpers = /** @class */ (function () {
             return null;
         }
     };
+    UtilityHelpers._partial = function (partial) {
+        try {
+            if (typeof partial !== 'function') {
+                throw new Error('Invalid argument. Was expecting partial function');
+            }
+            var args = Array.from(arguments);
+            var options = args.pop();
+            var context = args[1] || this;
+            var data = Object.assign(context, options.data, options.hash);
+            var output = partial(data);
+            return output;
+        }
+        catch (err) {
+            console.error('Bristles Error -> Helper: partial, Error:', err.message);
+            return typeof partial === 'string' ? partial : '';
+        }
+    };
     UtilityHelpers._toHtmlAttributes = function (input) {
         var attributes = [];
         try {
@@ -154,30 +173,34 @@ var UtilityHelpers = /** @class */ (function () {
                 'loop', 'multiple', 'muted', 'nomodule', 'novalidate', 'open', 'readonly', 'required',
                 'reversed', 'scoped', 'selected', 'typemustmatch'
             ];
+            var stringableTypes = ['number', 'boolean', 'string'];
             for (var _i = 0, _a = Object.entries(input); _i < _a.length; _i++) {
                 var _b = _a[_i], key = _b[0], value = _b[1];
                 if (tagName && !key.startsWith('data-')) {
                     var attribute = html_attributes_map_1.HTML_ATTRIBUTES_MAP[key] || [];
-                    if (attribute !== true && attribute.includes(tagName)) {
+                    if (attribute !== true && !attribute.includes(tagName)) {
                         continue;
                     }
                 }
                 if (ignore.includes(key)) {
                     continue;
                 }
+                var valueType = typeof value;
                 if (booleanAttributes.includes(key)) {
                     if (!!value) {
                         attributes.push(key);
                     }
                 }
-                else if (typeof value === 'object') {
+                else if (valueType === 'object') {
                     var stringified = JSON.stringify(value);
                     var escaped = stringified.replace(/'/g, '&apos;');
                     attributes.push(key + "='" + escaped + "'");
                 }
-                else {
+                else if (stringableTypes.includes(valueType)) {
                     var escaped = ('' + value).replace(/"/g, '&quot;');
-                    attributes.push(key + "=\"" + escaped + "\"");
+                    if (escaped !== '') {
+                        attributes.push(key + "=\"" + escaped + "\"");
+                    }
                 }
             }
         }

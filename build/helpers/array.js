@@ -46,11 +46,12 @@ var ArrayHelpers = /** @class */ (function () {
             var outputs = [];
             input = typeof input === 'undefined' ? [] : typeof input !== 'object' ? [input] : input;
             if (Array.isArray(input)) {
-                var total = '' + input.length;
-                for (var index in input) {
+                var total = input.length;
+                for (var index = 0; index < total; index++) {
                     var data = {
-                        '__first': index === '0',
-                        '__last': index === total,
+                        '__total': total,
+                        '__first': index === 0,
+                        '__last': index === total - 1,
                         '__index': index
                     };
                     var item = Object.assign(input[index], data);
@@ -60,11 +61,12 @@ var ArrayHelpers = /** @class */ (function () {
             }
             else {
                 var keys = Object.keys(input);
-                var total = '' + keys.length;
-                for (var index in keys) {
+                var total = keys.length;
+                for (var index = 0; index < keys.length; index++) {
                     var data = {
-                        '__first': index === '0',
-                        '__last': index === total,
+                        '__total': total,
+                        '__first': index === 0,
+                        '__last': index === total - 1,
                         '__key': keys[index]
                     };
                     var item = Object.assign(input[keys[index]], data);

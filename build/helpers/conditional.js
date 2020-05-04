@@ -117,32 +117,36 @@ var ConditionalHelpers = /** @class */ (function () {
             return ConditionalHelpers.conditionalResponse(helper, this, false);
         }
     };
-    ConditionalHelpers._hasAll = function () {
+    ConditionalHelpers._hasAll = function (target) {
+        var args = [];
+        for (var _i = 1; _i < arguments.length; _i++) {
+            args[_i - 1] = arguments[_i];
+        }
         var helper = arguments[arguments.length - 1];
         try {
-            var args = Array.from(arguments);
-            args.pop();
-            var target_1 = args.shift();
+            var helper_1 = args.pop();
             args = Array.isArray(args[0]) ? args[0] : args;
-            var missing = args.filter(function (arg) { return !target_1.hasOwnProperty(arg); });
+            var missing = args.filter(function (arg) { return !target.hasOwnProperty(arg); });
             var evaluation = missing.length === 0;
-            return ConditionalHelpers.conditionalResponse(helper, this, evaluation, { missing: missing });
+            return ConditionalHelpers.conditionalResponse(helper_1, this, evaluation, { missing: missing });
         }
         catch (err) {
             console.error('Bristles Error -> Helper: ifAll, Error:', err.message);
             return ConditionalHelpers.conditionalResponse(helper, this, false);
         }
     };
-    ConditionalHelpers._hasAny = function () {
+    ConditionalHelpers._hasAny = function (target) {
+        var args = [];
+        for (var _i = 1; _i < arguments.length; _i++) {
+            args[_i - 1] = arguments[_i];
+        }
         var helper = arguments[arguments.length - 1];
         try {
-            var args = Array.from(arguments);
-            args.pop();
-            var target = args.shift();
+            var helper_2 = args.pop();
             var has = [];
             var missing = [];
-            for (var _i = 0, args_3 = args; _i < args_3.length; _i++) {
-                var arg = args_3[_i];
+            for (var _a = 0, args_3 = args; _a < args_3.length; _a++) {
+                var arg = args_3[_a];
                 if (target.hasOwnProperty(arg)) {
                     has.push(arg);
                 }
@@ -151,7 +155,7 @@ var ConditionalHelpers = /** @class */ (function () {
                 }
             }
             var evaluation = has.length > 0;
-            return ConditionalHelpers.conditionalResponse(helper, this, evaluation, { has: has, missing: missing });
+            return ConditionalHelpers.conditionalResponse(helper_2, this, evaluation, { has: has, missing: missing });
         }
         catch (err) {
             console.error('Bristles Error -> Helper: ifAll, Error:', err.message);
@@ -393,10 +397,15 @@ var ConditionalHelpers = /** @class */ (function () {
     ConditionalHelpers._eq = function (inputA, inputB) {
         var helper = arguments[arguments.length - 1];
         try {
-            if (utilities_1.isOps(inputA) || !inputB || utilities_1.isOps(inputB)) {
+            if (utilities_1.isOps(inputA) || utilities_1.isOps(inputB)) {
                 throw new Error('Invalid arguments');
             }
-            if (typeof inputA === 'object' && typeof inputB === 'object') {
+            var inputAType = typeof inputA;
+            var inputBType = typeof inputB;
+            if (inputAType === 'undefined' && inputBType === 'undefined') {
+                return ConditionalHelpers.conditionalResponse(helper, this, true);
+            }
+            else if (inputAType === 'object' && typeof inputBType === 'object') {
                 var changes = DeepDiff.diff(inputA, inputB);
                 return ConditionalHelpers.conditionalResponse(helper, this, !changes, { changes: changes });
             }
@@ -692,9 +701,11 @@ var ConditionalHelpers = /** @class */ (function () {
             }
             else {
                 var output = '';
-                for (var _i = 0, _a = Object.entries(metadata); _i < _a.length; _i++) {
-                    var _b = _a[_i], key = _b[0], value = _b[1];
-                    context['@' + key] = value;
+                if (!Object.isFrozen(context)) {
+                    for (var _i = 0, _a = Object.entries(metadata); _i < _a.length; _i++) {
+                        var _b = _a[_i], key = _b[0], value = _b[1];
+                        context['__' + key] = value;
+                    }
                 }
                 if (evaluation) {
                     output = helper.fn(context);
@@ -702,9 +713,11 @@ var ConditionalHelpers = /** @class */ (function () {
                 else if (helper.inverse) {
                     output = helper.inverse(context);
                 }
-                for (var _c = 0, _d = Object.keys(metadata); _c < _d.length; _c++) {
-                    var key = _d[_c];
-                    delete context['@' + key];
+                if (!Object.isFrozen(context)) {
+                    for (var _c = 0, _d = Object.keys(metadata); _c < _d.length; _c++) {
+                        var key = _d[_c];
+                        delete context['__' + key];
+                    }
                 }
                 return output;
             }

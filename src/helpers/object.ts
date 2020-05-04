@@ -135,7 +135,9 @@ export default class ObjectHelpers {
         args.push(helper.hash);
       }
 
-      const output = Object.assign({}, ...args);
+      const objArgs = args.filter(item => typeof item === 'object' && !Array.isArray(item));
+
+      const output = Object.assign({}, ...objArgs);
 
       if (!helper.fn) {
         return output;

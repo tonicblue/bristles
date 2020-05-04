@@ -50,11 +50,12 @@ export default class ArrayHelpers {
       input = typeof input === 'undefined' ? [] : typeof input !== 'object' ? [input] : input;
 
       if (Array.isArray(input)) {
-        const total = '' + input.length;
-        for (const index in input) {
+        const total = input.length;
+        for (let index = 0; index < total; index++) {
           const data = {
-            '__first': index === '0',
-            '__last': index === total,
+            '__total': total,
+            '__first': index === 0,
+            '__last': index === total - 1,
             '__index': index
           };
           const item = Object.assign(input[index], data);
@@ -64,11 +65,12 @@ export default class ArrayHelpers {
         }
       } else {
         const keys = Object.keys(input);
-        const total = '' + keys.length;
-        for (const index in keys) {
+        const total = keys.length;
+        for (let index = 0; index < keys.length; index++) {
           const data = {
-            '__first': index === '0',
-            '__last': index === total,
+            '__total': total,
+            '__first': index === 0,
+            '__last': index === total - 1,
             '__key': keys[index]
           };
           const item = Object.assign(input[keys[index]], data);

@@ -132,13 +132,10 @@ var StringHelpers = /** @class */ (function () {
             args[_i] = arguments[_i];
         }
         try {
-            var helper = arguments[arguments.length - 1];
-            var output = '';
-            for (var i = 0; i < arguments.length; i++) {
-                if (typeof arguments[i] !== 'object') {
-                    output += (arguments[i] || '').toString();
-                }
-            }
+            var helper = args.pop();
+            var unstringableTypes_1 = ['function', 'undefined', 'object'];
+            var stringableArgs = args.filter(function (arg) { return !unstringableTypes_1.includes(typeof arg); });
+            var output = stringableArgs.join(helper.hash.separator || '');
             return output;
         }
         catch (err) {

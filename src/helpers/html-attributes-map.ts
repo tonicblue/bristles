@@ -242,6 +242,10 @@ export const HTML_ATTRIBUTES_MAP: { [attributes: string]: true | string[] } = {
     "input",
     "meter"
   ],
+  "minlength": [
+    "input",
+    "textarea"
+  ],
   "multiple": [
     "input",
     "select"
