@@ -92,29 +92,23 @@ export default class ObjectHelpers {
 
       switch (helper.hash.type || null) {
         case ('json'):
-          console.log(`Parsing as JSON: ${value}`);
           value = JSON6.parse(value);
           break;
         case ('number'):
-          console.log(`Parsing as Number: ${value}`);
           value = parseInt(value);
           break;
         case ('boolean'):
-          console.log(`Parsing as Boolean: ${value}`);
           value = Boolean(value);
           break;
         case ('querystring'):
-          console.log(`Parsing as Querystring: ${value}`);
           value = Querystring.parse(value);
           break;
       }
 
       if (helper.hash.context) {
         const path = helper.hash.path || '@parsed';
-        console.log(`Setting value at '${path} to ${value}`);
         dot.set(path, value, helper.hash.context);
       } else {
-        console.log(`Returning ${value}`);
         return value;
       }
     } catch(err) {
@@ -137,7 +131,9 @@ export default class ObjectHelpers {
 
       const objArgs = args.filter(item => typeof item === 'object' && !Array.isArray(item));
 
-      const output = Object.assign({}, ...objArgs);
+      const output = deepmerge.all([{}, ...objArgs], {
+        arrayMerge: (destinationArray, sourceArray, options) => sourceArray
+      });
 
       if (!helper.fn) {
         return output;
@@ -147,6 +143,16 @@ export default class ObjectHelpers {
     } catch(err) {
       console.error('Bristles Error -> Helper: extend, Error:', err.message);
       return null;
+    }
+  }
+
+  static _o(): any {
+    try {
+      const helper: HelperOptions = arguments[arguments.length - 1];
+      return Object.assign({}, helper.hash || {});
+    } catch(err) {
+      console.error('Bristles Error -> Helper: o, Error:', err.message);
+      return {};
     }
   }
 }

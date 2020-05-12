@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var Querystring = require("querystring");
 var dot = require("dot-object");
 var utilities_1 = require("../utilities");
+var deepmerge = require("deepmerge");
 var JSON6 = require('json-6');
 /**
  * TODO: Functions
@@ -89,29 +90,23 @@ var ObjectHelpers = /** @class */ (function () {
             }
             switch (helper.hash.type || null) {
                 case ('json'):
-                    console.log("Parsing as JSON: " + value);
                     value = JSON6.parse(value);
                     break;
                 case ('number'):
-                    console.log("Parsing as Number: " + value);
                     value = parseInt(value);
                     break;
                 case ('boolean'):
-                    console.log("Parsing as Boolean: " + value);
                     value = Boolean(value);
                     break;
                 case ('querystring'):
-                    console.log("Parsing as Querystring: " + value);
                     value = Querystring.parse(value);
                     break;
             }
             if (helper.hash.context) {
                 var path = helper.hash.path || '@parsed';
-                console.log("Setting value at '" + path + " to " + value);
                 dot.set(path, value, helper.hash.context);
             }
             else {
-                console.log("Returning " + value);
                 return value;
             }
         }
@@ -130,7 +125,9 @@ var ObjectHelpers = /** @class */ (function () {
                 args.push(helper.hash);
             }
             var objArgs = args.filter(function (item) { return typeof item === 'object' && !Array.isArray(item); });
-            var output = Object.assign.apply(Object, [{}].concat(objArgs));
+            var output = deepmerge.all([{}].concat(objArgs), {
+                arrayMerge: function (destinationArray, sourceArray, options) { return sourceArray; }
+            });
             if (!helper.fn) {
                 return output;
             }
@@ -141,6 +138,16 @@ var ObjectHelpers = /** @class */ (function () {
         catch (err) {
             console.error('Bristles Error -> Helper: extend, Error:', err.message);
             return null;
+        }
+    };
+    ObjectHelpers._o = function () {
+        try {
+            var helper = arguments[arguments.length - 1];
+            return Object.assign({}, helper.hash || {});
+        }
+        catch (err) {
+            console.error('Bristles Error -> Helper: o, Error:', err.message);
+            return {};
         }
     };
     return ObjectHelpers;

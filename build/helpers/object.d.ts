@@ -17,4 +17,5 @@ export default class ObjectHelpers {
     static _merge(): any;
     static _parse(value: any): any;
     static _extend(): any;
+    static _o(): any;
 }

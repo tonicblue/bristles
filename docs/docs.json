@@ -7847,7 +7847,7 @@
 							"sources": [
 								{
 									"fileName": "helpers/object.ts",
-									"line": 125,
+									"line": 119,
 									"character": 16
 								}
 							]
@@ -7980,6 +7980,36 @@
 							]
 						},
 						{
+							"id": 417,
+							"name": "_o",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isStatic": true,
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 418,
+									"name": "_o",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "helpers/object.ts",
+									"line": 149,
+									"character": 11
+								}
+							]
+						},
+						{
 							"id": 412,
 							"name": "_parse",
 							"kind": 2048,
@@ -8076,6 +8106,7 @@
 								406,
 								400,
 								410,
+								417,
 								412,
 								397
 							]
@@ -8090,7 +8121,7 @@
 					]
 				},
 				{
-					"id": 417,
+					"id": 419,
 					"name": "JSON6",
 					"kind": 32,
 					"kindString": "Variable",
@@ -8123,7 +8154,7 @@
 					"title": "Variables",
 					"kind": 32,
 					"children": [
-						417
+						419
 					]
 				}
 			],
@@ -8136,7 +8167,7 @@
 			]
 		},
 		{
-			"id": 418,
+			"id": 420,
 			"name": "\"helpers/string\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -8146,7 +8177,7 @@
 			"originalName": "/home/tonicblue/code/scvo/bristles/src/helpers/string.ts",
 			"children": [
 				{
-					"id": 419,
+					"id": 421,
 					"name": "StringHelpers",
 					"kind": 128,
 					"kindString": "Class",
@@ -8158,7 +8189,7 @@
 					},
 					"children": [
 						{
-							"id": 465,
+							"id": 467,
 							"name": "_camelize",
 							"kind": 2048,
 							"kindString": "Method",
@@ -8168,14 +8199,14 @@
 							},
 							"signatures": [
 								{
-									"id": 466,
+									"id": 468,
 									"name": "_camelize",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 467,
+											"id": 469,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -8201,7 +8232,7 @@
 							]
 						},
 						{
-							"id": 468,
+							"id": 470,
 							"name": "_capitalize",
 							"kind": 2048,
 							"kindString": "Method",
@@ -8211,14 +8242,14 @@
 							},
 							"signatures": [
 								{
-									"id": 469,
+									"id": 471,
 									"name": "_capitalize",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 470,
+											"id": 472,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -8244,7 +8275,7 @@
 							]
 						},
 						{
-							"id": 471,
+							"id": 473,
 							"name": "_chompLeft",
 							"kind": 2048,
 							"kindString": "Method",
@@ -8254,14 +8285,14 @@
 							},
 							"signatures": [
 								{
-									"id": 472,
+									"id": 474,
 									"name": "_chompLeft",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 473,
+											"id": 475,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -8272,7 +8303,7 @@
 											}
 										},
 										{
-											"id": 474,
+											"id": 476,
 											"name": "prefix",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -8298,7 +8329,7 @@
 							]
 						},
 						{
-							"id": 475,
+							"id": 477,
 							"name": "_chompRight",
 							"kind": 2048,
 							"kindString": "Method",
@@ -8308,14 +8339,14 @@
 							},
 							"signatures": [
 								{
-									"id": 476,
+									"id": 478,
 									"name": "_chompRight",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 477,
+											"id": 479,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -8326,7 +8357,7 @@
 											}
 										},
 										{
-											"id": 478,
+											"id": 480,
 											"name": "suffix",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -8352,7 +8383,7 @@
 							]
 						},
 						{
-							"id": 479,
+							"id": 481,
 							"name": "_collapseWhitespace",
 							"kind": 2048,
 							"kindString": "Method",
@@ -8362,14 +8393,14 @@
 							},
 							"signatures": [
 								{
-									"id": 480,
+									"id": 482,
 									"name": "_collapseWhitespace",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 481,
+											"id": 483,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -8395,7 +8426,7 @@
 							]
 						},
 						{
-							"id": 434,
+							"id": 436,
 							"name": "_concat",
 							"kind": 2048,
 							"kindString": "Method",
@@ -8405,7 +8436,7 @@
 							},
 							"signatures": [
 								{
-									"id": 435,
+									"id": 437,
 									"name": "_concat",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -8426,7 +8457,7 @@
 									},
 									"parameters": [
 										{
-											"id": 436,
+											"id": 438,
 											"name": "args",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -8457,7 +8488,7 @@
 							]
 						},
 						{
-							"id": 482,
+							"id": 484,
 							"name": "_countOccurances",
 							"kind": 2048,
 							"kindString": "Method",
@@ -8467,14 +8498,14 @@
 							},
 							"signatures": [
 								{
-									"id": 483,
+									"id": 485,
 									"name": "_countOccurances",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 484,
+											"id": 486,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -8485,7 +8516,7 @@
 											}
 										},
 										{
-											"id": 485,
+											"id": 487,
 											"name": "substring",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -8511,7 +8542,7 @@
 							]
 						},
 						{
-							"id": 486,
+							"id": 488,
 							"name": "_dasherize",
 							"kind": 2048,
 							"kindString": "Method",
@@ -8521,14 +8552,14 @@
 							},
 							"signatures": [
 								{
-									"id": 487,
+									"id": 489,
 									"name": "_dasherize",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 488,
+											"id": 490,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -8554,7 +8585,7 @@
 							]
 						},
 						{
-							"id": 489,
+							"id": 491,
 							"name": "_decodeHTMLEntities",
 							"kind": 2048,
 							"kindString": "Method",
@@ -8564,14 +8595,14 @@
 							},
 							"signatures": [
 								{
-									"id": 490,
+									"id": 492,
 									"name": "_decodeHTMLEntities",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 491,
+											"id": 493,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -8597,7 +8628,7 @@
 							]
 						},
 						{
-							"id": 492,
+							"id": 494,
 							"name": "_ensureLeft",
 							"kind": 2048,
 							"kindString": "Method",
@@ -8607,14 +8638,14 @@
 							},
 							"signatures": [
 								{
-									"id": 493,
+									"id": 495,
 									"name": "_ensureLeft",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 494,
+											"id": 496,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -8625,7 +8656,7 @@
 											}
 										},
 										{
-											"id": 495,
+											"id": 497,
 											"name": "prefix",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -8651,7 +8682,7 @@
 							]
 						},
 						{
-							"id": 496,
+							"id": 498,
 							"name": "_ensureRight",
 							"kind": 2048,
 							"kindString": "Method",
@@ -8661,14 +8692,14 @@
 							},
 							"signatures": [
 								{
-									"id": 497,
+									"id": 499,
 									"name": "_ensureRight",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 498,
+											"id": 500,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -8679,7 +8710,7 @@
 											}
 										},
 										{
-											"id": 499,
+											"id": 501,
 											"name": "suffix",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -8705,7 +8736,7 @@
 							]
 						},
 						{
-							"id": 500,
+							"id": 502,
 							"name": "_humanize",
 							"kind": 2048,
 							"kindString": "Method",
@@ -8715,14 +8746,14 @@
 							},
 							"signatures": [
 								{
-									"id": 501,
+									"id": 503,
 									"name": "_humanize",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 502,
+											"id": 504,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -8748,7 +8779,7 @@
 							]
 						},
 						{
-							"id": 437,
+							"id": 439,
 							"name": "_indexOf",
 							"kind": 2048,
 							"kindString": "Method",
@@ -8758,7 +8789,7 @@
 							},
 							"signatures": [
 								{
-									"id": 438,
+									"id": 440,
 									"name": "_indexOf",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -8779,7 +8810,7 @@
 									},
 									"parameters": [
 										{
-											"id": 439,
+											"id": 441,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -8793,7 +8824,7 @@
 											}
 										},
 										{
-											"id": 440,
+											"id": 442,
 											"name": "match",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -8822,7 +8853,7 @@
 							]
 						},
 						{
-							"id": 441,
+							"id": 443,
 							"name": "_lastIndexOf",
 							"kind": 2048,
 							"kindString": "Method",
@@ -8832,7 +8863,7 @@
 							},
 							"signatures": [
 								{
-									"id": 442,
+									"id": 444,
 									"name": "_lastIndexOf",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -8853,7 +8884,7 @@
 									},
 									"parameters": [
 										{
-											"id": 443,
+											"id": 445,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -8867,7 +8898,7 @@
 											}
 										},
 										{
-											"id": 444,
+											"id": 446,
 											"name": "match",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -8896,7 +8927,7 @@
 							]
 						},
 						{
-							"id": 503,
+							"id": 505,
 							"name": "_lines",
 							"kind": 2048,
 							"kindString": "Method",
@@ -8906,14 +8937,14 @@
 							},
 							"signatures": [
 								{
-									"id": 504,
+									"id": 506,
 									"name": "_lines",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 505,
+											"id": 507,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -8942,7 +8973,7 @@
 							]
 						},
 						{
-							"id": 556,
+							"id": 558,
 							"name": "_match",
 							"kind": 2048,
 							"kindString": "Method",
@@ -8952,14 +8983,14 @@
 							},
 							"signatures": [
 								{
-									"id": 557,
+									"id": 559,
 									"name": "_match",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 558,
+											"id": 560,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -8970,7 +9001,7 @@
 											}
 										},
 										{
-											"id": 559,
+											"id": 561,
 											"name": "pattern",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -8981,7 +9012,7 @@
 											}
 										},
 										{
-											"id": 560,
+											"id": 562,
 											"name": "options",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -9019,7 +9050,7 @@
 							]
 						},
 						{
-							"id": 456,
+							"id": 458,
 							"name": "_padEnd",
 							"kind": 2048,
 							"kindString": "Method",
@@ -9029,14 +9060,14 @@
 							},
 							"signatures": [
 								{
-									"id": 457,
+									"id": 459,
 									"name": "_padEnd",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 458,
+											"id": 460,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -9047,7 +9078,7 @@
 											}
 										},
 										{
-											"id": 459,
+											"id": 461,
 											"name": "maxLength",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -9058,7 +9089,7 @@
 											}
 										},
 										{
-											"id": 460,
+											"id": 462,
 											"name": "fillString",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -9084,7 +9115,7 @@
 							]
 						},
 						{
-							"id": 451,
+							"id": 453,
 							"name": "_padStart",
 							"kind": 2048,
 							"kindString": "Method",
@@ -9094,14 +9125,14 @@
 							},
 							"signatures": [
 								{
-									"id": 452,
+									"id": 454,
 									"name": "_padStart",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 453,
+											"id": 455,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -9112,7 +9143,7 @@
 											}
 										},
 										{
-											"id": 454,
+											"id": 456,
 											"name": "maxLength",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -9123,7 +9154,7 @@
 											}
 										},
 										{
-											"id": 455,
+											"id": 457,
 											"name": "fillString",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -9149,7 +9180,7 @@
 							]
 						},
 						{
-							"id": 511,
+							"id": 513,
 							"name": "_regexReplace",
 							"kind": 2048,
 							"kindString": "Method",
@@ -9159,14 +9190,14 @@
 							},
 							"signatures": [
 								{
-									"id": 512,
+									"id": 514,
 									"name": "_regexReplace",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 513,
+											"id": 515,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -9177,7 +9208,7 @@
 											}
 										},
 										{
-											"id": 514,
+											"id": 516,
 											"name": "match",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -9188,7 +9219,7 @@
 											}
 										},
 										{
-											"id": 515,
+											"id": 517,
 											"name": "options",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -9199,7 +9230,7 @@
 											}
 										},
 										{
-											"id": 516,
+											"id": 518,
 											"name": "replacement",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -9225,7 +9256,7 @@
 							]
 						},
 						{
-							"id": 461,
+							"id": 463,
 							"name": "_repeat",
 							"kind": 2048,
 							"kindString": "Method",
@@ -9235,14 +9266,14 @@
 							},
 							"signatures": [
 								{
-									"id": 462,
+									"id": 464,
 									"name": "_repeat",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 463,
+											"id": 465,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -9253,7 +9284,7 @@
 											}
 										},
 										{
-											"id": 464,
+											"id": 466,
 											"name": "times",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -9279,7 +9310,7 @@
 							]
 						},
 						{
-							"id": 506,
+							"id": 508,
 							"name": "_replace",
 							"kind": 2048,
 							"kindString": "Method",
@@ -9289,14 +9320,14 @@
 							},
 							"signatures": [
 								{
-									"id": 507,
+									"id": 509,
 									"name": "_replace",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 508,
+											"id": 510,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -9307,7 +9338,7 @@
 											}
 										},
 										{
-											"id": 509,
+											"id": 511,
 											"name": "match",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -9318,7 +9349,7 @@
 											}
 										},
 										{
-											"id": 510,
+											"id": 512,
 											"name": "replacement",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -9344,7 +9375,7 @@
 							]
 						},
 						{
-							"id": 517,
+							"id": 519,
 							"name": "_slugify",
 							"kind": 2048,
 							"kindString": "Method",
@@ -9354,14 +9385,14 @@
 							},
 							"signatures": [
 								{
-									"id": 518,
+									"id": 520,
 									"name": "_slugify",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 519,
+											"id": 521,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -9387,7 +9418,7 @@
 							]
 						},
 						{
-							"id": 420,
+							"id": 422,
 							"name": "_split",
 							"kind": 2048,
 							"kindString": "Method",
@@ -9397,7 +9428,7 @@
 							},
 							"signatures": [
 								{
-									"id": 421,
+									"id": 423,
 									"name": "_split",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -9418,7 +9449,7 @@
 									},
 									"parameters": [
 										{
-											"id": 422,
+											"id": 424,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -9432,7 +9463,7 @@
 											}
 										},
 										{
-											"id": 423,
+											"id": 425,
 											"name": "delimeter",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -9472,7 +9503,7 @@
 							]
 						},
 						{
-							"id": 529,
+							"id": 531,
 							"name": "_stripLeft",
 							"kind": 2048,
 							"kindString": "Method",
@@ -9482,14 +9513,14 @@
 							},
 							"signatures": [
 								{
-									"id": 530,
+									"id": 532,
 									"name": "_stripLeft",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 531,
+											"id": 533,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -9500,7 +9531,7 @@
 											}
 										},
 										{
-											"id": 532,
+											"id": 534,
 											"name": "chars",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -9526,7 +9557,7 @@
 							]
 						},
 						{
-							"id": 533,
+							"id": 535,
 							"name": "_stripRight",
 							"kind": 2048,
 							"kindString": "Method",
@@ -9536,14 +9567,14 @@
 							},
 							"signatures": [
 								{
-									"id": 534,
+									"id": 536,
 									"name": "_stripRight",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 535,
+											"id": 537,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -9554,7 +9585,7 @@
 											}
 										},
 										{
-											"id": 536,
+											"id": 538,
 											"name": "chars",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -9580,7 +9611,7 @@
 							]
 						},
 						{
-							"id": 537,
+							"id": 539,
 							"name": "_stripTags",
 							"kind": 2048,
 							"kindString": "Method",
@@ -9590,14 +9621,14 @@
 							},
 							"signatures": [
 								{
-									"id": 538,
+									"id": 540,
 									"name": "_stripTags",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 539,
+											"id": 541,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -9623,7 +9654,7 @@
 							]
 						},
 						{
-							"id": 424,
+							"id": 426,
 							"name": "_substr",
 							"kind": 2048,
 							"kindString": "Method",
@@ -9633,7 +9664,7 @@
 							},
 							"signatures": [
 								{
-									"id": 425,
+									"id": 427,
 									"name": "_substr",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -9654,7 +9685,7 @@
 									},
 									"parameters": [
 										{
-											"id": 426,
+											"id": 428,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -9668,7 +9699,7 @@
 											}
 										},
 										{
-											"id": 427,
+											"id": 429,
 											"name": "from",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -9682,7 +9713,7 @@
 											}
 										},
 										{
-											"id": 428,
+											"id": 430,
 											"name": "length",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -9719,7 +9750,7 @@
 							]
 						},
 						{
-							"id": 429,
+							"id": 431,
 							"name": "_substring",
 							"kind": 2048,
 							"kindString": "Method",
@@ -9729,7 +9760,7 @@
 							},
 							"signatures": [
 								{
-									"id": 430,
+									"id": 432,
 									"name": "_substring",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -9750,7 +9781,7 @@
 									},
 									"parameters": [
 										{
-											"id": 431,
+											"id": 433,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -9764,7 +9795,7 @@
 											}
 										},
 										{
-											"id": 432,
+											"id": 434,
 											"name": "start",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -9778,7 +9809,7 @@
 											}
 										},
 										{
-											"id": 433,
+											"id": 435,
 											"name": "end",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -9815,7 +9846,7 @@
 							]
 						},
 						{
-							"id": 540,
+							"id": 542,
 							"name": "_titleCase",
 							"kind": 2048,
 							"kindString": "Method",
@@ -9825,14 +9856,14 @@
 							},
 							"signatures": [
 								{
-									"id": 541,
+									"id": 543,
 									"name": "_titleCase",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 542,
+											"id": 544,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -9858,7 +9889,7 @@
 							]
 						},
 						{
-							"id": 543,
+							"id": 545,
 							"name": "_toBoolean",
 							"kind": 2048,
 							"kindString": "Method",
@@ -9868,14 +9899,14 @@
 							},
 							"signatures": [
 								{
-									"id": 544,
+									"id": 546,
 									"name": "_toBoolean",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 545,
+											"id": 547,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -9901,7 +9932,7 @@
 							]
 						},
 						{
-							"id": 448,
+							"id": 450,
 							"name": "_toLowerCase",
 							"kind": 2048,
 							"kindString": "Method",
@@ -9911,14 +9942,14 @@
 							},
 							"signatures": [
 								{
-									"id": 449,
+									"id": 451,
 									"name": "_toLowerCase",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 450,
+											"id": 452,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -9944,7 +9975,7 @@
 							]
 						},
 						{
-							"id": 445,
+							"id": 447,
 							"name": "_toUpperCase",
 							"kind": 2048,
 							"kindString": "Method",
@@ -9954,14 +9985,14 @@
 							},
 							"signatures": [
 								{
-									"id": 446,
+									"id": 448,
 									"name": "_toUpperCase",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 447,
+											"id": 449,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -9987,7 +10018,7 @@
 							]
 						},
 						{
-							"id": 520,
+							"id": 522,
 							"name": "_trim",
 							"kind": 2048,
 							"kindString": "Method",
@@ -9997,14 +10028,14 @@
 							},
 							"signatures": [
 								{
-									"id": 521,
+									"id": 523,
 									"name": "_trim",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 522,
+											"id": 524,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -10030,7 +10061,7 @@
 							]
 						},
 						{
-							"id": 523,
+							"id": 525,
 							"name": "_trimLeft",
 							"kind": 2048,
 							"kindString": "Method",
@@ -10040,14 +10071,14 @@
 							},
 							"signatures": [
 								{
-									"id": 524,
+									"id": 526,
 									"name": "_trimLeft",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 525,
+											"id": 527,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -10073,7 +10104,7 @@
 							]
 						},
 						{
-							"id": 526,
+							"id": 528,
 							"name": "_trimRight",
 							"kind": 2048,
 							"kindString": "Method",
@@ -10083,14 +10114,14 @@
 							},
 							"signatures": [
 								{
-									"id": 527,
+									"id": 529,
 									"name": "_trimRight",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 528,
+											"id": 530,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -10116,7 +10147,7 @@
 							]
 						},
 						{
-							"id": 546,
+							"id": 548,
 							"name": "_truncate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -10126,14 +10157,14 @@
 							},
 							"signatures": [
 								{
-									"id": 547,
+									"id": 549,
 									"name": "_truncate",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 548,
+											"id": 550,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -10144,7 +10175,7 @@
 											}
 										},
 										{
-											"id": 549,
+											"id": 551,
 											"name": "length",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -10155,7 +10186,7 @@
 											}
 										},
 										{
-											"id": 550,
+											"id": 552,
 											"name": "chars",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -10181,7 +10212,7 @@
 							]
 						},
 						{
-							"id": 551,
+							"id": 553,
 							"name": "_underscore",
 							"kind": 2048,
 							"kindString": "Method",
@@ -10191,14 +10222,14 @@
 							},
 							"signatures": [
 								{
-									"id": 552,
+									"id": 554,
 									"name": "_underscore",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 553,
+											"id": 555,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -10224,7 +10255,7 @@
 							]
 						},
 						{
-							"id": 554,
+							"id": 556,
 							"name": "_unindent",
 							"kind": 2048,
 							"kindString": "Method",
@@ -10234,7 +10265,7 @@
 							},
 							"signatures": [
 								{
-									"id": 555,
+									"id": 557,
 									"name": "_unindent",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -10259,44 +10290,44 @@
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								465,
-								468,
-								471,
-								475,
-								479,
-								434,
-								482,
-								486,
-								489,
-								492,
-								496,
-								500,
-								437,
-								441,
-								503,
-								556,
-								456,
-								451,
-								511,
-								461,
-								506,
-								517,
-								420,
-								529,
-								533,
-								537,
-								424,
-								429,
-								540,
-								543,
-								448,
-								445,
-								520,
-								523,
-								526,
-								546,
-								551,
-								554
+								467,
+								470,
+								473,
+								477,
+								481,
+								436,
+								484,
+								488,
+								491,
+								494,
+								498,
+								502,
+								439,
+								443,
+								505,
+								558,
+								458,
+								453,
+								513,
+								463,
+								508,
+								519,
+								422,
+								531,
+								535,
+								539,
+								426,
+								431,
+								542,
+								545,
+								450,
+								447,
+								522,
+								525,
+								528,
+								548,
+								553,
+								556
 							]
 						}
 					],
@@ -10314,7 +10345,7 @@
 					"title": "Classes",
 					"kind": 128,
 					"children": [
-						419
+						421
 					]
 				}
 			],
@@ -10327,7 +10358,7 @@
 			]
 		},
 		{
-			"id": 561,
+			"id": 563,
 			"name": "\"helpers/utility\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -10337,7 +10368,7 @@
 			"originalName": "/home/tonicblue/code/scvo/bristles/src/helpers/utility.ts",
 			"children": [
 				{
-					"id": 562,
+					"id": 564,
 					"name": "UtilityHelpers",
 					"kind": 128,
 					"kindString": "Class",
@@ -10349,7 +10380,7 @@
 					},
 					"children": [
 						{
-							"id": 567,
+							"id": 569,
 							"name": "_coalesce",
 							"kind": 2048,
 							"kindString": "Method",
@@ -10359,7 +10390,7 @@
 							},
 							"signatures": [
 								{
-									"id": 568,
+									"id": 570,
 									"name": "_coalesce",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -10379,7 +10410,7 @@
 							]
 						},
 						{
-							"id": 583,
+							"id": 585,
 							"name": "_eval",
 							"kind": 2048,
 							"kindString": "Method",
@@ -10389,14 +10420,14 @@
 							},
 							"signatures": [
 								{
-									"id": 584,
+									"id": 586,
 									"name": "_eval",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 585,
+											"id": 587,
 											"name": "code",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -10422,7 +10453,7 @@
 							]
 						},
 						{
-							"id": 563,
+							"id": 565,
 							"name": "_json",
 							"kind": 2048,
 							"kindString": "Method",
@@ -10432,7 +10463,7 @@
 							},
 							"signatures": [
 								{
-									"id": 564,
+									"id": 566,
 									"name": "_json",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -10452,7 +10483,7 @@
 							]
 						},
 						{
-							"id": 572,
+							"id": 574,
 							"name": "_lookupMap",
 							"kind": 2048,
 							"kindString": "Method",
@@ -10462,7 +10493,7 @@
 							},
 							"signatures": [
 								{
-									"id": 573,
+									"id": 575,
 									"name": "_lookupMap",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -10482,7 +10513,7 @@
 							]
 						},
 						{
-							"id": 574,
+							"id": 576,
 							"name": "_partial",
 							"kind": 2048,
 							"kindString": "Method",
@@ -10492,14 +10523,14 @@
 							},
 							"signatures": [
 								{
-									"id": 575,
+									"id": 577,
 									"name": "_partial",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 576,
+											"id": 578,
 											"name": "partial",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -10507,21 +10538,21 @@
 											"type": {
 												"type": "reflection",
 												"declaration": {
-													"id": 577,
+													"id": 579,
 													"name": "__type",
 													"kind": 65536,
 													"kindString": "Type literal",
 													"flags": {},
 													"signatures": [
 														{
-															"id": 578,
+															"id": 580,
 															"name": "__call",
 															"kind": 4096,
 															"kindString": "Call signature",
 															"flags": {},
 															"parameters": [
 																{
-																	"id": 579,
+																	"id": 581,
 																	"name": "context",
 																	"kind": 32768,
 																	"kindString": "Parameter",
@@ -10564,7 +10595,7 @@
 							]
 						},
 						{
-							"id": 569,
+							"id": 571,
 							"name": "_raw",
 							"kind": 2048,
 							"kindString": "Method",
@@ -10574,14 +10605,14 @@
 							},
 							"signatures": [
 								{
-									"id": 570,
+									"id": 572,
 									"name": "_raw",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 571,
+											"id": 573,
 											"name": "options",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -10607,7 +10638,7 @@
 							]
 						},
 						{
-							"id": 580,
+							"id": 582,
 							"name": "_toHtmlAttributes",
 							"kind": 2048,
 							"kindString": "Method",
@@ -10617,14 +10648,14 @@
 							},
 							"signatures": [
 								{
-									"id": 581,
+									"id": 583,
 									"name": "_toHtmlAttributes",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 582,
+											"id": 584,
 											"name": "input",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -10650,7 +10681,7 @@
 							]
 						},
 						{
-							"id": 565,
+							"id": 567,
 							"name": "_typeof",
 							"kind": 2048,
 							"kindString": "Method",
@@ -10660,7 +10691,7 @@
 							},
 							"signatures": [
 								{
-									"id": 566,
+									"id": 568,
 									"name": "_typeof",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -10726,14 +10757,14 @@
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								567,
-								583,
-								563,
-								572,
-								574,
 								569,
-								580,
-								565
+								585,
+								565,
+								574,
+								576,
+								571,
+								582,
+								567
 							]
 						}
 					],
@@ -10746,7 +10777,7 @@
 					]
 				},
 				{
-					"id": 586,
+					"id": 588,
 					"name": "JSON6",
 					"kind": 32,
 					"kindString": "Variable",
@@ -10767,7 +10798,7 @@
 					"defaultValue": " require('json-6')"
 				},
 				{
-					"id": 587,
+					"id": 589,
 					"name": "SafeStringify",
 					"kind": 32,
 					"kindString": "Variable",
@@ -10793,15 +10824,15 @@
 					"title": "Classes",
 					"kind": 128,
 					"children": [
-						562
+						564
 					]
 				},
 				{
 					"title": "Variables",
 					"kind": 32,
 					"children": [
-						586,
-						587
+						588,
+						589
 					]
 				}
 			],
@@ -10814,7 +10845,7 @@
 			]
 		},
 		{
-			"id": 588,
+			"id": 590,
 			"name": "\"index\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -10824,7 +10855,7 @@
 			"originalName": "/home/tonicblue/code/scvo/bristles/src/index.ts",
 			"children": [
 				{
-					"id": 592,
+					"id": 594,
 					"name": "Bristles",
 					"kind": 32,
 					"kindString": "Variable",
@@ -10846,7 +10877,7 @@
 					"defaultValue": " BristlesFactory()"
 				},
 				{
-					"id": 589,
+					"id": 591,
 					"name": "BristlesFactory",
 					"kind": 64,
 					"kindString": "Function",
@@ -10855,14 +10886,14 @@
 					},
 					"signatures": [
 						{
-							"id": 590,
+							"id": 592,
 							"name": "BristlesFactory",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 591,
+									"id": 593,
 									"name": "hbs",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -10899,21 +10930,21 @@
 					]
 				},
 				{
-					"id": 593,
+					"id": 595,
 					"name": "registerHelpers",
 					"kind": 64,
 					"kindString": "Function",
 					"flags": {},
 					"signatures": [
 						{
-							"id": 594,
+							"id": 596,
 							"name": "registerHelpers",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 595,
+									"id": 597,
 									"name": "hbs",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -10924,7 +10955,7 @@
 									}
 								},
 								{
-									"id": 596,
+									"id": 598,
 									"name": "mod",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -10955,15 +10986,15 @@
 					"title": "Variables",
 					"kind": 32,
 					"children": [
-						592
+						594
 					]
 				},
 				{
 					"title": "Functions",
 					"kind": 64,
 					"children": [
-						589,
-						593
+						591,
+						595
 					]
 				}
 			],
@@ -11117,9 +11148,9 @@
 				178,
 				390,
 				395,
-				418,
-				561,
-				588,
+				420,
+				563,
+				590,
 				1
 			]
 		}
