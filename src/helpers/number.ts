@@ -1,6 +1,6 @@
 import * as MathJS from 'mathjs';
 import { HelperOptions, TemplateDelegate } from 'handlebars';
-import { isOps } from 'src/utilities';
+import { isOps } from '../utilities';
 
 /**
  * A bunch of helpers for working with numbers

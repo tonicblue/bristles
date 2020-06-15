@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var MathJS = require("mathjs");
-var utilities_1 = require("src/utilities");
+var utilities_1 = require("../utilities");
 /**
  * A bunch of helpers for working with numbers
  */
