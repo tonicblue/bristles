@@ -620,19 +620,39 @@ export default class StringHelpers {
       const args = Array.from(arguments);
       const helper = args.pop();
 
-      const input = (args[0] || helper.fn(this)) as string;
-      const lines = S(input).lines();
-      let indentSize = 0;
+      let strings = [(args[0] || helper.fn(this)) as string];
 
-      for (const line of lines) {
-        indentSize = line.search(/\S|$/);
-        if (indentSize > 0) break;
+      strings[strings.length - 1] = strings[strings.length - 1].replace(
+        /\r?\n([\t ]*)$/,
+        '',
+      );
+
+      // 2. Find all line breaks to determine the highest common indentation level.
+      const indentLengths = strings.reduce(
+        (arr, str) => {
+          const matches = str.match(/\n[\t ]+/g);
+          if (matches) {
+            return arr.concat(matches.map(match => match.length - 1));
+          }
+          return arr;
+        },
+        <number[]>[],
+      );
+
+      // 3. Remove the common indentation from all strings.
+      if (indentLengths.length) {
+        const pattern = new RegExp(`\n[\t ]{${Math.min(...indentLengths)}}`, 'g');
+
+        strings = strings.map(str => str.replace(pattern, '\n'));
       }
 
-      const unpadRegex = new RegExp(`^\\s{0,${indentSize}}`, 'gm');
-      const output = input.replace(unpadRegex, '');
+      // 4. Remove leading whitespace.
+      strings[0] = strings[0].replace(/^\r?\n/, '');
 
-      return output;
+      // 5. Perform interpolation.
+      let string = strings[0];
+
+      return string;
     } catch(err) {
       console.error('Bristles Error -> Helper: unindent, Error:', err.message);
       return typeof arguments[0] === 'string' ? arguments[0] : '';

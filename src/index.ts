@@ -5,6 +5,7 @@ import ArrayHelpers from './helpers/array';
 import ObjectHelpers from './helpers/object';
 import UtilityHelpers from './helpers/utility';
 import NumberHelpers from './helpers/number';
+import DateHelpers from './helpers/date';
 
 export function BristlesFactory(hbs?: typeof Handlebars): typeof Handlebars{
   hbs = hbs || Handlebars;
@@ -14,6 +15,7 @@ export function BristlesFactory(hbs?: typeof Handlebars): typeof Handlebars{
   registerHelpers(hbs, ObjectHelpers);
   registerHelpers(hbs, UtilityHelpers);
   registerHelpers(hbs, NumberHelpers);
+  registerHelpers(hbs, DateHelpers);
   return hbs as typeof Handlebars;
 }
 

@@ -3,7 +3,7 @@
   "engines": {
     "node": ">=10"
   },
-  "version": "0.0.26",
+  "version": "0.0.27",
   "description": "Handlebars but with some a lot of useful helpers",
   "main": "build/index.js",
   "types": "build/index.d.ts",
@@ -23,17 +23,20 @@
   "author": "Matthew Wilkes",
   "license": "GPL-3.0",
   "dependencies": {
+    "date-fns": "^2.14.0",
     "deep-diff": "^1.0.2",
     "deepmerge": "^3.3.0",
     "dot-object": "^1.8.1",
     "fast-safe-stringify": "^2.0.6",
     "handlebars": "4.1.2",
     "json-6": "^1.0.2",
+    "mathjs": "^7.0.0",
     "string": "^3.3.3"
   },
   "devDependencies": {
     "@types/deep-diff": "^1.0.0",
     "@types/dot-object": "^1.7.0",
+    "@types/mathjs": "^6.0.5",
     "@types/node": "^12.6.8",
     "@types/string": "0.0.29",
     "brace": "^0.11.1",

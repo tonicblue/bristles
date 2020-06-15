@@ -129,7 +129,7 @@ export default class ObjectHelpers {
         args.push(helper.hash);
       }
 
-      const objArgs = args.filter(item => typeof item === 'object' && !Array.isArray(item));
+      const objArgs = args.filter(item => typeof item === 'object' && item !== null && !Array.isArray(item));
 
       const output = deepmerge.all([{}, ...objArgs], {
         arrayMerge: (destinationArray, sourceArray, options) => sourceArray

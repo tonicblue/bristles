@@ -124,7 +124,7 @@ var ObjectHelpers = /** @class */ (function () {
             if (Object.keys(helper.hash).length > 0) {
                 args.push(helper.hash);
             }
-            var objArgs = args.filter(function (item) { return typeof item === 'object' && !Array.isArray(item); });
+            var objArgs = args.filter(function (item) { return typeof item === 'object' && item !== null && !Array.isArray(item); });
             var output = deepmerge.all([{}].concat(objArgs), {
                 arrayMerge: function (destinationArray, sourceArray, options) { return sourceArray; }
             });

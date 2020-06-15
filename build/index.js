@@ -7,6 +7,7 @@ var array_1 = require("./helpers/array");
 var object_1 = require("./helpers/object");
 var utility_1 = require("./helpers/utility");
 var number_1 = require("./helpers/number");
+var date_1 = require("./helpers/date");
 function BristlesFactory(hbs) {
     hbs = hbs || Handlebars;
     registerHelpers(hbs, string_1.default);
@@ -15,6 +16,7 @@ function BristlesFactory(hbs) {
     registerHelpers(hbs, object_1.default);
     registerHelpers(hbs, utility_1.default);
     registerHelpers(hbs, number_1.default);
+    registerHelpers(hbs, date_1.default);
     return hbs;
 }
 exports.BristlesFactory = BristlesFactory;
