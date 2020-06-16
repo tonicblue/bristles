@@ -90,7 +90,7 @@ export default class ArrayHelpers {
 
     try {
       if (helper.inverse) {
-        return helper.inverse(helper.data);
+        return helper.inverse(this);
       }
     } catch(err) {
       console.error('Bristles Error -> Helper: each, Inverse Error:', err);
