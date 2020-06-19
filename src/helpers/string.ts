@@ -216,6 +216,20 @@ export default class StringHelpers {
     }
   }
 
+  static _inflect(count: number, singular: any, plural: any, includeCount: boolean) {
+    try {
+      const word = (count > 1 || count === 0) ? plural : singular;
+      if (includeCount === true) {
+        return String(count) + ' ' + word;
+      } else {
+        return word;
+      }
+    } catch(err) {
+      console.error('Bristles Error -> Helper: inflect, Error:', err.message);
+      return singular || plural || '';
+    }
+  };
+
   static _padStart(input: string, maxLength: number, fillString: string): string {
     try {
       const helper: HelperOptions = arguments[arguments.length - 1];

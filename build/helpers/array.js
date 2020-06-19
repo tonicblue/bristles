@@ -84,7 +84,7 @@ var ArrayHelpers = /** @class */ (function () {
         }
         try {
             if (helper.inverse) {
-                return helper.inverse(helper.data);
+                return helper.inverse(this);
             }
         }
         catch (err) {
