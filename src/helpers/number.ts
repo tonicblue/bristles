@@ -17,7 +17,7 @@ export default class NumberHelpers {
     }
   }
 
-  static maths(expression: string, data: any) {
+  static _maths(expression: string, data: any) {
     try {
       if (typeof expression !== 'string') {
         throw new Error('Invalid arguments, the first argument must be a string');

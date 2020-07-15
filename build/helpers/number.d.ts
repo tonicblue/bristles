@@ -3,5 +3,5 @@
  */
 export default class NumberHelpers {
     static _sum(...args: any[]): number;
-    static maths(expression: string, data: any): any;
+    static _maths(expression: string, data: any): any;
 }

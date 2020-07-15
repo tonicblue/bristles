@@ -221,6 +221,22 @@ var StringHelpers = /** @class */ (function () {
             return '';
         }
     };
+    StringHelpers._inflect = function (count, singular, plural, includeCount) {
+        try {
+            var word = (count > 1 || count === 0) ? plural : singular;
+            if (includeCount === true) {
+                return String(count) + ' ' + word;
+            }
+            else {
+                return word;
+            }
+        }
+        catch (err) {
+            console.error('Bristles Error -> Helper: inflect, Error:', err.message);
+            return singular || plural || '';
+        }
+    };
+    ;
     StringHelpers._padStart = function (input, maxLength, fillString) {
         try {
             var helper = arguments[arguments.length - 1];

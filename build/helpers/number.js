@@ -23,7 +23,7 @@ var NumberHelpers = /** @class */ (function () {
             return 0;
         }
     };
-    NumberHelpers.maths = function (expression, data) {
+    NumberHelpers._maths = function (expression, data) {
         try {
             if (typeof expression !== 'string') {
                 throw new Error('Invalid arguments, the first argument must be a string');

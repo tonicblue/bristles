@@ -101,6 +101,7 @@ export default class StringHelpers {
     static _lastIndexOf(input: string, match: string): number;
     static _toUpperCase(input: string): string;
     static _toLowerCase(input: string): string;
+    static _inflect(count: number, singular: any, plural: any, includeCount: boolean): any;
     static _padStart(input: string, maxLength: number, fillString: string): string;
     static _padEnd(input: string, maxLength: number, fillString: string): string;
     static _repeat(input: string, times: number): string;
