@@ -637,6 +637,18 @@ var StringHelpers = /** @class */ (function () {
             return typeof input === 'string' ? input : '';
         }
     };
+    StringHelpers._encodeURIComponent = function (input) {
+        return encodeURIComponent('' + input);
+    };
+    StringHelpers._encodeURI = function (input) {
+        return encodeURI('' + input);
+    };
+    StringHelpers._decodeURIComponent = function (input) {
+        return decodeURIComponent('' + input);
+    };
+    StringHelpers._decodeURI = function (input) {
+        return decodeURI('' + input);
+    };
     StringHelpers._unindent = function () {
         try {
             var args = Array.from(arguments);

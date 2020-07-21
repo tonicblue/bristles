@@ -101,21 +101,21 @@ var ArrayHelpers = /** @class */ (function () {
             direction = direction || 'asc';
             direction = direction === 'desc' ? 'desc' : 'asc';
             path = typeof path === 'string' ? path : undefined;
-            var func = function (a, b) { return b - a; };
+            var func = function (a, b) { return a - b; };
             if (!path) {
                 if (direction === 'desc') {
-                    func = function (a, b) { return a - b; };
+                    func = function (a, b) { return b - a; };
                 }
             }
             else {
                 if (direction === 'desc') {
                     func = function (a, b) {
-                        return dot.pick(path || '', a) - dot.pick(path || '', b);
+                        return dot.pick(path || '', b) - dot.pick(path || '', a);
                     };
                 }
                 else {
                     func = function (a, b) {
-                        return dot.pick(path || '', b) - dot.pick(path || '', a);
+                        return dot.pick(path || '', a) - dot.pick(path || '', b);
                     };
                 }
             }
@@ -130,7 +130,7 @@ var ArrayHelpers = /** @class */ (function () {
         }
         catch (err) {
             console.error('Bristles Error -> Helper: sort, Error:', err.message);
-            return Array.isArray ? input : [];
+            return Array.isArray(input) ? input : [];
         }
     };
     ArrayHelpers._slice = function (input, begin, end) {
