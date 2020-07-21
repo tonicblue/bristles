@@ -110,19 +110,19 @@ export default class ArrayHelpers {
       direction = direction === 'desc' ? 'desc' : 'asc';
       path = typeof path === 'string' ? path : undefined;
 
-      let func = (a: number, b: number) => { return b - a; };
+      let func = (a: number, b: number) => { return a - b; };
       if (!path) {
         if (direction === 'desc') {
-          func = (a: number, b: number) => { return a - b; };
+          func = (a: number, b: number) => { return b - a; };
         }
       } else {
         if (direction === 'desc') {
           func = (a: number, b: number) => {
-            return dot.pick(path || '', a) - dot.pick(path || '', b);
+            return dot.pick(path || '', b) - dot.pick(path || '', a);
           };
         } else {
           func = (a: number, b: number) => {
-            return dot.pick(path || '', b) - dot.pick(path || '', a);
+            return dot.pick(path || '', a) - dot.pick(path || '', b);
           };
         }
       }
@@ -136,7 +136,7 @@ export default class ArrayHelpers {
       }
     } catch(err) {
       console.error('Bristles Error -> Helper: sort, Error:', err.message);
-      return Array.isArray ? input : [];
+      return Array.isArray(input) ? input : [];
     }
   }
 

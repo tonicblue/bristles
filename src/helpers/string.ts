@@ -629,6 +629,22 @@ export default class StringHelpers {
     }
   }
 
+  static _encodeURIComponent(input: string) {
+    return encodeURIComponent('' + input);
+  }
+
+  static _encodeURI(input: string) {
+    return encodeURI('' + input);
+  }
+
+  static _decodeURIComponent(input: string) {
+    return decodeURIComponent('' + input);
+  }
+
+  static _decodeURI(input: string) {
+    return decodeURI('' + input);
+  }
+
   static _unindent(): string {
     try {
       const args = Array.from(arguments);
