@@ -2,6 +2,7 @@
 
 import * as DateFns from 'date-fns';
 import { isOps } from 'src/utilities';
+import { HelperOptions } from 'handlebars';
 const DateMaths = require('@elastic/datemath');
 
 /**
@@ -22,7 +23,7 @@ export default class DateHelpers {
 
   static _dateFormat(date: Date | number, format: string) {
     try {
-      date = date instanceof Date || typeof date === 'number' ? date : new Date();
+      date = date instanceof Date || typeof date === 'number' ? new Date(date) : new Date();
       format = typeof format !== 'string' ? 'yyyy-MM-dd hh:mm:ss' : format;
       const formatted = DateFns.format(date, format);
       return formatted;
@@ -42,6 +43,30 @@ export default class DateHelpers {
 
       const output = DateMaths.parse(expression, { forceNow: date });
       return output.toDate();
+    } catch(err) {
+      console.error('Bristles Error -> Helper: dateMaths, Error:', err.message);
+      return new Date();
+    }
+  }
+
+  static _dateDistance(date: Date, baseDate: Date) {
+    try {
+      const helper: HelperOptions = arguments[arguments.length - 1];
+      date = date instanceof Date || typeof date === 'number' ? new Date(date) : new Date();
+      baseDate = baseDate instanceof Date || typeof baseDate === 'number' ? new Date(baseDate) : new Date();
+
+      const options: any = {};
+
+      if (helper.hash.includeSeconds) {
+        options.includeSeconds = !!helper.hash.includeSeconds;
+      }
+
+      if (helper.hash.addSuffix) {
+        options.addSuffix = !!helper.hash.addSuffix;
+      }
+
+      const output = DateFns.formatDistance(date, baseDate, options);
+      return output;
     } catch(err) {
       console.error('Bristles Error -> Helper: dateMaths, Error:', err.message);
       return new Date();
