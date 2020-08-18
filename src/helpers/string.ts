@@ -1,5 +1,6 @@
 import { HelperOptions, TemplateDelegate } from 'handlebars';
 import * as S from 'string';
+const TruncHtml = require('trunc-html');
 
 /**
  * TODO: Functions
@@ -612,6 +613,41 @@ export default class StringHelpers {
       return S(input).truncate(length, chars).s;
     } catch(err) {
       console.error('Bristles Error -> Helper: truncate, Error:', err.message);
+      return typeof input === 'string' ? input : '';
+    }
+  }
+
+  static _truncateHtml(input: string, length: number): string {
+    try {
+      const helper: HelperOptions = arguments[arguments.length - 1];
+      if (typeof input !== 'string') {
+        return '';
+      }
+      if (typeof length !== 'number') {
+        return input;
+      }
+
+      const options: any = {};
+
+      if (typeof helper.hash.ignoreTags === 'string') {
+        options.ignoreTags = helper.hash.ignoreTags.split(',');
+      } else if (Array.isArray(helper.hash.ignoreTags)) {
+        options.ignoreTags = helper.hash.ignoreTags;
+      }
+
+      if (typeof helper.hash.imageAltText !== 'boolean') {
+        options.imageAltText = !!helper.hash.imageAltText;
+      }
+
+      if (typeof helper.hash.sanitizer === 'object') {
+        options.sanitizer = helper.hash.sanitizer;
+      }
+
+      const output = TruncHtml(input, length, options);
+
+      return output;
+    } catch(err) {
+      console.error('Bristles Error -> Helper: truncateHtml, Error:', err.message);
       return typeof input === 'string' ? input : '';
     }
   }

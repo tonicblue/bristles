@@ -129,6 +129,7 @@ export default class StringHelpers {
     static _titleCase(input: string): string;
     static _toBoolean(input: string): boolean;
     static _truncate(input: string, length: number, chars: string): string;
+    static _truncateHtml(input: string, length: number): string;
     static _underscore(input: string): string;
     static _encodeURIComponent(input: string): string;
     static _encodeURI(input: string): string;

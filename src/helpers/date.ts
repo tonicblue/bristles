@@ -1,8 +1,8 @@
 //import { HelperOptions } from 'handlebars';
 
-//import { isOps } from '../utilities';
-
 import * as DateFns from 'date-fns';
+import { isOps } from 'src/utilities';
+const DateMaths = require('@elastic/datemath');
 
 /**
  * A bunch of helpers for working with dates
@@ -29,6 +29,22 @@ export default class DateHelpers {
     } catch(err) {
       console.error('Bristles Error -> Helper: dateFormat, Error:', err.message);
       return '';
+    }
+  }
+
+  static _dateMaths(expression: string, date: Date) {
+    try {
+      if (typeof expression !== 'string') {
+        throw new Error('Expressions must be strings');
+      }
+
+      date = date instanceof Date || typeof date === 'number' ? new Date(date) : new Date();
+
+      const output = DateMaths.parse(expression, { forceNow: date });
+      return output.toDate();
+    } catch(err) {
+      console.error('Bristles Error -> Helper: dateMaths, Error:', err.message);
+      return new Date();
     }
   }
 }

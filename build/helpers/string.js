@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var S = require("string");
+var TruncHtml = require('trunc-html');
 /**
  * TODO: Functions
  *  regexReplace
@@ -621,6 +622,36 @@ var StringHelpers = /** @class */ (function () {
         }
         catch (err) {
             console.error('Bristles Error -> Helper: truncate, Error:', err.message);
+            return typeof input === 'string' ? input : '';
+        }
+    };
+    StringHelpers._truncateHtml = function (input, length) {
+        try {
+            var helper = arguments[arguments.length - 1];
+            if (typeof input !== 'string') {
+                return '';
+            }
+            if (typeof length !== 'number') {
+                return input;
+            }
+            var options = {};
+            if (typeof helper.hash.ignoreTags === 'string') {
+                options.ignoreTags = helper.hash.ignoreTags.split(',');
+            }
+            else if (Array.isArray(helper.hash.ignoreTags)) {
+                options.ignoreTags = helper.hash.ignoreTags;
+            }
+            if (typeof helper.hash.imageAltText !== 'boolean') {
+                options.imageAltText = !!helper.hash.imageAltText;
+            }
+            if (typeof helper.hash.sanitizer === 'object') {
+                options.sanitizer = helper.hash.sanitizer;
+            }
+            var output = TruncHtml(input, length, options);
+            return output;
+        }
+        catch (err) {
+            console.error('Bristles Error -> Helper: truncateHtml, Error:', err.message);
             return typeof input === 'string' ? input : '';
         }
     };
