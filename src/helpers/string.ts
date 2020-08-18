@@ -645,7 +645,11 @@ export default class StringHelpers {
 
       const output = TruncHtml(input, length, options);
 
-      return output;
+      if (helper.hash.returnText === true) {
+        return output.text;
+      } else {
+        return output.html;
+      }
     } catch(err) {
       console.error('Bristles Error -> Helper: truncateHtml, Error:', err.message);
       return typeof input === 'string' ? input : '';

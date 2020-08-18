@@ -648,7 +648,12 @@ var StringHelpers = /** @class */ (function () {
                 options.sanitizer = helper.hash.sanitizer;
             }
             var output = TruncHtml(input, length, options);
-            return output;
+            if (helper.hash.returnText === true) {
+                return output.text;
+            }
+            else {
+                return output.html;
+            }
         }
         catch (err) {
             console.error('Bristles Error -> Helper: truncateHtml, Error:', err.message);
