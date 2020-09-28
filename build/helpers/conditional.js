@@ -341,10 +341,28 @@ var ConditionalHelpers = /** @class */ (function () {
     ConditionalHelpers._gt = function (inputA, inputB) {
         var helper = arguments[arguments.length - 1];
         try {
-            if (typeof inputA !== 'number' && !utilities_1.isValidDate(inputA)) {
+            if (typeof inputA === 'string') {
+                try {
+                    inputA = parseInt(inputA);
+                }
+                catch (err) { }
+            }
+            else if (utilities_1.isValidDate(inputA)) {
+                inputA = +inputA;
+            }
+            if (typeof inputB === 'string') {
+                try {
+                    inputB = parseInt(inputB);
+                }
+                catch (err) { }
+            }
+            else if (utilities_1.isValidDate(inputB)) {
+                inputB = +inputB;
+            }
+            if (typeof inputA !== 'number') {
                 throw new Error('Invalid first argument');
             }
-            if (typeof inputB !== 'number' && !utilities_1.isValidDate(inputB)) {
+            if (typeof inputB !== 'number') {
                 throw new Error('Invalid second argument');
             }
             var evaluation = inputA > inputB;
@@ -358,10 +376,28 @@ var ConditionalHelpers = /** @class */ (function () {
     ConditionalHelpers._gte = function (inputA, inputB) {
         var helper = arguments[arguments.length - 1];
         try {
-            if (typeof inputA !== 'number' && !utilities_1.isValidDate(inputA)) {
+            if (typeof inputA === 'string') {
+                try {
+                    inputA = parseInt(inputA);
+                }
+                catch (err) { }
+            }
+            else if (utilities_1.isValidDate(inputA)) {
+                inputA = +inputA;
+            }
+            if (typeof inputB === 'string') {
+                try {
+                    inputB = parseInt(inputB);
+                }
+                catch (err) { }
+            }
+            else if (utilities_1.isValidDate(inputB)) {
+                inputB = +inputB;
+            }
+            if (typeof inputA !== 'number') {
                 throw new Error('Invalid first argument');
             }
-            if (typeof inputB !== 'number' && !utilities_1.isValidDate(inputB)) {
+            if (typeof inputB !== 'number') {
                 throw new Error('Invalid second argument');
             }
             var evaluation = inputA >= inputB;
@@ -375,10 +411,28 @@ var ConditionalHelpers = /** @class */ (function () {
     ConditionalHelpers._lt = function (inputA, inputB) {
         var helper = arguments[arguments.length - 1];
         try {
-            if (typeof inputA !== 'number' && !utilities_1.isValidDate(inputA)) {
+            if (typeof inputA === 'string') {
+                try {
+                    inputA = parseInt(inputA);
+                }
+                catch (err) { }
+            }
+            else if (utilities_1.isValidDate(inputA)) {
+                inputA = +inputA;
+            }
+            if (typeof inputB === 'string') {
+                try {
+                    inputB = parseInt(inputB);
+                }
+                catch (err) { }
+            }
+            else if (utilities_1.isValidDate(inputB)) {
+                inputB = +inputB;
+            }
+            if (typeof inputA !== 'number') {
                 throw new Error('Invalid first argument');
             }
-            if (typeof inputB !== 'number' && !utilities_1.isValidDate(inputB)) {
+            if (typeof inputB !== 'number') {
                 throw new Error('Invalid second argument');
             }
             var evaluation = inputA < inputB;
@@ -392,10 +446,28 @@ var ConditionalHelpers = /** @class */ (function () {
     ConditionalHelpers._lte = function (inputA, inputB) {
         var helper = arguments[arguments.length - 1];
         try {
-            if (typeof inputA !== 'number' && !utilities_1.isValidDate(inputA)) {
+            if (typeof inputA === 'string') {
+                try {
+                    inputA = parseInt(inputA);
+                }
+                catch (err) { }
+            }
+            else if (utilities_1.isValidDate(inputA)) {
+                inputA = +inputA;
+            }
+            if (typeof inputB === 'string') {
+                try {
+                    inputB = parseInt(inputB);
+                }
+                catch (err) { }
+            }
+            else if (utilities_1.isValidDate(inputB)) {
+                inputB = +inputB;
+            }
+            if (typeof inputA !== 'number') {
                 throw new Error('Invalid first argument');
             }
-            if (typeof inputB !== 'number' && !utilities_1.isValidDate(inputB)) {
+            if (typeof inputB !== 'number') {
                 throw new Error('Invalid second argument');
             }
             var evaluation = inputA <= inputB;
