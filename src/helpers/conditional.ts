@@ -330,10 +330,21 @@ export default class ConditionalHelpers {
   static _gt(inputA: number, inputB: number): any {
     const helper: HelperOptions = arguments[arguments.length - 1];
     try {
-      if (typeof inputA !== 'number' && !isValidDate(inputA)) {
+      if (typeof inputA === 'string') {
+        try { inputA = parseInt(inputA); } catch(err) {}
+      } else if (isValidDate(inputA)) {
+        inputA = +inputA;
+      }
+      if (typeof inputB === 'string') {
+        try { inputB = parseInt(inputB); } catch(err) {}
+      } else if (isValidDate(inputB)) {
+        inputB = +inputB;
+      }
+
+      if (typeof inputA !== 'number') {
         throw new Error('Invalid first argument');
       }
-      if (typeof inputB !== 'number' && !isValidDate(inputB)) {
+      if (typeof inputB !== 'number') {
         throw new Error('Invalid second argument');
       }
       const evaluation = inputA > inputB;
@@ -347,10 +358,21 @@ export default class ConditionalHelpers {
   static _gte(inputA: number, inputB: number): any {
     const helper: HelperOptions = arguments[arguments.length - 1];
     try {
-      if (typeof inputA !== 'number' && !isValidDate(inputA)) {
+      if (typeof inputA === 'string') {
+        try { inputA = parseInt(inputA); } catch(err) {}
+      } else if (isValidDate(inputA)) {
+        inputA = +inputA;
+      }
+      if (typeof inputB === 'string') {
+        try { inputB = parseInt(inputB); } catch(err) {}
+      } else if (isValidDate(inputB)) {
+        inputB = +inputB;
+      }
+
+      if (typeof inputA !== 'number') {
         throw new Error('Invalid first argument');
       }
-      if (typeof inputB !== 'number' && !isValidDate(inputB)) {
+      if (typeof inputB !== 'number') {
         throw new Error('Invalid second argument');
       }
       const evaluation = inputA >= inputB;
@@ -364,10 +386,21 @@ export default class ConditionalHelpers {
   static _lt(inputA: number, inputB: number): any {
     const helper: HelperOptions = arguments[arguments.length - 1];
     try {
-      if (typeof inputA !== 'number' && !isValidDate(inputA)) {
+      if (typeof inputA === 'string') {
+        try { inputA = parseInt(inputA); } catch(err) {}
+      } else if (isValidDate(inputA)) {
+        inputA = +inputA;
+      }
+      if (typeof inputB === 'string') {
+        try { inputB = parseInt(inputB); } catch(err) {}
+      } else if (isValidDate(inputB)) {
+        inputB = +inputB;
+      }
+
+      if (typeof inputA !== 'number') {
         throw new Error('Invalid first argument');
       }
-      if (typeof inputB !== 'number' && !isValidDate(inputB)) {
+      if (typeof inputB !== 'number') {
         throw new Error('Invalid second argument');
       }
       const evaluation = inputA < inputB;
@@ -381,10 +414,21 @@ export default class ConditionalHelpers {
   static _lte(inputA: number, inputB: number): any {
     const helper: HelperOptions = arguments[arguments.length - 1];
     try {
-      if (typeof inputA !== 'number' && !isValidDate(inputA)) {
+      if (typeof inputA === 'string') {
+        try { inputA = parseInt(inputA); } catch(err) {}
+      } else if (isValidDate(inputA)) {
+        inputA = +inputA;
+      }
+      if (typeof inputB === 'string') {
+        try { inputB = parseInt(inputB); } catch(err) {}
+      } else if (isValidDate(inputB)) {
+        inputB = +inputB;
+      }
+
+      if (typeof inputA !== 'number') {
         throw new Error('Invalid first argument');
       }
-      if (typeof inputB !== 'number' && !isValidDate(inputB)) {
+      if (typeof inputB !== 'number') {
         throw new Error('Invalid second argument');
       }
       const evaluation = inputA <= inputB;
