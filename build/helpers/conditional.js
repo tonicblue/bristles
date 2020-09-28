@@ -341,8 +341,11 @@ var ConditionalHelpers = /** @class */ (function () {
     ConditionalHelpers._gt = function (inputA, inputB) {
         var helper = arguments[arguments.length - 1];
         try {
-            if (typeof inputA !== 'number' || typeof inputB !== 'number') {
-                throw new Error('Invalid arguments');
+            if (typeof inputA !== 'number' || !utilities_1.isValidDate(inputA)) {
+                throw new Error('Invalid first argument');
+            }
+            if (typeof inputB !== 'number' || !utilities_1.isValidDate(inputB)) {
+                throw new Error('Invalid second argument');
             }
             var evaluation = inputA > inputB;
             return ConditionalHelpers.conditionalResponse(helper, this, evaluation);
@@ -355,8 +358,11 @@ var ConditionalHelpers = /** @class */ (function () {
     ConditionalHelpers._gte = function (inputA, inputB) {
         var helper = arguments[arguments.length - 1];
         try {
-            if (typeof inputA !== 'number' || typeof inputB !== 'number') {
-                throw new Error('Invalid arguments');
+            if (typeof inputA !== 'number' || !utilities_1.isValidDate(inputA)) {
+                throw new Error('Invalid first argument');
+            }
+            if (typeof inputB !== 'number' || !utilities_1.isValidDate(inputB)) {
+                throw new Error('Invalid second argument');
             }
             var evaluation = inputA >= inputB;
             return ConditionalHelpers.conditionalResponse(helper, this, evaluation);
@@ -369,8 +375,11 @@ var ConditionalHelpers = /** @class */ (function () {
     ConditionalHelpers._lt = function (inputA, inputB) {
         var helper = arguments[arguments.length - 1];
         try {
-            if (typeof inputA !== 'number' || typeof inputB !== 'number') {
-                throw new Error('Invalid arguments');
+            if (typeof inputA !== 'number' || !utilities_1.isValidDate(inputA)) {
+                throw new Error('Invalid first argument');
+            }
+            if (typeof inputB !== 'number' || !utilities_1.isValidDate(inputB)) {
+                throw new Error('Invalid second argument');
             }
             var evaluation = inputA < inputB;
             return ConditionalHelpers.conditionalResponse(helper, this, evaluation);
@@ -383,8 +392,11 @@ var ConditionalHelpers = /** @class */ (function () {
     ConditionalHelpers._lte = function (inputA, inputB) {
         var helper = arguments[arguments.length - 1];
         try {
-            if (typeof inputA !== 'number' || typeof inputB !== 'number') {
-                throw new Error('Invalid arguments');
+            if (typeof inputA !== 'number' || !utilities_1.isValidDate(inputA)) {
+                throw new Error('Invalid first argument');
+            }
+            if (typeof inputB !== 'number' || !utilities_1.isValidDate(inputB)) {
+                throw new Error('Invalid second argument');
             }
             var evaluation = inputA <= inputB;
             return ConditionalHelpers.conditionalResponse(helper, this, evaluation);

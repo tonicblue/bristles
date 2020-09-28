@@ -1,7 +1,7 @@
 import { HelperOptions, TemplateDelegate } from 'handlebars';
 import * as DeepDiff from 'deep-diff';
 
-import { isOps, Map } from '../utilities';
+import { isOps, Map, isValidDate } from '../utilities';
 
 /**
  * TODO:
@@ -330,8 +330,11 @@ export default class ConditionalHelpers {
   static _gt(inputA: number, inputB: number): any {
     const helper: HelperOptions = arguments[arguments.length - 1];
     try {
-      if (typeof inputA !== 'number' || typeof inputB !== 'number') {
-        throw new Error('Invalid arguments');
+      if (typeof inputA !== 'number' || !isValidDate(inputA)) {
+        throw new Error('Invalid first argument');
+      }
+      if (typeof inputB !== 'number' || !isValidDate(inputB)) {
+        throw new Error('Invalid second argument');
       }
       const evaluation = inputA > inputB;
       return ConditionalHelpers.conditionalResponse(helper, this, evaluation);
@@ -344,8 +347,11 @@ export default class ConditionalHelpers {
   static _gte(inputA: number, inputB: number): any {
     const helper: HelperOptions = arguments[arguments.length - 1];
     try {
-      if (typeof inputA !== 'number' || typeof inputB !== 'number') {
-        throw new Error('Invalid arguments');
+      if (typeof inputA !== 'number' || !isValidDate(inputA)) {
+        throw new Error('Invalid first argument');
+      }
+      if (typeof inputB !== 'number' || !isValidDate(inputB)) {
+        throw new Error('Invalid second argument');
       }
       const evaluation = inputA >= inputB;
       return ConditionalHelpers.conditionalResponse(helper, this, evaluation);
@@ -358,8 +364,11 @@ export default class ConditionalHelpers {
   static _lt(inputA: number, inputB: number): any {
     const helper: HelperOptions = arguments[arguments.length - 1];
     try {
-      if (typeof inputA !== 'number' || typeof inputB !== 'number') {
-        throw new Error('Invalid arguments');
+      if (typeof inputA !== 'number' || !isValidDate(inputA)) {
+        throw new Error('Invalid first argument');
+      }
+      if (typeof inputB !== 'number' || !isValidDate(inputB)) {
+        throw new Error('Invalid second argument');
       }
       const evaluation = inputA < inputB;
       return ConditionalHelpers.conditionalResponse(helper, this, evaluation);
@@ -372,8 +381,11 @@ export default class ConditionalHelpers {
   static _lte(inputA: number, inputB: number): any {
     const helper: HelperOptions = arguments[arguments.length - 1];
     try {
-      if (typeof inputA !== 'number' || typeof inputB !== 'number') {
-        throw new Error('Invalid arguments');
+      if (typeof inputA !== 'number' || !isValidDate(inputA)) {
+        throw new Error('Invalid first argument');
+      }
+      if (typeof inputB !== 'number' || !isValidDate(inputB)) {
+        throw new Error('Invalid second argument');
       }
       const evaluation = inputA <= inputB;
       return ConditionalHelpers.conditionalResponse(helper, this, evaluation);

@@ -10,6 +10,10 @@ export function isOps(obj: any) {
     obj.hasOwnProperty('name');
 }
 
+export function isValidDate(obj: any) {
+  return obj && Object.prototype.toString.call(obj) === "[object Date]" && !isNaN(obj);
+}
+
 export interface Map<T> {
   [key: string]: T;
 }

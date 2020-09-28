@@ -10,4 +10,8 @@ function isOps(obj) {
         obj.hasOwnProperty('name');
 }
 exports.isOps = isOps;
+function isValidDate(obj) {
+    return obj && Object.prototype.toString.call(obj) === "[object Date]" && !isNaN(obj);
+}
+exports.isValidDate = isValidDate;
 //# sourceMappingURL=utilities.js.map
