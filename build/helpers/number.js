@@ -42,6 +42,24 @@ var NumberHelpers = /** @class */ (function () {
             return 0;
         }
     };
+    NumberHelpers._toLocaleString = function (input, locale, radix) {
+        try {
+            var args = Array.from(arguments);
+            var helper = args.pop();
+            var options = helper.hash;
+            locale = typeof locale === 'string' ? locale : 'en-GB';
+            radix = typeof radix === 'number' ? radix : 10;
+            var num = parseInt(input, radix);
+            if (Number.isNaN(num)) {
+                return input;
+            }
+            return num.toLocaleString(locale, options);
+        }
+        catch (err) {
+            console.error('Bristles Error -> Helper: format, Error:', err.message);
+            return input;
+        }
+    };
     return NumberHelpers;
 }());
 exports.default = NumberHelpers;

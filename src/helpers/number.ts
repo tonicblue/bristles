@@ -40,4 +40,26 @@ export default class NumberHelpers {
       return 0;
     }
   }
+
+  static _toLocaleString(input: any, locale: string, radix: number) {
+    try {
+      const args = Array.from(arguments);
+      const helper: HelperOptions = args.pop();
+      const options = helper.hash;
+
+      locale = typeof locale === 'string' ? locale : 'en-GB';
+      radix = typeof radix === 'number' ? radix : 10;
+
+      let num = parseInt(input, radix);
+
+      if (Number.isNaN(num)) {
+        return input;
+      }
+
+      return num.toLocaleString(locale, options);
+    } catch (err) {
+      console.error('Bristles Error -> Helper: format, Error:', err.message);
+      return input;
+    }
+  }
 }
