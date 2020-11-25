@@ -81,6 +81,18 @@ export default class ObjectHelpers {
     }
   }
 
+  static _querystringify(input: any) {
+    try {
+      if (typeof input !== 'object' || input === null || isOps(input)) {
+        throw new Error('Invalid arguments');
+      }
+      return Querystring.stringify(input);
+    } catch(err) {
+      console.error('Bristles Error -> Helper: querystringify, Error:', err.message);
+      return '';
+    }
+  }
+
   //TODO: Merge options
   static _parse(value: any): any {
     try {

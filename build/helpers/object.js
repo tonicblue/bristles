@@ -81,6 +81,18 @@ var ObjectHelpers = /** @class */ (function () {
             return null;
         }
     };
+    ObjectHelpers._querystringify = function (input) {
+        try {
+            if (typeof input !== 'object' || input === null || utilities_1.isOps(input)) {
+                throw new Error('Invalid arguments');
+            }
+            return Querystring.stringify(input);
+        }
+        catch (err) {
+            console.error('Bristles Error -> Helper: querystringify, Error:', err.message);
+            return '';
+        }
+    };
     //TODO: Merge options
     ObjectHelpers._parse = function (value) {
         try {
