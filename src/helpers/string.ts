@@ -1,5 +1,6 @@
 import { HelperOptions, TemplateDelegate } from 'handlebars';
 import * as S from 'string';
+import Dedent from 'ts-dedent';
 const TruncHtml = require('trunc-html');
 
 /**
@@ -690,39 +691,10 @@ export default class StringHelpers {
       const args = Array.from(arguments);
       const helper = args.pop();
 
-      let strings = [(args[0] || helper.fn(this)) as string];
+      const input = (args[0] || helper.fn(this)) as string;
+      const output = Dedent(input);
 
-      strings[strings.length - 1] = strings[strings.length - 1].replace(
-        /\r?\n([\t ]*)$/,
-        '',
-      );
-
-      // 2. Find all line breaks to determine the highest common indentation level.
-      const indentLengths = strings.reduce(
-        (arr, str) => {
-          const matches = str.match(/\n[\t ]+/g);
-          if (matches) {
-            return arr.concat(matches.map(match => match.length - 1));
-          }
-          return arr;
-        },
-        <number[]>[],
-      );
-
-      // 3. Remove the common indentation from all strings.
-      if (indentLengths.length) {
-        const pattern = new RegExp(`\n[\t ]{${Math.min(...indentLengths)}}`, 'g');
-
-        strings = strings.map(str => str.replace(pattern, '\n'));
-      }
-
-      // 4. Remove leading whitespace.
-      strings[0] = strings[0].replace(/^\r?\n/, '');
-
-      // 5. Perform interpolation.
-      let string = strings[0];
-
-      return string;
+      return output;
     } catch(err) {
       console.error('Bristles Error -> Helper: unindent, Error:', err.message);
       return typeof arguments[0] === 'string' ? arguments[0] : '';

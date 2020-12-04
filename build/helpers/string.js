@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var S = require("string");
+var ts_dedent_1 = require("ts-dedent");
 var TruncHtml = require('trunc-html');
 /**
  * TODO: Functions
@@ -689,26 +690,9 @@ var StringHelpers = /** @class */ (function () {
         try {
             var args = Array.from(arguments);
             var helper = args.pop();
-            var strings = [(args[0] || helper.fn(this))];
-            strings[strings.length - 1] = strings[strings.length - 1].replace(/\r?\n([\t ]*)$/, '');
-            // 2. Find all line breaks to determine the highest common indentation level.
-            var indentLengths = strings.reduce(function (arr, str) {
-                var matches = str.match(/\n[\t ]+/g);
-                if (matches) {
-                    return arr.concat(matches.map(function (match) { return match.length - 1; }));
-                }
-                return arr;
-            }, []);
-            // 3. Remove the common indentation from all strings.
-            if (indentLengths.length) {
-                var pattern_1 = new RegExp("\n[\t ]{" + Math.min.apply(Math, indentLengths) + "}", 'g');
-                strings = strings.map(function (str) { return str.replace(pattern_1, '\n'); });
-            }
-            // 4. Remove leading whitespace.
-            strings[0] = strings[0].replace(/^\r?\n/, '');
-            // 5. Perform interpolation.
-            var string = strings[0];
-            return string;
+            var input = (args[0] || helper.fn(this));
+            var output = ts_dedent_1.default(input);
+            return output;
         }
         catch (err) {
             console.error('Bristles Error -> Helper: unindent, Error:', err.message);
