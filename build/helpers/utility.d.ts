@@ -15,6 +15,7 @@ export default class UtilityHelpers {
     static _coalesce(): any;
     static _raw(options: HelperOptions): string;
     static _lookupMap(): any;
+    static _once(key: string, context: any, options: HelperOptions): string;
     static _partial(partial: (context: any) => string): string;
     static _toHtmlAttributes(input: any): string;
     static _eval(code: string): any;

@@ -131,6 +131,21 @@ export default class UtilityHelpers {
     }
   }
 
+  static _once(key: string, context: any, options: HelperOptions) {
+    try {
+      if (!Array.isArray(context.__once)) {
+        context.__once = [];
+      } else if (context.__once.includes(key)) {
+        return options.inverse ? options.inverse(options.data, options) : '';
+      }
+      context.__once.push(key);
+      return options.fn(options.data, options);
+    } catch(err) {
+      console.error('Bristles Error -> Helper: once, Error:', err.message);
+      return '';
+    }
+  }
+
   static _partial(partial: (context: any) => string): string {
     try {
       if (typeof partial !== 'function') {
