@@ -136,10 +136,10 @@ export default class UtilityHelpers {
       if (!Array.isArray(context.__once)) {
         context.__once = [];
       } else if (context.__once.includes(key)) {
-        return options.inverse ? options.inverse(options.data, options) : '';
+        return options.inverse ? options.inverse(this) : '';
       }
       context.__once.push(key);
-      return options.fn(options.data, options);
+      return options.fn(this);
     } catch(err) {
       console.error('Bristles Error -> Helper: once, Error:', err.message);
       return '';
