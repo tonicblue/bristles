@@ -2,6 +2,7 @@ import { HelperOptions } from 'handlebars';
 import { isFunction } from 'util';
 
 import * as dot from 'dot-object';
+import * as MathJS from 'mathjs';
 
 import { isOps } from '../utilities';
 
@@ -33,6 +34,100 @@ export default class ArrayHelpers {
       console.error('Bristles Error -> Helper: map, Error:', err.message);
       return [];
     }
+  }
+
+  static _pluck(input: any[], path: string, undefinedAsNull: boolean) {
+    const output: any[] = [];
+
+    try {
+      if (!Array.isArray(input)) {
+        throw new Error('Input is not an array');
+      }
+
+      if (typeof path !== 'string') {
+        throw new Error('Path is not a string');
+      }
+
+      for (const item of input) {
+        const value = dot.pick(path, item);
+        if (typeof value === 'undefined' && undefinedAsNull !== true) continue;
+        output.push(value);
+      }
+    } catch(err) {
+      console.error('Bristles Error -> Helper: Pluck, Error:', err.message);
+    }
+
+    return output;
+  }
+
+  static _union(inputA: any[], inputB: any[]) {
+    try {
+      return MathJS.setUnion(inputA, inputB);
+    } catch(err) {
+      console.error('Bristles Error -> Helper: union, Error:', err.message);
+      return [];
+    }
+  }
+
+  static _intersect(inputA: any[], inputB: any[]) {
+    try {
+      return MathJS.setIntersect(inputA, inputB);
+    } catch(err) {
+      console.error('Bristles Error -> Helper: intersect, Error:', err.message);
+      return [];
+    }
+  }
+
+  static _difference(inputA: any[], inputB: any[]) {
+    try {
+      return MathJS.setDifference(inputA, inputB);
+    } catch(err) {
+      console.error('Bristles Error -> Helper: difference, Error:', err.message);
+      return [];
+    }
+  }
+
+  static _filter(items: any[], property: string, comparator: string, test: any) {
+    const found: any[] = [];
+
+    try {
+      items.forEach(item => {
+        const value: any = property === null ? item : dot.pick(property, item);
+        let match = false;
+        try {
+          switch (comparator) {
+            case ('==='): match = value === test;
+            break;
+            case ('=='): match = value == test;
+            break;
+            case ('>='): match = value >= test;
+            break;
+            case ('>'): match = value > test;
+            break;
+            case ('<='): match = value <= test;
+            break;
+            case ('<'): match = value < test;
+            break;
+            case ('testIn'): match = value.indexOf(test) > -1;
+            break;
+            case ('valueIn'): match = test.indexOf(value) > -1;
+            break;
+            case ('testNotIn'): match = value.indexOf(test) === -1;
+            break;
+            case ('valueNotIn'): match = test.indexOf(value) === -1;
+            break;
+            case ('exists'): match = !!property;
+          }
+        } catch(err) { }
+        if (match) {
+          found.push(item);
+        }
+      });
+    } catch(err) {
+      console.error('Bristles Error -> Helper: filter, Error:', err.message);
+    }
+
+    return found;
   }
 
   static _each(input: any, join: string): string {

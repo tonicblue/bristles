@@ -16,6 +16,11 @@
  */
 export default class ArrayHelpers {
     static _map(input: any[], func: (...args: any[]) => any): any[];
+    static _pluck(input: any[], path: string, undefinedAsNull: boolean): any[];
+    static _union(inputA: any[], inputB: any[]): any[];
+    static _intersect(inputA: any[], inputB: any[]): any[];
+    static _difference(inputA: any[], inputB: any[]): any[];
+    static _filter(items: any[], property: string, comparator: string, test: any): any[];
     static _each(input: any, join: string): string;
     static _sort(input: any[], direction?: string, path?: string): any[];
     static _slice(input: any[], begin?: number, end?: number): any[];

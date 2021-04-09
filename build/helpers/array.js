@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var util_1 = require("util");
 var dot = require("dot-object");
+var MathJS = require("mathjs");
 var utilities_1 = require("../utilities");
 /**
  * TODO: functions
@@ -33,6 +34,107 @@ var ArrayHelpers = /** @class */ (function () {
             console.error('Bristles Error -> Helper: map, Error:', err.message);
             return [];
         }
+    };
+    ArrayHelpers._pluck = function (input, path, undefinedAsNull) {
+        var output = [];
+        try {
+            if (!Array.isArray(input)) {
+                throw new Error('Input is not an array');
+            }
+            if (typeof path !== 'string') {
+                throw new Error('Path is not a string');
+            }
+            for (var _i = 0, input_1 = input; _i < input_1.length; _i++) {
+                var item = input_1[_i];
+                var value = dot.pick(path, item);
+                if (typeof value === 'undefined' && undefinedAsNull !== true)
+                    continue;
+                output.push(value);
+            }
+        }
+        catch (err) {
+            console.error('Bristles Error -> Helper: Pluck, Error:', err.message);
+        }
+        return output;
+    };
+    ArrayHelpers._union = function (inputA, inputB) {
+        try {
+            return MathJS.setUnion(inputA, inputB);
+        }
+        catch (err) {
+            console.error('Bristles Error -> Helper: union, Error:', err.message);
+            return [];
+        }
+    };
+    ArrayHelpers._intersect = function (inputA, inputB) {
+        try {
+            return MathJS.setIntersect(inputA, inputB);
+        }
+        catch (err) {
+            console.error('Bristles Error -> Helper: intersect, Error:', err.message);
+            return [];
+        }
+    };
+    ArrayHelpers._difference = function (inputA, inputB) {
+        try {
+            return MathJS.setDifference(inputA, inputB);
+        }
+        catch (err) {
+            console.error('Bristles Error -> Helper: difference, Error:', err.message);
+            return [];
+        }
+    };
+    ArrayHelpers._filter = function (items, property, comparator, test) {
+        var found = [];
+        try {
+            items.forEach(function (item) {
+                var value = property === null ? item : dot.pick(property, item);
+                var match = false;
+                try {
+                    switch (comparator) {
+                        case ('==='):
+                            match = value === test;
+                            break;
+                        case ('=='):
+                            match = value == test;
+                            break;
+                        case ('>='):
+                            match = value >= test;
+                            break;
+                        case ('>'):
+                            match = value > test;
+                            break;
+                        case ('<='):
+                            match = value <= test;
+                            break;
+                        case ('<'):
+                            match = value < test;
+                            break;
+                        case ('testIn'):
+                            match = value.indexOf(test) > -1;
+                            break;
+                        case ('valueIn'):
+                            match = test.indexOf(value) > -1;
+                            break;
+                        case ('testNotIn'):
+                            match = value.indexOf(test) === -1;
+                            break;
+                        case ('valueNotIn'):
+                            match = test.indexOf(value) === -1;
+                            break;
+                        case ('exists'): match = !!property;
+                    }
+                }
+                catch (err) { }
+                if (match) {
+                    found.push(item);
+                }
+            });
+        }
+        catch (err) {
+            console.error('Bristles Error -> Helper: filter, Error:', err.message);
+        }
+        return found;
     };
     ArrayHelpers._each = function (input, join) {
         var helper = arguments[arguments.length - 1];

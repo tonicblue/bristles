@@ -17,3 +17,9 @@ export function isValidDate(obj: any) {
 export interface Map<T> {
   [key: string]: T;
 }
+
+export function bristlesError(...args: any[]) {
+  if (process.env.NODE_ENV === 'development') {
+    console.error.call(console, ...args);
+  }
+}
