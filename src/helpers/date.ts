@@ -22,14 +22,17 @@ export default class DateHelpers {
     }
   }
 
-  static _dateFormat(date: Date | number, format: string, timezone: string) {
+  static _dateFormat(date: Date | number, format: string) {
     try {
+      const helper: HelperOptions = arguments[arguments.length - 1];
+      const timezone = typeof helper.hash.timezone !== 'string' ? 'Europe/London' : helper.hash.timezone;
+
       date = date instanceof Date || typeof date === 'number' ? new Date(date) : new Date();
-      if (typeof timezone === 'string') {
-        date = DateFnsTz.utcToZonedTime(date, timezone);
-      }
+      date = DateFnsTz.utcToZonedTime(date, timezone);
       format = typeof format !== 'string' ? 'yyyy-MM-dd hh:mm:ss' : format;
-      const formatted = DateFns.format(date, format);
+
+      const formatted = DateFnsTz.format(date, format, { timeZone: timezone });
+
       return formatted;
     } catch(err) {
       console.error('Bristles Error -> Helper: dateFormat, Error:', err.message);
