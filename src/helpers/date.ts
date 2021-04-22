@@ -1,6 +1,7 @@
 //import { HelperOptions } from 'handlebars';
 
 import * as DateFns from 'date-fns';
+import * as DateFnsTz from 'date-fns-tz';
 import { isOps } from 'src/utilities';
 import { HelperOptions } from 'handlebars';
 const DateMaths = require('@elastic/datemath');
@@ -21,9 +22,12 @@ export default class DateHelpers {
     }
   }
 
-  static _dateFormat(date: Date | number, format: string) {
+  static _dateFormat(date: Date | number, format: string, timezone: string) {
     try {
       date = date instanceof Date || typeof date === 'number' ? new Date(date) : new Date();
+      if (typeof timezone === 'string') {
+        date = DateFnsTz.utcToZonedTime(date, timezone);
+      }
       format = typeof format !== 'string' ? 'yyyy-MM-dd hh:mm:ss' : format;
       const formatted = DateFns.format(date, format);
       return formatted;
