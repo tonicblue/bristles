@@ -16,6 +16,7 @@ export default class ObjectHelpers {
     static _get(context: any, path: string): any;
     static _merge(): any;
     static _querystringify(input: any): string;
+    static _listify(input: any): string;
     static _parse(value: any): any;
     static _extend(): any;
     static _o(): any;

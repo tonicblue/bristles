@@ -93,6 +93,25 @@ var ObjectHelpers = /** @class */ (function () {
             return '';
         }
     };
+    ObjectHelpers._listify = function (input) {
+        try {
+            if (!input || typeof input !== 'object') {
+                throw new Error('Invalid arguments');
+            }
+            var json = JSON.stringify(input, null, 4);
+            return json.replace(/^(?:\s*")(.*?)(?:": [{\[]$)/gim, '<li><strong>$1</strong>:<ul>')
+                .replace(/^(?:\s*")(.*?)(?:": )(.*?),?$/gim, '<li><strong>$1</strong>: $2</li>')
+                .replace(/^\s*((".*?")|(true)|(false)|(null)|(\d+)),?$/gim, '<li>$1</li>')
+                .replace(/ +[{\[]$/gim, '<li><ul class="list-json">')
+                .replace(/ +[}\]],?$/gim, '</ul></li>')
+                .replace(/[{\[]$/gim, '<ul class="list-json">')
+                .replace(/[}\]],?$/gim, '</ul>');
+        }
+        catch (err) {
+            console.error('Bristles Error -> Helper: listify, Error:', err.message);
+            return '';
+        }
+    };
     //TODO: Merge options
     ObjectHelpers._parse = function (value) {
         try {
